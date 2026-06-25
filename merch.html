@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>WREAL X - SHOP NOW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', 'Nanum Pen Script', monospace;
+            background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
+            color: #fff2e6;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+        .header {
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ff6600;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
+            background: linear-gradient(45deg, #ff4500, #ff8c00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+        .back-btn {
+            background: linear-gradient(45deg, #ff6600, #ff8c00);
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
+        }
+        .hero-small {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://iili.io/C9aXwuI.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 25vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-small h1 {
+            font-size: 2rem;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
+            color: #ffcc00;
+        }
+        .shop-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
+            background: linear-gradient(45deg, #ff6600, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 0 1rem;
+        }
+        @media (max-width: 900px) { .merch-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .merch-grid { grid-template-columns: 1fr; } }
+        .card {
+            background: rgba(0,0,0,0.7);
+            border-radius: 15px;
+            text-align: center;
+            padding-bottom: 1rem;
+            border: 1px solid #ff6600;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: #ffcc00; }
+        .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 15px 15px 0 0; }
+        .card h3 { font-size: 1.1rem; margin: 0.8rem 0; color: #ffaa66; }
+        .price {
+            background: linear-gradient(45deg, #ff6600, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0.3rem 0;
+        }
+        .buy-btn {
+            background: linear-gradient(45deg, #ff6600, #ff8c00);
+            color: #000;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            margin: 0.8rem 0;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #ff6600;
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #ffaa66;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">WREAL X</a>
+        <a href="index.html" class="back-btn">← BACK TO HOME</a>
+    </div>
+    <div class="hero-small"><h1>🛍️ SHOP NOW</h1></div>
+    <h2 class="shop-title">MERCHANDISE</h2>
+    <div class="merch-grid">
+        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">💰 180,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy X-CELL DRESS for 180,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">💰 25,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy X-MAN GLOVES for 25,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">💰 25,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy GANGO SOCKS for 25,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">💰 220,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy X-MAN HOODIES for 220,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">💰 35,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy GANGO SCARVES for 35,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">💰 200,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy GANG GIRL DRESS for 200,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">💰 250,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy GANG GIRL X for 250,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">💰 150,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy X BOY SHIRTS for 150,000 SSP'">BUY NOW</button></div>
+    </div>
+    <div class="footer"><p>© 2026 WREAL X | All Rights Reserved</p></div>
+</body>
+  </html>
+                                                                                                                                                                                                                                                                                   
