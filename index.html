@@ -65,31 +65,29 @@
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
         
-        /* Streaming Service Icons */
+        /* Streaming Service Icons with SVG logos */
         .streaming-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
         .streaming-circle {
-            display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;
-            background: rgba(0,0,0,0.6); border-radius: 50%; transition: all 0.2s; text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            transition: all 0.2s;
+            text-decoration: none;
             border: 1px solid #ff6600;
-            font-weight: bold;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            font-size: 0.7rem;
-            text-align: center;
-            color: #ffaa66;
-            padding: 0 4px;
-            line-height: 1.2;
+            padding: 12px;
         }
-        .streaming-circle:hover { transform: scale(1.1); background: #ff4500; color: #000; border-color: #ffcc00; }
-        .streaming-circle .brand-icon {
-            display: block;
-            font-size: 1.8rem;
-            line-height: 1;
+        .streaming-circle:hover { transform: scale(1.1); background: #ff4500; border-color: #ffcc00; }
+        .streaming-circle svg {
+            width: 32px;
+            height: 32px;
+            fill: #ffaa66;
+            transition: fill 0.2s;
         }
-        .streaming-circle .brand-name {
-            display: block;
-            font-size: 0.55rem;
-            margin-top: 2px;
-        }
+        .streaming-circle:hover svg { fill: #000; }
         
         .double-btn-container {
             display: flex;
@@ -165,7 +163,6 @@
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
         
-        /* MERCH GRID */
         .merch-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -281,23 +278,37 @@
 
     <div class="hero"></div>
 
-    <!-- NEW STREAMING SERVICE LINKS (replaces social icons) -->
+    <!-- PROFESSIONAL STREAMING SERVICE LINKS WITH SVG LOGOS -->
     <div class="streaming-section">
-        <a href="https://tidal.com/artist/79457798/u" target="_blank" class="streaming-circle">
-            <span class="brand-icon">🎵</span>
-            <span class="brand-name">TIDAL</span>
+        <!-- TIDAL -->
+        <a href="https://tidal.com/artist/79457798/u" target="_blank" class="streaming-circle" aria-label="TIDAL">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4 L4 20 L8 20 L8 10 L12 10 L12 18 L16 18 L16 8 L20 8 L20 16 L24 16 L24 4"/>
+            </svg>
         </a>
-        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="streaming-circle">
-            <span class="brand-icon">🟢</span>
-            <span class="brand-name">SPOTIFY</span>
+        <!-- SPOTIFY -->
+        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="streaming-circle" aria-label="Spotify">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16.5 10.5c-2.5-1.5-5.5-1.5-8 0M14.5 13.5c-1.8-1-4-1-5.8 0M12.5 16.5c-1.2-0.6-2.5-0.6-3.5 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </svg>
         </a>
-        <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="streaming-circle">
-            <span class="brand-icon">🍎</span>
-            <span class="brand-name">APPLE MUSIC</span>
+        <!-- APPLE MUSIC -->
+        <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="streaming-circle" aria-label="Apple Music">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9 17V7l8 2.5V14" stroke="currentColor"/>
+                <circle cx="7" cy="17" r="2" fill="currentColor" stroke="none"/>
+                <circle cx="15" cy="14" r="2" fill="currentColor" stroke="none"/>
+            </svg>
         </a>
-        <a href="https://audiomack.com/wrealx" target="_blank" class="streaming-circle">
-            <span class="brand-icon">🎧</span>
-            <span class="brand-name">AUDIOMACK</span>
+        <!-- AUDIOMACK -->
+        <a href="https://audiomack.com/wrealx" target="_blank" class="streaming-circle" aria-label="Audiomack">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="4"/>
+                <path d="M8 16L8 8L16 8L16 16" stroke="currentColor"/>
+                <path d="M8 12L16 12" stroke="currentColor"/>
+            </svg>
         </a>
     </div>
 
@@ -376,4 +387,4 @@
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
     </script>
 </body>
-    </html>
+                    </html>
