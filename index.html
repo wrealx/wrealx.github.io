@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>WREAL X</title>
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <!-- Beacons Email Form Embed Script -->
+    <script>
+        (function () {
+            function loadBeaconsEmailFormEmbed() {
+                var s = document.createElement("script");
+                var t = Math.floor(new Date().getTime() / 120000);
+                s.type = "module";
+                s.async = 1;
+                s.src = `https://beacons.ai/embeds/emailForm.js?v=${t}&b=wrealx&f=31c0e709-a54d-43f1-918f-67317d82f9b4`;
+                (document.head || document.body || document.documentElement).appendChild(s);
+            }
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", loadBeaconsEmailFormEmbed, { once: true });
+                return;
+            }
+            loadBeaconsEmailFormEmbed();
+        })();
+    </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -65,7 +83,6 @@
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
         
-        /* Streaming Service Icons with SVG logos */
         .streaming-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
         .streaming-circle {
             display: flex;
@@ -89,39 +106,24 @@
         }
         .streaming-circle:hover svg { fill: #000; }
         
-        .double-btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            margin: 0.5rem 0 0rem;
-            flex-wrap: wrap;
-            padding: 0 1rem;
+        .play-now-container {
+            text-align: center;
+            padding: 0.5rem 0 0rem;
         }
-        .action-btn {
-            flex: 1;
-            max-width: 220px;
+        .play-now-btn {
+            display: inline-block;
             background: linear-gradient(45deg, #ff4500, #cc3300);
             color: white;
-            padding: 0.7rem 1rem;
+            padding: 0.7rem 2rem;
             font-size: 1rem;
             font-weight: bold;
             border-radius: 8px;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
             transition: all 0.2s;
             border: 1px solid #ff8c00;
-            white-space: nowrap;
         }
-        .action-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
-        .download-btn {
-            background: linear-gradient(45deg, #2c5f2d, #1e3a1e);
-            border: 1px solid #55aa55;
-        }
-        .download-btn:hover { background: linear-gradient(45deg, #3a7a3a, #2a4a2a); }
+        .play-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
         
         .choose-service {
             text-align: center;
@@ -159,7 +161,6 @@
             background-clip: text; color: transparent;
         }
         
-        /* VIDEO GRID - 2 VIDEOS, SIDE BY SIDE */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -247,21 +248,50 @@
             }
         }
         
-        .signup-section {
-            background: rgba(0,0,0,0.6); text-align: center; padding: 2rem; margin: 2rem 1rem;
-            border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600; border-radius: 10px;
+        /* Beacons Email Form Styles - Blended with Theme */
+        .beacons-signup-section {
+            background: rgba(0,0,0,0.6);
+            text-align: center;
+            padding: 2rem;
+            margin: 2rem 1rem;
+            border-top: 2px solid #ff6600;
+            border-bottom: 2px solid #ff6600;
+            border-radius: 10px;
         }
-        .signup-section h2 { font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive; color: #ffaa66; }
-        .signup-form { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 0.5rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap; }
-        .signup-form input {
-            flex: 2; min-width: 180px; padding: 10px 12px; background: #1a0505;
-            border: 2px solid #ff6600; border-radius: 8px; color: white;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; font-size: 1rem;
+        .beacons-signup-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
+            color: #ffaa66;
         }
-        .signup-form button {
-            flex: 1; min-width: 100px; padding: 10px 12px; background: linear-gradient(45deg, #ff6600, #ff8c00);
-            color: #000; border: none; border-radius: 8px; font-weight: bold;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; font-size: 1rem; cursor: pointer;
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        /* Style Beacons form elements to match theme */
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 input {
+            background: #1a0505 !important;
+            border: 2px solid #ff6600 !important;
+            border-radius: 8px !important;
+            color: white !important;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
+            padding: 12px !important;
+        }
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 button {
+            background: linear-gradient(45deg, #ff6600, #ff8c00) !important;
+            color: #000 !important;
+            border: none !important;
+            border-radius: 8px !important;
+            font-weight: bold !important;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
+            padding: 12px 24px !important;
+            cursor: pointer !important;
+        }
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 button:hover {
+            background: linear-gradient(45deg, #ff7700, #ffaa00) !important;
+        }
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-container {
+            background: transparent !important;
         }
         
         .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 1rem; text-align: center; }
@@ -294,22 +324,19 @@
 
     <div class="hero"></div>
 
-    <!-- PROFESSIONAL STREAMING SERVICE LINKS WITH SVG LOGOS -->
+    <!-- Streaming Icons -->
     <div class="streaming-section">
-        <!-- TIDAL -->
         <a href="https://tidal.com/artist/79457798/u" target="_blank" class="streaming-circle" aria-label="TIDAL">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4 L4 20 L8 20 L8 10 L12 10 L12 18 L16 18 L16 8 L20 8 L20 16 L24 16 L24 4"/>
             </svg>
         </a>
-        <!-- SPOTIFY -->
         <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="streaming-circle" aria-label="Spotify">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M16.5 10.5c-2.5-1.5-5.5-1.5-8 0M14.5 13.5c-1.8-1-4-1-5.8 0M12.5 16.5c-1.2-0.6-2.5-0.6-3.5 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
             </svg>
         </a>
-        <!-- APPLE MUSIC -->
         <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="streaming-circle" aria-label="Apple Music">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
@@ -318,7 +345,6 @@
                 <circle cx="15" cy="14" r="2" fill="currentColor" stroke="none"/>
             </svg>
         </a>
-        <!-- AUDIOMACK -->
         <a href="https://audiomack.com/wrealx" target="_blank" class="streaming-circle" aria-label="Audiomack">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="4"/>
@@ -328,9 +354,9 @@
         </a>
     </div>
 
-    <div class="double-btn-container">
-        <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="action-btn">▶ PLAY NOW</a>
-        <a href="download.html" class="action-btn download-btn">⬇ DOWNLOAD</a>
+    <!-- PLAY NOW BUTTON (DOWNLOAD REMOVED) -->
+    <div class="play-now-container">
+        <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW</a>
     </div>
     
     <div class="choose-service">
@@ -341,7 +367,7 @@
         <a href="https://wa.me/211920146370?text=I want to book Wreal X for an event" class="book-now-btn">📅 BOOK WREAL X NOW</a>
     </div>
     
-    <!-- UPDATED VIDEO SECTION: ONLY 2 VIDEOS -->
+    <!-- VIDEOS SECTION -->
     <h2 class="section-title">LATEST VIDEOS</h2>
     <div class="video-grid">
         <div class="video-card">
@@ -358,6 +384,7 @@
         </div>
     </div>
     
+    <!-- MERCH SECTION -->
     <h2 class="section-title">MERCH</h2>
     <div class="merch-grid">
         <div class="card">
@@ -386,12 +413,10 @@
         </div>
     </div>
     
-    <div class="signup-section">
+    <!-- BEACONS EMAIL SIGNUP FORM (REPLACES OLD SIGNUP) -->
+    <div class="beacons-signup-section">
         <h2>SIGN UP FOR UPDATES</h2>
-        <form class="signup-form" action="https://formspree.io/f/xzdwopey" method="post" target="_blank">
-            <input type="email" name="email" placeholder="EMAIL" required>
-            <button type="submit">SIGN UP</button>
-        </form>
+        <div id="31c0e709-a54d-43f1-918f-67317d82f9b4"></div>
     </div>
     
     <div class="contact-about">
@@ -412,4 +437,4 @@
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
     </script>
 </body>
-    </html>
+            </html>
