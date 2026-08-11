@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>WREAL X</title>
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <!-- Payhip Embed Script -->
+    <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -148,21 +150,35 @@
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
         
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 0 auto; padding: 0 0.8rem; }
-        
-        @media (max-width: 768px) {
-            .grid-4 { grid-template-columns: repeat(2, 1fr); }
-            .video-grid { grid-template-columns: repeat(2, 1fr); }
-            .social-circle { width: 52px; height: 52px; }
-            .double-btn-container { gap: 0.8rem; }
-            .action-btn { padding: 0.6rem 0.8rem; font-size: 0.9rem; white-space: nowrap; }
+        /* Payhip Embed Grid - 2 columns on desktop, 1 on mobile */
+        .payhip-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
         }
-        
-        .card { background: rgba(0,0,0,0.6); border-radius: 8px; text-align: center; padding-bottom: 0.6rem; border: 1px solid #ff6600; }
-        .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px 8px 0 0; }
-        .card h3 { font-size: 0.7rem; margin: 0.4rem 0; color: #ffaa66; }
-        .price { background: linear-gradient(45deg, #ff6600, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 0.8rem; font-weight: bold; }
-        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 0.3rem 0.6rem; margin: 0.3rem 0; cursor: pointer; border-radius: 4px; font-size: 0.65rem; font-weight: bold; }
+        .payhip-item {
+            background: rgba(0,0,0,0.4);
+            border-radius: 16px;
+            padding: 1rem;
+            border: 1px solid #ff6600;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .payhip-item:hover {
+            transform: translateY(-4px);
+            border-color: #ffcc00;
+        }
+        .payhip-item .payhip-embed-page {
+            width: 100%;
+        }
+        @media (max-width: 700px) {
+            .payhip-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
         
         .signup-section {
             background: rgba(0,0,0,0.6); text-align: center; padding: 2rem; margin: 2rem 1rem;
@@ -242,16 +258,21 @@
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Photo</div></div>
     </div>
     
+    <!-- NEW: MERCH SECTION WITH PAYHIP EMBEDS -->
     <h2 class="section-title">MERCH</h2>
-    <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">220,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want X-MAN HOODIES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">35,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want GANGO SCARVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">200,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want GANG GIRL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want GANG GIRL X'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">150,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
+    <div class="payhip-grid">
+        <div class="payhip-item">
+            <div class="payhip-embed-page" data-key="wP6EI"></div>
+        </div>
+        <div class="payhip-item">
+            <div class="payhip-embed-page" data-key="WDlu9"></div>
+        </div>
+        <div class="payhip-item">
+            <div class="payhip-embed-page" data-key="sLl4I"></div>
+        </div>
+        <div class="payhip-item">
+            <div class="payhip-embed-page" data-key="eyvrw"></div>
+        </div>
     </div>
     
     <div class="signup-section">
@@ -280,5 +301,4 @@
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
     </script>
 </body>
-  </html>
-
+    </html>
