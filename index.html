@@ -83,6 +83,7 @@
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
         
+        /* STREAMING + BEACONS + SOUNDCLOUD ICONS */
         .streaming-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
         .streaming-circle {
             display: flex;
@@ -180,7 +181,6 @@
             }
         }
         
-        /* MERCH GRID - UPDATED IMAGES & ORDER */
         .merch-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -249,7 +249,6 @@
             }
         }
         
-        /* Beacons Email Form Styles */
         .beacons-signup-section {
             background: rgba(0,0,0,0.6);
             text-align: center;
@@ -324,18 +323,22 @@
 
     <div class="hero"></div>
 
+    <!-- STREAMING + BEACONS + SOUNDCLOUD ICONS -->
     <div class="streaming-section">
+        <!-- TIDAL -->
         <a href="https://tidal.com/artist/79457798/u" target="_blank" class="streaming-circle" aria-label="TIDAL">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4 L4 20 L8 20 L8 10 L12 10 L12 18 L16 18 L16 8 L20 8 L20 16 L24 16 L24 4"/>
             </svg>
         </a>
+        <!-- SPOTIFY -->
         <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="streaming-circle" aria-label="Spotify">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M16.5 10.5c-2.5-1.5-5.5-1.5-8 0M14.5 13.5c-1.8-1-4-1-5.8 0M12.5 16.5c-1.2-0.6-2.5-0.6-3.5 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
             </svg>
         </a>
+        <!-- APPLE MUSIC -->
         <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="streaming-circle" aria-label="Apple Music">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
@@ -344,6 +347,7 @@
                 <circle cx="15" cy="14" r="2" fill="currentColor" stroke="none"/>
             </svg>
         </a>
+        <!-- AUDIOMACK -->
         <a href="https://audiomack.com/wrealx" target="_blank" class="streaming-circle" aria-label="Audiomack">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="4"/>
@@ -351,9 +355,25 @@
                 <path d="M8 12L16 12" stroke="currentColor"/>
             </svg>
         </a>
+        <!-- SOUNDCLOUD -->
+        <a href="https://soundcloud.com/wrealx" target="_blank" class="streaming-circle" aria-label="SoundCloud">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M7 16V11M10 16V9M13 16V7M16 16V10M19 16V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M5 16V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M21 16V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+        </a>
+        <!-- BEACONS -->
+        <a href="https://beacons.ai/wrealx" target="_blank" class="streaming-circle" aria-label="Beacons">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2L12 7M12 22L12 17M2 12L7 12M22 12L17 12M4.5 4.5L8 8M19.5 19.5L16 16M19.5 4.5L16 8M4.5 19.5L8 16"/>
+            </svg>
+        </a>
     </div>
 
-    <!-- PLAY NOW BUTTON (NO DOWNLOAD) - SoundCloud Link -->
+    <!-- PLAY NOW BUTTON (SOUNDCLOUD) -->
     <div class="play-now-container">
         <a href="https://soundcloud.com/wrealx" target="_blank" class="play-now-btn">▶ PLAY NOW</a>
     </div>
@@ -385,31 +405,24 @@
     <!-- MERCH SECTION WITH UPDATED IMAGES & ORDER -->
     <h2 class="section-title">MERCH</h2>
     <div class="merch-grid">
-        <!-- 1. X PURFER VEST -->
         <div class="card">
             <img src="https://iili.io/C6lJNwP.png" alt="X PURFER VEST">
             <h3>X PURFER VEST</h3>
             <div class="price">💰 $25.00</div>
             <a href="https://payhip.com/b/wP6EI" target="_blank" class="buy-btn">BUY NOW</a>
         </div>
-
-        <!-- 2. X MASKS -->
         <div class="card">
             <img src="https://iili.io/C6lHE2R.png" alt="X MASKS">
             <h3>X MASKS</h3>
             <div class="price">💰 $5.00</div>
             <a href="https://payhip.com/b/WDlu9" target="_blank" class="buy-btn">BUY NOW</a>
         </div>
-
-        <!-- 3. X ON HOODIE -->
         <div class="card">
             <img src="https://iili.io/C6l3Kaj.png" alt="X ON HOODIE">
             <h3>X ON HOODIE</h3>
             <div class="price">💰 $30.00</div>
             <a href="https://payhip.com/b/eyvrw" target="_blank" class="buy-btn">BUY NOW</a>
         </div>
-
-        <!-- 4. X'ED TIGHTS -->
         <div class="card">
             <img src="https://iili.io/C6l2BLX.png" alt="X'ED TIGHTS">
             <h3>X'ED TIGHTS</h3>
@@ -432,14 +445,4 @@
     <div class="footer"><p>© 2026 WREAL X | All Rights Reserved</p></div>
     
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const sideNav = document.getElementById('sideNav');
-        const overlay = document.getElementById('overlay');
-        function closeMenu() { sideNav.classList.remove('open'); overlay.classList.remove('active'); }
-        function openMenu() { sideNav.classList.add('open'); overlay.classList.add('active'); }
-        if (menuBtn) { menuBtn.addEventListener('click', () => { if (sideNav.classList.contains('open')) closeMenu(); else openMenu(); }); }
-        if (overlay) { overlay.addEventListener('click', closeMenu); }
-        document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
-    </script>
-</body>
-                                                        </html>
+        const menuBtn = document.getElement
