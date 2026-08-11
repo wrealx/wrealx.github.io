@@ -83,7 +83,6 @@
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
         
-        /* STREAMING + BEACONS + SOUNDCLOUD ICONS */
         .streaming-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
         .streaming-circle {
             display: flex;
@@ -249,6 +248,7 @@
             }
         }
         
+        /* BEACONS FORM - FULLY BLENDED WITH THEME */
         .beacons-signup-section {
             background: rgba(0,0,0,0.6);
             text-align: center;
@@ -268,29 +268,61 @@
             max-width: 500px;
             margin: 0 auto;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 input {
+        /* Hide Beacons default background and borders */
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-container {
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        /* Style input field */
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 input[type="email"],
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 input[type="text"] {
+            width: 100% !important;
+            padding: 12px !important;
             background: #1a0505 !important;
             border: 2px solid #ff6600 !important;
             border-radius: 8px !important;
             color: white !important;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
-            padding: 12px !important;
+            font-size: 1rem !important;
+            box-sizing: border-box !important;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 button {
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 input::placeholder {
+            color: #ffaa66 !important;
+            opacity: 0.7 !important;
+        }
+        /* Style submit button */
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 button[type="submit"] {
+            width: 100% !important;
+            padding: 12px !important;
             background: linear-gradient(45deg, #ff6600, #ff8c00) !important;
             color: #000 !important;
             border: none !important;
             border-radius: 8px !important;
             font-weight: bold !important;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
-            padding: 12px 24px !important;
+            font-size: 1rem !important;
             cursor: pointer !important;
+            transition: background 0.2s !important;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 button:hover {
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 button[type="submit"]:hover {
             background: linear-gradient(45deg, #ff7700, #ffaa00) !important;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-container {
-            background: transparent !important;
+        /* Style any labels or text inside the form */
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 label,
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-text {
+            color: #ffaa66 !important;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
+        }
+        /* Success message styling */
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-success {
+            color: #ffcc00 !important;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
         }
         
         .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 1rem; text-align: center; }
@@ -402,7 +434,7 @@
         </div>
     </div>
     
-    <!-- MERCH SECTION WITH UPDATED IMAGES & ORDER -->
+    <!-- MERCH SECTION -->
     <h2 class="section-title">MERCH</h2>
     <div class="merch-grid">
         <div class="card">
@@ -412,37 +444,4 @@
             <a href="https://payhip.com/b/wP6EI" target="_blank" class="buy-btn">BUY NOW</a>
         </div>
         <div class="card">
-            <img src="https://iili.io/C6lHE2R.png" alt="X MASKS">
-            <h3>X MASKS</h3>
-            <div class="price">💰 $5.00</div>
-            <a href="https://payhip.com/b/WDlu9" target="_blank" class="buy-btn">BUY NOW</a>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C6l3Kaj.png" alt="X ON HOODIE">
-            <h3>X ON HOODIE</h3>
-            <div class="price">💰 $30.00</div>
-            <a href="https://payhip.com/b/eyvrw" target="_blank" class="buy-btn">BUY NOW</a>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C6l2BLX.png" alt="X'ED TIGHTS">
-            <h3>X'ED TIGHTS</h3>
-            <div class="price">💰 $16.00</div>
-            <a href="https://payhip.com/b/sLl4I" target="_blank" class="buy-btn">BUY NOW</a>
-        </div>
-    </div>
-    
-    <!-- BEACONS EMAIL SIGNUP FORM -->
-    <div class="beacons-signup-section">
-        <h2>SIGN UP FOR UPDATES</h2>
-        <div id="31c0e709-a54d-43f1-918f-67317d82f9b4"></div>
-    </div>
-    
-    <div class="contact-about">
-        <div class="contact-card"><h3>CONTACT</h3><a href="contact.html" class="bottom-btn">Contact Us</a></div>
-        <div class="about-card"><h3>ABOUT US</h3><a href="about.html" class="bottom-btn">About Us</a></div>
-    </div>
-    
-    <div class="footer"><p>© 2026 WREAL X | All Rights Reserved</p></div>
-    
-    <script>
-        const menuBtn = document.getElement
+            <img src
