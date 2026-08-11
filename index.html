@@ -65,14 +65,31 @@
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
         
-        .social-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
-        .social-circle {
+        /* Streaming Service Icons */
+        .streaming-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
+        .streaming-circle {
             display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;
             background: rgba(0,0,0,0.6); border-radius: 50%; transition: all 0.2s; text-decoration: none;
             border: 1px solid #ff6600;
+            font-weight: bold;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #ffaa66;
+            padding: 0 4px;
+            line-height: 1.2;
         }
-        .social-circle:hover { transform: scale(1.1); background: #ff4500; }
-        .social-circle img { width: 32px; height: 32px; }
+        .streaming-circle:hover { transform: scale(1.1); background: #ff4500; color: #000; border-color: #ffcc00; }
+        .streaming-circle .brand-icon {
+            display: block;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        .streaming-circle .brand-name {
+            display: block;
+            font-size: 0.55rem;
+            margin-top: 2px;
+        }
         
         .double-btn-container {
             display: flex;
@@ -148,7 +165,7 @@
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
         
-        /* MERCH GRID - 2 columns on desktop, 1 on mobile */
+        /* MERCH GRID */
         .merch-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -264,14 +281,24 @@
 
     <div class="hero"></div>
 
-    <div class="social-section">
-        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB"></a>
-        <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG"></a>
-        <a href="https://x.com/Wreal_X" target="_blank" class="social-circle"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X" style="width:28px"></a>
-        <a href="https://youtube.com/@wrealx" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YT"></a>
-        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="BS"></a>
-        <a href="https://www.tiktok.com/@wreal_x" target="_blank" class="social-circle"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TT"></a>
-        <a href="https://wa.me/211920146370" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
+    <!-- NEW STREAMING SERVICE LINKS (replaces social icons) -->
+    <div class="streaming-section">
+        <a href="https://tidal.com/artist/79457798/u" target="_blank" class="streaming-circle">
+            <span class="brand-icon">🎵</span>
+            <span class="brand-name">TIDAL</span>
+        </a>
+        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="streaming-circle">
+            <span class="brand-icon">🟢</span>
+            <span class="brand-name">SPOTIFY</span>
+        </a>
+        <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="streaming-circle">
+            <span class="brand-icon">🍎</span>
+            <span class="brand-name">APPLE MUSIC</span>
+        </a>
+        <a href="https://audiomack.com/wrealx" target="_blank" class="streaming-circle">
+            <span class="brand-icon">🎧</span>
+            <span class="brand-name">AUDIOMACK</span>
+        </a>
     </div>
 
     <div class="double-btn-container">
@@ -295,7 +322,6 @@
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Photo</div></div>
     </div>
     
-    <!-- NEW MERCH SECTION WITH YOUR 4 PRODUCTS -->
     <h2 class="section-title">MERCH</h2>
     <div class="merch-grid">
         <div class="card">
