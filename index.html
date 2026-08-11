@@ -83,34 +83,17 @@
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
         
-        /* STREAMING + BEACONS + SOUNDCLOUD ICONS */
         .streaming-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
         .streaming-circle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: rgba(0,0,0,0.6);
-            border-radius: 50%;
-            transition: all 0.2s;
-            text-decoration: none;
-            border: 1px solid #ff6600;
-            padding: 12px;
+            display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;
+            background: rgba(0,0,0,0.6); border-radius: 50%; transition: all 0.2s; text-decoration: none;
+            border: 1px solid #ff6600; padding: 12px;
         }
         .streaming-circle:hover { transform: scale(1.1); background: #ff4500; border-color: #ffcc00; }
-        .streaming-circle svg {
-            width: 32px;
-            height: 32px;
-            fill: #ffaa66;
-            transition: fill 0.2s;
-        }
+        .streaming-circle svg { width: 32px; height: 32px; fill: #ffaa66; transition: fill 0.2s; }
         .streaming-circle:hover svg { fill: #000; }
         
-        .play-now-container {
-            text-align: center;
-            padding: 0.5rem 0 0rem;
-        }
+        .play-now-container { text-align: center; padding: 0.5rem 0 0rem; }
         .play-now-btn {
             display: inline-block;
             background: linear-gradient(45deg, #ff4500, #cc3300);
@@ -126,10 +109,7 @@
         }
         .play-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
         
-        .choose-service {
-            text-align: center;
-            margin: 0.5rem 0 0rem;
-        }
+        .choose-service { text-align: center; margin: 0.5rem 0 0rem; }
         .choose-service-btn {
             display: inline-block;
             background: rgba(0,0,0,0.7);
@@ -174,12 +154,7 @@
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        @media (max-width: 600px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-        }
+        @media (max-width: 600px) { .video-grid { grid-template-columns: 1fr; gap: 1rem; } }
         
         .merch-grid {
             display: grid;
@@ -197,29 +172,10 @@
             border: 1px solid #ff6600;
             transition: transform 0.2s, border-color 0.2s;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #ffcc00;
-        }
-        .card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 16px 16px 0 0;
-            border-bottom: 1px solid #ff6600;
-        }
-        .card h3 {
-            font-size: 1.3rem;
-            margin: 1rem 0 0.3rem;
-            color: #ffcc88;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-        }
-        .price {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #ffcc00;
-            margin: 0.3rem 0;
-        }
+        .card:hover { transform: translateY(-5px); border-color: #ffcc00; }
+        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 16px 16px 0 0; border-bottom: 1px solid #ff6600; }
+        .card h3 { font-size: 1.3rem; margin: 1rem 0 0.3rem; color: #ffcc88; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
+        .price { font-size: 1.2rem; font-weight: bold; color: #ffcc00; margin: 0.3rem 0; }
         .buy-btn {
             display: inline-block;
             background: linear-gradient(45deg, #ff6600, #ff8c00);
@@ -235,19 +191,8 @@
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
             transition: transform 0.2s;
         }
-        .buy-btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #ff7700, #ffaa00);
-        }
-        @media (max-width: 700px) {
-            .merch-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .card img {
-                height: 200px;
-            }
-        }
+        .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
+        @media (max-width: 700px) { .merch-grid { grid-template-columns: 1fr; gap: 1.5rem; } .card img { height: 200px; } }
         
         .beacons-signup-section {
             background: rgba(0,0,0,0.6);
@@ -264,10 +209,7 @@
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
             color: #ffaa66;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 {
-            max-width: 500px;
-            margin: 0 auto;
-        }
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 { max-width: 500px; margin: 0 auto; }
         #31c0e709-a54d-43f1-918f-67317d82f9b4 input {
             background: #1a0505 !important;
             border: 2px solid #ff6600 !important;
@@ -286,12 +228,8 @@
             padding: 12px 24px !important;
             cursor: pointer !important;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 button:hover {
-            background: linear-gradient(45deg, #ff7700, #ffaa00) !important;
-        }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-container {
-            background: transparent !important;
-        }
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 button:hover { background: linear-gradient(45deg, #ff7700, #ffaa00) !important; }
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-container { background: transparent !important; }
         
         .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 1rem; text-align: center; }
         .contact-card, .about-card { background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 10px; border: 1px solid #ff6600; }
@@ -325,29 +263,24 @@
 
     <!-- STREAMING + BEACONS + SOUNDCLOUD ICONS -->
     <div class="streaming-section">
-        <!-- TIDAL -->
         <a href="https://tidal.com/artist/79457798/u" target="_blank" class="streaming-circle" aria-label="TIDAL">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4 L4 20 L8 20 L8 10 L12 10 L12 18 L16 18 L16 8 L20 8 L20 16 L24 16 L24 4"/>
             </svg>
         </a>
-        <!-- SPOTIFY -->
         <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="streaming-circle" aria-label="Spotify">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M16.5 10.5c-2.5-1.5-5.5-1.5-8 0M14.5 13.5c-1.8-1-4-1-5.8 0M12.5 16.5c-1.2-0.6-2.5-0.6-3.5 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
             </svg>
         </a>
-        <!-- APPLE MUSIC -->
         <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="streaming-circle" aria-label="Apple Music">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M9 17V7l8 2.5V14" stroke="currentColor"/>
+                <circle cx="12" cy="12" r="10"/><path d="M9 17V7l8 2.5V14" stroke="currentColor"/>
                 <circle cx="7" cy="17" r="2" fill="currentColor" stroke="none"/>
                 <circle cx="15" cy="14" r="2" fill="currentColor" stroke="none"/>
             </svg>
         </a>
-        <!-- AUDIOMACK -->
         <a href="https://audiomack.com/wrealx" target="_blank" class="streaming-circle" aria-label="Audiomack">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="4"/>
@@ -355,7 +288,6 @@
                 <path d="M8 12L16 12" stroke="currentColor"/>
             </svg>
         </a>
-        <!-- SOUNDCLOUD -->
         <a href="https://soundcloud.com/wrealx" target="_blank" class="streaming-circle" aria-label="SoundCloud">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
@@ -364,7 +296,6 @@
                 <path d="M21 16V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
         </a>
-        <!-- BEACONS -->
         <a href="https://beacons.ai/wrealx" target="_blank" class="streaming-circle" aria-label="Beacons">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
@@ -373,7 +304,6 @@
         </a>
     </div>
 
-    <!-- PLAY NOW BUTTON (SOUNDCLOUD) -->
     <div class="play-now-container">
         <a href="https://soundcloud.com/wrealx" target="_blank" class="play-now-btn">▶ PLAY NOW</a>
     </div>
@@ -402,7 +332,6 @@
         </div>
     </div>
     
-    <!-- MERCH SECTION WITH UPDATED IMAGES & ORDER -->
     <h2 class="section-title">MERCH</h2>
     <div class="merch-grid">
         <div class="card">
@@ -431,7 +360,6 @@
         </div>
     </div>
     
-    <!-- BEACONS EMAIL SIGNUP FORM -->
     <div class="beacons-signup-section">
         <h2>SIGN UP FOR UPDATES</h2>
         <div id="31c0e709-a54d-43f1-918f-67317d82f9b4"></div>
@@ -445,4 +373,39 @@
     <div class="footer"><p>© 2026 WREAL X | All Rights Reserved</p></div>
     
     <!-- FIXED JAVASCRIPT FOR HAMBURGER MENU -->
-    <sc
+    <script>
+        var menuBtn = document.getElementById('menuBtn');
+        var sideNav = document.getElementById('sideNav');
+        var overlay = document.getElementById('overlay');
+
+        function openMenu() {
+            sideNav.classList.add('open');
+            overlay.classList.add('active');
+        }
+
+        function closeMenu() {
+            sideNav.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+
+        menuBtn.addEventListener('click', function() {
+            if (sideNav.classList.contains('open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        overlay.addEventListener('click', function() {
+            closeMenu();
+        });
+
+        var menuLinks = document.querySelectorAll('.side-nav a');
+        for (var i = 0; i < menuLinks.length; i++) {
+            menuLinks[i].addEventListener('click', function() {
+                closeMenu();
+            });
+        }
+    </script>
+</body>
+                </html>
