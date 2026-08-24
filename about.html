@@ -1,577 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="About Wreal X — South Sudanese singer, emo rapper and songwriter."
-  >
-
-  <title>About — Wreal X</title>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #080808;
-      color: #f5f5f5;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* =========================
-       BACKGROUND
-    ========================= */
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        linear-gradient(
-          rgba(0,0,0,.72),
-          rgba(0,0,0,.88)
-        ),
-        url("https://iili.io/CtDt512.jpg")
-        center / cover no-repeat;
-      z-index: -2;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(255,255,255,.06),
-          transparent 35%
-        ),
-        radial-gradient(
-          circle at 80% 70%,
-          rgba(255,255,255,.035),
-          transparent 35%
-        );
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 78px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 0 6%;
-
-      background: rgba(5,5,5,.72);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid rgba(255,255,255,.08);
-
-      z-index: 1000;
-    }
-
-    .logo {
-      color: white;
-      text-decoration: none;
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .nav-links a {
-      color: #ddd;
-      text-decoration: none;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: .25s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: white;
-    }
-
-    /* =========================
-       MOBILE MENU
-    ========================= */
-
-    .menu-button {
-      display: none;
-
-      width: 44px;
-      height: 44px;
-
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 50%;
-
-      background: rgba(255,255,255,.05);
-      color: white;
-
-      font-size: 21px;
-      cursor: pointer;
-    }
-
-    /* =========================
-       PAGE
-    ========================= */
-
-    main {
-      width: min(1100px, 92%);
-      margin: auto;
-      padding-top: 140px;
-      padding-bottom: 100px;
-    }
-
-    .page-label {
-      font-size: 12px;
-      letter-spacing: 5px;
-      color: #aaa;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .page-title {
-      font-size: clamp(48px, 8vw, 90px);
-      line-height: .95;
-      letter-spacing: -5px;
-      margin-bottom: 50px;
-    }
-
-    .page-title span {
-      color: #777;
-    }
-
-    /* =========================
-       BIO CARD
-    ========================= */
-
-    .bio-card {
-      background: rgba(12,12,12,.72);
-
-      border: 1px solid rgba(255,255,255,.13);
-      border-radius: 28px;
-
-      padding: clamp(25px, 5vw, 60px);
-
-      box-shadow:
-        0 30px 80px rgba(0,0,0,.45);
-
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    .bio-card h2 {
-      font-size: 27px;
-      margin-bottom: 28px;
-    }
-
-    .bio-card p {
-      color: #c9c9c9;
-      font-size: 16px;
-      line-height: 1.9;
-      margin-bottom: 27px;
-    }
-
-    .bio-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* =========================
-       ARTIST DETAILS
-    ========================= */
-
-    .artist-details {
-      margin-top: 30px;
-
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .detail {
-      padding: 22px;
-
-      border-radius: 18px;
-
-      background: rgba(255,255,255,.045);
-      border: 1px solid rgba(255,255,255,.08);
-    }
-
-    .detail small {
-      display: block;
-      color: #777;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 10px;
-      margin-bottom: 8px;
-    }
-
-    .detail strong {
-      font-size: 14px;
-      color: #eee;
-      font-weight: 500;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      border-top: 1px solid rgba(255,255,255,.08);
-
-      padding: 45px 6%;
-
-      text-align: center;
-
-      background: rgba(0,0,0,.55);
-    }
-
-    footer .footer-logo {
-      font-size: 23px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    footer p {
-      color: #777;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-top: 20px;
-    }
-
-    .footer-links a {
-      color: #aaa;
-      text-decoration: none;
-      font-size: 12px;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 700px) {
-
-      .navbar {
-        height: 70px;
-        padding: 0 20px;
-      }
-
-      .logo {
-        font-size: 22px;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .nav-links {
-        position: absolute;
-
-        top: 70px;
-        right: 15px;
-
-        width: 220px;
-
-        padding: 15px;
-
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 5px;
-
-        background: rgba(10,10,10,.94);
-        backdrop-filter: blur(20px);
-
-        border: 1px solid rgba(255,255,255,.12);
-        border-radius: 18px;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 15px;
-        border-radius: 10px;
-      }
-
-      .nav-links a:hover {
-        background: rgba(255,255,255,.06);
-      }
-
-      main {
-        padding-top: 115px;
-      }
-
-      .page-title {
-        letter-spacing: -3px;
-        margin-bottom: 30px;
-      }
-
-      .bio-card {
-        border-radius: 22px;
-        padding: 25px;
-      }
-
-      .bio-card p {
-        font-size: 14px;
-        line-height: 1.8;
-      }
-
-      .artist-details {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About · Wreal X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0A0A0A;
+            color: #E0E0E0;
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 5%;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #E0E0E0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #00F0FF; }
+        .page-title {
+            text-align: center;
+            padding: 2rem 5% 0;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 3rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+            align-items: start;
+            min-height: 70vh;
+        }
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #1A1A2E, #2A0A1A);
+            border-radius: 50%;
+            border: 3px solid #FF2060;
+            box-shadow: 0 0 60px rgba(255, 32, 96, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            transition: all 0.4s;
+            background-image: url('https://iili.io/CtDt512.jpg');
+            background-size: cover;
+            background-position: center;
+            position: sticky;
+            top: 2rem;
+        }
+        .about-image:hover {
+            border-color: #00F0FF;
+            box-shadow: 0 0 80px rgba(0, 240, 255, 0.2);
+            transform: scale(1.02);
+        }
+        .about-text h2 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .about-text .real-name {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+        .about-text .real-name span {
+            color: #00F0FF;
+            font-weight: 600;
+        }
+        .about-text .bio {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #CCC;
+            margin-bottom: 1.2rem;
+        }
+        .about-text .bio strong {
+            color: #FF2060;
+        }
+        .about-text .highlight {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #CCFF00;
+            border-left: 4px solid #CCFF00;
+            padding-left: 1.2rem;
+            margin: 1.8rem 0;
+            line-height: 1.3;
+        }
+        .about-text .details {
+            color: #888;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-top: 1rem;
+        }
+        .about-text .details span {
+            color: #00F0FF;
+            font-weight: 600;
+        }
+        .about-text .details .label {
+            color: #666;
+            font-weight: 400;
+        }
+        .about-text .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .about-text .social-links a {
+            color: #555;
+            font-size: 1.8rem;
+            transition: all 0.3s;
+        }
+        .about-text .social-links a:hover {
+            color: #00F0FF;
+            transform: translateY(-3px);
+        }
+        .about-text .milestones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            background: #0F0F0F;
+            border-radius: 16px;
+            border: 1px solid #1A1A1A;
+        }
+        .about-text .milestones .milestone {
+            text-align: center;
+        }
+        .about-text .milestones .milestone .num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #CCFF00;
+        }
+        .about-text .milestones .milestone .desc {
+            font-size: 0.7rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            color: #333;
+            font-size: 0.8rem;
+            border-top: 1px solid #1A1A1A;
+            margin-top: 2rem;
+        }
+        footer a { color: #00F0FF; text-decoration: none; }
+        @media (max-width: 900px) {
+            .about-container { grid-template-columns: 1fr; }
+            .about-image { 
+                max-width: 280px; 
+                margin: 0 auto;
+                position: relative;
+                top: 0;
+            }
+            .about-text .highlight { border-left: none; padding-left: 0; }
+            .about-text .social-links { justify-content: center; }
+            .about-text { text-align: center; }
+        }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            .nav-links { gap: 1rem; justify-content: center; }
+            .about-text .milestones { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .about-text .milestones { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
+<nav>
+    <a href="index.html" class="logo">✦ WREAL X</a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
-  <header class="navbar">
+<h1 class="page-title">ABOUT</h1>
 
-    <a href="index.html" class="logo">
-      WREAL X
-    </a>
+<div class="about-container">
+    <div class="about-image"></div>
+    <div class="about-text">
+        <h2>WREAL X</h2>
+        <p class="real-name">born <span>Angel Jambu Roy</span> · July 20, 2007 · Yei, South Sudan</p>
 
-    <button
-      class="menu-button"
-      id="menuButton"
-      aria-label="Open navigation"
-    >
-      ☰
-    </button>
+        <p class="bio">
+            <strong>Wreal X</strong> is a South Sudanese singer, emo rapper, and songwriter from East Africa. 
+            Deeply influenced by <strong>Juice WRLD</strong>, he masterfully blends the raw vulnerability of emo trap 
+            with the rhythmic warmth of Afrobeats — creating a sound that is both haunting and deeply resonant. 
+            His music navigates the blues, romance, love, and the harsh realities of life — each track a confession, 
+            every verse a glimpse into a soul marked by both suffering and hope.
+        </p>
 
-    <nav class="nav-links" id="navLinks">
+        <p class="bio">
+            Born to the late <strong>Mr. Taban Roy</strong> and <strong>Mrs. Santuke Koloy Kamba</strong>, 
+            Wreal X discovered his passion for music at just ten years old. He began writing rap songs as a child, 
+            pouring his emotions into lyrics long before he understood the weight of his own words. As he grew, 
+            so did his understanding of the industry and the hip-hop world, leading him to emo trap — a genre 
+            that gave voice to his pain. Through the influence of <strong>Juice WRLD, XXXTentacion, Lil Uzi Vert, 
+            and Trippie Redd</strong>, he found his true artistic identity.
+        </p>
 
-      <a href="index.html">
-        Home
-      </a>
+        <div class="highlight">
+            "Every verse is a confession — a soul marked by suffering and hope."
+        </div>
 
-      <a href="book.html">
-        Book Wreal X
-      </a>
+        <p class="bio">
+            The untimely passing of his father in <strong>2020</strong> became a turning point, pulling him back 
+            to South Sudan from his studies in Uganda and igniting a relentless pursuit of his musical destiny. 
+            His early releases, <strong>"Monalisa"</strong> and <strong>"Photo"</strong>, carried Afro influences 
+            familiar to his homeland, but it was <strong>"Hurry Up"</strong> — his first trap record — that 
+            announced his arrival, surpassing one thousand streams on YouTube. Its successor, <strong>"Gang Gang"</strong>, 
+            cemented his identity as a fully realized emo trap artisan: audacious in production, unflinching in 
+            lyrical candor, and utterly unlike anything emerging from his region.
+        </p>
 
-      <a href="about.html" class="active">
-        About
-      </a>
+        <p class="bio" style="color:#999; font-style:italic;">
+            Behind the music lies a young man who has faced familial opposition, institutional disillusionment, 
+            and the isolation of pioneering an unrecognized genre in a land rooted in local sounds. He has walked 
+            through broken promises from industry figures who deemed his vision too foreign, too perilous.
+        </p>
 
-      <a href="music.html">
-        Music
-      </a>
+        <div class="milestones">
+            <div class="milestone">
+                <div class="num">2017</div>
+                <div class="desc">Started Writing</div>
+            </div>
+            <div class="milestone">
+                <div class="num">2020</div>
+                <div class="desc">Father's Passing · Return to Music</div>
+            </div>
+            <div class="milestone">
+                <div class="num">1K+</div>
+                <div class="desc">"Hurry Up" YouTube Streams</div>
+            </div>
+            <div class="milestone">
+                <div class="num">2024</div>
+                <div class="desc">"Gang Gang" · Emo Trap Arrival</div>
+            </div>
+        </div>
 
-      <a href="contact.html">
-        Contact
-      </a>
+        <p class="details">
+            <span class="label">Influences:</span> <span>Juice WRLD · XXXTentacion · Lil Uzi Vert · Trippie Redd · Burna Boy</span><br>
+            <span class="label">Sound:</span> <span>Emo Trap · Afrobeats · Darkwave · Experimental</span><br>
+            <span class="label">From:</span> <span>Yei, Equatoria · South Sudan</span>
+        </p>
 
-    </nav>
-
-  </header>
-
-
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
-  <main>
-
-    <div class="page-label">
-      The story
+        <div class="social-links">
+            <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://tiktok.com/wreal_x" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com/wrealxcursed" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com/@wrealx" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://soundcloud.com/wrealx" target="_blank"><i class="fab fa-soundcloud"></i></a>
+            <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank"><i class="fab fa-apple"></i></a>
+        </div>
     </div>
+</div>
 
-    <h1 class="page-title">
-      ABOUT <span>WREAL X</span>
-    </h1>
+<footer>
+    © 2026 WREAL X · <a href="contact.html">Say hi</a>
+</footer>
 
-
-    <section class="bio-card">
-
-      <h2>
-        Wreal X
-      </h2>
-
-      <p>
-        Wreal X, born Angel Jambu Roy, is a South Sudanese singer,
-        emo rapper, and songwriter from East Africa. Deeply influenced
-        by Juice WRLD, he masterfully blends the raw vulnerability of
-        emo trap with the rhythmic warmth of Afrobeats, creating a sound
-        that is both haunting and deeply resonant. His music navigates
-        the blues, romance, love, and the harsh realities of life—each
-        track a confession, every verse a glimpse into a soul marked by
-        both suffering and hope.
-      </p>
-
-      <p>
-        Born July 20, 2007, in the town of Yei, Equatoria, to the late
-        Mr. Taban Roy and Mrs. Santuke Koloy Kamba, Wreal X discovered
-        his passion for music at just ten years old. He began writing
-        rap songs as a child, pouring his emotions into lyrics long
-        before he understood the weight of his own words. As he grew,
-        so did his understanding of the industry and the hip-hop world,
-        leading him to emo trap—a genre that gave voice to his pain.
-        Through the influence of Juice WRLD, XXXTentacion, Lil Uzi Vert,
-        and Trippie Redd, he found his true artistic identity.
-      </p>
-
-      <p>
-        The untimely passing of his father in 2020 became a turning
-        point, pulling him back to South Sudan from his studies in
-        Uganda and igniting a relentless pursuit of his musical destiny.
-        His early releases, "Monalisa" and "Photo," carried Afro
-        influences familiar to his homeland, but it was "Hurry Up"—his
-        first trap record—that announced his arrival, surpassing one
-        thousand streams on YouTube. Its successor, "Gang Gang,"
-        cemented his identity as a fully realized emo trap artisan:
-        audacious in production, unflinching in lyrical candor, and
-        utterly unlike anything emerging from his region.
-      </p>
-
-      <p>
-        Behind the music lies a young man who has faced familial
-        opposition, institutional disillusionment, and the isolation
-        of pioneering an unrecognized genre in a land rooted in local
-        sounds. He has walked through broken promises from industry
-        figures who deemed his vision too foreign, too perilous.
-      </p>
-
-    </section>
-
-
-    <!-- ARTIST DETAILS -->
-
-    <section class="artist-details">
-
-      <div class="detail">
-        <small>Artist</small>
-        <strong>Wreal X</strong>
-      </div>
-
-      <div class="detail">
-        <small>Genre</small>
-        <strong>Emo Trap / Afrobeats</strong>
-      </div>
-
-      <div class="detail">
-        <small>From</small>
-        <strong>South Sudan · East Africa</strong>
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-    <div class="footer-logo">
-      WREAL X
-    </div>
-
-    <p>
-      © 2026 Wreal X. All rights reserved.
-    </p>
-
-    <div class="footer-links">
-
-      <a href="index.html">Home</a>
-
-      <a href="book.html">Book Wreal X</a>
-
-      <a href="about.html">About</a>
-
-      <a href="music.html">Music</a>
-
-      <a href="contact.html">Contact</a>
-
-    </div>
-
-  </footer>
-
-
-  <!-- =========================
-       MOBILE NAV SCRIPT
-  ========================= -->
-
-  <script>
-
-    const menuButton =
-      document.getElementById("menuButton");
-
-    const navLinks =
-      document.getElementById("navLinks");
-
-    menuButton.addEventListener("click", () => {
-
-      navLinks.classList.toggle("show");
-
-    });
-
-    document.querySelectorAll(".nav-links a")
-      .forEach(link => {
-
-        link.addEventListener("click", () => {
-
-          navLinks.classList.remove("show");
-
-        });
-
-      });
-
-  </script>
+<!-- TAWK.TO WIDGET -->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
 
 </body>
-  </html>
+              </html>
