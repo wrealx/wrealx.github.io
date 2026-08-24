@@ -6,7 +6,7 @@
     <title>Merch · Wreal X</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Uncial+Antiqua&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,12 +25,14 @@
             gap: 1rem;
         }
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
             background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
         }
         .nav-links {
             display: flex;
@@ -39,13 +41,16 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #E0E0E0;
+            color: #AAA;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
-        .nav-links a:hover { color: #00F0FF; }
+        .nav-links a:hover { color: #00F0FF; text-shadow: 0 0 20px rgba(0, 240, 255, 0.2); }
         .page-title {
             text-align: center;
             padding: 2rem 5% 0;
@@ -54,13 +59,17 @@
             background: linear-gradient(135deg, #CCFF00, #00F0FF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
         }
         .page-sub {
             text-align: center;
-            color: #666;
-            font-size: 1rem;
+            color: #555;
+            font-size: 0.9rem;
             letter-spacing: 0.2em;
             margin-top: 0.2rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
         }
         .merch-grid {
             display: grid;
@@ -71,7 +80,7 @@
             margin: 0 auto;
         }
         .merch-item {
-            background: #111;
+            background: #0F0F0F;
             border-radius: 20px;
             padding: 1.8rem;
             border: 1px solid #1A1A1A;
@@ -82,6 +91,32 @@
             box-shadow: 0 0 40px rgba(204, 255, 0, 0.06);
             transform: translateY(-6px);
         }
+        .merch-item h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            text-align: center;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .merch-item .tag {
+            display: inline-block;
+            background: #FF2060;
+            color: #0A0A0A;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 0 auto 1rem;
+            display: table;
+            letter-spacing: 0.1em;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+        }
         .merch-item .payhip-embed {
             width: 100%;
             min-height: 420px;
@@ -89,42 +124,26 @@
             border: none;
             background: #0A0A0A;
         }
-        .merch-item h3 {
-            font-size: 1.3rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
+        .soundplate-link {
             text-align: center;
+            padding: 1rem 5% 2rem;
         }
-        .merch-item .tag {
+        .soundplate-link a {
             display: inline-block;
-            background: #FF2060;
-            color: #0A0A0A;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.2rem 1rem;
-            border-radius: 20px;
-            text-align: center;
-            margin: 0 auto 1rem;
-            display: table;
-            letter-spacing: 0.05em;
-        }
-        .soundplate-section {
-            text-align: center;
-            padding: 2rem 5%;
-        }
-        .soundplate-section a {
-            display: inline-block;
-            padding: 1rem 3rem;
+            padding: 0.8rem 2.5rem;
             background: linear-gradient(135deg, #FF2060, #00F0FF);
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             box-shadow: 0 0 40px rgba(255, 32, 96, 0.2);
         }
-        .soundplate-section a:hover {
+        .soundplate-link a:hover {
             transform: scale(1.05);
             box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
         }
@@ -135,6 +154,7 @@
             font-size: 0.8rem;
             border-top: 1px solid #1A1A1A;
             margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
         }
         footer a { color: #00F0FF; text-decoration: none; }
         @media (max-width: 768px) {
@@ -163,29 +183,39 @@
 <div class="merch-grid">
     <div class="merch-item">
         <h3>X PURFER VESTS</h3>
-        <span class="tag">LIMITED EDITION</span>
+        <span class="tag">Limited Edition</span>
         <div class="payhip-embed" data-key="wP6EI"></div>
         <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
     </div>
 
     <div class="merch-item">
         <h3>X ON HOODIE</h3>
-        <span class="tag">PRE-ORDER</span>
+        <span class="tag">Pre-Order</span>
         <div class="payhip-embed" data-key="eyvrw"></div>
         <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
     </div>
 </div>
 
-<!-- SOUNDPLATE -->
-<div class="soundplate-section">
-    <a href="https://snd.click/xvy9" target="_blank">
-        <i class="fas fa-link"></i> SOUNDPLATE · Exclusive Content
-    </a>
+<div class="soundplate-link">
+    <a href="https://snd.click/xvy9" target="_blank"><i class="fas fa-link"></i> Soundplate · Exclusive Content</a>
 </div>
 
 <footer>
     © 2026 WREAL X · <a href="contact.html">Get in touch</a>
 </footer>
 
+<!-- TAWK.TO -->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+
 </body>
-</html>
+                              </html>
