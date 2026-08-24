@@ -6,7 +6,7 @@
     <title>Merch · Wreal X</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Uncial+Antiqua&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Space+Grotesk:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,14 +25,16 @@
             gap: 1rem;
         }
         .logo {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #FFD700;
             text-decoration: none;
-            font-family: 'Uncial Antiqua', cursive;
+            font-family: 'Creepster', cursive;
             letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+        }
+        .logo:hover {
+            text-shadow: 0 0 60px rgba(255, 215, 0, 0.4);
         }
         .nav-links {
             display: flex;
@@ -41,30 +43,32 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #AAA;
+            color: #FF8C00;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
             font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
-        .nav-links a:hover { color: #00F0FF; text-shadow: 0 0 20px rgba(0, 240, 255, 0.2); }
+        .nav-links a:hover {
+            color: #FFD700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
         .page-title {
             text-align: center;
             padding: 2rem 5% 0;
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 800;
-            background: linear-gradient(135deg, #CCFF00, #00F0FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Uncial Antiqua', cursive;
+            color: #FFD700;
+            font-family: 'Creepster', cursive;
             letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
         }
         .page-sub {
             text-align: center;
-            color: #555;
+            color: #FF8C00;
             font-size: 0.9rem;
             letter-spacing: 0.2em;
             margin-top: 0.2rem;
@@ -87,24 +91,21 @@
             transition: all 0.4s;
         }
         .merch-item:hover {
-            border-color: #CCFF00;
-            box-shadow: 0 0 40px rgba(204, 255, 0, 0.06);
+            border-color: #FFD700;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
             transform: translateY(-6px);
         }
         .merch-item h3 {
             font-size: 1.3rem;
-            color: #fff;
+            color: #FFD700;
             margin-bottom: 0.3rem;
             text-align: center;
-            font-family: 'Uncial Antiqua', cursive;
+            font-family: 'Creepster', cursive;
             letter-spacing: 0.05em;
-            background: linear-gradient(135deg, #FF2060, #00F0FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
         .merch-item .tag {
             display: inline-block;
-            background: #FF2060;
+            background: #FF6B00;
             color: #0A0A0A;
             font-size: 0.65rem;
             font-weight: 700;
@@ -131,7 +132,7 @@
         .soundplate-link a {
             display: inline-block;
             padding: 0.8rem 2.5rem;
-            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            background: #FF6B00;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
@@ -141,22 +142,26 @@
             font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            box-shadow: 0 0 40px rgba(255, 32, 96, 0.2);
+            box-shadow: 0 0 40px rgba(255, 107, 0, 0.2);
         }
         .soundplate-link a:hover {
+            background: #FFD700;
             transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
         }
         footer {
             text-align: center;
             padding: 2rem 5%;
-            color: #333;
+            color: #FF8C00;
             font-size: 0.8rem;
             border-top: 1px solid #1A1A1A;
             margin-top: 2rem;
             font-family: 'JetBrains Mono', monospace;
         }
-        footer a { color: #00F0FF; text-decoration: none; }
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
         @media (max-width: 768px) {
             nav { flex-direction: column; }
             .nav-links { gap: 1rem; justify-content: center; }
@@ -218,4 +223,4 @@
 </script>
 
 </body>
-                              </html>
+    </html>
