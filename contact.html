@@ -1,1457 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Contact Wreal X — bookings, collaborations, business and general enquiries."
-  >
-
-  <title>Contact — Wreal X</title>
-
-
-  <!-- FONT AWESOME -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  >
-
-
-  <style>
-
-    @import url(
-      'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
-    );
-
-
-    /* =========================================
-       RESET
-    ========================================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
-    body {
-
-      font-family: 'Inter', sans-serif;
-
-      background: #070707;
-
-      color: white;
-
-      min-height: 100vh;
-
-      overflow-x: hidden;
-    }
-
-
-    /* =========================================
-       CINEMATIC BACKGROUND
-    ========================================= */
-
-    body::before {
-
-      content: "";
-
-      position: fixed;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          rgba(0,0,0,.76),
-          rgba(0,0,0,.93)
-        ),
-        url("https://iili.io/CtDt512.jpg")
-        center / cover no-repeat;
-
-      z-index: -2;
-    }
-
-
-    body::after {
-
-      content: "";
-
-      position: fixed;
-
-      inset: 0;
-
-      background:
-        radial-gradient(
-          circle at 15% 20%,
-          rgba(255,255,255,.05),
-          transparent 35%
-        ),
-        radial-gradient(
-          circle at 85% 75%,
-          rgba(255,255,255,.035),
-          transparent 35%
-        );
-
-      pointer-events: none;
-
-      z-index: -1;
-    }
-
-
-    /* =========================================
-       NAVIGATION
-    ========================================= */
-
-    .navbar {
-
-      position: fixed;
-
-      top: 0;
-      left: 0;
-
-      width: 100%;
-
-      height: 78px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      padding: 0 6%;
-
-      background:
-        rgba(5,5,5,.72);
-
-      backdrop-filter: blur(18px);
-
-      -webkit-backdrop-filter: blur(18px);
-
-      border-bottom:
-        1px solid rgba(255,255,255,.08);
-
-      z-index: 1000;
-    }
-
-
-    .logo {
-
-      color: white;
-
-      text-decoration: none;
-
-      font-size: 25px;
-
-      font-weight: 700;
-
-      letter-spacing: -1px;
-    }
-
-
-    .nav-links {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 30px;
-    }
-
-
-    .nav-links a {
-
-      color: #ccc;
-
-      text-decoration: none;
-
-      font-size: 12px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 2px;
-
-      transition: .25s ease;
-    }
-
-
-    .nav-links a:hover,
-    .nav-links a.active {
-
-      color: white;
-    }
-
-
-    /* =========================================
-       MOBILE MENU
-    ========================================= */
-
-    .menu-button {
-
-      display: none;
-
-      width: 44px;
-
-      height: 44px;
-
-      border-radius: 50%;
-
-      border:
-        1px solid rgba(255,255,255,.15);
-
-      background:
-        rgba(255,255,255,.05);
-
-      color: white;
-
-      font-size: 20px;
-
-      cursor: pointer;
-    }
-
-
-    /* =========================================
-       MAIN
-    ========================================= */
-
-    main {
-
-      width: min(1050px, 92%);
-
-      margin: auto;
-
-      padding-top: 140px;
-
-      padding-bottom: 110px;
-    }
-
-
-    .section-label {
-
-      color: #999;
-
-      font-size: 11px;
-
-      letter-spacing: 5px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 18px;
-    }
-
-
-    .page-title {
-
-      font-size:
-        clamp(50px, 9vw, 95px);
-
-      line-height: .92;
-
-      letter-spacing: -5px;
-
-      margin-bottom: 20px;
-    }
-
-
-    .page-title span {
-
-      color: #666;
-    }
-
-
-    .intro {
-
-      max-width: 620px;
-
-      color: #999;
-
-      font-size: 14px;
-
-      line-height: 1.8;
-
-      margin-bottom: 55px;
-    }
-
-
-    /* =========================================
-       CONTACT GRID
-    ========================================= */
-
-    .contact-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 20px;
-
-      margin-bottom: 25px;
-    }
-
-
-    .contact-card {
-
-      position: relative;
-
-      padding: 35px;
-
-      min-height: 230px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-
-      border-radius: 25px;
-
-      background:
-        rgba(12,12,12,.76);
-
-      border:
-        1px solid rgba(255,255,255,.12);
-
-      backdrop-filter: blur(16px);
-
-      -webkit-backdrop-filter: blur(16px);
-
-      transition:
-        transform .3s ease,
-        border-color .3s ease;
-
-      overflow: hidden;
-    }
-
-
-    .contact-card::after {
-
-      content: "";
-
-      position: absolute;
-
-      width: 180px;
-
-      height: 180px;
-
-      right: -80px;
-
-      bottom: -90px;
-
-      border-radius: 50%;
-
-      background:
-        rgba(255,255,255,.035);
-
-      pointer-events: none;
-    }
-
-
-    .contact-card:hover {
-
-      transform: translateY(-4px);
-
-      border-color:
-        rgba(255,255,255,.23);
-    }
-
-
-    .contact-icon {
-
-      width: 52px;
-
-      height: 52px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background:
-        rgba(255,255,255,.07);
-
-      border:
-        1px solid rgba(255,255,255,.1);
-
-      font-size: 20px;
-
-      margin-bottom: 25px;
-    }
-
-
-    .contact-card h2 {
-
-      font-size: 24px;
-
-      margin-bottom: 10px;
-    }
-
-
-    .contact-card p {
-
-      color: #888;
-
-      font-size: 13px;
-
-      line-height: 1.7;
-
-      margin-bottom: 22px;
-    }
-
-
-    .contact-button {
-
-      align-self: flex-start;
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      padding: 12px 18px;
-
-      border-radius: 25px;
-
-      background: white;
-
-      color: black;
-
-      text-decoration: none;
-
-      font-size: 11px;
-
-      font-weight: 600;
-
-      transition: .25s ease;
-    }
-
-
-    .contact-button:hover {
-
-      transform: translateY(-2px);
-
-      opacity: .87;
-    }
-
-
-    .contact-button.dark {
-
-      background:
-        rgba(255,255,255,.07);
-
-      color: white;
-
-      border:
-        1px solid rgba(255,255,255,.12);
-    }
-
-
-    /* =========================================
-       BOOKING CARD
-    ========================================= */
-
-    .booking-card {
-
-      padding: 40px;
-
-      border-radius: 25px;
-
-      background:
-        rgba(255,255,255,.045);
-
-      border:
-        1px solid rgba(255,255,255,.1);
-
-      margin-top: 20px;
-
-      text-align: center;
-    }
-
-
-    .booking-card h2 {
-
-      font-size: 30px;
-
-      margin-bottom: 10px;
-    }
-
-
-    .booking-card p {
-
-      max-width: 560px;
-
-      margin:
-        0 auto 25px;
-
-      color: #888;
-
-      font-size: 13px;
-
-      line-height: 1.8;
-    }
-
-
-    .booking-button {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      padding: 14px 24px;
-
-      border-radius: 30px;
-
-      background: white;
-
-      color: black;
-
-      text-decoration: none;
-
-      font-size: 12px;
-
-      font-weight: 600;
-
-      transition: .25s ease;
-    }
-
-
-    .booking-button:hover {
-
-      transform: translateY(-3px);
-    }
-
-
-    /* =========================================
-       SOCIALS
-    ========================================= */
-
-    .social-section {
-
-      margin-top: 60px;
-
-      text-align: center;
-    }
-
-
-    .social-section h2 {
-
-      font-size: 28px;
-
-      margin-bottom: 10px;
-    }
-
-
-    .social-section > p {
-
-      color: #777;
-
-      font-size: 12px;
-
-      margin-bottom: 25px;
-    }
-
-
-    .social-links {
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 12px;
-    }
-
-
-    .social-link {
-
-      width: 52px;
-
-      height: 52px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border-radius: 50%;
-
-      color: white;
-
-      text-decoration: none;
-
-      background:
-        rgba(255,255,255,.045);
-
-      border:
-        1px solid rgba(255,255,255,.11);
-
-      font-size: 19px;
-
-      transition: .25s ease;
-    }
-
-
-    .social-link:hover {
-
-      background:
-        rgba(255,255,255,.12);
-
-      transform:
-        translateY(-4px);
-    }
-
-
-    /* =========================================
-       FOOTER
-    ========================================= */
-
-    footer {
-
-      border-top:
-        1px solid rgba(255,255,255,.08);
-
-      padding:
-        45px 6%;
-
-      text-align: center;
-
-      background:
-        rgba(0,0,0,.6);
-    }
-
-
-    .footer-logo {
-
-      font-size: 22px;
-
-      font-weight: 700;
-
-      margin-bottom: 12px;
-    }
-
-
-    footer p {
-
-      color: #777;
-
-      font-size: 11px;
-
-      line-height: 1.8;
-    }
-
-
-    .footer-links {
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 24px;
-
-      margin-top: 20px;
-    }
-
-
-    .footer-links a {
-
-      color: #999;
-
-      text-decoration: none;
-
-      font-size: 11px;
-    }
-
-
-    .footer-links a:hover {
-
-      color: white;
-    }
-
-
-    /* =========================================
-       COOKIE
-    ========================================= */
-
-    .cookie-box {
-
-      position: fixed;
-
-      left: 20px;
-      right: 20px;
-
-      bottom: 20px;
-
-      max-width: 620px;
-
-      margin: auto;
-
-      padding: 18px 20px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      background:
-        rgba(15,15,15,.94);
-
-      border:
-        1px solid rgba(255,255,255,.13);
-
-      border-radius: 17px;
-
-      backdrop-filter: blur(20px);
-
-      -webkit-backdrop-filter: blur(20px);
-
-      box-shadow:
-        0 20px 60px rgba(0,0,0,.6);
-
-      z-index: 5000;
-    }
-
-
-    .cookie-box p {
-
-      color: #aaa;
-
-      font-size: 11px;
-
-      line-height: 1.6;
-    }
-
-
-    .cookie-buttons {
-
-      display: flex;
-
-      gap: 8px;
-
-      flex-shrink: 0;
-    }
-
-
-    .cookie-buttons button {
-
-      border: 0;
-
-      border-radius: 20px;
-
-      padding: 9px 15px;
-
-      cursor: pointer;
-
-      font-size: 11px;
-    }
-
-
-    .accept-cookie {
-
-      background: white;
-
-      color: black;
-    }
-
-
-    .reject-cookie {
-
-      background:
-        rgba(255,255,255,.08);
-
-      color: white;
-
-      border:
-        1px solid rgba(255,255,255,.12) !important;
-    }
-
-
-    /* =========================================
-       SIGNUP POPUP
-    ========================================= */
-
-    .signup-overlay {
-
-      position: fixed;
-
-      inset: 0;
-
-      display: none;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 20px;
-
-      background:
-        rgba(0,0,0,.72);
-
-      backdrop-filter: blur(7px);
-
-      z-index: 4500;
-    }
-
-
-    .signup-box {
-
-      position: relative;
-
-      width: min(470px, 100%);
-
-      padding: 30px;
-
-      border-radius: 25px;
-
-      background:
-        #101010;
-
-      border:
-        1px solid rgba(255,255,255,.14);
-
-      box-shadow:
-        0 30px 90px rgba(0,0,0,.7);
-    }
-
-
-    .signup-close {
-
-      position: absolute;
-
-      right: 15px;
-      top: 15px;
-
-      width: 34px;
-      height: 34px;
-
-      border-radius: 50%;
-
-      border:
-        1px solid rgba(255,255,255,.12);
-
-      background:
-        rgba(255,255,255,.05);
-
-      color: white;
-
-      cursor: pointer;
-    }
-
-
-    .signup-box h2 {
-
-      margin-bottom: 8px;
-
-      font-size: 25px;
-    }
-
-
-    .signup-box > p {
-
-      color: #888;
-
-      font-size: 12px;
-
-      line-height: 1.7;
-
-      margin-bottom: 20px;
-    }
-
-
-    #email-form-container {
-
-      min-height: 120px;
-    }
-
-
-    /* =========================================
-       RESPONSIVE
-    ========================================= */
-
-    @media (max-width: 760px) {
-
-      .navbar {
-
-        height: 70px;
-
-        padding: 0 20px;
-      }
-
-
-      .logo {
-
-        font-size: 21px;
-      }
-
-
-      .menu-button {
-
-        display: block;
-      }
-
-
-      .nav-links {
-
-        position: absolute;
-
-        top: 70px;
-
-        right: 15px;
-
-        width: 220px;
-
-        padding: 12px;
-
-        display: none;
-
-        flex-direction: column;
-
-        gap: 4px;
-
-        background:
-          rgba(8,8,8,.96);
-
-        backdrop-filter: blur(20px);
-
-        border:
-          1px solid rgba(255,255,255,.12);
-
-        border-radius: 18px;
-      }
-
-
-      .nav-links.show {
-
-        display: flex;
-      }
-
-
-      .nav-links a {
-
-        padding: 14px;
-
-        border-radius: 10px;
-      }
-
-
-      main {
-
-        padding-top: 110px;
-      }
-
-
-      .page-title {
-
-        letter-spacing: -3px;
-      }
-
-
-      .contact-grid {
-
-        grid-template-columns: 1fr;
-      }
-
-
-      .contact-card {
-
-        min-height: 220px;
-
-        padding: 27px;
-      }
-
-
-      .booking-card {
-
-        padding: 30px 20px;
-      }
-
-
-      .cookie-box {
-
-        flex-direction: column;
-
-        align-items: stretch;
-      }
-
-
-      .cookie-buttons {
-
-        justify-content: flex-end;
-      }
-
-    }
-
-  </style>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact · Wreal X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0A0A0A;
+            color: #E0E0E0;
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 5%;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #E0E0E0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #00F0FF; }
+        .page-title {
+            text-align: center;
+            padding: 2rem 5% 0;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #00F0FF, #CCFF00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .page-sub {
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            margin-top: 0.2rem;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 3rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 60vh;
+        }
+        .contact-info h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .contact-info p {
+            color: #999;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .contact-info .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.8rem 1.2rem;
+            background: #111;
+            border-radius: 12px;
+            border: 1px solid #1A1A1A;
+            transition: all 0.3s;
+        }
+        .contact-info .contact-item:hover {
+            border-color: #00F0FF;
+        }
+        .contact-info .contact-item i {
+            font-size: 1.3rem;
+            color: #00F0FF;
+            width: 30px;
+        }
+        .contact-info .contact-item a {
+            color: #E0E0E0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-info .contact-item a:hover {
+            color: #00F0FF;
+        }
+        .contact-info .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .contact-info .social-links a {
+            color: #555;
+            font-size: 2rem;
+            transition: all 0.3s;
+        }
+        .contact-info .social-links a:hover {
+            color: #00F0FF;
+            transform: translateY(-3px);
+        }
+        .contact-form {
+            background: #111;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid #1A1A1A;
+        }
+        .contact-form h3 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .contact-form label {
+            display: block;
+            color: #888;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: #0A0A0A;
+            border: 1px solid #222;
+            border-radius: 10px;
+            color: #E0E0E0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            transition: border-color 0.3s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #00F0FF;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.05);
+        }
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .contact-form button {
+            padding: 0.9rem 3rem;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            border: none;
+            border-radius: 50px;
+            color: #0A0A0A;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        .contact-form button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 40px rgba(255, 32, 96, 0.3);
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.8rem 2rem;
+            background: #25D366;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(37, 211, 102, 0.3);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            color: #333;
+            font-size: 0.8rem;
+            border-top: 1px solid #1A1A1A;
+            margin-top: 2rem;
+        }
+        footer a { color: #00F0FF; text-decoration: none; }
+        @media (max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-form { padding: 1.5rem; }
+        }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            .nav-links { gap: 1rem; justify-content: center; }
+        }
+    </style>
 </head>
-
-
 <body>
 
+<nav>
+    <a href="index.html" class="logo">✦ WREAL X</a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
-  <!-- =========================================
-       NAVIGATION
-  ========================================= -->
+<h1 class="page-title">CONTACT</h1>
+<p class="page-sub">— let's connect —</p>
 
-  <header class="navbar">
+<div class="contact-grid">
+    <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p>
+            For bookings, collaborations, or just to say hi — hit me up through 
+            any of these channels. I'll get back to you within 24 hours.
+        </p>
 
-    <a
-      href="index.html"
-      class="logo"
-    >
-      WREAL X
-    </a>
-
-
-    <button
-      class="menu-button"
-      id="menuButton"
-      aria-label="Open navigation"
-    >
-      ☰
-    </button>
-
-
-    <nav
-      class="nav-links"
-      id="navLinks"
-    >
-
-      <a href="index.html">
-        Home
-      </a>
-
-      <a href="book.html">
-        Book Wreal X
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="music.html">
-        Music
-      </a>
-
-      <a
-        href="contact.html"
-        class="active"
-      >
-        Contact
-      </a>
-
-    </nav>
-
-  </header>
-
-
-
-  <!-- =========================================
-       CONTACT
-  ========================================= -->
-
-  <main>
-
-    <div class="section-label">
-      Get in touch
-    </div>
-
-
-    <h1 class="page-title">
-      CONTACT <span>WREAL X</span>
-    </h1>
-
-
-    <p class="intro">
-      For bookings, collaborations, business enquiries,
-      music opportunities or general messages, reach out
-      directly through any of the channels below.
-    </p>
-
-
-
-    <!-- =======================================
-         CONTACT CARDS
-    ======================================== -->
-
-    <section class="contact-grid">
-
-
-      <!-- EMAIL -->
-
-      <article class="contact-card">
-
-        <div>
-
-          <div class="contact-icon">
-
-            <i class="fa-solid fa-envelope"></i>
-
-          </div>
-
-
-          <h2>
-            Email
-          </h2>
-
-
-          <p>
-            For professional enquiries, collaborations,
-            press, management and general communication.
-          </p>
-
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:wrealx@proton.me">wrealx@proton.me</a>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/2110920146370" target="_blank">+211 0920146370</a>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-link"></i>
+            <a href="https://snd.click/xvy9" target="_blank">Soundplate · Exclusive Content</a>
         </div>
 
-
-        <a
-          href="mailto:wrealx@proton.me"
-          class="contact-button"
-        >
-
-          <i class="fa-solid fa-paper-plane"></i>
-
-          Email Wreal X
-
+        <a href="https://wa.me/2110920146370" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
         </a>
 
-      </article>
-
-
-
-      <!-- WHATSAPP -->
-
-      <article class="contact-card">
-
-        <div>
-
-          <div class="contact-icon">
-
-            <i class="fa-brands fa-whatsapp"></i>
-
-          </div>
-
-
-          <h2>
-            WhatsApp
-          </h2>
-
-
-          <p>
-            Send a direct message through WhatsApp
-            for quick enquiries and communication.
-          </p>
-
+        <div class="social-links">
+            <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://tiktok.com/wreal_x" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com/wrealxcursed" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com/@wrealx" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://soundcloud.com/wrealx" target="_blank"><i class="fab fa-soundcloud"></i></a>
+            <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank"><i class="fab fa-apple"></i></a>
+            <a href="https://tidal.com/artist/79457798/u" target="_blank"><i class="fab fa-tidal"></i></a>
+            <a href="https://audiomack.com/@wrealx" target="_blank"><i class="fas fa-headphones"></i></a>
         </div>
-
-
-        <a
-          href="https://wa.me/0920146370"
-          class="contact-button"
-          target="_blank"
-          rel="noopener"
-        >
-
-          <i class="fa-brands fa-whatsapp"></i>
-
-          Message on WhatsApp
-
-        </a>
-
-      </article>
-
-
-    </section>
-
-
-
-    <!-- =======================================
-         BOOKING
-    ======================================== -->
-
-    <section class="booking-card">
-
-      <h2>
-        Book Wreal X
-      </h2>
-
-
-      <p>
-        Looking to book Wreal X for a performance,
-        event, collaboration or appearance?
-        Start a booking request through the official
-        booking page.
-      </p>
-
-
-      <a
-        href="book.html"
-        class="booking-button"
-      >
-
-        <i class="fa-solid fa-calendar-check"></i>
-
-        Booking Enquiries
-
-      </a>
-
-    </section>
-
-
-
-    <!-- =======================================
-         SOCIALS
-    ======================================== -->
-
-    <section class="social-section">
-
-      <h2>
-        Follow Wreal X
-      </h2>
-
-
-      <p>
-        Stay connected across the official social platforms.
-      </p>
-
-
-      <div class="social-links">
-
-
-        <!-- X -->
-
-        <a
-          href="https://twitter.com/Wreal_X"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="X / Twitter"
-        >
-
-          <i class="fa-brands fa-x-twitter"></i>
-
-        </a>
-
-
-
-        <!-- FACEBOOK -->
-
-        <a
-          href="https://facebook.com/wrealxcursed"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="Facebook"
-        >
-
-          <i class="fa-brands fa-facebook-f"></i>
-
-        </a>
-
-
-
-        <!-- INSTAGRAM -->
-
-        <a
-          href="https://instagram.com/wreal.x"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="Instagram"
-        >
-
-          <i class="fa-brands fa-instagram"></i>
-
-        </a>
-
-
-
-        <!-- TIKTOK -->
-
-        <a
-          href="https://tiktok.com/@wreal_x"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="TikTok"
-        >
-
-          <i class="fa-brands fa-tiktok"></i>
-
-        </a>
-
-
-
-        <!-- YOUTUBE -->
-
-        <a
-          href="https://youtube.com/@wrealx"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="YouTube"
-        >
-
-          <i class="fa-brands fa-youtube"></i>
-
-        </a>
-
-
-
-        <!-- SOUNDCLOUD -->
-
-        <a
-          href="https://soundcloud.com/wrealx"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="SoundCloud"
-        >
-
-          <i class="fa-brands fa-soundcloud"></i>
-
-        </a>
-
-
-
-        <!-- AUDIOMACK -->
-
-        <a
-          href="https://audiomack.com/@wrealx"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="Audiomack"
-        >
-
-          <strong style="font-size:12px;">
-            AM
-          </strong>
-
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-
-  <!-- =========================================
-       FOOTER
-  ========================================= -->
-
-  <footer>
-
-    <div class="footer-logo">
-      WREAL X
     </div>
 
+    <div class="contact-form">
+        <h3>✉️ Send a Message</h3>
+        <form action="mailto:wrealx@proton.me" method="post" enctype="text/plain">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="e.g. Alex" required>
 
-    <p>
-      © 2026 Wreal X. All rights reserved.
-    </p>
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@example.com" required>
 
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="Booking / Collaboration / Fan">
 
-    <div class="footer-links">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell me what's on your mind..." required></textarea>
 
-      <a href="index.html">
-        Home
-      </a>
-
-      <a href="book.html">
-        Book Wreal X
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="music.html">
-        Music
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
-
+            <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
     </div>
+</div>
 
-  </footer>
+<footer>
+    © 2026 WREAL X · <a href="index.html">wrealx.com</a>
+</footer>
 
+<!-- TAWK.TO WIDGET -->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
 
-
-  <!-- =========================================
-       SIGNUP POPUP
-  ========================================= -->
-
-  <div
-    class="signup-overlay"
-    id="signupOverlay"
-  >
-
-    <div class="signup-box">
-
-      <button
-        class="signup-close"
-        id="signupClose"
-        aria-label="Close signup form"
-      >
-        ×
-      </button>
-
-
-      <h2>
-        Stay connected.
-      </h2>
-
-
-      <p>
-        Join the Wreal X mailing list for new music,
-        releases, announcements and updates.
-      </p>
-
-
-      <div id="email-form-container">
-
-        <div
-          id="31c0e709-a54d-43f1-918f-67317d82f9b4"
-        >
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- =========================================
-       COOKIE NOTICE
-  ==============
+</body>
+                                        </html>
