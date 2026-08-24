@@ -1,413 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>WREAL X</title>
-    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-    <!-- Beacons Email Form Embed Script -->
-    <script>
-        (function () {
-            function loadBeaconsEmailFormEmbed() {
-                var s = document.createElement("script");
-                var t = Math.floor(new Date().getTime() / 120000);
-                s.type = "module";
-                s.async = 1;
-                s.src = `https://beacons.ai/embeds/emailForm.js?v=${t}&b=wrealx&f=31c0e709-a54d-43f1-918f-67317d82f9b4`;
-                (document.head || document.body || document.documentElement).appendChild(s);
-            }
-            if (document.readyState === "loading") {
-                document.addEventListener("DOMContentLoaded", loadBeaconsEmailFormEmbed, { once: true });
-                return;
-            }
-            loadBeaconsEmailFormEmbed();
-        })();
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wreal X · The African Juice WRLD</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* ---------- RESET ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', 'Nanum Pen Script', monospace;
-            background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
-            color: #fff2e6;
-            line-height: 1.5;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-        .header {
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #ff6600;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            letter-spacing: 3px;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
-            background: linear-gradient(45deg, #ff4500, #ff8c00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-decoration: none;
-        }
-        .menu-btn { background: none; border: none; cursor: pointer; padding: 10px; z-index: 1001; }
-        .menu-btn span { display: block; width: 28px; height: 3px; background: #ff6600; margin: 6px 0; border-radius: 3px; }
-        
-        .side-nav {
-            position: fixed; top: 0; left: -300px; width: 280px; height: 100%; background: rgba(30,10,10,0.98);
-            backdrop-filter: blur(10px); z-index: 1002; transition: left 0.3s ease; padding-top: 80px;
-            box-shadow: 2px 0 20px rgba(255,68,0,0.3); border-right: 2px solid #ff4500;
-        }
-        .side-nav.open { left: 0; }
-        .side-nav a {
-            display: flex; align-items: center; gap: 15px; padding: 1rem 1.5rem; color: #ff8c66;
-            text-decoration: none; font-size: 1.2rem; font-weight: bold; border-bottom: 1px solid #ff4500;
-            transition: background 0.3s; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
-        }
-        .side-nav a:hover { background: #ff4500; color: #000; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1001; display: none; }
-        .overlay.active { display: block; }
-        
-        .hero {
-            width: 100%;
-            background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
-            aspect-ratio: 16 / 9;
-            border-bottom: 3px solid #ff4500;
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #f0f0f0;
+            line-height: 1.6;
         }
 
-        /* LATEST RELEASE SECTION */
-        .latest-release {
+        /* ---------- BACKGROUND (your image) ---------- */
+        .site-bg {
+            background: url('https://iili.io/CtDt512.jpg') center/cover fixed no-repeat;
+            position: relative;
+        }
+        .site-bg::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(3px);
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* ---------- HERO (Lady Kola style) ---------- */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid #ff6b6b;
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: #ff6b6b;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: clamp(4rem, 15vw, 8rem);
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, #ff6b6b, #c850c0, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #ccc;
+            max-width: 700px;
+            margin: 1rem auto 2rem;
+        }
+        .hero .btn-group {
             display: flex;
             flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .btn {
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: #ff6b6b;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ff6b6b;
+            color: #ff6b6b;
+        }
+        .btn-outline:hover {
+            background: #ff6b6b;
+            color: #fff;
+            transform: scale(1.05);
+        }
+        .hero .mini-tag {
+            margin-top: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 1.5rem;
+        }
+        .hero .mini-tag span {
+            color: #ffd93d;
+        }
+
+        /* ---------- STATS (Lady Kola style) ---------- */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 2rem;
-            align-items: center;
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: rgba(0,0,0,0.7);
-            border-radius: 20px;
-            border: 1px solid #ff6600;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            margin: 2rem 0;
         }
-        .release-cover {
-            flex: 0 0 160px;
-            border-radius: 12px;
+        .stat-item .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd93d, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-item .label {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+        .stat-item .sub {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* ---------- SECTION TITLES ---------- */
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            text-align: center;
+            margin: 3rem 0 0.5rem;
+        }
+        .section-sub {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* ---------- MUSIC GRID ---------- */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+        .music-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 16px;
             overflow: hidden;
-            border: 2px solid #ff6600;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s ease;
         }
-        .release-cover img {
+        .music-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(255,107,107,0.1);
+            border-color: rgba(255,107,107,0.3);
+        }
+        .music-card img {
             width: 100%;
-            height: 100%;
+            aspect-ratio: 1/1;
             object-fit: cover;
             display: block;
         }
-        .release-info {
-            flex: 1;
+        .music-card .info {
+            padding: 1.2rem 1.5rem 1.5rem;
         }
-        .release-info .tag {
-            display: inline-block;
-            background: #ff4500;
-            color: #000;
-            padding: 0.2rem 1rem;
-            border-radius: 30px;
-            font-weight: bold;
+        .music-card .info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .music-card .info .artist {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            margin: 0.2rem 0 0.5rem;
+        }
+        .music-card .info .year {
+            color: #666;
             font-size: 0.8rem;
-            margin-bottom: 0.5rem;
         }
-        .release-info h2 {
+        .music-card .info .btn-sm {
+            display: inline-block;
+            margin-top: 0.8rem;
+            padding: 0.4rem 1.5rem;
+            border-radius: 50px;
+            background: #ff6b6b;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .music-card .info .btn-sm:hover {
+            background: #e05555;
+            transform: scale(1.05);
+        }
+
+        /* ---------- VIDEOS ---------- */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .video-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(255,107,107,0.08);
+        }
+        .video-card iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+        }
+        .video-card .info {
+            padding: 1rem 1.5rem 1.5rem;
+        }
+        .video-card .info h4 {
+            font-size: 1rem;
+        }
+        .video-card .info p {
+            color: #888;
+            font-size: 0.85rem;
+        }
+        .see-all {
+            text-align: center;
+            margin: 1.5rem 0 3rem;
+        }
+
+        /* ---------- NEWSLETTER ---------- */
+        .newsletter {
+            text-align: center;
+            max-width: 550px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .newsletter h3 {
             font-size: 1.8rem;
-            color: #ffcc88;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
+            margin-bottom: 0.3rem;
         }
-        .release-info .artist {
-            font-size: 1.2rem;
-            color: #ffaa66;
-            margin-bottom: 1rem;
+        .newsletter p {
+            color: #aaa;
+            margin-bottom: 1.5rem;
         }
-        .release-buttons {
+        .newsletter form {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin-top: 0.5rem;
-        }
-        .stream-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0.4rem 1rem;
-            background: rgba(0,0,0,0.6);
-            border: 1px solid #ff6600;
-            border-radius: 30px;
-            text-decoration: none;
-            color: #ffaa66;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            font-size: 0.85rem;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-        .stream-btn:hover {
-            background: #ff4500;
-            color: #000;
-            border-color: #ffcc00;
-        }
-        .stream-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-        .stream-btn.spotify:hover { background: #1DB954; color: #000; border-color: #1DB954; }
-        .stream-btn.apple:hover { background: #FA243C; color: #fff; border-color: #FA243C; }
-        .stream-btn.tidal:hover { background: #000; color: #fff; border-color: #fff; }
-        .stream-btn.audiomack:hover { background: #FF9900; color: #000; border-color: #FF9900; }
-        .stream-btn.soundcloud:hover { background: #FF5500; color: #fff; border-color: #FF5500; }
-        .stream-btn.lynkify:hover { background: #ffcc00; color: #000; border-color: #ffcc00; }
-        @media (max-width: 700px) {
-            .latest-release { flex-direction: column; text-align: center; }
-            .release-cover { flex: 0 0 150px; width: 150px; margin: 0 auto; }
-            .release-buttons { justify-content: center; }
-        }
-        
-        .streaming-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
-        .streaming-circle {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: rgba(0,0,0,0.6);
-            border-radius: 50%;
-            transition: all 0.2s;
-            text-decoration: none;
-            border: 1px solid #ff6600;
-            padding: 12px;
         }
-        .streaming-circle:hover { transform: scale(1.1); background: #ff4500; border-color: #ffcc00; }
-        .streaming-circle svg { width: 32px; height: 32px; fill: #ffaa66; transition: fill 0.2s; }
-        .streaming-circle:hover svg { fill: #000; }
-        
-        .play-now-container { text-align: center; padding: 0.5rem 0 0rem; }
-        .play-now-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff4500, #cc3300);
-            color: white;
-            padding: 0.7rem 2rem;
+        .newsletter input {
+            flex: 1 1 200px;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid #333;
+            background: rgba(255,255,255,0.06);
+            color: #fff;
             font-size: 1rem;
-            font-weight: bold;
-            border-radius: 8px;
-            text-decoration: none;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            transition: all 0.2s;
-            border: 1px solid #ff8c00;
+            outline: none;
         }
-        .play-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
-        
-        .choose-service { text-align: center; margin: 0.5rem 0 0rem; }
-        .choose-service-btn {
-            display: inline-block;
-            background: rgba(0,0,0,0.7);
-            color: #ffaa66;
-            padding: 0.4rem 1.5rem;
-            border: 1px solid #ff6600;
-            border-radius: 30px;
-            cursor: pointer;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            font-size: 0.85rem;
-            transition: 0.2s;
-            text-decoration: none;
+        .newsletter input:focus {
+            border-color: #ff6b6b;
         }
-        .choose-service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
-        
-        .book-now-container { text-align: center; margin: 0.8rem 0 1.2rem; }
-        .book-now-btn {
-            background: linear-gradient(45deg, #8b0000, #660000); color: #ffcc88;
-            padding: 0.5rem 1.8rem; font-size: 0.9rem; font-weight: bold; border-radius: 40px;
-            text-decoration: none; display: inline-block; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            border: 1px solid #ff8844;
+        .newsletter .btn {
+            padding: 0.8rem 2rem;
         }
-        .book-now-btn:hover { background: linear-gradient(45deg, #a00000, #770000); color: #ffddaa; }
-        
-        .section-title {
-            text-align: center; font-size: 1.8rem; margin: 1.5rem 0 1rem;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
-            background: linear-gradient(45deg, #ff6600, #ffcc00);
-            -webkit-background-clip: text;
-            background-clip: text; color: transparent;
+        .newsletter .fine-print {
+            font-size: 0.75rem;
+            color: #555;
+            margin-top: 1rem;
         }
-        
-        .video-grid {
+
+        /* ---------- FOOTER (Lady Kola style) ---------- */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 3rem 2rem 2rem;
+        }
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 1rem auto;
-            padding: 0 1rem;
-        }
-        .video-card { background: rgba(0,0,0,0.6); border-radius: 8px; overflow: hidden; border: 1px solid #ff6600; }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        @media (max-width: 600px) { .video-grid { grid-template-columns: 1fr; gap: 1rem; } }
-        
-        .merch-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 2rem;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem 2rem;
         }
-        .card {
-            background: rgba(0,0,0,0.7);
-            border-radius: 16px;
-            text-align: center;
-            padding-bottom: 1.5rem;
-            border: 1px solid #ff6600;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .card:hover { transform: translateY(-5px); border-color: #ffcc00; }
-        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 16px 16px 0 0; border-bottom: 1px solid #ff6600; }
-        .card h3 { font-size: 1.3rem; margin: 1rem 0 0.3rem; color: #ffcc88; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        .price { font-size: 1.2rem; font-weight: bold; color: #ffcc00; margin: 0.3rem 0; }
-        .buy-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6600, #ff8c00);
-            color: #000;
-            border: none;
-            padding: 0.6rem 2rem;
-            margin: 0.8rem 0;
-            cursor: pointer;
-            border-radius: 30px;
+        .footer-grid h4 {
+            color: #ffd93d;
             font-size: 1rem;
-            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+        .footer-grid a {
+            display: block;
+            color: #aaa;
             text-decoration: none;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            transition: transform 0.2s;
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+            transition: color 0.3s;
         }
-        .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
-        @media (max-width: 700px) { .merch-grid { grid-template-columns: 1fr; gap: 1.5rem; } .card img { height: 200px; } }
-        
-        .beacons-signup-section {
-            background: rgba(0,0,0,0.6);
+        .footer-grid a:hover {
+            color: #ff6b6b;
+        }
+        .footer-bottom {
             text-align: center;
-            padding: 2rem;
-            margin: 2rem 1rem;
-            border-top: 2px solid #ff6600;
-            border-bottom: 2px solid #ff6600;
-            border-radius: 10px;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: #666;
+            font-size: 0.85rem;
         }
-        .beacons-signup-section h2 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
-            color: #ffaa66;
+        .footer-bottom .heart {
+            color: #ff6b6b;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 { max-width: 500px; margin: 0 auto; }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 input {
-            background: #1a0505 !important;
-            border: 2px solid #ff6600 !important;
-            border-radius: 8px !important;
-            color: white !important;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
-            padding: 12px !important;
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.8rem; }
+            .stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .music-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 button {
-            background: linear-gradient(45deg, #ff6600, #ff8c00) !important;
-            color: #000 !important;
-            border: none !important;
-            border-radius: 8px !important;
-            font-weight: bold !important;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
-            padding: 12px 24px !important;
-            cursor: pointer !important;
+        @media (max-width: 480px) {
+            .music-grid { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: 1fr; }
+            .hero { padding: 2rem 1rem; }
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 button:hover { background: linear-gradient(45deg, #ff7700, #ffaa00) !important; }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-container { background: transparent !important; }
-        
-        .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 1rem; text-align: center; }
-        .contact-card, .about-card { background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 10px; border: 1px solid #ff6600; }
-        .contact-card h3, .about-card h3 { color: #ffaa66; margin-bottom: 0.8rem; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive; }
-        .bottom-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; padding: 0.5rem 1rem; text-decoration: none; display: inline-block; border-radius: 8px; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        
-        .footer { text-align: center; padding: 1rem; border-top: 1px solid #ff6600; font-size: 0.7rem; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
     </style>
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function() { var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true; s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
-        s1.charset = 'UTF-8'; s1.setAttribute('crossorigin','*'); s0.parentNode.insertBefore(s1, s0); })();
-    </script>
 </head>
 <body>
-    <div class="header">
-        <a href="index.html" class="logo">WREAL X</a>
-        <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
-    </div>
-    
-    <div class="side-nav" id="sideNav">
-        <a href="merch.html">🛍️ SHOP NOW</a>
-        <a href="fanclub.html">💬 JOIN THE FAN CLUB</a>
-        <a href="contact.html">📧 CONTACT</a>
-        <a href="about.html">📖 ABOUT</a>
-    </div>
-    <div class="overlay" id="overlay"></div>
+    <div class="site-bg">
+        <div class="content">
 
-    <div class="hero"></div>
+            <!-- ===== HERO ===== -->
+            <section class="hero">
+                <div class="badge">✦ STREAMING EVERYWHERE</div>
+                <h1>WREAL X</h1>
+                <p>South Sudanese Emo Rapper &amp; Singer — <br/>bringing raw emotion and African energy to the world stage.</p>
+                <div class="btn-group">
+                    <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="btn btn-primary">🎵 Listen Now</a>
+                    <a href="#videos" class="btn btn-outline">▶ Watch Videos</a>
+                </div>
+                <div class="mini-tag">
+                    🎤 <span>Hurry Up</span> · Out now · New releases
+                </div>
+            </section>
 
-    <!-- YOUR LATEST RELEASE SECTION: "TIME" WITH LYNIKIFY -->
-    <div class="latest-release">
-        <div class="release-cover">
-            <img src="https://iili.io/C9aXwuI.jpg" alt="Time - Wreal X" onerror="this.src='https://via.placeholder.com/300x300/1a0505/ff6600?text=TIME'">
-        </div>
-        <div class="release-info">
-            <span class="tag">🔥 OUT NOW</span>
-            <h2>Time</h2>
-            <div class="artist">Wreal X · 2026</div>
-            <div class="release-buttons">
-                <a href="https://lynkify.in/album/time/10434854" target="_blank" class="stream-btn lynkify">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg> CHOOSE SERVICE
-                </a>
-                <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="stream-btn spotify">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M16.5 10.5c-2.5-1.5-5.5-1.5-8 0M14.5 13.5c-1.8-1-4-1-5.8 0M12.5 16.5c-1.2-0.6-2.5-0.6-3.5 0" stroke="currentColor" stroke-width="1.8" fill="none"/></svg> Spotify
-                </a>
-                <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="stream-btn apple">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9 17V7l8 2.5V14"/><circle cx="7" cy="17" r="2"/><circle cx="15" cy="14" r="2"/></svg> Apple Music
-                </a>
-                <a href="https://tidal.com/artist/79457798/u" target="_blank" class="stream-btn tidal">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4 L4 20 L8 20 L8 10 L12 10 L12 18 L16 18 L16 8 L20 8 L20 16 L24 16 L24 4"/></svg> TIDAL
-                </a>
-                <a href="https://audiomack.com/wrealx" target="_blank" class="stream-btn audiomack">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M8 16V8L16 8V16"/><path d="M8 12H16"/></svg> Audiomack
-                </a>
+            <!-- ===== STATS ===== -->
+            <section class="stats">
+                <div class="stat-item">
+                    <div class="number">1K+</div>
+                    <div class="label">YouTube streams</div>
+                    <div class="sub">"Hurry Up"</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">🌍</div>
+                    <div class="label">From Yei, South Sudan</div>
+                    <div class="sub">to the world</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">🎵</div>
+                    <div class="label">Songs released</div>
+                    <div class="sub">on all platforms</div>
+                </div>
+            </section>
+
+            <!-- ===== LATEST MUSIC ===== -->
+            <h2 class="section-title">🎶 Latest Music</h2>
+            <p class="section-sub">Stream the hits defining East Africa's new sound.</p>
+
+            <div class="music-grid">
+                <div class="music-card">
+                    <img src="https://iili.io/CtDt512.jpg" alt="Hurry Up" loading="lazy">
+                    <div class="info">
+                        <h3>Hurry Up</h3>
+                        <div class="artist">Wreal X</div>
+                        <div class="year">2026 · Emo Trap</div>
+                        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="btn-sm">Stream Now</a>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="https://iili.io/CtDt512.jpg" alt="Coming Soon" loading="lazy">
+                    <div class="info">
+                        <h3>Coming Soon</h3>
+                        <div class="artist">Wreal X</div>
+                        <div class="year">2026 · Afrobeats</div>
+                        <a href="#" class="btn-sm">Pre-save</a>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="https://iili.io/CtDt512.jpg" alt="New Track" loading="lazy">
+                    <div class="info">
+                        <h3>New Track</h3>
+                        <div class="artist">Wreal X</div>
+                        <div class="year">2026 · Emo Rap</div>
+                        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="btn-sm">Stream Now</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- STREAMING + BEACONS + SOUNDCLOUD ICONS -->
-    <div class="streaming-section">
-        <a href="https://tidal.com/artist/79457798/u" target="_blank" class="streaming-circle" aria-label="TIDAL">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4 L4 20 L8 20 L8 10 L12 10 L12 18 L16 18 L16 8 L20 8 L20 16 L24 16 L24 4"/>
-            </svg>
-        </a>
-        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="streaming-circle" aria-label="Spotify">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M16.5 10.5c-2.5-1.5-5.5-1.5-8 0M14.5 13.5c-1.8-1-4-1-5.8 0M12.5 16.5c-1.2-0.6-2.5-0.6-3.5 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            </svg>
-        </a>
-        <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="streaming-circle" aria-label="Apple Music">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/><path d="M9 17V7l8 2.5V14" stroke="currentColor"/>
-                <circle cx="7" cy="17" r="2" fill="currentColor" stroke="none"/>
-                <circle cx="15" cy="14" r="2" fill="currentColor" stroke="none"/>
-            </svg>
-        </a>
-        <a href="https://audiomack.com/wrealx" target="_blank" class="streaming-circle" aria-label="Audiomack">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-
+            <div style="text-align:center; margin-bottom:2rem;">
+                <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="btn btn-outline">View all music →</a>
+            </div>
+
+            <!-- ===== LATEST VIDEOS ===== -->
+            <h2 class="section-title" id="videos">▶ Latest Videos</h2>
+            <p class="section-sub">Fresh from the official YouTube channel.</p>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen loading="lazy"></iframe>
+                    <div class="info">
+                        <h4>Hurry Up (Official Video)</h4>
+                        <p>Wreal X · 2026</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen loading="lazy"></iframe>
+                    <div class="info">
+                        <h4>Coming Soon</h4>
+                        <p>Wreal X · 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="see-all">
+                <a href="https://youtube.com/@wrealx" target="_blank" class="btn btn-outline">See all videos →</a>
+            </div>
+
+            <!-- ===== NEWSLETTER ===== -->
+            <div class="newsletter">
+                <h3>📬 Stay updated</h3>
+                <p>Get releases, videos, and show announcements.</p>
+                <form action="#" method="post">
+                    <input type="email" placeholder="you@email.com" required />
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div class="fine-print">No spam. Unsubscribe anytime.</div>
+            </div>
+
+            <!-- ===== FOOTER ===== -->
+            <footer>
+                <div class="footer-grid">
+                    <div>
+                        <h4>WREAL X</h4>
+                        <p style="color:#888; font-size:0.85rem; line-height:1.8;">
+                            Singer · Emo Rapper · Songwriter<br/>
+                            Yei, South Sudan → The World
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Music</h4>
+                        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank">Spotify</a>
+                        <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank">Apple Music</a>
+                        <a href="https://soundcloud.com/wrealx" target="_blank">SoundCloud</a>
+                        <a href="https://www.deezer.com/artist/390511031" target="_blank">Deezer</a>
+                    </div>
+                    <div>
+                        <h4>Watch</h4>
+                        <a href="https://youtube.com/@wrealx" target="_blank">YouTube</a>
+                    </div>
+                    <div>
+                        <h4>Connect</h4>
+                        <a href="https://twitter.com/Wreal_X" target="_blank">Twitter/X</a>
+                        <a href="https://instagram.com/wreal.x" target="_blank">Instagram</a>
+                        <a href="https://facebook.com/wrealxcursed" target="_blank">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 Wreal X · The African Juice WRLD. All rights reserved.</p>
+                    <p style="margin-top:0.3rem;">SOUTH SUDANESE EMO RAP &amp; AFROBEATS ARTIST</p>
+                    <p style="margin-top:0.5rem; font-size:0.8rem;">
+                        Made with <span class="heart">❤️</span> by the Wreal X team
+                    </p>
+                </div>
+            </footer>
+
+        </div><!-- /content -->
+    </div><!-- /site-bg -->
+</body>
+                    </html>
