@@ -82,8 +82,98 @@
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
+
+        /* LATEST RELEASE SECTION */
+        .latest-release {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.7);
+            border-radius: 20px;
+            border: 1px solid #ff6600;
+        }
+        .release-cover {
+            flex: 0 0 160px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #ff6600;
+        }
+        .release-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .release-info {
+            flex: 1;
+        }
+        .release-info .tag {
+            display: inline-block;
+            background: #ff4500;
+            color: #000;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .release-info h2 {
+            font-size: 1.8rem;
+            color: #ffcc88;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
+        }
+        .release-info .artist {
+            font-size: 1.2rem;
+            color: #ffaa66;
+            margin-bottom: 1rem;
+        }
+        .release-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        .stream-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.4rem 1rem;
+            background: rgba(0,0,0,0.6);
+            border: 1px solid #ff6600;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #ffaa66;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .stream-btn:hover {
+            background: #ff4500;
+            color: #000;
+            border-color: #ffcc00;
+        }
+        .stream-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        .stream-btn.spotify:hover { background: #1DB954; color: #000; border-color: #1DB954; }
+        .stream-btn.apple:hover { background: #FA243C; color: #fff; border-color: #FA243C; }
+        .stream-btn.tidal:hover { background: #000; color: #fff; border-color: #fff; }
+        .stream-btn.audiomack:hover { background: #FF9900; color: #000; border-color: #FF9900; }
+        .stream-btn.soundcloud:hover { background: #FF5500; color: #fff; border-color: #FF5500; }
+        .stream-btn.lynkify:hover { background: #ffcc00; color: #000; border-color: #ffcc00; }
+        @media (max-width: 700px) {
+            .latest-release { flex-direction: column; text-align: center; }
+            .release-cover { flex: 0 0 150px; width: 150px; margin: 0 auto; }
+            .release-buttons { justify-content: center; }
+        }
         
-        /* TOP STREAMING ICONS - REAL LOGOS */
         .streaming-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
         .streaming-circle {
             display: flex;
@@ -99,12 +189,7 @@
             padding: 12px;
         }
         .streaming-circle:hover { transform: scale(1.1); background: #ff4500; border-color: #ffcc00; }
-        .streaming-circle svg {
-            width: 32px;
-            height: 32px;
-            fill: #ffaa66;
-            transition: fill 0.2s;
-        }
+        .streaming-circle svg { width: 32px; height: 32px; fill: #ffaa66; transition: fill 0.2s; }
         .streaming-circle:hover svg { fill: #000; }
         
         .play-now-container { text-align: center; padding: 0.5rem 0 0rem; }
@@ -154,113 +239,6 @@
             background: linear-gradient(45deg, #ff6600, #ffcc00);
             -webkit-background-clip: text;
             background-clip: text; color: transparent;
-        }
-        
-        /* NEW RELEASE CARD */
-        .release-card {
-            max-width: 800px;
-            margin: 1rem auto;
-            padding: 1.5rem;
-            background: rgba(0,0,0,0.6);
-            border-radius: 16px;
-            border: 2px solid #ff6600;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 2rem;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .release-card:hover { transform: translateY(-4px); border-color: #ffcc00; }
-        .release-artwork { flex: 0 0 150px; }
-        .release-artwork img { width: 100%; height: auto; border-radius: 12px; border: 1px solid #ff6600; }
-        .release-info { flex: 1; }
-        .release-title { font-size: 1.6rem; font-weight: bold; color: #ffcc88; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive; }
-        .release-meta { color: #ffaa66; margin: 0.3rem 0; font-size: 0.9rem; }
-        .release-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6600, #ff8c00);
-            color: #000;
-            padding: 0.6rem 2rem;
-            margin-top: 0.8rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            transition: transform 0.2s;
-        }
-        .release-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
-        .release-icons {
-            display: flex;
-            gap: 0.8rem;
-            margin-top: 0.8rem;
-            flex-wrap: wrap;
-        }
-        .release-icons a {
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-        .release-icons a:hover { transform: scale(1.1); }
-        .release-icons svg {
-            width: 30px;
-            height: 30px;
-            fill: #ffaa66;
-            transition: fill 0.2s;
-        }
-        .release-icons a:hover svg { fill: #ffcc00; }
-        @media (max-width: 600px) {
-            .release-card { flex-direction: column; text-align: center; gap: 1rem; padding: 1rem; }
-            .release-artwork { flex: 0 0 100%; max-width: 200px; }
-            .release-artwork img { width: 100%; }
-            .release-icons { justify-content: center; }
-        }
-        
-        /* SONGS GRID */
-        .songs-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 1rem auto;
-            padding: 0 1rem;
-        }
-        .song-card {
-            background: rgba(0,0,0,0.6);
-            border-radius: 16px;
-            border: 1px solid #ff6600;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .song-card:hover { transform: translateY(-3px); border-color: #ffcc00; }
-        .song-artwork { flex: 0 0 80px; }
-        .song-artwork img { width: 100%; height: 80px; object-fit: cover; border-radius: 10px; border: 1px solid #ff6600; }
-        .song-info { flex: 1; }
-        .song-title { font-size: 1.2rem; font-weight: bold; color: #ffcc88; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        .song-icons {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-            margin-top: 0.3rem;
-        }
-        .song-icons a {
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-        .song-icons a:hover { transform: scale(1.1); }
-        .song-icons svg {
-            width: 22px;
-            height: 22px;
-            fill: #ffaa66;
-            transition: fill 0.2s;
-        }
-        .song-icons a:hover svg { fill: #ffcc00; }
-        @media (max-width: 550px) {
-            .song-card { flex-direction: column; text-align: center; padding: 1rem; }
-            .song-artwork { flex: 0 0 100%; max-width: 120px; }
-            .song-artwork img { width: 100%; height: 120px; }
-            .song-icons { justify-content: center; }
         }
         
         .video-grid {
@@ -382,22 +360,48 @@
 
     <div class="hero"></div>
 
-    <!-- ===== TOP STREAMING ICONS WITH REAL LOGOS ===== -->
+    <!-- YOUR LATEST RELEASE SECTION: "TIME" WITH LYNIKIFY -->
+    <div class="latest-release">
+        <div class="release-cover">
+            <img src="https://iili.io/C9aXwuI.jpg" alt="Time - Wreal X" onerror="this.src='https://via.placeholder.com/300x300/1a0505/ff6600?text=TIME'">
+        </div>
+        <div class="release-info">
+            <span class="tag">🔥 OUT NOW</span>
+            <h2>Time</h2>
+            <div class="artist">Wreal X · 2026</div>
+            <div class="release-buttons">
+                <a href="https://lynkify.in/album/time/10434854" target="_blank" class="stream-btn lynkify">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg> CHOOSE SERVICE
+                </a>
+                <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="stream-btn spotify">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M16.5 10.5c-2.5-1.5-5.5-1.5-8 0M14.5 13.5c-1.8-1-4-1-5.8 0M12.5 16.5c-1.2-0.6-2.5-0.6-3.5 0" stroke="currentColor" stroke-width="1.8" fill="none"/></svg> Spotify
+                </a>
+                <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="stream-btn apple">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9 17V7l8 2.5V14"/><circle cx="7" cy="17" r="2"/><circle cx="15" cy="14" r="2"/></svg> Apple Music
+                </a>
+                <a href="https://tidal.com/artist/79457798/u" target="_blank" class="stream-btn tidal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4 L4 20 L8 20 L8 10 L12 10 L12 18 L16 18 L16 8 L20 8 L20 16 L24 16 L24 4"/></svg> TIDAL
+                </a>
+                <a href="https://audiomack.com/wrealx" target="_blank" class="stream-btn audiomack">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M8 16V8L16 8V16"/><path d="M8 12H16"/></svg> Audiomack
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STREAMING + BEACONS + SOUNDCLOUD ICONS -->
     <div class="streaming-section">
-        <!-- TIDAL -->
         <a href="https://tidal.com/artist/79457798/u" target="_blank" class="streaming-circle" aria-label="TIDAL">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4 L4 20 L8 20 L8 10 L12 10 L12 18 L16 18 L16 8 L20 8 L20 16 L24 16 L24 4"/>
             </svg>
         </a>
-        <!-- SPOTIFY -->
         <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="streaming-circle" aria-label="Spotify">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M16.5 10.5c-2.5-1.5-5.5-1.5-8 0M14.5 13.5c-1.8-1-4-1-5.8 0M12.5 16.5c-1.2-0.6-2.5-0.6-3.5 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
             </svg>
         </a>
-        <!-- APPLE MUSIC -->
         <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="streaming-circle" aria-label="Apple Music">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/><path d="M9 17V7l8 2.5V14" stroke="currentColor"/>
@@ -405,22 +409,5 @@
                 <circle cx="15" cy="14" r="2" fill="currentColor" stroke="none"/>
             </svg>
         </a>
-        <!-- AUDIOMACK -->
         <a href="https://audiomack.com/wrealx" target="_blank" class="streaming-circle" aria-label="Audiomack">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="4"/>
-                <path d="M8 16L8 8L16 8L16 16" stroke="currentColor"/>
-                <path d="M8 12L16 12" stroke="currentColor"/>
-            </svg>
-        </a>
-        <!-- SOUNDCLOUD -->
-        <a href="https://soundcloud.com/wrealx" target="_blank" class="streaming-circle" aria-label="SoundCloud">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M7 16V11M10 16V9M13 16V7M16 16V10M19 16V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M5 16V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M21 16V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-        </a>
-        <!-- BEACONS -->
-        <a href="https://beacons.ai/wreal
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-
