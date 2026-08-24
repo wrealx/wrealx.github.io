@@ -89,17 +89,31 @@
             padding: 1.8rem;
             border: 1px solid #1A1A1A;
             transition: all 0.4s;
+            text-align: center;
         }
         .merch-item:hover {
             border-color: #FFD700;
             box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
             transform: translateY(-6px);
         }
+        .merch-item .merch-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 1rem;
+            border: 1px solid #1A1A1A;
+            transition: all 0.3s;
+        }
+        .merch-item .merch-image:hover {
+            border-color: #FFD700;
+            transform: scale(1.02);
+        }
         .merch-item h3 {
             font-size: 1.3rem;
             color: #FFD700;
             margin-bottom: 0.3rem;
-            text-align: center;
             font-family: 'Creepster', cursive;
             letter-spacing: 0.05em;
         }
@@ -118,12 +132,28 @@
             font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
         }
-        .merch-item .payhip-embed {
-            width: 100%;
-            min-height: 420px;
-            border-radius: 12px;
+        .merch-item .buy-btn {
+            display: inline-block;
+            padding: 0.8rem 3rem;
+            background: #FF6B00;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
             border: none;
-            background: #0A0A0A;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            box-shadow: 0 0 40px rgba(255, 107, 0, 0.15);
+        }
+        .merch-item .buy-btn:hover {
+            background: #FFD700;
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
         }
         .soundplate-link {
             text-align: center;
@@ -186,18 +216,20 @@
 <p class="page-sub">— wear the movement —</p>
 
 <div class="merch-grid">
+    <!-- X PURFER VEST -->
     <div class="merch-item">
-        <h3>X PURFER VESTS</h3>
+        <div class="merch-image" style="background-image: url('https://iili.io/CDCdmBt.png');"></div>
+        <h3>X PURFER VEST</h3>
         <span class="tag">Limited Edition</span>
-        <div class="payhip-embed" data-key="wP6EI"></div>
-        <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+        <a href="https://payhip.com/b/wP6EI" target="_blank" class="buy-btn">Buy Now</a>
     </div>
 
+    <!-- X ON HOODIE -->
     <div class="merch-item">
+        <div class="merch-image" style="background-image: url('https://iili.io/CDCA0KJ.png');"></div>
         <h3>X ON HOODIE</h3>
         <span class="tag">Pre-Order</span>
-        <div class="payhip-embed" data-key="eyvrw"></div>
-        <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+        <a href="https://payhip.com/b/eyvrw" target="_blank" class="buy-btn">Buy Now</a>
     </div>
 </div>
 
