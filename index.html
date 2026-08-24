@@ -6,7 +6,7 @@
     <title>Wreal X · Official Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Uncial+Antiqua&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,7 +23,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: #141414;
+            background: #0A0A0A;
             border-top: 2px solid #FF2060;
             padding: 1.2rem 5%;
             display: flex;
@@ -34,12 +34,14 @@
             z-index: 9999;
             backdrop-filter: blur(10px);
             transition: transform 0.5s ease;
+            box-shadow: 0 -10px 60px rgba(255, 32, 96, 0.1);
         }
         .cookie-banner.hidden { transform: translateY(100%); }
         .cookie-banner p {
             font-size: 0.9rem;
             color: #BBB;
             max-width: 600px;
+            font-family: 'JetBrains Mono', monospace;
         }
         .cookie-banner p a {
             color: #00F0FF;
@@ -53,23 +55,24 @@
             padding: 0.5rem 1.8rem;
             border: none;
             border-radius: 30px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
+            font-size: 0.85rem;
         }
         .cookie-accept {
-            background: #00F0FF;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
             color: #0A0A0A;
         }
         .cookie-accept:hover {
-            background: #FF2060;
             transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 32, 96, 0.3);
         }
         .cookie-reject {
             background: transparent;
             color: #888;
-            border: 1px solid #444 !important;
+            border: 1px solid #333 !important;
         }
         .cookie-reject:hover {
             border-color: #FF2060 !important;
@@ -87,7 +90,7 @@
             z-index: 10;
         }
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
             background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00, #FF2060);
             background-size: 300% 300%;
@@ -96,6 +99,7 @@
             animation: gradientMove 6s ease infinite;
             text-decoration: none;
             letter-spacing: -0.02em;
+            font-family: 'Uncial Antiqua', cursive;
         }
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
@@ -109,16 +113,19 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #E0E0E0;
+            color: #AAA;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s;
             position: relative;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
         }
         .nav-links a:hover {
             color: #00F0FF;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
         }
         .nav-links a::after {
             content: '';
@@ -155,12 +162,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(10, 10, 10, 0.6);
+            background: rgba(10, 10, 10, 0.7);
             z-index: 1;
         }
         .hero * { position: relative; z-index: 2; }
         .hero h1 {
-            font-size: clamp(3.5rem, 15vw, 7rem);
+            font-size: clamp(4rem, 15vw, 8rem);
             font-weight: 800;
             line-height: 1.1;
             background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00, #FF2060);
@@ -168,15 +175,19 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: gradientMove 6s ease infinite;
-            text-shadow: 0 0 60px rgba(255, 32, 96, 0.2);
+            text-shadow: 0 0 80px rgba(255, 32, 96, 0.2);
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
         }
         .hero .subhead {
             font-size: 1.6rem;
             color: #00F0FF;
             margin-top: 0.5rem;
             font-weight: 400;
-            letter-spacing: 0.2em;
-            text-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+            letter-spacing: 0.3em;
+            text-shadow: 0 0 40px rgba(0, 240, 255, 0.15);
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
         }
         .hero .tagline {
             font-size: 1.1rem;
@@ -184,34 +195,16 @@
             margin-top: 1rem;
             max-width: 500px;
             opacity: 0.9;
-        }
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            margin-top: 2.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .hero-stats .stat {
-            text-align: center;
-        }
-        .hero-stats .stat .number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #CCFF00;
-        }
-        .hero-stats .stat .label {
-            font-size: 0.8rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.05em;
         }
         .cta-btn {
             margin-top: 2.5rem;
             padding: 1rem 3.5rem;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'JetBrains Mono', monospace;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             background: linear-gradient(135deg, #FF2060, #00F0FF);
             border: none;
             color: #0A0A0A;
@@ -220,11 +213,13 @@
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 0 40px rgba(255, 32, 96, 0.3);
+            box-shadow: 0 0 60px rgba(255, 32, 96, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
         .cta-btn:hover {
             transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 0 60px rgba(0, 240, 255, 0.4);
+            box-shadow: 0 0 80px rgba(0, 240, 255, 0.3);
         }
         /* SOCIAL BAR */
         .social-bar {
@@ -232,13 +227,13 @@
             justify-content: center;
             gap: 2rem;
             padding: 1.5rem 5%;
-            background: #0F0F0F;
+            background: #0A0A0A;
             border-top: 1px solid #1A1A1A;
             border-bottom: 1px solid #1A1A1A;
             flex-wrap: wrap;
         }
         .social-bar a {
-            color: #666;
+            color: #555;
             font-size: 1.5rem;
             text-decoration: none;
             transition: all 0.3s;
@@ -249,11 +244,110 @@
         .social-bar a:hover {
             color: #00F0FF;
             transform: translateY(-3px);
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
         }
-        .social-bar a .follower-count {
-            font-size: 0.7rem;
+        .social-bar a .label {
+            font-size: 0.65rem;
             color: #444;
-            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        /* MERCH SECTION ON HOME */
+        .home-merch {
+            padding: 4rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .home-merch h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #CCFF00, #00F0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
+        }
+        .home-merch .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .home-merch .merch-item {
+            background: #0F0F0F;
+            border-radius: 20px;
+            padding: 1.8rem;
+            border: 1px solid #1A1A1A;
+            transition: all 0.4s;
+        }
+        .home-merch .merch-item:hover {
+            border-color: #CCFF00;
+            box-shadow: 0 0 40px rgba(204, 255, 0, 0.06);
+            transform: translateY(-6px);
+        }
+        .home-merch .merch-item h3 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            text-align: center;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .home-merch .merch-item .tag {
+            display: inline-block;
+            background: #FF2060;
+            color: #0A0A0A;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 0 auto 1rem;
+            display: table;
+            letter-spacing: 0.1em;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+        }
+        .home-merch .merch-item .payhip-embed {
+            width: 100%;
+            min-height: 380px;
+            border-radius: 12px;
+            border: none;
+            background: #0A0A0A;
+        }
+        /* EMAIL SIGNUP - BOTTOM */
+        .email-signup-section {
+            padding: 3rem 5%;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .email-signup-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #00F0FF, #CCFF00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
+        }
+        .email-signup-section p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .email-signup-section #email-form-container {
+            background: #0F0F0F;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid #1A1A1A;
         }
         footer {
             text-align: center;
@@ -261,6 +355,8 @@
             color: #333;
             font-size: 0.8rem;
             border-top: 1px solid #1A1A1A;
+            margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
         }
         footer a {
             color: #00F0FF;
@@ -269,14 +365,15 @@
         @media (max-width: 768px) {
             nav { flex-direction: column; }
             .nav-links { gap: 1rem; justify-content: center; }
-            .hero-stats { gap: 1.5rem; }
-            .hero-stats .stat .number { font-size: 1.5rem; }
             .social-bar { gap: 1.2rem; }
             .social-bar a { font-size: 1.2rem; }
-        }
-        @media (max-width: 480px) {
+            .home-merch .merch-grid { grid-template-columns: 1fr; }
             .cookie-banner { flex-direction: column; text-align: center; }
             .cookie-buttons { width: 100%; justify-content: center; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: clamp(3rem, 12vw, 4.5rem); }
+            .hero .subhead { font-size: 1rem; letter-spacing: 0.15em; }
         }
     </style>
 </head>
@@ -306,58 +403,52 @@
 <!-- HERO -->
 <section class="hero">
     <h1>WREAL X</h1>
-    <p class="subhead">ARTIST · PRODUCER · VISIONARY</p>
+    <p class="subhead">Artist · Producer · Visionary</p>
     <p class="tagline">Dark aesthetics meet color explosions — welcome to my world.</p>
-    <div class="hero-stats">
-        <div class="stat">
-            <div class="number" id="spotifyCount">12.4K</div>
-            <div class="label">Spotify Listeners</div>
-        </div>
-        <div class="stat">
-            <div class="number" id="igCount">8.7K</div>
-            <div class="label">Instagram Followers</div>
-        </div>
-        <div class="stat">
-            <div class="number" id="scCount">3.2K</div>
-            <div class="label">SoundCloud Followers</div>
-        </div>
-    </div>
-    <a href="music.html" class="cta-btn">▶ LISTEN NOW</a>
+    <a href="music.html" class="cta-btn">▶ Listen Now</a>
 </section>
 
 <!-- SOCIAL BAR -->
 <div class="social-bar">
-    <a href="https://instagram.com/wreal.x" target="_blank">
-        <i class="fab fa-instagram"></i> <span class="follower-count" id="igFollowerCount">8.7K</span>
-    </a>
-    <a href="https://twitter.com/Wreal_X" target="_blank">
-        <i class="fab fa-twitter"></i> <span class="follower-count" id="twFollowerCount">1.2K</span>
-    </a>
-    <a href="https://tiktok.com/wreal_x" target="_blank">
-        <i class="fab fa-tiktok"></i> <span class="follower-count" id="ttFollowerCount">5.4K</span>
-    </a>
-    <a href="https://facebook.com/wrealxcursed" target="_blank">
-        <i class="fab fa-facebook"></i> <span class="follower-count" id="fbFollowerCount">3.1K</span>
-    </a>
-    <a href="https://youtube.com/@wrealx" target="_blank">
-        <i class="fab fa-youtube"></i> <span class="follower-count" id="ytFollowerCount">2.8K</span>
-    </a>
-    <a href="https://soundcloud.com/wrealx" target="_blank">
-        <i class="fab fa-soundcloud"></i> <span class="follower-count" id="scFollowerCount">3.2K</span>
-    </a>
-    <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank">
-        <i class="fab fa-spotify"></i> <span class="follower-count" id="spFollowerCount">12.4K</span>
-    </a>
-    <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank">
-        <i class="fab fa-apple"></i>
-    </a>
-    <a href="https://tidal.com/artist/79457798/u" target="_blank">
-        <i class="fab fa-tidal"></i>
-    </a>
-    <a href="https://audiomack.com/@wrealx" target="_blank">
-        <i class="fas fa-headphones"></i>
-    </a>
+    <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i> <span class="label">Instagram</span></a>
+    <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i> <span class="label">Twitter</span></a>
+    <a href="https://tiktok.com/wreal_x" target="_blank"><i class="fab fa-tiktok"></i> <span class="label">TikTok</span></a>
+    <a href="https://facebook.com/wrealxcursed" target="_blank"><i class="fab fa-facebook"></i> <span class="label">Facebook</span></a>
+    <a href="https://youtube.com/@wrealx" target="_blank"><i class="fab fa-youtube"></i> <span class="label">YouTube</span></a>
+    <a href="https://soundcloud.com/wrealx" target="_blank"><i class="fab fa-soundcloud"></i> <span class="label">SoundCloud</span></a>
+    <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank"><i class="fab fa-spotify"></i> <span class="label">Spotify</span></a>
+    <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank"><i class="fab fa-apple"></i> <span class="label">Apple</span></a>
+    <a href="https://tidal.com/artist/79457798/u" target="_blank"><i class="fab fa-tidal"></i> <span class="label">Tidal</span></a>
+    <a href="https://audiomack.com/@wrealx" target="_blank"><i class="fas fa-headphones"></i> <span class="label">Audiomack</span></a>
 </div>
+
+<!-- MERCH SECTION ON HOME -->
+<section class="home-merch">
+    <h2>✦ MERCH</h2>
+    <div class="merch-grid">
+        <div class="merch-item">
+            <h3>X PURFER VESTS</h3>
+            <span class="tag">Limited Edition</span>
+            <div class="payhip-embed" data-key="wP6EI"></div>
+            <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+        </div>
+        <div class="merch-item">
+            <h3>X ON HOODIE</h3>
+            <span class="tag">Pre-Order</span>
+            <div class="payhip-embed" data-key="eyvrw"></div>
+            <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+        </div>
+    </div>
+</section>
+
+<!-- EMAIL SIGNUP - BOTTOM -->
+<section class="email-signup-section">
+    <h2>✦ STAY CONNECTED</h2>
+    <p>Join the movement. Get first access to music, merch drops, and exclusive content.</p>
+    <div id="email-form-container">
+        <div id="31c0e709-a54d-43f1-918f-67317d82f9b4"></div>
+    </div>
+</section>
 
 <footer>
     © 2026 WREAL X · Built with <span style="color:#FF2060;">♥</span> · <a href="#" onclick="showCookieAgain()">Cookie Settings</a>
@@ -376,8 +467,7 @@
     })();
 </script>
 
-<!-- BEACONS EMAIL FORM (pops on scroll) -->
-<div id="31c0e709-a54d-43f1-918f-67317d82f9b4"></div>
+<!-- BEACONS EMAIL FORM -->
 <script>
     (function () {
         function loadBeaconsEmailFormEmbed() {
@@ -409,11 +499,10 @@
     function showCookieAgain() {
         document.getElementById('cookieBanner').classList.remove('hidden');
     }
-    // Check if already accepted
     if (localStorage.getItem('cookiesAccepted')) {
         document.getElementById('cookieBanner').classList.add('hidden');
     }
 </script>
 
 </body>
-   </html>
+    </html>
