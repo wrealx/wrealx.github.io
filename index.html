@@ -1,411 +1,598 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>WREAL X</title>
-    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-    <!-- Beacons Email Form Embed Script -->
-    <script>
-        (function () {
-            function loadBeaconsEmailFormEmbed() {
-                var s = document.createElement("script");
-                var t = Math.floor(new Date().getTime() / 120000);
-                s.type = "module";
-                s.async = 1;
-                s.src = `https://beacons.ai/embeds/emailForm.js?v=${t}&b=wrealx&f=31c0e709-a54d-43f1-918f-67317d82f9b4`;
-                (document.head || document.body || document.documentElement).appendChild(s);
-            }
-            if (document.readyState === "loading") {
-                document.addEventListener("DOMContentLoaded", loadBeaconsEmailFormEmbed, { once: true });
-                return;
-            }
-            loadBeaconsEmailFormEmbed();
-        })();
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wreal X · The African Juice WRLD</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* ---------- RESET & BASE ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', 'Nanum Pen Script', monospace;
-            background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
-            color: #fff2e6;
-            line-height: 1.5;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0b0b0f;
+            color: #f0f0f0;
+            line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* ---------- SMOOTH SCROLL & ANIMATIONS ---------- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---------- BACKGROUND (your image) ---------- */
+        .hero-bg {
+            background: url('https://iili.io/CtDt512.jpg') center center / cover no-repeat fixed;
             min-height: 100vh;
-        }
-        .header {
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #ff6600;
+            position: relative;
         }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            letter-spacing: 3px;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
-            background: linear-gradient(45deg, #ff4500, #ff8c00);
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(2px);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        /* ---------- HERO ---------- */
+        .hero-title {
+            font-size: clamp(2.8rem, 10vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ff6b6b, #c850c0, #ffd93d);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-decoration: none;
+            line-height: 1.1;
         }
-        .menu-btn { background: none; border: none; cursor: pointer; padding: 10px; z-index: 1001; }
-        .menu-btn span { display: block; width: 28px; height: 3px; background: #ff6600; margin: 6px 0; border-radius: 3px; }
-        
-        .side-nav {
-            position: fixed; top: 0; left: -300px; width: 280px; height: 100%; background: rgba(30,10,10,0.98);
-            backdrop-filter: blur(10px); z-index: 1002; transition: left 0.3s ease; padding-top: 80px;
-            box-shadow: 2px 0 20px rgba(255,68,0,0.3); border-right: 2px solid #ff4500;
+
+        .hero-sub {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #ffd93d;
+            margin-top: 0.25rem;
+            font-weight: 300;
         }
-        .side-nav.open { left: 0; }
-        .side-nav a {
-            display: flex; align-items: center; gap: 15px; padding: 1rem 1.5rem; color: #ff8c66;
-            text-decoration: none; font-size: 1.2rem; font-weight: bold; border-bottom: 1px solid #ff4500;
-            transition: background 0.3s; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #ccc;
+            max-width: 600px;
+            margin: 1.5rem 0 2rem;
+            border-left: 4px solid #ff6b6b;
+            padding-left: 1.5rem;
         }
-        .side-nav a:hover { background: #ff4500; color: #000; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1001; display: none; }
-        .overlay.active { display: block; }
-        
-        .hero {
-            width: 100%;
-            background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
-            aspect-ratio: 16 / 9;
-            border-bottom: 3px solid #ff4500;
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
-        
-        .streaming-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
-        .streaming-circle {
-            display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;
-            background: rgba(0,0,0,0.6); border-radius: 50%; transition: all 0.2s; text-decoration: none;
-            border: 1px solid #ff6600; padding: 12px;
-        }
-        .streaming-circle:hover { transform: scale(1.1); background: #ff4500; border-color: #ffcc00; }
-        .streaming-circle svg { width: 32px; height: 32px; fill: #ffaa66; transition: fill 0.2s; }
-        .streaming-circle:hover svg { fill: #000; }
-        
-        .play-now-container { text-align: center; padding: 0.5rem 0 0rem; }
-        .play-now-btn {
+
+        .btn {
             display: inline-block;
-            background: linear-gradient(45deg, #ff4500, #cc3300);
-            color: white;
-            padding: 0.7rem 2rem;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 8px;
+            padding: 0.8rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
             text-decoration: none;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            transition: all 0.2s;
-            border: 1px solid #ff8c00;
-        }
-        .play-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
-        
-        .choose-service { text-align: center; margin: 0.5rem 0 0rem; }
-        .choose-service-btn {
-            display: inline-block;
-            background: rgba(0,0,0,0.7);
-            color: #ffaa66;
-            padding: 0.4rem 1.5rem;
-            border: 1px solid #ff6600;
-            border-radius: 30px;
+            transition: all 0.3s ease;
+            background: #ff6b6b;
+            color: #fff;
+            border: none;
             cursor: pointer;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            font-size: 0.85rem;
-            transition: 0.2s;
-            text-decoration: none;
         }
-        .choose-service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
-        
-        .book-now-container { text-align: center; margin: 0.8rem 0 1.2rem; }
-        .book-now-btn {
-            background: linear-gradient(45deg, #8b0000, #660000); color: #ffcc88;
-            padding: 0.5rem 1.8rem; font-size: 0.9rem; font-weight: bold; border-radius: 40px;
-            text-decoration: none; display: inline-block; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            border: 1px solid #ff8844;
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ff6b6b;
+            color: #ff6b6b;
         }
-        .book-now-btn:hover { background: linear-gradient(45deg, #a00000, #770000); color: #ffddaa; }
-        
-        .section-title {
-            text-align: center; font-size: 1.8rem; margin: 1.5rem 0 1rem;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
-            background: linear-gradient(45deg, #ff6600, #ffcc00);
+
+        .btn-outline:hover {
+            background: #ff6b6b;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.35);
+        }
+
+        /* ---------- STATS (Milestones) ---------- */
+        .stats-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem 1rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd93d, #ff6b6b);
             -webkit-background-clip: text;
-            background-clip: text; color: transparent;
+            background-clip: text;
+            color: transparent;
         }
-        
+
+        .stat-label {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+        }
+
+        /* ---------- SECTION HEADERS ---------- */
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* ---------- MUSIC GRID ---------- */
+        .music-grid {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .music-card {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(4px);
+        }
+
+        .music-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 48px rgba(255, 107, 107, 0.12);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+
+        .music-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .music-card-body {
+            padding: 1.5rem;
+        }
+
+        .music-card-body h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .music-card-body .artist {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin: 0.25rem 0 1rem;
+        }
+
+        .music-card-body .btn {
+            padding: 0.5rem 1.5rem;
+            font-size: 0.85rem;
+            background: #ff6b6b;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .music-card-body .btn:hover {
+            background: #e05555;
+            transform: scale(1.05);
+        }
+
+        /* ---------- VIDEO SECTION ---------- */
+        .video-section {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 1rem auto;
-            padding: 0 1rem;
-        }
-        .video-card { background: rgba(0,0,0,0.6); border-radius: 8px; overflow: hidden; border: 1px solid #ff6600; }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        @media (max-width: 600px) { .video-grid { grid-template-columns: 1fr; gap: 1rem; } }
-        
-        .merch-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 1rem 2rem;
         }
-        .card {
-            background: rgba(0,0,0,0.7);
-            border-radius: 16px;
-            text-align: center;
-            padding-bottom: 1.5rem;
-            border: 1px solid #ff6600;
-            transition: transform 0.2s, border-color 0.2s;
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-        .card:hover { transform: translateY(-5px); border-color: #ffcc00; }
-        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 16px 16px 0 0; border-bottom: 1px solid #ff6600; }
-        .card h3 { font-size: 1.3rem; margin: 1rem 0 0.3rem; color: #ffcc88; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        .price { font-size: 1.2rem; font-weight: bold; color: #ffcc00; margin: 0.3rem 0; }
-        .buy-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6600, #ff8c00);
-            color: #000;
+
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.1);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
             border: none;
-            padding: 0.6rem 2rem;
-            margin: 0.8rem 0;
-            cursor: pointer;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            transition: transform 0.2s;
         }
-        .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
-        @media (max-width: 700px) { .merch-grid { grid-template-columns: 1fr; gap: 1.5rem; } .card img { height: 200px; } }
-        
-        .beacons-signup-section {
-            background: rgba(0,0,0,0.6);
+
+        .video-card-body {
+            padding: 1.2rem 1.5rem 1.5rem;
+        }
+
+        .video-card-body h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .video-card-body p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* ---------- NEWSLETTER ---------- */
+        .newsletter {
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
             text-align: center;
-            padding: 2rem;
-            margin: 2rem 1rem;
-            border-top: 2px solid #ff6600;
-            border-bottom: 2px solid #ff6600;
-            border-radius: 10px;
         }
-        .beacons-signup-section h2 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
-            color: #ffaa66;
+
+        .newsletter form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1.5rem;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 { max-width: 500px; margin: 0 auto; }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 input {
-            background: #1a0505 !important;
-            border: 2px solid #ff6600 !important;
-            border-radius: 8px !important;
-            color: white !important;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
-            padding: 12px !important;
+
+        .newsletter input {
+            flex: 1 1 220px;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid #333;
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 button {
-            background: linear-gradient(45deg, #ff6600, #ff8c00) !important;
-            color: #000 !important;
-            border: none !important;
-            border-radius: 8px !important;
-            font-weight: bold !important;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
-            padding: 12px 24px !important;
-            cursor: pointer !important;
+
+        .newsletter input:focus {
+            border-color: #ff6b6b;
         }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 button:hover { background: linear-gradient(45deg, #ff7700, #ffaa00) !important; }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 .beacons-email-form-container { background: transparent !important; }
-        
-        .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 1rem; text-align: center; }
-        .contact-card, .about-card { background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 10px; border: 1px solid #ff6600; }
-        .contact-card h3, .about-card h3 { color: #ffaa66; margin-bottom: 0.8rem; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive; }
-        .bottom-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; padding: 0.5rem 1rem; text-decoration: none; display: inline-block; border-radius: 8px; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        
-        .footer { text-align: center; padding: 1rem; border-top: 1px solid #ff6600; font-size: 0.7rem; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
+
+        .newsletter .btn {
+            flex: 0 0 auto;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 3rem 2rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-inner h4 {
+            color: #ffd93d;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-inner a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin: 0.3rem 0;
+            transition: color 0.3s;
+        }
+
+        .footer-inner a:hover {
+            color: #ff6b6b;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .music-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .music-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* ---------- STREAMING PLATFORM ICONS (text) ---------- */
+        .platform-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .platform-links a {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            color: #ccc;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .platform-links a:hover {
+            background: #ff6b6b;
+            color: #fff;
+            border-color: #ff6b6b;
+            transform: scale(1.05);
+        }
     </style>
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function() { var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true; s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
-        s1.charset = 'UTF-8'; s1.setAttribute('crossorigin','*'); s0.parentNode.insertBefore(s1, s0); })();
-    </script>
 </head>
 <body>
-    <div class="header">
-        <a href="index.html" class="logo">WREAL X</a>
-        <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
-    </div>
-    
-    <div class="side-nav" id="sideNav">
-        <a href="merch.html">🛍️ SHOP NOW</a>
-        <a href="fanclub.html">💬 JOIN THE FAN CLUB</a>
-        <a href="contact.html">📧 CONTACT</a>
-        <a href="about.html">📖 ABOUT</a>
-    </div>
-    <div class="overlay" id="overlay"></div>
 
-    <div class="hero"></div>
-
-    <!-- STREAMING + BEACONS + SOUNDCLOUD ICONS -->
-    <div class="streaming-section">
-        <a href="https://tidal.com/artist/79457798/u" target="_blank" class="streaming-circle" aria-label="TIDAL">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4 L4 20 L8 20 L8 10 L12 10 L12 18 L16 18 L16 8 L20 8 L20 16 L24 16 L24 4"/>
-            </svg>
-        </a>
-        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="streaming-circle" aria-label="Spotify">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M16.5 10.5c-2.5-1.5-5.5-1.5-8 0M14.5 13.5c-1.8-1-4-1-5.8 0M12.5 16.5c-1.2-0.6-2.5-0.6-3.5 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            </svg>
-        </a>
-        <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" class="streaming-circle" aria-label="Apple Music">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/><path d="M9 17V7l8 2.5V14" stroke="currentColor"/>
-                <circle cx="7" cy="17" r="2" fill="currentColor" stroke="none"/>
-                <circle cx="15" cy="14" r="2" fill="currentColor" stroke="none"/>
-            </svg>
-        </a>
-        <a href="https://audiomack.com/wrealx" target="_blank" class="streaming-circle" aria-label="Audiomack">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="4"/>
-                <path d="M8 16L8 8L16 8L16 16" stroke="currentColor"/>
-                <path d="M8 12L16 12" stroke="currentColor"/>
-            </svg>
-        </a>
-        <a href="https://soundcloud.com/wrealx" target="_blank" class="streaming-circle" aria-label="SoundCloud">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M7 16V11M10 16V9M13 16V7M16 16V10M19 16V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M5 16V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M21 16V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-        </a>
-        <a href="https://beacons.ai/wrealx" target="_blank" class="streaming-circle" aria-label="Beacons">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 2L12 7M12 22L12 17M2 12L7 12M22 12L17 12M4.5 4.5L8 8M19.5 19.5L16 16M19.5 4.5L16 8M4.5 19.5L8 16"/>
-            </svg>
-        </a>
-    </div>
-
-    <div class="play-now-container">
-        <a href="https://soundcloud.com/wrealx" target="_blank" class="play-now-btn">▶ PLAY NOW</a>
-    </div>
-    
-    <div class="choose-service">
-        <a href="https://lynkify.in/album/time/10434854" target="_blank" class="choose-service-btn">CHOOSE SERVICE</a>
-    </div>
-    
-    <div class="book-now-container">
-        <a href="https://wa.me/211920146370?text=I want to book Wreal X for an event" class="book-now-btn">📅 BOOK WREAL X NOW</a>
-    </div>
-    
-    <h2 class="section-title">LATEST VIDEOS</h2>
-    <div class="video-grid">
-        <div class="video-card">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/T59z8NQ3OMA" frameborder="0" allowfullscreen></iframe>
+    <!-- ========== HERO ========== -->
+    <section class="hero-bg">
+        <div class="hero-content fade-up">
+            <div class="hero-sub">✧ The African Juice WRLD ✧</div>
+            <h1 class="hero-title">Wreal X</h1>
+            <p class="hero-tagline">
+                Singer · Emo Rapper · Songwriter from Yei, South Sudan.<br />
+                Emo trap · Afrobeats · Blues · Romance · Life realities.
+            </p>
+            <div class="btn-group">
+                <a href="#music" class="btn">🎵 Listen Now</a>
+                <a href="#videos" class="btn btn-outline">▶ Watch Videos</a>
             </div>
-            <div class="video-title">Wreal X ft Bu Man - Monalisa (Lyrics Video)</div>
         </div>
-        <div class="video-card">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/swCF5DMFquE" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="stats-section fade-up" id="stats">
+        <div class="stat-item">
+            <div class="stat-number">1K+</div>
+            <div class="stat-label">YouTube streams (Hurry Up)</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">🎵</div>
+            <div class="stat-label">Songs released on all platforms</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">🌍</div>
+            <div class="stat-label">From Yei to the world</div>
+        </div>
+    </section>
+
+    <!-- ========== MUSIC ========== -->
+    <h2 class="section-title fade-up" id="music">🎶 Latest Music</h2>
+    <p class="section-sub fade-up">Stream the hits defining East Africa's new sound.</p>
+
+    <div class="music-grid">
+        <!-- Track 1 -->
+        <div class="music-card fade-up">
+            <img src="https://iili.io/CtDt512.jpg" alt="Hurry Up cover" loading="lazy">
+            <div class="music-card-body">
+                <h3>Hurry Up</h3>
+                <div class="artist">Wreal X</div>
+                <p style="color:#aaa; font-size:0.85rem; margin-bottom:1rem;">2026 · Emo Trap</p>
+                <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="btn">Stream Now</a>
             </div>
-            <div class="video-title">Wreal X - Hurry Up (Official Lyrics Video)</div>
+        </div>
+        <!-- Track 2 (placeholder – add your real tracks) -->
+        <div class="music-card fade-up">
+            <img src="https://iili.io/CtDt512.jpg" alt="Track 2" loading="lazy">
+            <div class="music-card-body">
+                <h3>Coming Soon</h3>
+                <div class="artist">Wreal X</div>
+                <p style="color:#aaa; font-size:0.85rem; margin-bottom:1rem;">2026 · Afrobeats</p>
+                <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="btn">Pre-save</a>
+            </div>
+        </div>
+        <!-- Track 3 (placeholder) -->
+        <div class="music-card fade-up">
+            <img src="https://iili.io/CtDt512.jpg" alt="Track 3" loading="lazy">
+            <div class="music-card-body">
+                <h3>Another Hit</h3>
+                <div class="artist">Wreal X</div>
+                <p style="color:#aaa; font-size:0.85rem; margin-bottom:1rem;">2026 · Emo Rap</p>
+                <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" class="btn">Stream Now</a>
+            </div>
         </div>
     </div>
-    
-    <h2 class="section-title">MERCH</h2>
-    <div class="merch-grid">
-        <div class="card">
-            <img src="https://iili.io/C6lJNwP.png" alt="X PURFER VEST">
-            <h3>X PURFER VEST</h3>
-            <div class="price">💰 $25.00</div>
-            <a href="https://payhip.com/b/wP6EI" target="_blank" class="buy-btn">BUY NOW</a>
+
+    <!-- ========== VIDEOS ========== -->
+    <h2 class="section-title fade-up" id="videos">▶ Latest Videos</h2>
+    <p class="section-sub fade-up">Fresh from the official YouTube channel.</p>
+
+    <div class="video-section">
+        <div class="video-grid">
+            <div class="video-card fade-up">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen loading="lazy"></iframe>
+                <div class="video-card-body">
+                    <h4>Hurry Up (Official Video)</h4>
+                    <p>Wreal X · 2026</p>
+                </div>
+            </div>
+            <div class="video-card fade-up">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen loading="lazy"></iframe>
+                <div class="video-card-body">
+                    <h4>Coming Soon</h4>
+                    <p>Wreal X · 2026</p>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <img src="https://iili.io/C6lHE2R.png" alt="X MASKS">
-            <h3>X MASKS</h3>
-            <div class="price">💰 $5.00</div>
-            <a href="https://payhip.com/b/WDlu9" target="_blank" class="buy-btn">BUY NOW</a>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C6l3Kaj.png" alt="X ON HOODIE">
-            <h3>X ON HOODIE</h3>
-            <div class="price">💰 $30.00</div>
-            <a href="https://payhip.com/b/eyvrw" target="_blank" class="buy-btn">BUY NOW</a>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C6l2BLX.png" alt="X'ED TIGHTS">
-            <h3>X'ED TIGHTS</h3>
-            <div class="price">💰 $16.00</div>
-            <a href="https://payhip.com/b/sLl4I" target="_blank" class="buy-btn">BUY NOW</a>
+        <div style="text-align:center; margin-top:2rem;">
+            <a href="https://youtube.com/@wrealx" target="_blank" class="btn btn-outline">See all videos →</a>
         </div>
     </div>
-    
-    <div class="beacons-signup-section">
-        <h2>SIGN UP FOR UPDATES</h2>
-        <div id="31c0e709-a54d-43f1-918f-67317d82f9b4"></div>
+
+    <!-- ========== NEWSLETTER ========== -->
+    <div class="newsletter fade-up">
+        <h3 style="font-size:1.8rem; font-weight:600;">📬 Stay updated</h3>
+        <p style="color:#aaa;">Get releases, videos, and show announcements.</p>
+        <form action="#" method="post">
+            <input type="email" placeholder="you@email.com" required />
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+        <p style="color:#666; font-size:0.8rem; margin-top:1rem;">
+            No spam. Unsubscribe anytime.
+        </p>
     </div>
-    
-    <div class="contact-about">
-        <div class="contact-card"><h3>CONTACT</h3><a href="contact.html" class="bottom-btn">Contact Us</a></div>
-        <div class="about-card"><h3>ABOUT US</h3><a href="about.html" class="bottom-btn">About Us</a></div>
-    </div>
-    
-    <div class="footer"><p>© 2026 WREAL X | All Rights Reserved</p></div>
-    
-    <!-- FIXED JAVASCRIPT FOR HAMBURGER MENU -->
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <h4>WREAL X</h4>
+                <p style="color:#888; font-size:0.9rem;">
+                    Singer · Emo Rapper · Songwriter<br />
+                    Yei, South Sudan → The World
+                </p>
+                <div class="platform-links">
+                    <a href="https://twitter.com/Wreal_X" target="_blank">Twitter/X</a>
+                    <a href="https://instagram.com/wreal.x" target="_blank">Instagram</a>
+                    <a href="https://facebook.com/wrealxcursed" target="_blank">Facebook</a>
+                    <a href="https://youtube.com/@wrealx" target="_blank">YouTube</a>
+                    <a href="https://soundcloud.com/wrealx" target="_blank">SoundCloud</a>
+                    <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank">Spotify</a>
+                    <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank">Apple Music</a>
+                    <a href="https://www.deezer.com/artist/390511031" target="_blank">Deezer</a>
+                </div>
+            </div>
+            <div>
+                <h4>Music</h4>
+                <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank">Spotify</a>
+                <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank">Apple Music</a>
+                <a href="https://soundcloud.com/wrealx" target="_blank">SoundCloud</a>
+                <a href="https://www.deezer.com/artist/390511031" target="_blank">Deezer</a>
+            </div>
+            <div>
+                <h4>Watch</h4>
+                <a href="https://youtube.com/@wrealx" target="_blank">YouTube</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="https://twitter.com/Wreal_X" target="_blank">Twitter/X</a>
+                <a href="https://instagram.com/wreal.x" target="_blank">Instagram</a>
+                <a href="https://facebook.com/wrealxcursed" target="_blank">Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Wreal X · The African Juice WRLD. All rights reserved.</p>
+            <p style="margin-top:0.3rem;">Made with ❤️ by the Wreal X team · South Sudanese sound to the world 🌍</p>
+        </div>
+    </footer>
+
+    <!-- ========== SCROLL ANIMATION ========== -->
     <script>
-        var menuBtn = document.getElementById('menuBtn');
-        var sideNav = document.getElementById('sideNav');
-        var overlay = document.getElementById('overlay');
+        const fadeEls = document.querySelectorAll('.fade-up');
 
-        function openMenu() {
-            sideNav.classList.add('open');
-            overlay.classList.add('active');
-        }
-
-        function closeMenu() {
-            sideNav.classList.remove('open');
-            overlay.classList.remove('active');
-        }
-
-        menuBtn.addEventListener('click', function() {
-            if (sideNav.classList.contains('open')) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
-
-        overlay.addEventListener('click', function() {
-            closeMenu();
-        });
-
-        var menuLinks = document.querySelectorAll('.side-nav a');
-        for (var i = 0; i < menuLinks.length; i++) {
-            menuLinks[i].addEventListener('click', function() {
-                closeMenu();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
-        }
+        }, { threshold: 0.15 });
+
+        fadeEls.forEach(el => observer.observe(el));
     </script>
+
 </body>
-                </html>
+                    </html>
