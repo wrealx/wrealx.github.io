@@ -1,909 +1,930 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta charset="UTF-8">
+  <meta name="theme-color" content="#050505">
+  <meta
+    name="description"
+    content="Wreal X — official website. Music, videos, merch, bookings and updates."
+  >
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <title>WREAL X — Official Website</title>
 
-    <meta
-        name="description"
-        content="Official website of Wreal X — music, videos, releases, merch and socials."
-    >
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta
-        name="theme-color"
-        content="#050505"
-    >
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-    <title>Wreal X — Official</title>
-
-
-    <!-- =================================================
-         ICONS
-    ================================================== -->
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
-
-    <!-- =================================================
-         STYLESHEET
-    ================================================== -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+  <!-- ================================
+       BACKGROUND
+  ================================= -->
 
-<!-- =====================================================
-     BACKGROUND
-====================================================== -->
-
-<div class="site-background"></div>
-
-<div class="background-overlay"></div>
+  <div class="site-bg"></div>
+  <div class="grain"></div>
 
 
-<!-- =====================================================
-     NAVIGATION
-====================================================== -->
+  <!-- ================================
+       HEADER
+  ================================= -->
 
-<header class="site-header">
+  <header class="topbar">
 
-    <a
-        href="#home"
-        class="logo"
-        aria-label="Wreal X home"
-    >
-        WREAL <span>X</span>
+    <a href="index.html" class="brand">
+      WREAL <b>X</b>
     </a>
 
-
     <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Open navigation"
-        aria-expanded="false"
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Open navigation"
+      aria-expanded="false"
     >
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
+  </header>
 
-    <nav
-        class="site-nav"
-        id="siteNav"
+
+  <!-- ================================
+       NAVIGATION MENU
+  ================================= -->
+
+  <div
+    class="menu-panel"
+    id="menuPanel"
+    aria-hidden="true"
+  >
+
+    <button
+      class="menu-close"
+      id="menuClose"
+      aria-label="Close navigation"
     >
+      ×
+    </button>
 
-        <a href="#home">Home</a>
+    <nav class="main-navigation">
 
-        <a href="#music">Music</a>
+      <a href="contact.html#booking">
+        BOOK WREAL X
+      </a>
 
-        <a href="#videos">Videos</a>
+      <a href="about.html">
+        ABOUT
+      </a>
 
-        <a href="#merch">Merch</a>
+      <a href="music.html">
+        MUSIC
+      </a>
 
-        <a href="#socials">Socials</a>
-
-        <a href="#contact">Contact</a>
+      <a href="contact.html">
+        CONTACT
+      </a>
 
     </nav>
 
-</header>
+
+    <div class="menu-socials">
+
+      <a
+        href="https://instagram.com/wreal.x"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram"
+      >
+        <img
+          src="https://cdn.simpleicons.org/instagram/ffffff"
+          alt="Instagram"
+        >
+      </a>
+
+      <a
+        href="https://twitter.com/Wreal_X"
+        target="_blank"
+        rel="noopener"
+        aria-label="X"
+      >
+        <img
+          src="https://cdn.simpleicons.org/x/ffffff"
+          alt="X"
+        >
+      </a>
+
+      <a
+        href="https://tiktok.com/wreal_x"
+        target="_blank"
+        rel="noopener"
+        aria-label="TikTok"
+      >
+        <img
+          src="https://cdn.simpleicons.org/tiktok/ffffff"
+          alt="TikTok"
+        >
+      </a>
+
+      <a
+        href="https://youtube.com/@wrealx"
+        target="_blank"
+        rel="noopener"
+        aria-label="YouTube"
+      >
+        <img
+          src="https://cdn.simpleicons.org/youtube/ffffff"
+          alt="YouTube"
+        >
+      </a>
+
+      <a
+        href="https://soundcloud.com/wrealx"
+        target="_blank"
+        rel="noopener"
+        aria-label="SoundCloud"
+      >
+        <img
+          src="https://cdn.simpleicons.org/soundcloud/ffffff"
+          alt="SoundCloud"
+        >
+      </a>
+
+    </div>
+
+  </div>
 
 
 
-<!-- =====================================================
-     HERO
-====================================================== -->
+  <!-- ================================
+       MAIN CONTENT
+  ================================= -->
 
-<main>
+  <main>
 
 
-<section
-    class="hero"
-    id="home"
->
+    <!-- ================================
+         HERO
+    ================================= -->
 
-    <div class="hero-content">
+    <section class="hero" id="top">
 
-        <p class="eyebrow">
-            OFFICIAL WEBSITE
-        </p>
+      <div class="hero-copy">
 
+        <div class="eyebrow">
+          OFFICIAL ARTIST WEBSITE
+        </div>
 
         <h1>
-            WREAL
-            <span>X</span>
+          WREAL <em>X</em>
         </h1>
 
-
-        <p class="hero-description">
-            Music. Vision. No boundaries.
+        <p>
+          MUSIC. VISION.
+          <strong>NO BOUNDARIES.</strong>
         </p>
 
 
-        <div class="hero-buttons">
+        <div class="hero-actions">
 
-            <a
-                href="#music"
-                class="button button-primary"
-            >
-                <i class="fa-solid fa-play"></i>
-                Listen Now
-            </a>
+          <a
+            class="btn red"
+            href="music.html"
+          >
+            STREAM NOW
+          </a>
 
-
-            <a
-                href="#videos"
-                class="button button-outline"
-            >
-                Watch Videos
-            </a>
+          <a
+            class="btn ghost"
+            href="#videos"
+          >
+            WATCH LATEST
+          </a>
 
         </div>
 
 
         <div class="hero-socials">
 
-            <a
-                href="https://instagram.com/wreal.x"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
+          <a
+            href="https://instagram.com/wreal.x"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
+            <img
+              src="https://cdn.simpleicons.org/instagram/ffffff"
+              alt="Instagram"
             >
-                <i class="fa-brands fa-instagram"></i>
-            </a>
+          </a>
 
-
-            <a
-                href="https://twitter.com/Wreal_X"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X"
+          <a
+            href="https://twitter.com/Wreal_X"
+            target="_blank"
+            rel="noopener"
+            aria-label="X"
+          >
+            <img
+              src="https://cdn.simpleicons.org/x/ffffff"
+              alt="X"
             >
-                <i class="fa-brands fa-x-twitter"></i>
-            </a>
+          </a>
 
-
-            <a
-                href="https://tiktok.com/wreal_x"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok"
+          <a
+            href="https://tiktok.com/wreal_x"
+            target="_blank"
+            rel="noopener"
+            aria-label="TikTok"
+          >
+            <img
+              src="https://cdn.simpleicons.org/tiktok/ffffff"
+              alt="TikTok"
             >
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
+          </a>
 
-
-            <a
-                href="https://youtube.com/@wrealx"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
+          <a
+            href="https://youtube.com/@wrealx"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+          >
+            <img
+              src="https://cdn.simpleicons.org/youtube/ffffff"
+              alt="YouTube"
             >
-                <i class="fa-brands fa-youtube"></i>
-            </a>
+          </a>
+
+          <a
+            href="https://soundcloud.com/wrealx"
+            target="_blank"
+            rel="noopener"
+            aria-label="SoundCloud"
+          >
+            <img
+              src="https://cdn.simpleicons.org/soundcloud/ffffff"
+              alt="SoundCloud"
+            >
+          </a>
 
         </div>
 
-    </div>
+      </div>
 
-</section>
-
-
-
-<!-- =====================================================
-     LIVE STATS
-====================================================== -->
-
-<section class="stats-section">
-
-    <div class="stats-grid">
-
-
-        <div class="stat-card">
-
-            <i class="fa-brands fa-youtube"></i>
-
-            <div>
-
-                <span class="stat-value">
-                    —
-                </span>
-
-                <span class="stat-label">
-                    YouTube Subscribers
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <i class="fa-solid fa-eye"></i>
-
-            <div>
-
-                <span class="stat-value">
-                    —
-                </span>
-
-                <span class="stat-label">
-                    Total Views
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <i class="fa-solid fa-music"></i>
-
-            <div>
-
-                <span class="stat-value">
-                    3
-                </span>
-
-                <span class="stat-label">
-                    Featured Releases
-                </span>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
+    </section>
 
 
 
-<!-- =====================================================
-     MUSIC
-====================================================== -->
+    <!-- ================================
+         YOUTUBE VIDEOS
+         VIDEOS COME BEFORE MUSIC
+    ================================= -->
 
-<section
-    class="section music-section"
-    id="music"
->
+    <section
+      id="videos"
+      class="section videos-section"
+    >
 
-    <div class="section-heading">
+      <div class="section-heading">
 
-        <p class="section-kicker">
-            LISTEN
-        </p>
+        <span>
+          01 / WATCH
+        </span>
 
         <h2>
-            WREAL X
-            <span>MUSIC</span>
+          LATEST <i>VIDEOS</i>
+        </h2>
+
+        <a
+          href="https://youtube.com/@wrealx"
+          target="_blank"
+          rel="noopener"
+        >
+          VIEW ON YOUTUBE ↗
+        </a>
+
+      </div>
+
+
+      <!-- VIDEO 1 -->
+
+      <article class="video-card">
+
+        <div class="video-frame-wrap">
+
+          <iframe
+            src="https://www.youtube.com/embed/swCF5DMFquE?rel=0&modestbranding=1"
+            title="Wreal X - Hurry Up"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen
+          ></iframe>
+
+        </div>
+
+        <div class="video-caption">
+
+          <div>
+            <b>Hurry Up</b>
+            <span>Wreal X</span>
+          </div>
+
+          <small data-video-views="swCF5DMFquE">
+            Views —
+          </small>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- VIDEO 2 -->
+
+      <article class="video-card">
+
+        <div class="video-frame-wrap">
+
+          <iframe
+            src="https://www.youtube.com/embed/T59z8NQ3OMA?rel=0&modestbranding=1"
+            title="Wreal X - Monalisa"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen
+          ></iframe>
+
+        </div>
+
+        <div class="video-caption">
+
+          <div>
+            <b>Monalisa</b>
+            <span>Wreal X ft. Bu Man</span>
+          </div>
+
+          <small data-video-views="T59z8NQ3OMA">
+            Views —
+          </small>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- VIDEO 3 -->
+
+      <article class="video-card">
+
+        <div class="video-frame-wrap">
+
+          <iframe
+            src="https://www.youtube.com/embed/2H3Ei5EPkFc?rel=0&modestbranding=1"
+            title="Wreal X - Photo"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen
+          ></iframe>
+
+        </div>
+
+        <div class="video-caption">
+
+          <div>
+            <b>Photo</b>
+            <span>Wreal X ft. Khida</span>
+          </div>
+
+          <small data-video-views="2H3Ei5EPkFc">
+            Views —
+          </small>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+
+    <!-- ================================
+         SOUND CLOUD MUSIC
+         EACH SONG HAS ITS OWN STREAM LINKS
+    ================================= -->
+
+    <section
+      id="music"
+      class="section music-section"
+    >
+
+      <div class="section-heading">
+
+        <span>
+          02 / LISTEN
+        </span>
+
+        <h2>
+          LATEST <i>MUSIC</i>
+        </h2>
+
+        <a href="music.html">
+          VIEW ALL MUSIC ↗
+        </a>
+
+      </div>
+
+
+      <!-- =================================
+           MONALISA
+      ================================== -->
+
+      <article class="song-card">
+
+        <img
+          src="https://iili.io/CD3DF8g.png"
+          alt="Monalisa cover art"
+          class="song-cover"
+        >
+
+        <div class="song-main">
+
+          <div class="song-title">
+
+            <b>
+              MONALISA
+            </b>
+
+            <span>
+              Wreal X
+            </span>
+
+          </div>
+
+
+          <iframe
+            class="sc-player"
+            scrolling="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/monalisa&color=%23ff294d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+          ></iframe>
+
+
+          <!-- STREAMING SERVICES UNDER THIS SONG -->
+
+          <div class="stream-block song-streams">
+
+            <label>
+              STREAM MONALISA ON
+            </label>
+
+            <div class="stream-icons">
+
+              <a
+                href="https://music.apple.com/us/artist/wreal-x/1896590252"
+                target="_blank"
+                rel="noopener"
+                title="Apple Music"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/applemusic/ffffff"
+                  alt="Apple Music"
+                >
+              </a>
+
+              <a
+                href="https://tidal.com/artist/79457798/u"
+                target="_blank"
+                rel="noopener"
+                title="TIDAL"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/tidal/ffffff"
+                  alt="TIDAL"
+                >
+              </a>
+
+              <a
+                href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl"
+                target="_blank"
+                rel="noopener"
+                title="Spotify"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/spotify/ffffff"
+                  alt="Spotify"
+                >
+              </a>
+
+              <a
+                href="https://youtube.com/@wrealx"
+                target="_blank"
+                rel="noopener"
+                title="YouTube"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/youtube/ffffff"
+                  alt="YouTube"
+                >
+              </a>
+
+              <a
+                href="https://soundcloud.com/wrealx/monalisa"
+                target="_blank"
+                rel="noopener"
+                title="SoundCloud"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/soundcloud/ffffff"
+                  alt="SoundCloud"
+                >
+              </a>
+
+              <a
+                href="https://audiomack.com/@wrealx"
+                target="_blank"
+                rel="noopener"
+                title="Audiomack"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/audiomack/ffffff"
+                  alt="Audiomack"
+                >
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =================================
+           PHOTO
+      ================================== -->
+
+      <article class="song-card">
+
+        <img
+          src="https://iili.io/CD3s8XI.png"
+          alt="Photo cover art"
+          class="song-cover"
+        >
+
+        <div class="song-main">
+
+          <div class="song-title">
+
+            <b>
+              PHOTO
+            </b>
+
+            <span>
+              Wreal X
+            </span>
+
+          </div>
+
+
+          <iframe
+            class="sc-player"
+            scrolling="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/photo&color=%23ff294d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+          ></iframe>
+
+
+          <div class="stream-block song-streams">
+
+            <label>
+              STREAM PHOTO ON
+            </label>
+
+            <div class="stream-icons">
+
+              <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" rel="noopener" title="Apple Music">
+                <img src="https://cdn.simpleicons.org/applemusic/ffffff" alt="Apple Music">
+              </a>
+
+              <a href="https://tidal.com/artist/79457798/u" target="_blank" rel="noopener" title="TIDAL">
+                <img src="https://cdn.simpleicons.org/tidal/ffffff" alt="TIDAL">
+              </a>
+
+              <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" rel="noopener" title="Spotify">
+                <img src="https://cdn.simpleicons.org/spotify/ffffff" alt="Spotify">
+              </a>
+
+              <a href="https://youtube.com/@wrealx" target="_blank" rel="noopener" title="YouTube">
+                <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube">
+              </a>
+
+              <a href="https://soundcloud.com/wrealx/photo" target="_blank" rel="noopener" title="SoundCloud">
+                <img src="https://cdn.simpleicons.org/soundcloud/ffffff" alt="SoundCloud">
+              </a>
+
+              <a href="https://audiomack.com/@wrealx" target="_blank" rel="noopener" title="Audiomack">
+                <img src="https://cdn.simpleicons.org/audiomack/ffffff" alt="Audiomack">
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =================================
+           HURRY UP
+      ================================== -->
+
+      <article class="song-card">
+
+        <img
+          src="https://iili.io/CD36r0b.png"
+          alt="Hurry Up cover art"
+          class="song-cover"
+        >
+
+        <div class="song-main">
+
+          <div class="song-title">
+
+            <b>
+              HURRY UP
+            </b>
+
+            <span>
+              Wreal X
+            </span>
+
+          </div>
+
+
+          <iframe
+            class="sc-player"
+            scrolling="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/hurry-up&color=%23ff294d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+          ></iframe>
+
+
+          <div class="stream-block song-streams">
+
+            <label>
+              STREAM HURRY UP ON
+            </label>
+
+            <div class="stream-icons">
+
+              <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" rel="noopener" title="Apple Music">
+                <img src="https://cdn.simpleicons.org/applemusic/ffffff" alt="Apple Music">
+              </a>
+
+              <a href="https://tidal.com/artist/79457798/u" target="_blank" rel="noopener" title="TIDAL">
+                <img src="https://cdn.simpleicons.org/tidal/ffffff" alt="TIDAL">
+              </a>
+
+              <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" rel="noopener" title="Spotify">
+                <img src="https://cdn.simpleicons.org/spotify/ffffff" alt="Spotify">
+              </a>
+
+              <a href="https://youtube.com/@wrealx" target="_blank" rel="noopener" title="YouTube">
+                <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube">
+              </a>
+
+              <a href="https://soundcloud.com/wrealx/hurry-up" target="_blank" rel="noopener" title="SoundCloud">
+                <img src="https://cdn.simpleicons.org/soundcloud/ffffff" alt="SoundCloud">
+              </a>
+
+              <a href="https://audiomack.com/@wrealx" target="_blank" rel="noopener" title="Audiomack">
+                <img src="https://cdn.simpleicons.org/audiomack/ffffff" alt="Audiomack">
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+
+    <!-- ================================
+         MERCH — LAST
+    ================================= -->
+
+    <section
+      id="merch"
+      class="section merch-section"
+    >
+
+      <div class="section-heading">
+
+        <span>
+          03 / SHOP
+        </span>
+
+        <h2>
+          OFFICIAL <i>MERCH</i>
+        </h2>
+
+      </div>
+
+
+      <div class="merch-grid">
+
+
+        <!-- PURFER VEST -->
+
+        <article class="merch-card">
+
+          <img
+            src="https://iili.io/CDCdmBt.png"
+            alt="X Purfer Vests"
+          >
+
+          <div class="merch-info">
+
+            <span>
+              WRX / 01
+            </span>
+
+            <h3>
+              X PURFER VESTS
+            </h3>
+
+            <strong>
+              $30
+            </strong>
+
+            <a
+              class="btn red"
+              href="https://payhip.com/b/wP6EI"
+              target="_blank"
+              rel="noopener"
+            >
+              BUY NOW ↗
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- X ON HOODIE -->
+
+        <article class="merch-card">
+
+          <img
+            src="https://iili.io/CDCA0KJ.png"
+            alt="X On Hoodie"
+          >
+
+          <div class="merch-info">
+
+            <span>
+              WRX / 02
+            </span>
+
+            <h3>
+              X ON HOODIE
+            </h3>
+
+            <strong>
+              $25
+            </strong>
+
+            <a
+              class="btn red"
+              href="https://payhip.com/b/eyvrw"
+              target="_blank"
+              rel="noopener"
+            >
+              BUY NOW ↗
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         NEWSLETTER
+    ================================= -->
+
+    <section class="newsletter section">
+
+      <div class="newsletter-inner">
+
+        <span>
+          JOIN THE WORLD OF WREAL X
+        </span>
+
+        <h2>
+          DON'T MISS THE NEXT DROP.
         </h2>
 
         <p>
-            Stream the latest releases.
+          Music, videos, releases, merch and announcements.
         </p>
 
+        <button
+          class="btn red"
+          id="signupFallback"
+        >
+          SIGN UP
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ================================
+       FOOTER
+  ================================= -->
+
+  <footer class="footer">
+
+    <div class="footer-brand">
+      WREAL <b>X</b>
     </div>
 
-
-
-    <!-- MONALISA -->
-
-    <article class="track-card">
-
-        <div class="track-art">
-
-            <img
-                src="https://iili.io/CD3DF8g.png"
-                alt="Monalisa by Wreal X"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="track-content">
-
-            <div class="track-heading">
-
-                <span class="track-number">
-                    01
-                </span>
-
-                <div>
-
-                    <h3>
-                        Monalisa
-                    </h3>
-
-                    <p>
-                        Wreal X
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <iframe
-                class="soundcloud-player"
-                title="Monalisa by Wreal X"
-                width="100%"
-                height="166"
-                scrolling="no"
-                frameborder="no"
-                allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/mona-lisa&color=%23ffffff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
-            ></iframe>
-
-
-            <div class="stream-links">
-
-                <span>
-                    STREAM
-                </span>
-
-
-                <a
-                    href="https://music.apple.com/us/artist/wreal-x/1896590252"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Apple Music"
-                >
-                    <i class="fa-brands fa-apple"></i>
-                </a>
-
-
-                <a
-                    href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Spotify"
-                >
-                    <i class="fa-brands fa-spotify"></i>
-                </a>
-
-
-                <a
-                    href="https://tidal.com/artist/79457798/u"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="TIDAL"
-                >
-                    <strong>TIDAL</strong>
-                </a>
-
-
-                <a
-                    href="https://youtube.com/@wrealx"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="YouTube"
-                >
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-
-
-                <a
-                    href="https://soundcloud.com/wrealx/mona-lisa"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="SoundCloud"
-                >
-                    <i class="fa-brands fa-soundcloud"></i>
-                </a>
-
-
-                <a
-                    href="https://audiomack.com/@wrealx"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Audiomack"
-                >
-                    <strong>AM</strong>
-                </a>
-
-            </div>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- PHOTO -->
-
-    <article class="track-card">
-
-        <div class="track-art">
-
-            <img
-                src="https://iili.io/CD3s8XI.png"
-                alt="Photo by Wreal X"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="track-content">
-
-            <div class="track-heading">
-
-                <span class="track-number">
-                    02
-                </span>
-
-                <div>
-
-                    <h3>
-                        Photo
-                    </h3>
-
-                    <p>
-                        Wreal X
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <iframe
-                class="soundcloud-player"
-                title="Photo by Wreal X"
-                width="100%"
-                height="166"
-                scrolling="no"
-                frameborder="no"
-                allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/photo&color=%23ffffff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
-            ></iframe>
-
-
-            <div class="stream-links">
-
-                <span>
-                    STREAM
-                </span>
-
-
-                <a
-                    href="https://music.apple.com/us/artist/wreal-x/1896590252"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Apple Music"
-                >
-                    <i class="fa-brands fa-apple"></i>
-                </a>
-
-
-                <a
-                    href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Spotify"
-                >
-                    <i class="fa-brands fa-spotify"></i>
-                </a>
-
-
-                <a
-                    href="https://tidal.com/artist/79457798/u"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="TIDAL"
-                >
-                    <strong>TIDAL</strong>
-                </a>
-
-
-                <a
-                    href="https://youtube.com/@wrealx"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="YouTube"
-                >
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-
-
-                <a
-                    href="https://soundcloud.com/wrealx/photo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="SoundCloud"
-                >
-                    <i class="fa-brands fa-soundcloud"></i>
-                </a>
-
-
-                <a
-                    href="https://audiomack.com/@wrealx"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Audiomack"
-                >
-                    <strong>AM</strong>
-                </a>
-
-            </div>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- HURRY UP -->
-
-    <article class="track-card">
-
-        <div class="track-art">
-
-            <img
-                src="https://iili.io/CD36r0b.png"
-                alt="Hurry Up by Wreal X"
-                loading="lazy"
-            >
-
-        </div>
-
-
-        <div class="track-content">
-
-            <div class="track-heading">
-
-                <span class="track-number">
-                    03
-                </span>
-
-                <div>
-
-                    <h3>
-                        Hurry Up
-                    </h3>
-
-                    <p>
-                        Wreal X
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <iframe
-                class="soundcloud-player"
-                title="Hurry Up by Wreal X"
-                width="100%"
-                height="166"
-                scrolling="no"
-                frameborder="no"
-                allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/hurry-up&color=%23ffffff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
-            ></iframe>
-
-
-            <div class="stream-links">
-
-                <span>
-                    STREAM
-                </span>
-
-
-                <a
-                    href="https://music.apple.com/us/artist/wreal-x/1896590252"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Apple Music"
-                >
-                    <i class="fa-brands fa-apple"></i>
-                </a>
-
-
-                <a
-                    href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Spotify"
-                >
-                    <i class="fa-brands fa-spotify"></i>
-                </a>
-
-
-                <a
-                    href="https://tidal.com/artist/79457798/u"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="TIDAL"
-                >
-                    <strong>TIDAL</strong>
-                </a>
-
-
-                <a
-                    href="https://youtube.com/@wrealx"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="YouTube"
-                >
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-
-
-                <a
-                    href="https://soundcloud.com/wrealx/hurry-up"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="SoundCloud"
-                >
-                    <i class="fa-brands fa-soundcloud"></i>
-                </a>
-
-
-                <a
-                    href="https://audiomack.com/@wrealx"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Audiomack"
-                >
-                    <strong>AM</strong>
-                </a>
-
-            </div>
-
-        </div>
-
-    </article>
-
-</section>
-
-
-
-<!-- =====================================================
-     VIDEOS
-====================================================== -->
-
-<section
-    class="section videos-section"
-    id="videos"
->
-
-    <div class="section-heading">
-
-        <p class="section-kicker">
-            WATCH
-        </p>
-
-        <h2>
-            LATEST
-            <span>VIDEOS</span>
-        </h2>
+    <p>
+      © 2026 Wreal X. All rights reserved.
+    </p>
+
+    <p>
+      Music. Vision. No Boundaries.
+    </p>
+
+    <div class="footer-links">
+
+      <a href="music.html">
+        Music
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="contact.html#booking">
+        Book Wreal X
+      </a>
 
     </div>
 
 
-    <div class="video-grid">
+    <div class="footer-socials">
 
-
-        <!-- VIDEO 1 -->
-
-        <article class="video-card">
-
-            <div class="video-frame">
-
-                <iframe
-                    src="https://www.youtube.com/embed/swCF5DMFquE"
-                    title="Wreal X — YouTube video"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                ></iframe>
-
-            </div>
-
-            <div class="video-meta">
-
-                <span>
-                    WREAL X
-                </span>
-
-                <a
-                    href="https://youtu.be/swCF5DMFquE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Watch on YouTube
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- VIDEO 2 -->
-
-        <article class="video-card">
-
-            <div class="video-frame">
-
-                <iframe
-                    src="https://www.youtube.com/embed/T59z8NQ3OMA"
-                    title="Wreal X — YouTube video"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                ></iframe>
-
-            </div>
-
-            <div class="video-meta">
-
-                <span>
-                    WREAL X
-                </span>
-
-                <a
-                    href="https://youtu.be/T59z8NQ3OMA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Watch on YouTube
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- VIDEO 3 -->
-
-        <article class="video-card">
-
-            <div class="video-frame">
-
-                <iframe
-                    src="https://www.youtube.com/embed/2H3Ei5EPkFc"
-                    title="Wreal X — YouTube video"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                ></iframe>
-
-            </div>
-
-            <div class="video-meta">
-
-                <span>
-                    WREAL X
-                </span>
-
-                <a
-                    href="https://youtu.be/2H3Ei5EPkFc"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Watch on YouTube
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ALL PLATFORMS
-====================================================== -->
-
-<section class="platform-section">
-
-    <div class="section-heading">
-
-        <p class="section-kicker">
-            EVERYWHERE
-        </p>
-
-        <h2>
-            FIND WREAL X
-        </h2>
-
-    </div>
-
-
-    <div class="platform-grid">
-
-
-        <a
-            href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="platform-card"
-        >
-
-            <i class="fa-brands fa-spotify"></i>
-
-            <span>Spotify</span>
-
-        </a>
-
-
-        <a
-            href="https://music.apple.com/us/artist/wreal-x/1896590252"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="platform-card"
-        >
-
-            <i class="fa-brands fa-apple"></i>
-
-            <span>Apple Music</span>
-
-        </a>
-
-
-        <a
-            href="https://tidal.com/artist/79457798/u"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="platform-card"
-        >
-
-            <strong class="text-icon">
-                TIDAL
-            </strong>
-
-            <span>TIDAL</span>
-
-        </a>
-
-
-        <a
-            href="https://youtube.com/@wrealx"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="platform-card"
-        >
-
-            <i class="fa-brands fa-youtube"></i>
-
-            <span>YouTube</span>
-
-        </a>
-
-
-        <a
-            href="https://soundcloud.com/wrealx"
-            target="_blank"
-            rel="
+      <a href="https://instagram.com/wreal.x" target="_blank" re
