@@ -6,7 +6,7 @@
     <title>Contact · Wreal X</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Uncial+Antiqua&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,12 +25,14 @@
             gap: 1rem;
         }
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
             background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
         }
         .nav-links {
             display: flex;
@@ -39,13 +41,16 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #E0E0E0;
+            color: #AAA;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
-        .nav-links a:hover { color: #00F0FF; }
+        .nav-links a:hover { color: #00F0FF; text-shadow: 0 0 20px rgba(0, 240, 255, 0.2); }
         .page-title {
             text-align: center;
             padding: 2rem 5% 0;
@@ -54,13 +59,17 @@
             background: linear-gradient(135deg, #00F0FF, #CCFF00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
         }
         .page-sub {
             text-align: center;
-            color: #666;
-            font-size: 1rem;
+            color: #555;
+            font-size: 0.9rem;
             letter-spacing: 0.2em;
             margin-top: 0.2rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
         }
         .contact-grid {
             display: grid;
@@ -75,11 +84,16 @@
             font-size: clamp(1.8rem, 3vw, 2.5rem);
             color: #fff;
             margin-bottom: 1rem;
+            font-family: 'Uncial Antiqua', cursive;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .contact-info p {
-            color: #999;
+            color: #777;
             line-height: 1.8;
             margin-bottom: 1.5rem;
+            font-weight: 300;
         }
         .contact-info .contact-item {
             display: flex;
@@ -87,13 +101,14 @@
             gap: 1rem;
             margin-bottom: 1rem;
             padding: 0.8rem 1.2rem;
-            background: #111;
+            background: #0F0F0F;
             border-radius: 12px;
             border: 1px solid #1A1A1A;
             transition: all 0.3s;
         }
         .contact-info .contact-item:hover {
             border-color: #00F0FF;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.05);
         }
         .contact-info .contact-item i {
             font-size: 1.3rem;
@@ -104,6 +119,8 @@
             color: #E0E0E0;
             text-decoration: none;
             transition: color 0.3s;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
         }
         .contact-info .contact-item a:hover {
             color: #00F0FF;
@@ -115,16 +132,37 @@
             flex-wrap: wrap;
         }
         .contact-info .social-links a {
-            color: #555;
+            color: #444;
             font-size: 2rem;
             transition: all 0.3s;
         }
         .contact-info .social-links a:hover {
             color: #00F0FF;
             transform: translateY(-3px);
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.8rem 2rem;
+            background: #25D366;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(37, 211, 102, 0.3);
         }
         .contact-form {
-            background: #111;
+            background: #0F0F0F;
             padding: 2.5rem;
             border-radius: 20px;
             border: 1px solid #1A1A1A;
@@ -133,15 +171,20 @@
             color: #fff;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
+            font-family: 'Uncial Antiqua', cursive;
+            background: linear-gradient(135deg, #00F0FF, #CCFF00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .contact-form label {
             display: block;
-            color: #888;
-            font-size: 0.85rem;
+            color: #666;
+            font-size: 0.75rem;
             font-weight: 600;
             margin-bottom: 0.3rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            font-family: 'JetBrains Mono', monospace;
         }
         .contact-form input,
         .contact-form textarea {
@@ -172,32 +215,41 @@
             border: none;
             border-radius: 50px;
             color: #0A0A0A;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'JetBrains Mono', monospace;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s;
             width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         .contact-form button:hover {
             transform: scale(1.02);
             box-shadow: 0 0 40px rgba(255, 32, 96, 0.3);
         }
-        .whatsapp-btn {
+        .soundplate-link {
+            text-align: center;
+            padding: 1rem 5% 2rem;
+        }
+        .soundplate-link a {
             display: inline-block;
-            margin-top: 0.5rem;
-            padding: 0.8rem 2rem;
-            background: #25D366;
+            padding: 0.8rem 2.5rem;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            text-align: center;
+            font-size: 0.95rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            box-shadow: 0 0 40px rgba(255, 32, 96, 0.2);
         }
-        .whatsapp-btn:hover {
+        .soundplate-link a:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
         }
         footer {
             text-align: center;
@@ -206,6 +258,7 @@
             font-size: 0.8rem;
             border-top: 1px solid #1A1A1A;
             margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
         }
         footer a { color: #00F0FF; text-decoration: none; }
         @media (max-width: 900px) {
@@ -293,11 +346,15 @@
     </div>
 </div>
 
+<div class="soundplate-link">
+    <a href="https://snd.click/xvy9" target="_blank"><i class="fas fa-link"></i> Soundplate · Exclusive Content</a>
+</div>
+
 <footer>
     © 2026 WREAL X · <a href="index.html">wrealx.com</a>
 </footer>
 
-<!-- TAWK.TO WIDGET -->
+<!-- TAWK.TO -->
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function() {
@@ -311,4 +368,4 @@
 </script>
 
 </body>
-                                        </html>
+                </html>
