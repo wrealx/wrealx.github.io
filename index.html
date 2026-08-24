@@ -1,1185 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Wreal X — Official Website</title>
-
-<meta name="description"
-content="Official website of Wreal X — South Sudanese singer, emo rapper and songwriter. Music, videos, merchandise and more.">
-
-<meta name="theme-color" content="#080808">
-
-<!-- Cinematic fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
-<!-- Font Awesome icons -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<style>
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #050505;
-    color: #f4f4f4;
-    font-family: "Inter", sans-serif;
-    overflow-x: hidden;
-}
-
-/* =========================================================
-   CINEMATIC BACKGROUND
-========================================================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.52),
-            rgba(0,0,0,.78) 55%,
-            #050505 100%
-        ),
-        url("https://iili.io/CtDt512.jpg") center top / cover no-repeat;
-
-    z-index: -3;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(255,255,255,.06),
-            transparent 35%
-        ),
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.32),
-            transparent,
-            rgba(0,0,0,.32)
-        );
-
-    z-index: -2;
-    pointer-events: none;
-}
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    height: 76px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 6%;
-
-    background: rgba(5,5,5,.70);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(255,255,255,.08);
-
-    z-index: 1000;
-}
-
-.logo {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 32px;
-    letter-spacing: 3px;
-    color: #fff;
-}
-
-.nav-links {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: rgba(255,255,255,.82);
-    text-decoration: none;
-
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    transition: .3s ease;
-}
-
-.nav-links a:hover {
-    color: #fff;
-    transform: translateY(-1px);
-}
-
-.menu-btn {
-    display: none;
-    border: 1px solid rgba(255,255,255,.2);
-    background: rgba(255,255,255,.05);
-    color: #fff;
-
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-
-    font-size: 18px;
-}
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: flex-end;
-
-    padding:
-        150px 7%
-        110px;
-
-    position: relative;
-}
-
-.hero-content {
-    max-width: 720px;
-}
-
-.eyebrow {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 11px;
-    letter-spacing: 6px;
-    color: rgba(255,255,255,.62);
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: clamp(70px, 13vw, 170px);
-    line-height: .82;
-
-    letter-spacing: 2px;
-
-    color: #fff;
-
-    text-shadow:
-        0 8px 35px rgba(0,0,0,.7);
-}
-
-.hero h1 span {
-    color: rgba(255,255,255,.35);
-}
-
-.hero-description {
-    margin-top: 30px;
-
-    max-width: 560px;
-
-    color: rgba(255,255,255,.72);
-
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 30px;
-}
-
-.hero-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 13px 21px;
-
-    border-radius: 30px;
-
-    text-decoration: none;
-
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-
-    transition: .3s ease;
-}
-
-.hero-btn.primary {
-    background: #fff;
-    color: #050505;
-}
-
-.hero-btn.secondary {
-    border: 1px solid rgba(255,255,255,.28);
-    color: #fff;
-    background: rgba(255,255,255,.04);
-}
-
-.hero-btn:hover {
-    transform: translateY(-3px);
-}
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-.section {
-    width: min(1100px, 90%);
-    margin: 0 auto;
-
-    padding: 110px 0;
-}
-
-.section-label {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 10px;
-    letter-spacing: 5px;
-    color: rgba(255,255,255,.45);
-    margin-bottom: 15px;
-}
-
-.section-title {
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: clamp(48px, 8vw, 88px);
-    line-height: .9;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 45px;
-}
-
-.section-title span {
-    color: rgba(255,255,255,.30);
-}
-
-/* =========================================================
-   VIDEO SECTION
-========================================================= */
-
-.video-list {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-.video-card {
-    background: rgba(10,10,10,.76);
-
-    border: 1px solid rgba(255,255,255,.12);
-
-    border-radius: 24px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.35);
-
-    transition: .3s ease;
-}
-
-.video-card:hover {
-    border-color: rgba(255,255,255,.25);
-    transform: translateY(-3px);
-}
-
-.video-frame {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-}
-
-.video-frame iframe {
-    width: 100%;
-    height: 100%;
-
-    border: 0;
-}
-
-.video-info {
-    padding: 20px 22px 24px;
-}
-
-.video-number {
-    color: rgba(255,255,255,.38);
-
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 10px;
-    letter-spacing: 3px;
-}
-
-.video-title {
-    margin-top: 8px;
-
-    font-family: "Cinzel", serif;
-    font-size: 22px;
-
-    letter-spacing: 1px;
-}
-
-.video-subtitle {
-    margin-top: 6px;
-
-    color: rgba(255,255,255,.52);
-
-    font-size: 12px;
-}
-
-/* =========================================================
-   MUSIC
-========================================================= */
-
-.music-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.song-card {
-    background: rgba(12,12,12,.82);
-
-    border: 1px solid rgba(255,255,255,.11);
-
-    border-radius: 24px;
-
-    padding: 22px;
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.30);
-}
-
-.song-heading {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-
-    margin-bottom: 20px;
-}
-
-.song-cover {
-    width: 80px;
-    height: 80px;
-
-    object-fit: cover;
-
-    border-radius: 14px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,.5);
-}
-
-.song-title {
-    font-family: "Cinzel", serif;
-    font-size: 20px;
-}
-
-.song-artist {
-    margin-top: 5px;
-
-    font-size: 12px;
-
-    color: rgba(255,255,255,.45);
-}
-
-.soundcloud-player {
-    width: 100%;
-    height: 166px;
-
-    border: 0;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-}
-
-/* =========================================================
-   STREAMING LINKS
-========================================================= */
-
-.stream-row {
-    display: flex;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-top: 16px;
-}
-
-.stream-label {
-    width: 100%;
-
-    color: rgba(255,255,255,.35);
-
-    font-size: 9px;
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 3px;
-}
-
-.stream-link {
-    width: 38px;
-    height: 38px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: rgba(255,255,255,.75);
-
-    text-decoration: none;
-
-    background: rgba(255,255,255,.045);
-
-    border: 1px solid rgba(255,255,255,.13);
-
-    font-size: 15px;
-
-    transition: .25s ease;
-}
-
-.stream-link:hover {
-    color: #fff;
-
-    background: rgba(255,255,255,.12);
-
-    transform: translateY(-2px);
-}
-
-/* =========================================================
-   MERCH
-========================================================= */
-
-.merch-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 25px;
-}
-
-.product {
-    background: rgba(12,12,12,.85);
-
-    border: 1px solid rgba(255,255,255,.11);
-
-    border-radius: 24px;
-
-    overflow: hidden;
-
-    padding-bottom: 24px;
-
-    transition: .3s ease;
-}
-
-.product:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255,255,255,.25);
-}
-
-.product-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-.product-content {
-    padding: 22px;
-}
-
-.product-code {
-    font-size: 9px;
-
-    color: rgba(255,255,255,.35);
-
-    letter-spacing: 3px;
-}
-
-.product h3 {
-    font-family: "Cinzel", serif;
-
-    font-size: 19px;
-
-    margin-top: 12px;
-
-    line-height: 1.4;
-}
-
-.product-bottom {
-    margin-top: 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 15px;
-}
-
-.price {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: 17px;
-
-    color: #fff;
-}
-
-.buy-btn {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 11px 17px;
-
-    border-radius: 30px;
-
-    background: #fff;
-
-    color: #050505;
-
-    text-decoration: none;
-
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-
-    transition: .3s ease;
-}
-
-.buy-btn:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 25px rgba(255,255,255,.14);
-}
-
-/* =========================================================
-   FIND WREAL X
-========================================================= */
-
-.platform-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(6, 1fr);
-
-    gap: 12px;
-}
-
-.platform {
-    min-height: 85px;
-
-    border-radius: 18px;
-
-    border: 1px solid rgba(255,255,255,.1);
-
-    background: rgba(10,10,10,.7);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    color: rgba(255,255,255,.7);
-
-    text-decoration: none;
-
-    transition: .3s ease;
-}
-
-.platform i {
-    font-size: 19px;
-}
-
-.platform span {
-    font-size: 8px;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-}
-
-.platform:hover {
-    color: #fff;
-    background: rgba(255,255,255,.09);
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    margin-top: 100px;
-
-    padding: 80px 7% 45px;
-
-    border-top: 1px solid rgba(255,255,255,.08);
-
-    background: rgba(3,3,3,.88);
-
-    text-align: center;
-}
-
-.footer-logo {
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: 45px;
-
-    letter-spacing: 4px;
-}
-
-.footer-tag {
-    margin-top: 10px;
-
-    color: rgba(255,255,255,.38);
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-}
-
-.socials {
-    margin-top: 30px;
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 9px;
-}
-
-.socials a {
-    width: 38px;
-    height: 38px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(255,255,255,.12);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: rgba(255,255,255,.65);
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    transition: .25s ease;
-}
-
-.socials a:hover {
-    color: #fff;
-    background: rgba(255,255,255,.1);
-}
-
-.footer-links {
-    margin-top: 30px;
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 22px;
-}
-
-.footer-links a {
-    color: rgba(255,255,255,.45);
-
-    font-size: 10px;
-
-    letter-spacing: 1px;
-
-    text-decoration: none;
-}
-
-.copyright {
-    margin-top: 35px;
-
-    color: rgba(255,255,255,.25);
-
-    font-size: 10px;
-}
-
-/* =========================================================
-   COOKIE BANNER
-========================================================= */
-
-.cookie-box {
-    position: fixed;
-
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-
-    max-width: 600px;
-
-    margin: auto;
-
-    z-index: 5000;
-
-    padding: 20px;
-
-    border-radius: 18px;
-
-    background: rgba(15,15,15,.96);
-
-    border: 1px solid rgba(255,255,255,.13);
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.5);
-
-    backdrop-filter: blur(15px);
-}
-
-.cookie-box p {
-    font-size: 11px;
-
-    color: rgba(255,255,255,.62);
-
-    line-height: 1.6;
-}
-
-.cookie-buttons {
-    display: flex;
-
-    gap: 9px;
-
-    margin-top: 14px;
-}
-
-.cookie-buttons button {
-    flex: 1;
-
-    padding: 10px;
-
-    border-radius: 20px;
-
-    border: 1px solid rgba(255,255,255,.15);
-
-    background: rgba(255,255,255,.06);
-
-    color: #fff;
-
-    cursor: pointer;
-
-    font-size: 10px;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-}
-
-.cookie-buttons button:first-child {
-    background: #fff;
-    color: #050505;
-}
-
-/* =========================================================
-   MOBILE NAV
-========================================================= */
-
-@media (max-width: 750px) {
-
-    .navbar {
-        height: 64px;
-        padding: 0 5%;
-    }
-
-    .logo {
-        font-size: 27px;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-
-        top: 64px;
-        left: 0;
-        width: 100%;
-
-        padding: 18px 6%;
-
-        background: rgba(5,5,5,.97);
-
-        border-bottom: 1px solid rgba(255,255,255,.08);
-
-        display: none;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 18px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hero {
-        min-height: 95vh;
-
-        padding:
-            130px 7%
-            80px;
-    }
-
-    .hero h1 {
-        font-size: 82px;
-    }
-
-    .section {
-        width: 90%;
-        padding: 75px 0;
-    }
-
-    .section-title {
-        margin-bottom: 30px;
-    }
-
-    .video-list {
-        gap: 22px;
-    }
-
-    .video-card {
-        border-radius: 18px;
-    }
-
-    .video-info {
-        padding: 16px;
-    }
-
-    .song-card {
-        padding: 15px;
-        border-radius: 18px;
-    }
-
-    .song-cover {
-        width: 65px;
-        height: 65px;
-    }
-
-    .soundcloud-player {
-        height: 166px;
-    }
-
-    .merch-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .platform-grid {
-        grid-template-columns:
-            repeat(3, 1fr);
-    }
-
-    .platform {
-        min-height: 75px;
-    }
-
-    .product-bottom {
-        align-items: stretch;
-    }
-
-    .buy-btn {
-        padding: 12px 15px;
-    }
-}
-
-/* =========================================================
-   EXTRA SMALL PHONES
-========================================================= */
-
-@media (max-width: 390px) {
-
-    .hero h1 {
-        font-size: 68px;
-    }
-
-    .stream-link {
-        width: 35px;
-        height: 35px;
-    }
-
-    .platform-grid {
-        gap: 8px;
-    }
-
-    .platform {
-        min-height: 68px;
-    }
-
-    .platform i {
-        font-size: 16px;
-    }
-
-    .platform span {
-        font-size: 7px;
-    }
-}
-
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wreal X · Official Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0A0A0A;
+            color: #E0E0E0;
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* COOKIE BANNER */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #141414;
+            border-top: 2px solid #FF2060;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+            transition: transform 0.5s ease;
+        }
+        .cookie-banner.hidden { transform: translateY(100%); }
+        .cookie-banner p {
+            font-size: 0.9rem;
+            color: #BBB;
+            max-width: 600px;
+        }
+        .cookie-banner p a {
+            color: #00F0FF;
+            text-decoration: none;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        .cookie-buttons button {
+            padding: 0.5rem 1.8rem;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .cookie-accept {
+            background: #00F0FF;
+            color: #0A0A0A;
+        }
+        .cookie-accept:hover {
+            background: #FF2060;
+            transform: scale(1.05);
+        }
+        .cookie-reject {
+            background: transparent;
+            color: #888;
+            border: 1px solid #444 !important;
+        }
+        .cookie-reject:hover {
+            border-color: #FF2060 !important;
+            color: #FF2060;
+        }
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 5%;
+            flex-wrap: wrap;
+            gap: 1rem;
+            position: relative;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00, #FF2060);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 6s ease infinite;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #E0E0E0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            position: relative;
+            letter-spacing: 0.05em;
+        }
+        .nav-links a:hover {
+            color: #00F0FF;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #FF2060, #00F0FF);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        /* HERO */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 5%;
+            background-image: url('https://iili.io/CtDt512.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background-attachment: fixed;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.6);
+            z-index: 1;
+        }
+        .hero * { position: relative; z-index: 2; }
+        .hero h1 {
+            font-size: clamp(3.5rem, 15vw, 7rem);
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00, #FF2060);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 6s ease infinite;
+            text-shadow: 0 0 60px rgba(255, 32, 96, 0.2);
+        }
+        .hero .subhead {
+            font-size: 1.6rem;
+            color: #00F0FF;
+            margin-top: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+        }
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #CCC;
+            margin-top: 1rem;
+            max-width: 500px;
+            opacity: 0.9;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-stats .stat {
+            text-align: center;
+        }
+        .hero-stats .stat .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #CCFF00;
+        }
+        .hero-stats .stat .label {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .cta-btn {
+            margin-top: 2.5rem;
+            padding: 1rem 3.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            border: none;
+            color: #0A0A0A;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 0 40px rgba(255, 32, 96, 0.3);
+        }
+        .cta-btn:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 0 60px rgba(0, 240, 255, 0.4);
+        }
+        /* SOCIAL BAR */
+        .social-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.5rem 5%;
+            background: #0F0F0F;
+            border-top: 1px solid #1A1A1A;
+            border-bottom: 1px solid #1A1A1A;
+            flex-wrap: wrap;
+        }
+        .social-bar a {
+            color: #666;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .social-bar a:hover {
+            color: #00F0FF;
+            transform: translateY(-3px);
+        }
+        .social-bar a .follower-count {
+            font-size: 0.7rem;
+            color: #444;
+            font-weight: 600;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            color: #333;
+            font-size: 0.8rem;
+            border-top: 1px solid #1A1A1A;
+        }
+        footer a {
+            color: #00F0FF;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            .nav-links { gap: 1rem; justify-content: center; }
+            .hero-stats { gap: 1.5rem; }
+            .hero-stats .stat .number { font-size: 1.5rem; }
+            .social-bar { gap: 1.2rem; }
+            .social-bar a { font-size: 1.2rem; }
+        }
+        @media (max-width: 480px) {
+            .cookie-banner { flex-direction: column; text-align: center; }
+            .cookie-buttons { width: 100%; justify-content: center; }
+        }
+    </style>
 </head>
-
-
 <body>
 
-<!-- ======================================================
-     NAVIGATION
-====================================================== -->
-
-<header class="navbar">
-
-    <a href="#home"
-       class="logo"
-       style="text-decoration:none;color:white;">
-       WREAL X
-    </a>
-
-    <button class="menu-btn"
-            id="menuBtn"
-            aria-label="Open menu">
-        <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <nav class="nav-links" id="navLinks">
-
-        <a href="#home">Home</a>
-
-        <a href="#videos">Videos</a>
-
-        <a href="#music">Music</a>
-
-        <a href="#merch">Merch</a>
-
-        <a href="#platforms">Socials</a>
-
-        <a href="mailto:wrealx@proton.me">Contact</a>
-
-    </nav>
-
-</header>
-
-
-<!-- ======================================================
-     HERO
-====================================================== -->
-
-<main id="home">
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="eyebrow">
-            SOUTH SUDAN • EAST AFRICA
-        </div>
-
-        <h1>
-            WREAL<br>
-            <span>X</span>
-        </h1>
-
-        <p class="hero-description">
-            Singer. Emo rapper. Songwriter.
-            A voice from South Sudan blending
-            emo trap, Afrobeats, vulnerability,
-            romance and the realities of life.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#music"
-               class="hero-btn primary">
-                Listen Now
-            </a>
-
-            <a href="#videos"
-               class="hero-btn secondary">
-                Watch Videos
-            </a>
-
-        </div>
-
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" class="cookie-banner">
+    <p>🍪 We use cookies to improve your experience. By using this site, you agree to our <a href="#">Privacy Policy</a>.</p>
+    <div class="cookie-buttons">
+        <button class="cookie-reject" onclick="rejectCookies()">Reject All</button>
+        <button class="cookie-accept" onclick="acceptCookies()">Accept All</button>
     </div>
+</div>
 
+<!-- NAV -->
+<nav>
+    <a href="index.html" class="logo">✦ WREAL X</a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>WREAL X</h1>
+    <p class="subhead">ARTIST · PRODUCER · VISIONARY</p>
+    <p class="tagline">Dark aesthetics meet color explosions — welcome to my world.</p>
+    <div class="hero-stats">
+        <div class="stat">
+            <div class="number" id="spotifyCount">12.4K</div>
+            <div class="label">Spotify Listeners</div>
+        </div>
+        <div class="stat">
+            <div class="number" id="igCount">8.7K</div>
+            <div class="label">Instagram Followers</div>
+        </div>
+        <div class="stat">
+            <div class="number" id="scCount">3.2K</div>
+            <div class="label">SoundCloud Followers</div>
+        </div>
+    </div>
+    <a href="music.html" class="cta-btn">▶ LISTEN NOW</a>
 </section>
 
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+    <a href="https://instagram.com/wreal.x" target="_blank">
+        <i class="fab fa-instagram"></i> <span class="follower-count" id="igFollowerCount">8.7K</span>
+    </a>
+    <a href="https://twitter.com/Wreal_X" target="_blank">
+        <i class="fab fa-twitter"></i> <span class="follower-count" id="twFollowerCount">1.2K</span>
+    </a>
+    <a href="https://tiktok.com/wreal_x" target="_blank">
+        <i class="fab fa-tiktok"></i> <span class="follower-count" id="ttFollowerCount">5.4K</span>
+    </a>
+    <a href="https://facebook.com/wrealxcursed" target="_blank">
+        <i class="fab fa-facebook"></i> <span class="follower-count" id="fbFollowerCount">3.1K</span>
+    </a>
+    <a href="https://youtube.com/@wrealx" target="_blank">
+        <i class="fab fa-youtube"></i> <span class="follower-count" id="ytFollowerCount">2.8K</span>
+    </a>
+    <a href="https://soundcloud.com/wrealx" target="_blank">
+        <i class="fab fa-soundcloud"></i> <span class="follower-count" id="scFollowerCount">3.2K</span>
+    </a>
+    <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank">
+        <i class="fab fa-spotify"></i> <span class="follower-count" id="spFollowerCount">12.4K</span>
+    </a>
+    <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank">
+        <i class="fab fa-apple"></i>
+    </a>
+    <a href="https://tidal.com/artist/79457798/u" target="_blank">
+        <i class="fab fa-tidal"></i>
+    </a>
+    <a href="https://audiomack.com/@wrealx" target="_blank">
+        <i class="fas fa-headphones"></i>
+    </a>
+</div>
 
-<!-- ======================================================
-     VIDEOS
-====================================================== -->
+<footer>
+    © 2026 WREAL X · Built with <span style="color:#FF2060;">♥</span> · <a href="#" onclick="showCookieAgain()">Cookie Settings</a>
+</footer>
 
-<section class="section" id="videos">
+<!-- TAWK.TO WIDGET -->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
 
-    <div class="section-label">
-        01 / WATCH
-    </div>
+<!-- BEACONS EMAIL FORM (pops on scroll) -->
+<div id="31c0e709-a54d-43f1-918f-67317d82f9b4"></div>
+<script>
+    (function () {
+        function loadBeaconsEmailFormEmbed() {
+            var s = document.createElement("script");
+            var t = Math.floor(new Date().getTime() / 120000);
+            s.type = "module";
+            s.async = 1;
+            s.src = `https://beacons.ai/embeds/emailForm.js?v=${t}&b=wrealx&f=31c0e709-a54d-43f1-918f-67317d82f9b4`;
+            (document.head || document.body || document.documentElement).appendChild(s);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", loadBeaconsEmailFormEmbed, { once: true });
+            return;
+        }
+        loadBeaconsEmailFormEmbed();
+    })();
+</script>
 
-    <h2 class="section-title">
-        LATEST <span>VIDEOS</span>
-    </h2>
+<!-- COOKIE SCRIPT -->
+<script>
+    function acceptCookies() {
+        document.getElementById('cookieBanner').classList.add('hidden');
+        localStorage.setItem('cookiesAccepted', 'true');
+    }
+    function rejectCookies() {
+        document.getElementById('cookieBanner').classList.add('hidden');
+        localStorage.setItem('cookiesAccepted', 'false');
+    }
+    function showCookieAgain() {
+        document.getElementById('cookieBanner').classList.remove('hidden');
+    }
+    // Check if already accepted
+    if (localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookieBanner').classList.add('hidden');
+    }
+</script>
 
-    <div class="video-list">
-
-
-        <!-- VIDEO 01 -->
-
-        <article class="video-card">
-
-            <div class="video-frame">
-
-                <iframe
-                    src="https://www.youtube.com/embed/swCF5DMFquE"
-                    title="Wreal X — Latest Video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <div class="video-info">
-
-                <div class="video-number">
-                    VIDEO / 01
-                </div>
-
-                <div class="video-title">
-                    Wreal X
-                </div>
-
-                <div class="video-subtitle">
-                    Official YouTube release
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- VIDEO 02 -->
-
-        <article class="video-card">
-
-            <div class="video-frame">
-
-                <iframe
-                    src="https://www.youtube.com/embed/T59z8NQ3OMA"
-                    title="Wreal X — Latest Video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <div class="video-info">
-
-                <div class="video-number">
-                    VIDEO / 02
-                </div>
-
-                <div class="video-title">
-                    Wreal X
-                </div>
-
-                <div class="video-subtitle">
-                    Official YouTube release
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- VIDEO 03 -->
-
-        <article class="video-card">
-
-            <div class="video-frame">
-
-                <iframe
-                    src="https://www.youtube.com/embed/2H3Ei5EPkFc"
-                    title="Wreal X — Latest Video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <div class="video-info">
-
-                <div class="video-number">
-                    VIDEO / 03
-                </div>
-
-                <div class="video-title">
-                    Wreal X
-                </div>
-
-           
+</body>
+   </html>
