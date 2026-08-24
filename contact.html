@@ -6,7 +6,7 @@
     <title>Contact · Wreal X</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Uncial+Antiqua&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Space+Grotesk:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,14 +25,16 @@
             gap: 1rem;
         }
         .logo {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #FFD700;
             text-decoration: none;
-            font-family: 'Uncial Antiqua', cursive;
+            font-family: 'Creepster', cursive;
             letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+        }
+        .logo:hover {
+            text-shadow: 0 0 60px rgba(255, 215, 0, 0.4);
         }
         .nav-links {
             display: flex;
@@ -41,30 +43,32 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #AAA;
+            color: #FF8C00;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
             font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
-        .nav-links a:hover { color: #00F0FF; text-shadow: 0 0 20px rgba(0, 240, 255, 0.2); }
+        .nav-links a:hover {
+            color: #FFD700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
         .page-title {
             text-align: center;
             padding: 2rem 5% 0;
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 800;
-            background: linear-gradient(135deg, #00F0FF, #CCFF00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Uncial Antiqua', cursive;
+            color: #FFD700;
+            font-family: 'Creepster', cursive;
             letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
         }
         .page-sub {
             text-align: center;
-            color: #555;
+            color: #FF8C00;
             font-size: 0.9rem;
             letter-spacing: 0.2em;
             margin-top: 0.2rem;
@@ -82,15 +86,13 @@
         }
         .contact-info h2 {
             font-size: clamp(1.8rem, 3vw, 2.5rem);
-            color: #fff;
+            color: #FFD700;
             margin-bottom: 1rem;
-            font-family: 'Uncial Antiqua', cursive;
-            background: linear-gradient(135deg, #FF2060, #00F0FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Creepster', cursive;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
         }
         .contact-info p {
-            color: #777;
+            color: #FF8C00;
             line-height: 1.8;
             margin-bottom: 1.5rem;
             font-weight: 300;
@@ -107,12 +109,12 @@
             transition: all 0.3s;
         }
         .contact-info .contact-item:hover {
-            border-color: #00F0FF;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.05);
+            border-color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
         }
         .contact-info .contact-item i {
             font-size: 1.3rem;
-            color: #00F0FF;
+            color: #FFD700;
             width: 30px;
         }
         .contact-info .contact-item a {
@@ -123,7 +125,7 @@
             font-size: 0.9rem;
         }
         .contact-info .contact-item a:hover {
-            color: #00F0FF;
+            color: #FFD700;
         }
         .contact-info .social-links {
             display: flex;
@@ -132,14 +134,14 @@
             flex-wrap: wrap;
         }
         .contact-info .social-links a {
-            color: #444;
+            color: #FF8C00;
             font-size: 2rem;
             transition: all 0.3s;
         }
         .contact-info .social-links a:hover {
-            color: #00F0FF;
+            color: #FFD700;
             transform: translateY(-3px);
-            text-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
         }
         .whatsapp-btn {
             display: inline-block;
@@ -168,17 +170,15 @@
             border: 1px solid #1A1A1A;
         }
         .contact-form h3 {
-            color: #fff;
+            color: #FFD700;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
-            font-family: 'Uncial Antiqua', cursive;
-            background: linear-gradient(135deg, #00F0FF, #CCFF00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Creepster', cursive;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
         }
         .contact-form label {
             display: block;
-            color: #666;
+            color: #FF8C00;
             font-size: 0.75rem;
             font-weight: 600;
             margin-bottom: 0.3rem;
@@ -202,8 +202,8 @@
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
-            border-color: #00F0FF;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.05);
+            border-color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
         }
         .contact-form textarea {
             min-height: 130px;
@@ -211,7 +211,7 @@
         }
         .contact-form button {
             padding: 0.9rem 3rem;
-            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            background: #FF6B00;
             border: none;
             border-radius: 50px;
             color: #0A0A0A;
@@ -225,8 +225,9 @@
             letter-spacing: 0.05em;
         }
         .contact-form button:hover {
+            background: #FFD700;
             transform: scale(1.02);
-            box-shadow: 0 0 40px rgba(255, 32, 96, 0.3);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
         }
         .soundplate-link {
             text-align: center;
@@ -235,7 +236,7 @@
         .soundplate-link a {
             display: inline-block;
             padding: 0.8rem 2.5rem;
-            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            background: #FF6B00;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
@@ -245,22 +246,26 @@
             font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            box-shadow: 0 0 40px rgba(255, 32, 96, 0.2);
+            box-shadow: 0 0 40px rgba(255, 107, 0, 0.2);
         }
         .soundplate-link a:hover {
+            background: #FFD700;
             transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
         }
         footer {
             text-align: center;
             padding: 2rem 5%;
-            color: #333;
+            color: #FF8C00;
             font-size: 0.8rem;
             border-top: 1px solid #1A1A1A;
             margin-top: 2rem;
             font-family: 'JetBrains Mono', monospace;
         }
-        footer a { color: #00F0FF; text-decoration: none; }
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
         @media (max-width: 900px) {
             .contact-grid { grid-template-columns: 1fr; }
             .contact-form { padding: 1.5rem; }
@@ -368,4 +373,4 @@
 </script>
 
 </body>
-                </html>
+    </html>
