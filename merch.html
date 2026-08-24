@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Merch · Wreal X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0A0A0A;
+            color: #E0E0E0;
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 5%;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #E0E0E0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #00F0FF; }
+        .page-title {
+            text-align: center;
+            padding: 2rem 5% 0;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #CCFF00, #00F0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .page-sub {
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            margin-top: 0.2rem;
+        }
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            padding: 3rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .merch-item {
+            background: #111;
+            border-radius: 20px;
+            padding: 1.8rem;
+            border: 1px solid #1A1A1A;
+            transition: all 0.4s;
+        }
+        .merch-item:hover {
+            border-color: #CCFF00;
+            box-shadow: 0 0 40px rgba(204, 255, 0, 0.06);
+            transform: translateY(-6px);
+        }
+        .merch-item .payhip-embed {
+            width: 100%;
+            min-height: 420px;
+            border-radius: 12px;
+            border: none;
+            background: #0A0A0A;
+        }
+        .merch-item h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .merch-item .tag {
+            display: inline-block;
+            background: #FF2060;
+            color: #0A0A0A;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 0 auto 1rem;
+            display: table;
+            letter-spacing: 0.05em;
+        }
+        .soundplate-section {
+            text-align: center;
+            padding: 2rem 5%;
+        }
+        .soundplate-section a {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, #FF2060, #00F0FF);
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            box-shadow: 0 0 40px rgba(255, 32, 96, 0.2);
+        }
+        .soundplate-section a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(0, 240, 255, 0.3);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            color: #333;
+            font-size: 0.8rem;
+            border-top: 1px solid #1A1A1A;
+            margin-top: 2rem;
+        }
+        footer a { color: #00F0FF; text-decoration: none; }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            .nav-links { gap: 1rem; justify-content: center; }
+            .merch-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">✦ WREAL X</a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<h1 class="page-title">MERCH</h1>
+<p class="page-sub">— wear the movement —</p>
+
+<div class="merch-grid">
+    <div class="merch-item">
+        <h3>X PURFER VESTS</h3>
+        <span class="tag">LIMITED EDITION</span>
+        <div class="payhip-embed" data-key="wP6EI"></div>
+        <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+    </div>
+
+    <div class="merch-item">
+        <h3>X ON HOODIE</h3>
+        <span class="tag">PRE-ORDER</span>
+        <div class="payhip-embed" data-key="eyvrw"></div>
+        <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+    </div>
+</div>
+
+<!-- SOUNDPLATE -->
+<div class="soundplate-section">
+    <a href="https://snd.click/xvy9" target="_blank">
+        <i class="fas fa-link"></i> SOUNDPLATE · Exclusive Content
+    </a>
+</div>
+
+<footer>
+    © 2026 WREAL X · <a href="contact.html">Get in touch</a>
+</footer>
+
+</body>
+</html>
