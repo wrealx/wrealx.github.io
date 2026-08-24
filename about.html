@@ -6,7 +6,7 @@
     <title>About · Wreal X</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Uncial+Antiqua&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,12 +25,14 @@
             gap: 1rem;
         }
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
             background: linear-gradient(135deg, #FF2060, #00F0FF, #CCFF00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
         }
         .nav-links {
             display: flex;
@@ -39,13 +41,16 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #E0E0E0;
+            color: #AAA;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
-        .nav-links a:hover { color: #00F0FF; }
+        .nav-links a:hover { color: #00F0FF; text-shadow: 0 0 20px rgba(0, 240, 255, 0.2); }
         .page-title {
             text-align: center;
             padding: 2rem 5% 0;
@@ -54,6 +59,8 @@
             background: linear-gradient(135deg, #FF2060, #00F0FF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
         }
         .about-container {
             display: grid;
@@ -90,17 +97,20 @@
         }
         .about-text h2 {
             font-size: clamp(2.5rem, 4vw, 3.5rem);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
             font-weight: 800;
             background: linear-gradient(135deg, #FF2060, #00F0FF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-family: 'Uncial Antiqua', cursive;
+            letter-spacing: 0.05em;
         }
         .about-text .real-name {
-            color: #666;
-            font-size: 1rem;
+            color: #555;
+            font-size: 0.95rem;
             margin-bottom: 1.5rem;
             letter-spacing: 0.05em;
+            font-family: 'JetBrains Mono', monospace;
         }
         .about-text .real-name span {
             color: #00F0FF;
@@ -111,9 +121,11 @@
             line-height: 1.9;
             color: #CCC;
             margin-bottom: 1.2rem;
+            font-weight: 300;
         }
         .about-text .bio strong {
             color: #FF2060;
+            font-weight: 700;
         }
         .about-text .highlight {
             font-size: 1.6rem;
@@ -123,19 +135,22 @@
             padding-left: 1.2rem;
             margin: 1.8rem 0;
             line-height: 1.3;
+            font-family: 'Uncial Antiqua', cursive;
+            text-shadow: 0 0 40px rgba(204, 255, 0, 0.1);
         }
         .about-text .details {
-            color: #888;
+            color: #777;
             font-size: 0.95rem;
             line-height: 1.8;
             margin-top: 1rem;
+            font-family: 'JetBrains Mono', monospace;
         }
         .about-text .details span {
             color: #00F0FF;
             font-weight: 600;
         }
         .about-text .details .label {
-            color: #666;
+            color: #555;
             font-weight: 400;
         }
         .about-text .social-links {
@@ -145,13 +160,14 @@
             flex-wrap: wrap;
         }
         .about-text .social-links a {
-            color: #555;
+            color: #444;
             font-size: 1.8rem;
             transition: all 0.3s;
         }
         .about-text .social-links a:hover {
             color: #00F0FF;
             transform: translateY(-3px);
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
         }
         .about-text .milestones {
             display: grid;
@@ -170,12 +186,14 @@
             font-size: 1.8rem;
             font-weight: 800;
             color: #CCFF00;
+            font-family: 'Uncial Antiqua', cursive;
         }
         .about-text .milestones .milestone .desc {
-            font-size: 0.7rem;
-            color: #666;
+            font-size: 0.65rem;
+            color: #555;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-family: 'JetBrains Mono', monospace;
         }
         footer {
             text-align: center;
@@ -184,6 +202,7 @@
             font-size: 0.8rem;
             border-top: 1px solid #1A1A1A;
             margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
         }
         footer a { color: #00F0FF; text-decoration: none; }
         @media (max-width: 900px) {
@@ -260,7 +279,7 @@
             lyrical candor, and utterly unlike anything emerging from his region.
         </p>
 
-        <p class="bio" style="color:#999; font-style:italic;">
+        <p class="bio" style="color:#888; font-style:italic;">
             Behind the music lies a young man who has faced familial opposition, institutional disillusionment, 
             and the isolation of pioneering an unrecognized genre in a land rooted in local sounds. He has walked 
             through broken promises from industry figures who deemed his vision too foreign, too perilous.
@@ -273,15 +292,15 @@
             </div>
             <div class="milestone">
                 <div class="num">2020</div>
-                <div class="desc">Father's Passing · Return to Music</div>
+                <div class="desc">Father's Passing</div>
             </div>
             <div class="milestone">
                 <div class="num">1K+</div>
-                <div class="desc">"Hurry Up" YouTube Streams</div>
+                <div class="desc">"Hurry Up" Streams</div>
             </div>
             <div class="milestone">
                 <div class="num">2024</div>
-                <div class="desc">"Gang Gang" · Emo Trap Arrival</div>
+                <div class="desc">"Gang Gang"</div>
             </div>
         </div>
 
@@ -308,7 +327,7 @@
     © 2026 WREAL X · <a href="contact.html">Say hi</a>
 </footer>
 
-<!-- TAWK.TO WIDGET -->
+<!-- TAWK.TO -->
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function() {
@@ -322,4 +341,4 @@
 </script>
 
 </body>
-              </html>
+    </html>
