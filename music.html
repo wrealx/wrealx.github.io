@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Listen to Wreal X — Monalisa, Photo and Hurry Up."
+  >
+
+  <title>Music — Wreal X</title>
+
+
+  <!-- FONT AWESOME -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+
+  <style>
+
+    @import url(
+      'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+    );
+
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #070707;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+
+    /* =========================================
+       CINEMATIC BACKGROUND
+    ========================================= */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,.76),
+          rgba(0,0,0,.92)
+        ),
+        url("https://iili.io/CtDt512.jpg")
+        center / cover no-repeat;
+
+      z-index: -2;
+    }
+
+
+    body::after {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(255,255,255,.045),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 80% 75%,
+          rgba(255,255,255,.035),
+          transparent 35%
+        );
+
+      pointer-events: none;
+
+      z-index: -1;
+    }
+
+
+    /* =========================================
+       NAVIGATION
+    ========================================= */
+
+    .navbar {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      height: 78px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 0 6%;
+
+      background:
+        rgba(5,5,5,.72);
+
+      backdrop-filter: blur(18px);
+
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+      z-index: 1000;
+    }
+
+
+    .logo {
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 25px;
+
+      font-weight: 700;
+
+      letter-spacing: -1px;
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 30px;
+    }
+
+
+    .nav-links a {
+
+      color: #ccc;
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      transition: .25s ease;
+    }
+
+
+    .nav-links a:hover,
+    .nav-links a.active {
+
+      color: white;
+    }
+
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
+
+    .menu-button {
+
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(255,255,255,.15);
+
+      background:
+        rgba(255,255,255,.05);
+
+      color: white;
+
+      font-size: 20px;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================================
+       MAIN
+    ========================================= */
+
+    main {
+
+      width: min(1050px, 92%);
+
+      margin: auto;
+
+      padding-top: 140px;
+
+      padding-bottom: 110px;
+    }
+
+
+    .section-label {
+
+      color: #999;
+
+      font-size: 11px;
+
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+
+    .page-title {
+
+      font-size:
+        clamp(50px, 9vw, 95px);
+
+      line-height: .92;
+
+      letter-spacing: -5px;
+
+      margin-bottom: 20px;
+    }
+
+
+    .page-title span {
+
+      color: #666;
+    }
+
+
+    .intro {
+
+      max-width: 620px;
+
+      color: #999;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      margin-bottom: 60px;
+    }
+
+
+    /* =========================================
+       SONG CARD
+    ========================================= */
+
+    .song-card {
+
+      background:
+        rgba(12,12,12,.76);
+
+      border:
+        1px solid rgba(255,255,255,.12);
+
+      border-radius: 28px;
+
+      padding: clamp(20px, 4vw, 38px);
+
+      margin-bottom: 35px;
+
+      backdrop-filter: blur(16px);
+
+      -webkit-backdrop-filter: blur(16px);
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.4);
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease;
+    }
+
+
+    .song-card:hover {
+
+      transform: translateY(-4px);
+
+      border-color:
+        rgba(255,255,255,.22);
+    }
+
+
+    /* =========================================
+       SONG HEADER
+    ========================================= */
+
+    .song-top {
+
+      display: grid;
+
+      grid-template-columns:
+        280px 1fr;
+
+      gap: 35px;
+
+      align-items: center;
+
+      margin-bottom: 30px;
+    }
+
+
+    .cover-art {
+
+      width: 100%;
+
+      aspect-ratio: 1 / 1;
+
+      object-fit: cover;
+
+      border-radius: 18px;
+
+      display: block;
+
+      box-shadow:
+        0 20px 45px rgba(0,0,0,.45);
+    }
+
+
+    .song-number {
+
+      color: #777;
+
+      font-size: 11px;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .song-title {
+
+      font-size:
+        clamp(32px, 5vw, 55px);
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .artist-name {
+
+      color: #999;
+
+      font-size: 14px;
+
+      margin-bottom: 22px;
+    }
+
+
+    /* =========================================
+       SOUNDCLOUD PLAYER
+    ========================================= */
+
+    .soundcloud-wrapper {
+
+      width: 100%;
+
+      overflow: hidden;
+
+      border-radius: 14px;
+
+      background: #111;
+    }
+
+
+    .soundcloud-wrapper iframe {
+
+      display: block;
+
+      width: 100%;
+
+      height: 166px;
+
+      border: 0;
+    }
+
+
+    /* =========================================
+       STREAMING AREA
+    ========================================= */
+
+    .stream-title {
+
+      color: #777;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 15px;
+    }
+
+
+    .stream-links {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+
+    .stream-link {
+
+      width: 48px;
+
+      height: 48px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(255,255,255,.15);
+
+      background:
+        rgba(255,255,255,.035);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: #eee;
+
+      text-decoration: none;
+
+      font-size: 18px;
+
+      transition:
+        .25s ease;
+    }
+
+
+    .stream-link:hover {
+
+      background:
+        rgba(255,255,255,.13);
+
+      border-color:
+        rgba(255,255,255,.35);
+
+      transform:
+        translateY(-3px);
+    }
+
+
+    .stream-link.audiomack {
+
+      font-size: 15px;
+
+      font-weight: 700;
+    }
+
+
+    .stream-name {
+
+      position: absolute;
+
+      width: 1px;
+
+      height: 1px;
+
+      padding: 0;
+
+      margin: -1px;
+
+      overflow: hidden;
+
+      clip: rect(0,0,0,0);
+
+      white-space: nowrap;
+
+      border: 0;
+    }
+
+
+    /* =========================================
+       CTA
+    ========================================= */
+
+    .music-cta {
+
+      margin-top: 70px;
+
+      padding: 40px;
+
+      text-align: center;
+
+      border-radius: 25px;
+
+      background:
+        rgba(255,255,255,.04);
+
+      border:
+        1px solid rgba(255,255,255,.1);
+    }
+
+
+    .music-cta h2 {
+
+      font-size: 28px;
+
+      margin-bottom: 10px;
+    }
+
+
+    .music-cta p {
+
+      color: #888;
+
+      font-size: 13px;
+
+      margin-bottom: 25px;
+    }
+
+
+    .all-music-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 14px 23px;
+
+      border-radius: 30px;
+
+      background: white;
+
+      color: black;
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      font-weight: 600;
+
+      transition: .25s ease;
+    }
+
+
+    .all-music-button:hover {
+
+      transform: translateY(-3px);
+
+      opacity: .88;
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+
+      border-top:
+        1px solid rgba(255,255,255,.08);
+
+      padding:
+        45px 6%;
+
+      text-align: center;
+
+      background:
+        rgba(0,0,0,.6);
+    }
+
+
+    .footer-logo {
+
+      font-size: 22px;
+
+      font-weight: 700;
+
+      margin-bottom: 12px;
+    }
+
+
+    footer p {
+
+      color: #777;
+
+      font-size: 11px;
+
+      line-height: 1.8;
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 24px;
+
+      margin-top: 20px;
+    }
+
+
+    .footer-links a {
+
+      color: #999;
+
+      text-decoration: none;
+
+      font-size: 11px;
+    }
+
+
+    .footer-links a:hover {
+
+      color: white;
+    }
+
+
+    /* =========================================
+       COOKIE NOTICE
+    ========================================= */
+
+    .cookie-box {
+
+      position: fixed;
+
+      left: 20px;
+      right: 20px;
+
+      bottom: 20px;
+
+      max-width: 620px;
+
+      margin: auto;
+
+      padding: 18px 20px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      background:
+        rgba(15,15,15,.94);
+
+      border:
+        1px solid rgba(255,255,255,.13);
+
+      border-radius: 17px;
+
+      backdrop-filter: blur(20px);
+
+      -webkit-backdrop-filter: blur(20px);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.6);
+
+      z-index: 5000;
+    }
+
+
+    .cookie-box p {
+
+      color: #aaa;
+
+      font-size: 11px;
+
+      line-height: 1.6;
+    }
+
+
+    .cookie-buttons {
+
+      display: flex;
+
+      gap: 8px;
+
+      flex-shrink: 0;
+    }
+
+
+    .cookie-buttons button {
+
+      border: 0;
+
+      border-radius: 20px;
+
+      padding: 9px 15px;
+
+      cursor: pointer;
+
+      font-size: 11px;
+    }
+
+
+    .accept-cookie {
+
+      background: white;
+
+      color: black;
+    }
+
+
+    .reject-cookie {
+
+      background:
+        rgba(255,255,255,.08);
+
+      color: white;
+
+      border:
+        1px solid rgba(255,255,255,.12) !important;
+    }
+
+
+    /* =========================================
+       EMAIL POPUP
+    ========================================= */
+
+    .signup-overlay {
+
+      position: fixed;
+
+      inset: 0;
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(0,0,0,.72);
+
+      backdrop-filter: blur(7px);
+
+      z-index: 4500;
+    }
+
+
+    .signup-box {
+
+      position: relative;
+
+      width: min(470px, 100%);
+
+      padding: 30px;
+
+      border-radius: 25px;
+
+      background:
+        #101010;
+
+      border:
+        1px solid rgba(255,255,255,.14);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,.7);
+    }
+
+
+    .signup-close {
+
+      position: absolute;
+
+      right: 15px;
+      top: 15px;
+
+      width: 34px;
+      height: 34px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      background:
+        rgba(255,255,255,.05);
+
+      color: white;
+
+      cursor: pointer;
+    }
+
+
+    .signup-box h2 {
+
+      margin-bottom: 8px;
+
+      font-size: 25px;
+    }
+
+
+    .signup-box > p {
+
+      color: #888;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      margin-bottom: 20px;
+    }
+
+
+    #email-form-container {
+
+      min-height: 120px;
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 760px) {
+
+      .navbar {
+
+        height: 70px;
+
+        padding: 0 20px;
+      }
+
+
+      .logo {
+
+        font-size: 21px;
+      }
+
+
+      .menu-button {
+
+        display: block;
+      }
+
+
+      .nav-links {
+
+        position: absolute;
+
+        top: 70px;
+
+        right: 15px;
+
+        width: 220px;
+
+        padding: 12px;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 4px;
+
+        background:
+          rgba(8,8,8,.96);
+
+        backdrop-filter: blur(20px);
+
+        border:
+          1px solid rgba(255,255,255,.12);
+
+        border-radius: 18px;
+      }
+
+
+      .nav-links.show {
+
+        display: flex;
+      }
+
+
+      .nav-links a {
+
+        padding: 14px;
+
+        border-radius: 10px;
+      }
+
+
+      .nav-links a:hover {
+
+        background:
+          rgba(255,255,255,.06);
+      }
+
+
+      main {
+
+        padding-top: 110px;
+      }
+
+
+      .page-title {
+
+        letter-spacing: -3px;
+      }
+
+
+      .song-top {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+      }
+
+
+      .cover-art {
+
+        max-width: 100%;
+
+        margin: auto;
+      }
+
+
+      .song-title {
+
+        font-size: 40px;
+      }
+
+
+      .song-card {
+
+        padding: 18px;
+
+        border-radius: 22px;
+      }
+
+
+      .soundcloud-wrapper iframe {
+
+        height: 166px;
+      }
+
+
+      .cookie-box {
+
+        flex-direction: column;
+
+        align-items: stretch;
+      }
+
+
+      .cookie-buttons {
+
+        justify-content: flex-end;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       NAVIGATION
+  ========================================= -->
+
+  <header class="navbar">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+      WREAL X
+    </a>
+
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Open navigation"
+    >
+      ☰
+    </button>
+
+
+    <nav
+      class="nav-links"
+      id="navLinks"
+    >
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="book.html">
+        Book Wreal X
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a
+        href="music.html"
+        class="active"
+      >
+        Music
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =========================================
+       MUSIC PAGE
+  ========================================= -->
+
+  <main>
+
+    <div class="section-label">
+      Listen everywhere
+    </div>
+
+
+    <h1 class="page-title">
+      WREAL <span>MUSIC</span>
+    </h1>
+
+
+    <p class="intro">
+      Enter the world of Wreal X. Listen directly through
+      SoundCloud or choose your preferred streaming platform
+      underneath each release.
+    </p>
+
+
+
+    <!-- =======================================
+         MONALISA
+    ======================================== -->
+
+    <article class="song-card">
+
+      <div class="song-top">
+
+        <img
+          class="cover-art"
+          src="https://iili.io/CD3DF8g.png"
+          alt="Monalisa by Wreal X cover art"
+          loading="lazy"
+        >
+
+
+        <div>
+
+          <div class="song-number">
+            01 · SINGLE
+          </div>
+
+          <h2 class="song-title">
+            Monalisa
+          </h2>
+
+          <p class="artist-name">
+            Wreal X
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- SOUNDCLOUD -->
+
+      <div class="soundcloud-wrapper">
+
+        <iframe
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/monalisa&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+          title="Monalisa by Wreal X on SoundCloud"
+        >
+        </iframe>
+
+      </div>
+
+
+      <!-- STREAMING SERVICES -->
+
+      <div style="margin-top:25px;">
+
+        <div class="stream-title">
+          Stream Monalisa
+        </div>
+
+
+        <div class="stream-links">
+
+          <a
+            class="stream-link"
+            href="https://music.apple.com/us/artist/wreal-x/1896590252"
+            target="_blank"
+            rel="noopener"
+            aria-label="Apple Music"
+          >
+            <i class="fa-brands fa-apple"></i>
+            <span class="stream-name">
+              Apple Music
+            </span>
+          </a>
+
+
+          <a
+            class="stream-link"
+            href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl"
+            target="_blank"
+            rel="noopener"
+            aria-label="Spotify"
+          >
+            <i class="fa-brands fa-spotify"></i>
+            <span class="stream-name">
+              Spotify
+            </span>
+          </a>
+
+
+          <a
+            class="stream-link"
+            href="https://tidal.com/artist/79457798/u"
+            target="_blank"
+            rel="noopener"
+            aria-label="TIDAL"
+          >
+            <strong>
+              TIDAL
+            </strong>
+            <span class="stream-name">
+              TIDAL
+            </span>
+          </a>
+
+
+          <a
+            class="stream-link"
+            href="https://youtube.com/@wrealx"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+          >
+            <i class="fa-brands fa-youtube"></i>
+            <span class="stream-name">
+              YouTube
+            </span>
+          </a>
+
+
+          <a
+            class="stream-link"
+            href="https://soundcloud.com/wrealx/monalisa"
+            target="_blank"
+            rel="noopener"
+            aria-label="SoundCloud"
+          >
+            <i class="fa-brands fa-soundcloud"></i>
+            <span class="stream-name">
+              SoundCloud
+            </span>
+          </a>
+
+
+          <a
+            class="stream-link audiomack"
+            href="https://audiomack.com/@wrealx"
+            target="_blank"
+            rel="noopener"
+            aria-label="Audiomack"
+          >
+            AM
+            <span class="stream-name">
+              Audiomack
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =======================================
+         PHOTO
+    ======================================== -->
+
+    <article class="song-card">
+
+      <div class="song-top">
+
+        <img
+          class="cover-art"
+          src="https://iili.io/CD3s8XI.png"
+          alt="Photo by Wreal X cover art"
+          loading="lazy"
+        >
+
+
+        <div>
+
+          <div class="song-number">
+            02 · SINGLE
+          </div>
+
+          <h2 class="song-title">
+            Photo
+          </h2>
+
+          <p class="artist-name">
+            Wreal X
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="soundcloud-wrapper">
+
+        <iframe
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/photo&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+          title="Photo by Wreal X on SoundCloud"
+        >
+        </iframe>
+
+      </div>
+
+
+      <div style="margin-top:25px;">
+
+        <div class="stream-title">
+          Stream Photo
+        </div>
+
+
+        <div class="stream-links">
+
+          <a
+            class="stream-link"
+            href="https://music.apple.com/us/artist/wreal-x/1896590252"
+            target="_blank"
+            rel="noopener"
+            aria-label="Apple Music"
+          >
+            <i class="fa-brands fa-apple"></i>
+          </a>
+
+
+          <a
+            class="stream-link"
+            href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl"
+            target="_blank"
+            rel="noopener"
+            aria-label="Spotify"
+          >
+            <i class="fa-brands fa-spotify"></i>
+          </a>
+
+
+          <a
+            class="stream-link"
+            href="https://tidal.com/artist/79457798/u"
+            target="_blank"
+            rel="noopener"
+            aria-label="TIDAL"
+          >
+            <strong>TIDAL</strong>
+          </a>
+
+
+          <a
+            class="stream-link"
+            href="https://youtube.com/@wrealx"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+          >
+            <i class="fa-bra
