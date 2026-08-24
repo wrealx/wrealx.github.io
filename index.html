@@ -1,930 +1,1185 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="theme-color" content="#050505">
-  <meta
-    name="description"
-    content="Wreal X — official website. Music, videos, merch, bookings and updates."
-  >
+<title>Wreal X — Official Website</title>
 
-  <title>WREAL X — Official Website</title>
+<meta name="description"
+content="Official website of Wreal X — South Sudanese singer, emo rapper and songwriter. Music, videos, merchandise and more.">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="theme-color" content="#080808">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+<!-- Cinematic fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- Font Awesome icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f4f4f4;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   CINEMATIC BACKGROUND
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.52),
+            rgba(0,0,0,.78) 55%,
+            #050505 100%
+        ),
+        url("https://iili.io/CtDt512.jpg") center top / cover no-repeat;
+
+    z-index: -3;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,255,255,.06),
+            transparent 35%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.32),
+            transparent,
+            rgba(0,0,0,.32)
+        );
+
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(5,5,5,.70);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,.82);
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.menu-btn {
+    display: none;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.05);
+    color: #fff;
+
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
+    font-size: 18px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding:
+        150px 7%
+        110px;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.eyebrow {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: rgba(255,255,255,.62);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(70px, 13vw, 170px);
+    line-height: .82;
+
+    letter-spacing: 2px;
+
+    color: #fff;
+
+    text-shadow:
+        0 8px 35px rgba(0,0,0,.7);
+}
+
+.hero h1 span {
+    color: rgba(255,255,255,.35);
+}
+
+.hero-description {
+    margin-top: 30px;
+
+    max-width: 560px;
+
+    color: rgba(255,255,255,.72);
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 21px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.hero-btn.primary {
+    background: #fff;
+    color: #050505;
+}
+
+.hero-btn.secondary {
+    border: 1px solid rgba(255,255,255,.28);
+    color: #fff;
+    background: rgba(255,255,255,.04);
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+
+    padding: 110px 0;
+}
+
+.section-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,.45);
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: .9;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: rgba(255,255,255,.30);
+}
+
+/* =========================================================
+   VIDEO SECTION
+========================================================= */
+
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.video-card {
+    background: rgba(10,10,10,.76);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+
+    transition: .3s ease;
+}
+
+.video-card:hover {
+    border-color: rgba(255,255,255,.25);
+    transform: translateY(-3px);
+}
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-frame iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+.video-info {
+    padding: 20px 22px 24px;
+}
+
+.video-number {
+    color: rgba(255,255,255,.38);
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.video-title {
+    margin-top: 8px;
+
+    font-family: "Cinzel", serif;
+    font-size: 22px;
+
+    letter-spacing: 1px;
+}
+
+.video-subtitle {
+    margin-top: 6px;
+
+    color: rgba(255,255,255,.52);
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.song-card {
+    background: rgba(12,12,12,.82);
+
+    border: 1px solid rgba(255,255,255,.11);
+
+    border-radius: 24px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.30);
+}
+
+.song-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+.song-cover {
+    width: 80px;
+    height: 80px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.5);
+}
+
+.song-title {
+    font-family: "Cinzel", serif;
+    font-size: 20px;
+}
+
+.song-artist {
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,.45);
+}
+
+.soundcloud-player {
+    width: 100%;
+    height: 166px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+/* =========================================================
+   STREAMING LINKS
+========================================================= */
+
+.stream-row {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 16px;
+}
+
+.stream-label {
+    width: 100%;
+
+    color: rgba(255,255,255,.35);
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 3px;
+}
+
+.stream-link {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255,255,255,.75);
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,.045);
+
+    border: 1px solid rgba(255,255,255,.13);
+
+    font-size: 15px;
+
+    transition: .25s ease;
+}
+
+.stream-link:hover {
+    color: #fff;
+
+    background: rgba(255,255,255,.12);
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   MERCH
+========================================================= */
+
+.merch-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.product {
+    background: rgba(12,12,12,.85);
+
+    border: 1px solid rgba(255,255,255,.11);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    padding-bottom: 24px;
+
+    transition: .3s ease;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,.25);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.product-content {
+    padding: 22px;
+}
+
+.product-code {
+    font-size: 9px;
+
+    color: rgba(255,255,255,.35);
+
+    letter-spacing: 3px;
+}
+
+.product h3 {
+    font-family: "Cinzel", serif;
+
+    font-size: 19px;
+
+    margin-top: 12px;
+
+    line-height: 1.4;
+}
+
+.product-bottom {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.price {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 17px;
+
+    color: #fff;
+}
+
+.buy-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 17px;
+
+    border-radius: 30px;
+
+    background: #fff;
+
+    color: #050505;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.buy-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(255,255,255,.14);
+}
+
+/* =========================================================
+   FIND WREAL X
+========================================================= */
+
+.platform-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 12px;
+}
+
+.platform {
+    min-height: 85px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    background: rgba(10,10,10,.7);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: rgba(255,255,255,.7);
+
+    text-decoration: none;
+
+    transition: .3s ease;
+}
+
+.platform i {
+    font-size: 19px;
+}
+
+.platform span {
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.platform:hover {
+    color: #fff;
+    background: rgba(255,255,255,.09);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin-top: 100px;
+
+    padding: 80px 7% 45px;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    background: rgba(3,3,3,.88);
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 45px;
+
+    letter-spacing: 4px;
+}
+
+.footer-tag {
+    margin-top: 10px;
+
+    color: rgba(255,255,255,.38);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.socials {
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+.socials a {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255,255,255,.65);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: .25s ease;
+}
+
+.socials a:hover {
+    color: #fff;
+    background: rgba(255,255,255,.1);
+}
+
+.footer-links {
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 22px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,.45);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+}
+
+.copyright {
+    margin-top: 35px;
+
+    color: rgba(255,255,255,.25);
+
+    font-size: 10px;
+}
+
+/* =========================================================
+   COOKIE BANNER
+========================================================= */
+
+.cookie-box {
+    position: fixed;
+
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    z-index: 5000;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: rgba(15,15,15,.96);
+
+    border: 1px solid rgba(255,255,255,.13);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.5);
+
+    backdrop-filter: blur(15px);
+}
+
+.cookie-box p {
+    font-size: 11px;
+
+    color: rgba(255,255,255,.62);
+
+    line-height: 1.6;
+}
+
+.cookie-buttons {
+    display: flex;
+
+    gap: 9px;
+
+    margin-top: 14px;
+}
+
+.cookie-buttons button {
+    flex: 1;
+
+    padding: 10px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    background: rgba(255,255,255,.06);
+
+    color: #fff;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.cookie-buttons button:first-child {
+    background: #fff;
+    color: #050505;
+}
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .navbar {
+        height: 64px;
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 64px;
+        left: 0;
+        width: 100%;
+
+        padding: 18px 6%;
+
+        background: rgba(5,5,5,.97);
+
+        border-bottom: 1px solid rgba(255,255,255,.08);
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 95vh;
+
+        padding:
+            130px 7%
+            80px;
+    }
+
+    .hero h1 {
+        font-size: 82px;
+    }
+
+    .section {
+        width: 90%;
+        padding: 75px 0;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+    }
+
+    .video-list {
+        gap: 22px;
+    }
+
+    .video-card {
+        border-radius: 18px;
+    }
+
+    .video-info {
+        padding: 16px;
+    }
+
+    .song-card {
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .song-cover {
+        width: 65px;
+        height: 65px;
+    }
+
+    .soundcloud-player {
+        height: 166px;
+    }
+
+    .merch-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .platform-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .platform {
+        min-height: 75px;
+    }
+
+    .product-bottom {
+        align-items: stretch;
+    }
+
+    .buy-btn {
+        padding: 12px 15px;
+    }
+}
+
+/* =========================================================
+   EXTRA SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .hero h1 {
+        font-size: 68px;
+    }
+
+    .stream-link {
+        width: 35px;
+        height: 35px;
+    }
+
+    .platform-grid {
+        gap: 8px;
+    }
+
+    .platform {
+        min-height: 68px;
+    }
+
+    .platform i {
+        font-size: 16px;
+    }
+
+    .platform span {
+        font-size: 7px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <!-- ================================
-       BACKGROUND
-  ================================= -->
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
 
-  <div class="site-bg"></div>
-  <div class="grain"></div>
+<header class="navbar">
 
-
-  <!-- ================================
-       HEADER
-  ================================= -->
-
-  <header class="topbar">
-
-    <a href="index.html" class="brand">
-      WREAL <b>X</b>
+    <a href="#home"
+       class="logo"
+       style="text-decoration:none;color:white;">
+       WREAL X
     </a>
 
-    <button
-      class="menu-btn"
-      id="menuBtn"
-      aria-label="Open navigation"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-btn"
+            id="menuBtn"
+            aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
     </button>
 
-  </header>
+    <nav class="nav-links" id="navLinks">
 
+        <a href="#home">Home</a>
 
-  <!-- ================================
-       NAVIGATION MENU
-  ================================= -->
+        <a href="#videos">Videos</a>
 
-  <div
-    class="menu-panel"
-    id="menuPanel"
-    aria-hidden="true"
-  >
+        <a href="#music">Music</a>
 
-    <button
-      class="menu-close"
-      id="menuClose"
-      aria-label="Close navigation"
-    >
-      ×
-    </button>
+        <a href="#merch">Merch</a>
 
-    <nav class="main-navigation">
+        <a href="#platforms">Socials</a>
 
-      <a href="contact.html#booking">
-        BOOK WREAL X
-      </a>
-
-      <a href="about.html">
-        ABOUT
-      </a>
-
-      <a href="music.html">
-        MUSIC
-      </a>
-
-      <a href="contact.html">
-        CONTACT
-      </a>
+        <a href="mailto:wrealx@proton.me">Contact</a>
 
     </nav>
 
-
-    <div class="menu-socials">
-
-      <a
-        href="https://instagram.com/wreal.x"
-        target="_blank"
-        rel="noopener"
-        aria-label="Instagram"
-      >
-        <img
-          src="https://cdn.simpleicons.org/instagram/ffffff"
-          alt="Instagram"
-        >
-      </a>
-
-      <a
-        href="https://twitter.com/Wreal_X"
-        target="_blank"
-        rel="noopener"
-        aria-label="X"
-      >
-        <img
-          src="https://cdn.simpleicons.org/x/ffffff"
-          alt="X"
-        >
-      </a>
-
-      <a
-        href="https://tiktok.com/wreal_x"
-        target="_blank"
-        rel="noopener"
-        aria-label="TikTok"
-      >
-        <img
-          src="https://cdn.simpleicons.org/tiktok/ffffff"
-          alt="TikTok"
-        >
-      </a>
-
-      <a
-        href="https://youtube.com/@wrealx"
-        target="_blank"
-        rel="noopener"
-        aria-label="YouTube"
-      >
-        <img
-          src="https://cdn.simpleicons.org/youtube/ffffff"
-          alt="YouTube"
-        >
-      </a>
-
-      <a
-        href="https://soundcloud.com/wrealx"
-        target="_blank"
-        rel="noopener"
-        aria-label="SoundCloud"
-      >
-        <img
-          src="https://cdn.simpleicons.org/soundcloud/ffffff"
-          alt="SoundCloud"
-        >
-      </a>
-
-    </div>
-
-  </div>
+</header>
 
 
+<!-- ======================================================
+     HERO
+====================================================== -->
 
-  <!-- ================================
-       MAIN CONTENT
-  ================================= -->
+<main id="home">
 
-  <main>
+<section class="hero">
 
-
-    <!-- ================================
-         HERO
-    ================================= -->
-
-    <section class="hero" id="top">
-
-      <div class="hero-copy">
+    <div class="hero-content">
 
         <div class="eyebrow">
-          OFFICIAL ARTIST WEBSITE
+            SOUTH SUDAN • EAST AFRICA
         </div>
 
         <h1>
-          WREAL <em>X</em>
+            WREAL<br>
+            <span>X</span>
         </h1>
 
-        <p>
-          MUSIC. VISION.
-          <strong>NO BOUNDARIES.</strong>
+        <p class="hero-description">
+            Singer. Emo rapper. Songwriter.
+            A voice from South Sudan blending
+            emo trap, Afrobeats, vulnerability,
+            romance and the realities of life.
         </p>
 
-
-        <div class="hero-actions">
-
-          <a
-            class="btn red"
-            href="music.html"
-          >
-            STREAM NOW
-          </a>
-
-          <a
-            class="btn ghost"
-            href="#videos"
-          >
-            WATCH LATEST
-          </a>
-
-        </div>
-
-
-        <div class="hero-socials">
-
-          <a
-            href="https://instagram.com/wreal.x"
-            target="_blank"
-            rel="noopener"
-            aria-label="Instagram"
-          >
-            <img
-              src="https://cdn.simpleicons.org/instagram/ffffff"
-              alt="Instagram"
-            >
-          </a>
-
-          <a
-            href="https://twitter.com/Wreal_X"
-            target="_blank"
-            rel="noopener"
-            aria-label="X"
-          >
-            <img
-              src="https://cdn.simpleicons.org/x/ffffff"
-              alt="X"
-            >
-          </a>
-
-          <a
-            href="https://tiktok.com/wreal_x"
-            target="_blank"
-            rel="noopener"
-            aria-label="TikTok"
-          >
-            <img
-              src="https://cdn.simpleicons.org/tiktok/ffffff"
-              alt="TikTok"
-            >
-          </a>
-
-          <a
-            href="https://youtube.com/@wrealx"
-            target="_blank"
-            rel="noopener"
-            aria-label="YouTube"
-          >
-            <img
-              src="https://cdn.simpleicons.org/youtube/ffffff"
-              alt="YouTube"
-            >
-          </a>
-
-          <a
-            href="https://soundcloud.com/wrealx"
-            target="_blank"
-            rel="noopener"
-            aria-label="SoundCloud"
-          >
-            <img
-              src="https://cdn.simpleicons.org/soundcloud/ffffff"
-              alt="SoundCloud"
-            >
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ================================
-         YOUTUBE VIDEOS
-         VIDEOS COME BEFORE MUSIC
-    ================================= -->
-
-    <section
-      id="videos"
-      class="section videos-section"
-    >
-
-      <div class="section-heading">
-
-        <span>
-          01 / WATCH
-        </span>
-
-        <h2>
-          LATEST <i>VIDEOS</i>
-        </h2>
-
-        <a
-          href="https://youtube.com/@wrealx"
-          target="_blank"
-          rel="noopener"
-        >
-          VIEW ON YOUTUBE ↗
-        </a>
-
-      </div>
-
-
-      <!-- VIDEO 1 -->
-
-      <article class="video-card">
-
-        <div class="video-frame-wrap">
-
-          <iframe
-            src="https://www.youtube.com/embed/swCF5DMFquE?rel=0&modestbranding=1"
-            title="Wreal X - Hurry Up"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-              web-share
-            "
-            allowfullscreen
-          ></iframe>
-
-        </div>
-
-        <div class="video-caption">
-
-          <div>
-            <b>Hurry Up</b>
-            <span>Wreal X</span>
-          </div>
-
-          <small data-video-views="swCF5DMFquE">
-            Views —
-          </small>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- VIDEO 2 -->
-
-      <article class="video-card">
-
-        <div class="video-frame-wrap">
-
-          <iframe
-            src="https://www.youtube.com/embed/T59z8NQ3OMA?rel=0&modestbranding=1"
-            title="Wreal X - Monalisa"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-              web-share
-            "
-            allowfullscreen
-          ></iframe>
-
-        </div>
-
-        <div class="video-caption">
-
-          <div>
-            <b>Monalisa</b>
-            <span>Wreal X ft. Bu Man</span>
-          </div>
-
-          <small data-video-views="T59z8NQ3OMA">
-            Views —
-          </small>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- VIDEO 3 -->
-
-      <article class="video-card">
-
-        <div class="video-frame-wrap">
-
-          <iframe
-            src="https://www.youtube.com/embed/2H3Ei5EPkFc?rel=0&modestbranding=1"
-            title="Wreal X - Photo"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-              web-share
-            "
-            allowfullscreen
-          ></iframe>
-
-        </div>
-
-        <div class="video-caption">
-
-          <div>
-            <b>Photo</b>
-            <span>Wreal X ft. Khida</span>
-          </div>
-
-          <small data-video-views="2H3Ei5EPkFc">
-            Views —
-          </small>
-
-        </div>
-
-      </article>
-
-    </section>
-
-
-
-    <!-- ================================
-         SOUND CLOUD MUSIC
-         EACH SONG HAS ITS OWN STREAM LINKS
-    ================================= -->
-
-    <section
-      id="music"
-      class="section music-section"
-    >
-
-      <div class="section-heading">
-
-        <span>
-          02 / LISTEN
-        </span>
-
-        <h2>
-          LATEST <i>MUSIC</i>
-        </h2>
-
-        <a href="music.html">
-          VIEW ALL MUSIC ↗
-        </a>
-
-      </div>
-
-
-      <!-- =================================
-           MONALISA
-      ================================== -->
-
-      <article class="song-card">
-
-        <img
-          src="https://iili.io/CD3DF8g.png"
-          alt="Monalisa cover art"
-          class="song-cover"
-        >
-
-        <div class="song-main">
-
-          <div class="song-title">
-
-            <b>
-              MONALISA
-            </b>
-
-            <span>
-              Wreal X
-            </span>
-
-          </div>
-
-
-          <iframe
-            class="sc-player"
-            scrolling="no"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/monalisa&color=%23ff294d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
-          ></iframe>
-
-
-          <!-- STREAMING SERVICES UNDER THIS SONG -->
-
-          <div class="stream-block song-streams">
-
-            <label>
-              STREAM MONALISA ON
-            </label>
-
-            <div class="stream-icons">
-
-              <a
-                href="https://music.apple.com/us/artist/wreal-x/1896590252"
-                target="_blank"
-                rel="noopener"
-                title="Apple Music"
-              >
-                <img
-                  src="https://cdn.simpleicons.org/applemusic/ffffff"
-                  alt="Apple Music"
-                >
-              </a>
-
-              <a
-                href="https://tidal.com/artist/79457798/u"
-                target="_blank"
-                rel="noopener"
-                title="TIDAL"
-              >
-                <img
-                  src="https://cdn.simpleicons.org/tidal/ffffff"
-                  alt="TIDAL"
-                >
-              </a>
-
-              <a
-                href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl"
-                target="_blank"
-                rel="noopener"
-                title="Spotify"
-              >
-                <img
-                  src="https://cdn.simpleicons.org/spotify/ffffff"
-                  alt="Spotify"
-                >
-              </a>
-
-              <a
-                href="https://youtube.com/@wrealx"
-                target="_blank"
-                rel="noopener"
-                title="YouTube"
-              >
-                <img
-                  src="https://cdn.simpleicons.org/youtube/ffffff"
-                  alt="YouTube"
-                >
-              </a>
-
-              <a
-                href="https://soundcloud.com/wrealx/monalisa"
-                target="_blank"
-                rel="noopener"
-                title="SoundCloud"
-              >
-                <img
-                  src="https://cdn.simpleicons.org/soundcloud/ffffff"
-                  alt="SoundCloud"
-                >
-              </a>
-
-              <a
-                href="https://audiomack.com/@wrealx"
-                target="_blank"
-                rel="noopener"
-                title="Audiomack"
-              >
-                <img
-                  src="https://cdn.simpleicons.org/audiomack/ffffff"
-                  alt="Audiomack"
-                >
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================
-           PHOTO
-      ================================== -->
-
-      <article class="song-card">
-
-        <img
-          src="https://iili.io/CD3s8XI.png"
-          alt="Photo cover art"
-          class="song-cover"
-        >
-
-        <div class="song-main">
-
-          <div class="song-title">
-
-            <b>
-              PHOTO
-            </b>
-
-            <span>
-              Wreal X
-            </span>
-
-          </div>
-
-
-          <iframe
-            class="sc-player"
-            scrolling="no"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/photo&color=%23ff294d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
-          ></iframe>
-
-
-          <div class="stream-block song-streams">
-
-            <label>
-              STREAM PHOTO ON
-            </label>
-
-            <div class="stream-icons">
-
-              <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" rel="noopener" title="Apple Music">
-                <img src="https://cdn.simpleicons.org/applemusic/ffffff" alt="Apple Music">
-              </a>
-
-              <a href="https://tidal.com/artist/79457798/u" target="_blank" rel="noopener" title="TIDAL">
-                <img src="https://cdn.simpleicons.org/tidal/ffffff" alt="TIDAL">
-              </a>
-
-              <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" rel="noopener" title="Spotify">
-                <img src="https://cdn.simpleicons.org/spotify/ffffff" alt="Spotify">
-              </a>
-
-              <a href="https://youtube.com/@wrealx" target="_blank" rel="noopener" title="YouTube">
-                <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube">
-              </a>
-
-              <a href="https://soundcloud.com/wrealx/photo" target="_blank" rel="noopener" title="SoundCloud">
-                <img src="https://cdn.simpleicons.org/soundcloud/ffffff" alt="SoundCloud">
-              </a>
-
-              <a href="https://audiomack.com/@wrealx" target="_blank" rel="noopener" title="Audiomack">
-                <img src="https://cdn.simpleicons.org/audiomack/ffffff" alt="Audiomack">
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================
-           HURRY UP
-      ================================== -->
-
-      <article class="song-card">
-
-        <img
-          src="https://iili.io/CD36r0b.png"
-          alt="Hurry Up cover art"
-          class="song-cover"
-        >
-
-        <div class="song-main">
-
-          <div class="song-title">
-
-            <b>
-              HURRY UP
-            </b>
-
-            <span>
-              Wreal X
-            </span>
-
-          </div>
-
-
-          <iframe
-            class="sc-player"
-            scrolling="no"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/wrealx/hurry-up&color=%23ff294d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
-          ></iframe>
-
-
-          <div class="stream-block song-streams">
-
-            <label>
-              STREAM HURRY UP ON
-            </label>
-
-            <div class="stream-icons">
-
-              <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" rel="noopener" title="Apple Music">
-                <img src="https://cdn.simpleicons.org/applemusic/ffffff" alt="Apple Music">
-              </a>
-
-              <a href="https://tidal.com/artist/79457798/u" target="_blank" rel="noopener" title="TIDAL">
-                <img src="https://cdn.simpleicons.org/tidal/ffffff" alt="TIDAL">
-              </a>
-
-              <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" rel="noopener" title="Spotify">
-                <img src="https://cdn.simpleicons.org/spotify/ffffff" alt="Spotify">
-              </a>
-
-              <a href="https://youtube.com/@wrealx" target="_blank" rel="noopener" title="YouTube">
-                <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube">
-              </a>
-
-              <a href="https://soundcloud.com/wrealx/hurry-up" target="_blank" rel="noopener" title="SoundCloud">
-                <img src="https://cdn.simpleicons.org/soundcloud/ffffff" alt="SoundCloud">
-              </a>
-
-              <a href="https://audiomack.com/@wrealx" target="_blank" rel="noopener" title="Audiomack">
-                <img src="https://cdn.simpleicons.org/audiomack/ffffff" alt="Audiomack">
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </article>
-
-    </section>
-
-
-
-    <!-- ================================
-         MERCH — LAST
-    ================================= -->
-
-    <section
-      id="merch"
-      class="section merch-section"
-    >
-
-      <div class="section-heading">
-
-        <span>
-          03 / SHOP
-        </span>
-
-        <h2>
-          OFFICIAL <i>MERCH</i>
-        </h2>
-
-      </div>
-
-
-      <div class="merch-grid">
-
-
-        <!-- PURFER VEST -->
-
-        <article class="merch-card">
-
-          <img
-            src="https://iili.io/CDCdmBt.png"
-            alt="X Purfer Vests"
-          >
-
-          <div class="merch-info">
-
-            <span>
-              WRX / 01
-            </span>
-
-            <h3>
-              X PURFER VESTS
-            </h3>
-
-            <strong>
-              $30
-            </strong>
-
-            <a
-              class="btn red"
-              href="https://payhip.com/b/wP6EI"
-              target="_blank"
-              rel="noopener"
-            >
-              BUY NOW ↗
+        <div class="hero-buttons">
+
+            <a href="#music"
+               class="hero-btn primary">
+                Listen Now
             </a>
 
-          </div>
+            <a href="#videos"
+               class="hero-btn secondary">
+                Watch Videos
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     VIDEOS
+====================================================== -->
+
+<section class="section" id="videos">
+
+    <div class="section-label">
+        01 / WATCH
+    </div>
+
+    <h2 class="section-title">
+        LATEST <span>VIDEOS</span>
+    </h2>
+
+    <div class="video-list">
+
+
+        <!-- VIDEO 01 -->
+
+        <article class="video-card">
+
+            <div class="video-frame">
+
+                <iframe
+                    src="https://www.youtube.com/embed/swCF5DMFquE"
+                    title="Wreal X — Latest Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <div class="video-info">
+
+                <div class="video-number">
+                    VIDEO / 01
+                </div>
+
+                <div class="video-title">
+                    Wreal X
+                </div>
+
+                <div class="video-subtitle">
+                    Official YouTube release
+                </div>
+
+            </div>
 
         </article>
 
 
-        <!-- X ON HOODIE -->
+        <!-- VIDEO 02 -->
 
-        <article class="merch-card">
+        <article class="video-card">
 
-          <img
-            src="https://iili.io/CDCA0KJ.png"
-            alt="X On Hoodie"
-          >
+            <div class="video-frame">
 
-          <div class="merch-info">
+                <iframe
+                    src="https://www.youtube.com/embed/T59z8NQ3OMA"
+                    title="Wreal X — Latest Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
 
-            <span>
-              WRX / 02
-            </span>
+            </div>
 
-            <h3>
-              X ON HOODIE
-            </h3>
+            <div class="video-info">
 
-            <strong>
-              $25
-            </strong>
+                <div class="video-number">
+                    VIDEO / 02
+                </div>
 
-            <a
-              class="btn red"
-              href="https://payhip.com/b/eyvrw"
-              target="_blank"
-              rel="noopener"
-            >
-              BUY NOW ↗
-            </a>
+                <div class="video-title">
+                    Wreal X
+                </div>
 
-          </div>
+                <div class="video-subtitle">
+                    Official YouTube release
+                </div>
+
+            </div>
 
         </article>
 
-      </div>
 
-    </section>
+        <!-- VIDEO 03 -->
 
+        <article class="video-card">
 
+            <div class="video-frame">
 
-    <!-- ================================
-         NEWSLETTER
-    ================================= -->
+                <iframe
+                    src="https://www.youtube.com/embed/2H3Ei5EPkFc"
+                    title="Wreal X — Latest Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
 
-    <section class="newsletter section">
+            </div>
 
-      <div class="newsletter-inner">
+            <div class="video-info">
 
-        <span>
-          JOIN THE WORLD OF WREAL X
-        </span>
+                <div class="video-number">
+                    VIDEO / 03
+                </div>
 
-        <h2>
-          DON'T MISS THE NEXT DROP.
-        </h2>
+                <div class="video-title">
+                    Wreal X
+                </div>
 
-        <p>
-          Music, videos, releases, merch and announcements.
-        </p>
-
-        <button
-          class="btn red"
-          id="signupFallback"
-        >
-          SIGN UP
-        </button>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-
-  <!-- ================================
-       FOOTER
-  ================================= -->
-
-  <footer class="footer">
-
-    <div class="footer-brand">
-      WREAL <b>X</b>
-    </div>
-
-    <p>
-      © 2026 Wreal X. All rights reserved.
-    </p>
-
-    <p>
-      Music. Vision. No Boundaries.
-    </p>
-
-    <div class="footer-links">
-
-      <a href="music.html">
-        Music
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
-
-      <a href="contact.html#booking">
-        Book Wreal X
-      </a>
-
-    </div>
-
-
-    <div class="footer-socials">
-
-      <a href="https://instagram.com/wreal.x" target="_blank" re
+           
