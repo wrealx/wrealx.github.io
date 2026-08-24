@@ -1,667 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#090a08" />
-  <title>WREAL X — CURSED</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    :root {
-      --bg: #090a08;
-      --panel: #12130f;
-      --panel-light: #171912;
-      --gold: #f4ba16;
-      --gold-soft: #ffcf45;
-      --white: #f7f5ee;
-      --muted: #a7a89f;
-      --line: rgba(255, 255, 255, 0.11);
-      --radius: 20px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--white);
-      font-family: "DM Sans", sans-serif;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: auto;
-    }
-
-    .hero {
-      min-height: 780px;
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(5, 6, 4, 0.96) 0%,
-          rgba(5, 6, 4, 0.72) 42%,
-          rgba(5, 6, 4, 0.30) 100%
-        ),
-        url("https://iili.io/CtDt512.jpg") center / cover no-repeat;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 45%;
-      background: linear-gradient(transparent, var(--bg));
-    }
-
-    .nav {
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .logo {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 19px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    .logo-mark {
-      color: var(--gold);
-      margin-right: 8px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      color: #d5d4cc;
-      font-size: 14px;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-    .hero-content {
-      max-width: 690px;
-      padding: 130px 0 70px;
-    }
-
-    .badge {
-      width: fit-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(244, 186, 22, 0.36);
-      color: var(--gold);
-      background: rgba(244, 186, 22, 0.10);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-    }
-
-    .live-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #40d47d;
-      box-shadow: 0 0 12px #40d47d;
-    }
-
-    h1 {
-      margin: 24px 0 8px;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(64px, 12vw, 135px);
-      line-height: 0.82;
-      letter-spacing: -0.09em;
-    }
-
-    .cursed {
-      margin: 0;
-      color: var(--gold);
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(50px, 10vw, 104px);
-      line-height: 0.92;
-      letter-spacing: 0.09em;
-      text-shadow: 0 0 38px rgba(244, 186, 22, 0.23);
-    }
-
-    .bio {
-      max-width: 500px;
-      margin: 28px 0;
-      color: #d0d0c9;
-      font-size: 18px;
-      line-height: 1.65;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 9px;
-      padding: 15px 22px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 14px;
-      font-weight: 700;
-      transition: 0.25s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-    }
-
-    .button-primary {
-      background: var(--white);
-      color: #10110e;
-    }
-
-    .button-primary:hover {
-      background: var(--gold);
-    }
-
-    .button-secondary {
-      background: rgba(0, 0, 0, 0.26);
-      border-color: var(--line);
-    }
-
-    .button-secondary:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    .availability {
-      margin-top: 72px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      color: #c5c5bd;
-      font-size: 13px;
-    }
-
-    .icon-row {
-      display: flex;
-      gap: 8px;
-    }
-
-    .mini-icon {
-      width: 35px;
-      height: 35px;
-      border: 1px solid var(--line);
-      background: rgba(0, 0, 0, 0.45);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    section {
-      padding: 95px 0;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-    }
-
-    h2 {
-      margin: 12px 0 30px;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(38px, 6vw, 62px);
-      line-height: 0.96;
-      letter-spacing: -0.07em;
-    }
-
-    .videos {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .video-card {
-      overflow: hidden;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .video-card iframe {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: 0;
-    }
-
-    .release-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      padding: 36px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at 93% 8%, rgba(244, 186, 22, 0.20), transparent 32%),
-        var(--panel);
-    }
-
-    .release-card h3 {
-      margin: 9px 0;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 32px;
-      letter-spacing: -0.05em;
-    }
-
-    .release-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .platforms-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 13px;
-    }
-
-    .platform-card {
-      min-height: 142px;
-      padding: 22px 12px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--panel);
-      text-align: center;
-      transition: 0.25s ease;
-    }
-
-    .platform-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
-      background: var(--panel-light);
-    }
-
-    .platform-logo {
-      width: 45px;
-      height: 45px;
-      margin: 0 auto 13px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #23251c;
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 12px;
-    }
-
-    .platform-card span {
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .contact {
-      text-align: center;
-      border-top: 1px solid var(--line);
-    }
-
-    .contact h2 {
-      margin-bottom: 12px;
-    }
-
-    .contact p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .contact .buttons {
-      justify-content: center;
-      margin-top: 28px;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0;
-      color: #777870;
-      font-size: 13px;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .socials {
-      display: flex;
-      gap: 9px;
-    }
-
-    .social {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      color: #dfddd4;
-      font-size: 12px;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .social:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    @media (max-width: 720px) {
-      .container {
-        width: min(100% - 32px, 1120px);
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: 740px;
-        background-position: 59% center;
-      }
-
-      .hero-content {
-        padding-top: 118px;
-      }
-
-      .availability {
-        margin-top: 50px;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      section {
-        padding: 72px 0;
-      }
-
-      .videos {
-        grid-template-columns: 1fr;
-      }
-
-      .release-card {
-        display: block;
-      }
-
-      .release-card .button {
-        margin-top: 23px;
-      }
-
-      .platforms-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wreal X — Cursed Child of Yei</title>
+<meta name="description" content="Wreal X. South Sudanese emo-trap and afro artist out of Yei. Listen to the latest single 'Time' and stream everywhere.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='20' font-size='20'%3E%F0%9F%95%AF%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <header class="hero" id="home">
-    <div class="container">
-      <nav class="nav">
-        <a class="logo" href="#home">
-          <span class="logo-mark">✦</span>WREAL X
-        </a>
 
-        <div class="nav-links">
-          <a href="#videos">Videos</a>
-          <a href="#music">Music</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="wrap nav__row">
+    <a href="#top" class="brand"><span class="flame" aria-hidden="true"></span> WREAL X</a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#music">Music</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#platforms">Platforms</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <a href="https://snd.click/xvy9" target="_blank" rel="noopener" class="nav__cta">Listen Now</a>
+    <button class="nav__burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-      <div class="hero-content">
-        <div class="badge">
-          <span class="live-dot"></span>
-          STREAMING EVERYWHERE
-        </div>
-
-        <h1>WREAL X</h1>
-        <p class="cursed">CURSED</p>
-
-        <p class="bio">
-          South Sudanese artist shaping a sound beyond borders.
-          Trap, hip-hop and raw energy — built for the world.
-        </p>
-
-        <div class="buttons">
-          <a
-            class="button button-primary"
-            href="https://snd.click/xvy9"
-            target="_blank"
-            rel="noopener"
-          >
-            ▶ Listen Now
-          </a>
-
-          <a class="button button-secondary" href="#videos">
-            Watch Latest ↓
-          </a>
-        </div>
-
-        <div class="availability">
-          <div class="icon-row">
-            <span class="mini-icon">S</span>
-            <span class="mini-icon">AM</span>
-            <span class="mini-icon">T</span>
-            <span class="mini-icon">SC</span>
-            <span class="mini-icon">YT</span>
-          </div>
-
-          <span>Available on major streaming platforms</span>
-        </div>
-      </div>
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero__bg" role="img" aria-label="Wreal X portrait"></div>
+  <div class="wrap hero__content">
+    <span class="hero__tag"><span class="dot"></span> Cursed Child of Yei</span>
+    <h1>WREAL<br><em>X</em></h1>
+    <p class="hero__lede">South Sudanese singer, rapper and songwriter turning grief into emo trap. Born Angel Jambu Roy — the world knows the curse he's still unbuilding, one track at a time.</p>
+    <div class="hero__actions">
+      <a href="https://snd.click/xvy9" target="_blank" rel="noopener" class="btn btn--solid">▶ Listen to "Time"</a>
+      <a href="#videos" class="btn btn--ghost">Watch the Videos</a>
     </div>
-  </header>
+    <div class="hero__socials" aria-label="Social links">
+      <a href="https://twitter.com/Wreal_X" target="_blank" rel="noopener" aria-label="X / Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L4 22H1l8.1-9.3L1 2h7.4l5.1 6.7L18.9 2Zm-1.3 18h2L7.5 4h-2l12.1 16Z"/></svg>
+      </a>
+      <a href="https://facebook.com/wrealxcursed" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
+      </a>
+      <a href="https://instagram.com/wreal.x" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.16.55.55.9 1.11 1.16 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.16 1.77 4.9 4.9 0 0 1-1.77 1.16c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.16 4.9 4.9 0 0 1-1.16-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.16-1.77A4.9 4.9 0 0 1 5.46.52C6.1.27 6.83.1 7.89.05 8.94.01 9.28 0 12 0Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.25a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5ZM17.5 4.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z" transform="translate(0 2)"/></svg>
+      </a>
+      <a href="https://tiktok.com/wreal_x" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.3v13.3a3 3 0 1 1-2.6-3v-3.3a6.3 6.3 0 1 0 6 6.3V9.1a7.6 7.6 0 0 0 4.6 1.5V7.3a4.3 4.3 0 0 1-4.7-5.3Z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
 
-  <section id="videos">
-    <div class="container">
-      <div class="eyebrow">WATCH NOW</div>
-      <h2>Latest visuals.</h2>
+<svg class="drip-divider" viewBox="0 0 1200 26" preserveAspectRatio="none"><path fill="currentColor" d="M0,0 L1200,0 L1200,10 C1150,10 1140,22 1110,22 C1085,22 1080,12 1055,12 C1010,12 1000,26 960,26 C930,26 925,14 895,14 C850,14 840,20 800,20 C770,20 765,10 735,10 C690,10 680,18 640,18 C610,18 605,8 575,8 C530,8 520,16 480,16 C450,16 445,6 415,6 C370,6 360,14 320,14 C290,14 285,10 255,10 C210,10 200,18 160,18 C130,18 125,8 95,8 C55,8 40,14 0,14 Z"/></svg>
 
-      <div class="videos">
-        <article class="video-card">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/swCF5DMFquE"
-            title="WREAL X latest video"
-            allowfullscreen
-          ></iframe>
-        </article>
+<!-- ============ IDENTITY STRIP ============ -->
+<div class="identity">
+  <div class="wrap identity__row">
+    <div class="identity__item"><span class="k">Origin</span><span class="v">Yei, South Sudan</span></div>
+    <div class="identity__item"><span class="k">Real Name</span><span class="v">Angel Jambu Roy</span></div>
+    <div class="identity__item"><span class="k">Sound</span><span class="v">Emo Trap / Afro</span></div>
+    <div class="identity__item"><span class="k">Est.</span><span class="v">2020</span></div>
+    <div class="identity__item"><span class="k">Status</span><span class="v">Streaming Everywhere</span></div>
+  </div>
+</div>
 
-        <article class="video-card">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/YcoFTv6jspA"
-            title="WREAL X latest video"
-            allowfullscreen
-          ></iframe>
-        </article>
+<main>
+
+  <!-- ============ LATEST RELEASE ============ -->
+  <section class="section" id="music">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Out Now</span>
+        <h2>The Latest Curse</h2>
+        <p>"Time" is the newest release from Wreal X — pick your platform below and press play.</p>
+      </div>
+
+      <div class="release reveal">
+        <div class="release__art">
+          <img src="https://i.scdn.co/image/ab67616d0000b273cf852f6b1b81f8653ae124f0" alt="Time — single artwork by Wreal X" loading="lazy">
+        </div>
+        <div class="release__body">
+          <div class="release__eyebrow"><span class="dot"></span><span class="eyebrow">Single · 2026</span></div>
+          <h3>Time</h3>
+          <p>The latest chapter from Wreal X's emo-trap corridor between South Sudan and the world. Choose your platform and stream it now.</p>
+          <div class="release__platforms">
+            <a class="platform-pill" href="https://open.spotify.com/album/3ZZ6KPrKOc8SCxBArSSwCo" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.59 14.4a.62.62 0 0 1-.86.21c-2.36-1.44-5.33-1.77-8.83-.97a.63.63 0 1 1-.28-1.22c3.83-.88 7.12-.5 9.76 1.12.3.18.4.57.21.86Zm1.22-2.72a.78.78 0 0 1-1.07.26c-2.7-1.66-6.82-2.14-10.02-1.17a.78.78 0 1 1-.45-1.49c3.65-1.1 8.19-.57 11.28 1.33.37.23.49.72.26 1.07Zm.11-2.83C14.98 9.02 9.08 8.83 5.7 9.86a.93.93 0 1 1-.54-1.78c3.88-1.18 10.37-.95 14.46 1.48a.93.93 0 0 1-.94 1.61Z"/></svg>
+              Spotify
+            </a>
+            <a class="platform-pill" href="https://geo.music.apple.com/album/time-single/6795112863?app=music&at=11lPP6" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.15 5.6a4.9 4.9 0 0 0-1.16-1.8 4.6 4.6 0 0 0-2.1-1.2A11.5 11.5 0 0 0 17.6 2.3H6.4c-.8.05-1.6.11-2.3.31a4.6 4.6 0 0 0-2.1 1.2 4.9 4.9 0 0 0-1.16 1.8C.4 6.5.3 7.5.3 8.5v7c0 1 .1 2 .54 2.9.28.63.66 1.2 1.16 1.68.5.5 1.1.87 1.7 1.1.7.28 1.5.34 2.3.4h11.2c.8-.06 1.6-.12 2.3-.4.6-.23 1.2-.6 1.7-1.1.5-.48.88-1.05 1.16-1.68.44-.9.54-1.9.54-2.9v-7c0-1-.1-2-.75-2.9ZM9.75 16.5a1.65 1.65 0 0 1-3.25-.4V11.2l6-1.25v5.15a1.65 1.65 0 0 1-3.25.35v-3.9l-3-.6v5.35c0 .06.5.2.5.2Zm5-.02a1.65 1.65 0 1 1-.02-3.3 1.65 1.65 0 0 1 .02 3.3ZM15.5 8.9l-6 1.25v-1.4l6-1.25v1.4Z"/></svg>
+              Apple Music
+            </a>
+            <a class="platform-pill" href="https://www.deezer.com/album/1040376812" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 15.2h3.6V17H2v-1.8Zm4.9-2.5h3.6v4.3H6.9v-4.3Zm4.9-2.4h3.6v6.7h-3.6V10.3Zm4.9-2.4h3.6v9.1h-3.6V7.9Zm4.9-2.5H22V17h-3.4V5.4ZM2 11.6h3.6v1.8H2v-1.8Zm4.9-2.4h3.6v1.8H6.9V9.2Zm4.9-2.4h3.6v1.8h-3.6V6.8Zm4.9-2.4h3.6v1.8h-3.6V4.4Z"/></svg>
+              Deezer
+            </a>
+            <a class="platform-pill" href="https://www.youtube.com/watch?v=YcoFTv6jspA" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+              YouTube
+            </a>
+            <a class="platform-pill" href="http://www.tidal.com/album/547063019" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 8 6l4 4 4-4-4-4Zm-8 8 4 4 4-4-4-4-4 4Zm16 0-4-4-4 4 4 4 4-4Zm-8 4-4 4 4 4 4-4-4-4Z"/></svg>
+              Tidal
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="music">
-    <div class="container">
-      <div class="release-card">
-        <div>
-          <div class="eyebrow">OUT NOW</div>
-          <h3>Listen to WREAL X</h3>
-          <p>Tap into the latest music, wherever you stream.</p>
-        </div>
-
-        <a
-          class="button button-primary"
-          href="https://snd.click/xvy9"
-          target="_blank"
-          rel="noopener"
-        >
-          Open Release ↗
-        </a>
+  <!-- ============ DISCOGRAPHY ============ -->
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Discography</span>
+        <h2>Where It Started</h2>
+        <p>Every curse has an origin story. These three tracks trace the turn from Afro roots to emo trap.</p>
       </div>
+      <div class="tracks reveal">
+        <div class="track-card">
+          <span class="num">01</span>
+          <h4>Monalisa</h4>
+          <p class="desc">An early work, still carrying the Afro influence he grew up around.</p>
+          <a class="listen" href="https://on.soundcloud.com/DajqsZXk6iny9opVWi" target="_blank" rel="noopener">
+            Listen on SoundCloud
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+        <div class="track-card">
+          <span class="num">02</span>
+          <h4>Photo</h4>
+          <p class="desc">The second Afro-rooted release, before the sound turned darker.</p>
+          <a class="listen" href="https://on.soundcloud.com/mwR5GJIVOlqcmVEStV" target="_blank" rel="noopener">
+            Listen on SoundCloud
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+        <div class="track-card">
+          <span class="num">03</span>
+          <h4>Hurry Up</h4>
+          <p class="desc">His first trap composition — the announcement that Wreal X was something entirely other.</p>
+          <a class="listen" href="https://on.soundcloud.com/mTHxTh9jylL8x99fXI" target="_blank" rel="noopener">
+            Listen on SoundCloud
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="eyebrow" style="margin-top: 72px;">STREAMING</div>
-      <h2>Choose your platform.</h2>
+  <!-- ============ VIDEOS ============ -->
+  <section class="section" id="videos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">On Screen</span>
+        <h2>Latest Videos</h2>
+        <p>Straight from the channel — no algorithm required.</p>
+      </div>
+      <div class="videos reveal">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/swCF5DMFquE" title="Wreal X video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/T59z8NQ3OMA" title="Wreal X video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" title="Wreal X video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="platforms-grid">
-        <a
-          class="platform-card"
-          href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl?si=Uap9FXYtRbOOkVy5pCYgKw&utm_source=copy-link"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="platform-logo">S</div>
+  <svg class="drip-divider" viewBox="0 0 1200 26" preserveAspectRatio="none" style="color:var(--char)"><path fill="currentColor" d="M0,0 L1200,0 L1200,10 C1150,10 1140,22 1110,22 C1085,22 1080,12 1055,12 C1010,12 1000,26 960,26 C930,26 925,14 895,14 C850,14 840,20 800,20 C770,20 765,10 735,10 C690,10 680,18 640,18 C610,18 605,8 575,8 C530,8 520,16 480,16 C450,16 445,6 415,6 C370,6 360,14 320,14 C290,14 285,10 255,10 C210,10 200,18 160,18 C130,18 125,8 95,8 C55,8 40,14 0,14 Z"/></svg>
+
+  <!-- ============ STORY ============ -->
+  <section class="story" id="story">
+    <div class="wrap section">
+      <div class="story__grid">
+        <div class="story__quote reveal">
+          "He believes he is cursed. But listen closely, and you'll hear a young man slowly unbuilding that curse — one lyric, one track, one dream at a time."
+        </div>
+        <div class="story__body reveal">
+          <p><strong>Angel Jambu Roy</strong> was born July 20, 2007, in Yei, Central Equatoria State — a small town where rhythm and melody became the only language that offered him solace. While the sounds around him leaned Afro, he was drawn to emo trap: artists who turned darkness into art.</p>
+          <p>In 2020, his father's death upended everything, pulling him back to a homeland that felt both familiar and foreign. That loss, layered onto a family unraveling, planted the belief that he carried a curse. In the studio, that same weight became fuel.</p>
+          <p>His earliest releases, <strong>Monalisa</strong> and <strong>Photo</strong>, still carried the Afro sound of home. Then came <strong>Hurry Up</strong> — his first trap record, and the moment Wreal X announced himself as something else entirely.</p>
+          <p>He's faced disillusionment, isolation, and broken promises from people who called his vision too risky. He kept building anyway — engineering a corridor between South Sudan and global emo trap, track by track.</p>
+          <span class="story__real-name">Angel Jambu Roy — b. July 20, 2007 — Yei, South Sudan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLATFORMS ============ -->
+  <section class="section" id="platforms">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Everywhere</span>
+        <h2>Stream on Any Platform</h2>
+        <p>Wreal X's full catalog, wherever you already listen.</p>
+      </div>
+      <div class="platform-grid reveal">
+        <a class="platform-card" href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.59 14.4a.62.62 0 0 1-.86.21c-2.36-1.44-5.33-1.77-8.83-.97a.63.63 0 1 1-.28-1.22c3.83-.88 7.12-.5 9.76 1.12.3.18.4.57.21.86Zm1.22-2.72a.78.78 0 0 1-1.07.26c-2.7-1.66-6.82-2.14-10.02-1.17a.78.78 0 1 1-.45-1.49c3.65-1.1 8.19-.57 11.28 1.33.37.23.49.72.26 1.07Zm.11-2.83C14.98 9.02 9.08 8.83 5.7 9.86a.93.93 0 1 1-.54-1.78c3.88-1.18 10.37-.95 14.46 1.48a.93.93 0 0 1-.94 1.61Z"/></svg>
           <span>Spotify</span>
         </a>
-
-        <a
-          class="platform-card"
-          href="https://music.apple.com/us/artist/wreal-x/1896590252"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="platform-logo">AM</div>
+        <a class="platform-card" href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.15 5.6a4.9 4.9 0 0 0-1.16-1.8 4.6 4.6 0 0 0-2.1-1.2A11.5 11.5 0 0 0 17.6 2.3H6.4c-.8.05-1.6.11-2.3.31a4.6 4.6 0 0 0-2.1 1.2 4.9 4.9 0 0 0-1.16 1.8C.4 6.5.3 7.5.3 8.5v7c0 1 .1 2 .54 2.9.28.63.66 1.2 1.16 1.68.5.5 1.1.87 1.7 1.1.7.28 1.5.34 2.3.4h11.2c.8-.06 1.6-.12 2.3-.4.6-.23 1.2-.6 1.7-1.1.5-.48.88-1.05 1.16-1.68.44-.9.54-1.9.54-2.9v-7c0-1-.1-2-.75-2.9ZM9.75 16.5a1.65 1.65 0 0 1-3.25-.4V11.2l6-1.25v5.15a1.65 1.65 0 0 1-3.25.35v-3.9l-3-.6v5.35c0 .06.5.2.5.2Zm5-.02a1.65 1.65 0 1 1-.02-3.3 1.65 1.65 0 0 1 .02 3.3ZM15.5 8.9l-6 1.25v-1.4l6-1.25v1.4Z"/></svg>
           <span>Apple Music</span>
         </a>
-
-        <a
-          class="platform-card"
-          href="https://tidal.com/artist/79457798/u"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="platform-logo">T</div>
-          <span>TIDAL</span>
+        <a class="platform-card" href="https://tidal.com/artist/79457798/u" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 8 6l4 4 4-4-4-4Zm-8 8 4 4 4-4-4-4-4 4Zm16 0-4-4-4 4 4 4 4-4Zm-8 4-4 4 4 4 4-4-4-4Z"/></svg>
+          <span>Tidal</span>
         </a>
-
-        <a
-          class="platform-card"
-          href="https://soundcloud.com/wrealx"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="platform-logo">SC</div>
-          <span>SoundCloud</span>
-        </a>
-
-        <a
-          class="platform-card"
-          href="https://youtube.com/@wrealx"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="platform-logo">YT</div>
+        <a class="platform-card" href="https://youtube.com/@wrealx" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
           <span>YouTube</span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="eyebrow">BOOKINGS · FEATURES · BUSINESS</div>
-      <h2>Let’s make noise.</h2>
-
-      <p>
-        For bookings, collaborations, press, and everything WREAL X.
-      </p>
-
-      <div class="buttons">
-        <a class="button button-primary" href="mailto:wrealx@proton.me">
-          Email WREAL X
-        </a>
-
-        <a
-          class="button button-secondary"
-          href="https://wa.me/211920146370"
-          target="_blank"
-          rel="noopener"
-        >
-          WhatsApp
+        <a class="platform-card" href="https://soundcloud.com/wrealx" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 15.5v-3.7c0-.13.1-.24.24-.24s.24.11.24.24v3.7a.24.24 0 0 1-.48 0Zm2.3 1.4V10.2c0-.15.12-.27.27-.27s.27.12.27.27v6.7a.27.27 0 0 1-.54 0Zm2.4.6V8.7c0-.17.14-.31.3-.31s.31.14.31.31v8.8a.3.3 0 0 1-.6 0Zm2.5.1V7.3c0-.19.16-.35.35-.35s.35.16.35.35v10.3a.35.35 0 0 1-.7 0Zm2.6.05V5.6c0-.22.18-.4.4-.4s.4.18.4.4v11.95a.4.4 0 0 1-.8 0Zm2.7 0V4.2a.44.44 0 0 1 .88 0v13.35a.44.44 0 1 1-.88 0Zm2.85.02V3.6a4.6 4.6 0 0 1 1.7-.33c1.63 0 3.05.94 3.75 2.32a3.6 3.6 0 0 1 1.4-.28c2 0 3.6 1.63 3.6 3.63a3.63 3.63 0 0 1-3.6 3.63H14.9a.44.44 0 0 1-.4-.44V17.57Z"/></svg>
+          <span>SoundCloud</span>
         </a>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="container footer-content">
-      <span>© 2026 WREAL X. All rights reserved.</span>
-
-      <div class="socials">
-        <a
-          class="social"
-          href="https://twitter.com/Wreal_X"
-          target="_blank"
-          rel="noopener"
-        >X</a>
-
-        <a
-          class="social"
-          href="https://facebook.com/wrealxcursed"
-          target="_blank"
-          rel="noopener"
-        >f</a>
-
-        <a
-          class="social"
-          href="https://instagram.com/wreal.x"
-          target="_blank"
-          rel="noopener"
-        >IG</a>
-
-        <a
-          class="social"
-          href="https://tiktok.com/wreal_x"
-          target="_blank"
-          rel="noopener"
-        >TT</a>
+  <!-- ============ CONNECT ============ -->
+  <section class="section" id="connect">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Connect</span>
+        <h2>Follow The Curse</h2>
       </div>
-    </div>
-  </footer>
-</body>
-    </html>
+
+      <div class="connect">
+        <div class="connect__socials reveal">
+          <div class="social-row">
+            <a class="left" href="https://twitter.com/Wreal_X" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px;width:100%;">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L4 22H1l8.1-9.3L1 2h7.4l5.1 6.7L18.9 2Zm-1.3 18h2L7.5 4h-2l12.1 16Z"/></svg>
+              <span><span class="name">X (Twitter)</span><br><span class="handle">@Wreal_X</span></span>
+              <span class="arrow" style="margin-left:auto;">↗</span>
+            </a>
+          </div>
+          <div class="social-row">
+            <a class="left" href="https://instagram.com/wreal.x" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px;width:100%;">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.16.55.55.9 1.11 1.16 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.16 1.77 4.9 4.9 0 0 1-1.77 1.16c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.16 4.9 4.9 0 0 1-1.16-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.16-1.77A4.9 4.9 0 0 1 5.46.52C6.1.27 6.83.1 7.89.05 8.94.01 9.28 0 12 0Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.25a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5ZM17.5 4.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z" transform="translate(0 2)"/></svg>
+              <span><span class="name">Instagram</span><br><span class="handle">@wreal.x</span></span>
+              <span class="arrow" style="margin-left:auto;">↗</span>
+            </a>
+          </div>
+          <div class="social-row">
+            <a class="left" href="https://facebook.com/wrealxcursed" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:16px;width:100%;">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H
