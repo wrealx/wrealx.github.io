@@ -6,7 +6,7 @@
     <title>Merch · Wreal X</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Space+Grotesk:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,15 +26,15 @@
         }
         .logo {
             font-size: 2.2rem;
-            font-weight: 800;
-            color: #FFD700;
+            font-weight: 900;
+            color: #00D4FF;
             text-decoration: none;
-            font-family: 'Creepster', cursive;
-            letter-spacing: 0.05em;
-            text-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+            letter-spacing: 0.1em;
+            font-family: 'Orbitron', cursive;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.3), 0 0 80px rgba(0, 212, 255, 0.1);
         }
         .logo:hover {
-            text-shadow: 0 0 60px rgba(255, 215, 0, 0.4);
+            text-shadow: 0 0 60px rgba(0, 212, 255, 0.5), 0 0 120px rgba(0, 212, 255, 0.2);
         }
         .nav-links {
             display: flex;
@@ -43,36 +43,58 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #FF8C00;
+            color: #00B4D8;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.3s;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
         }
         .nav-links a:hover {
-            color: #FFD700;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            color: #00F0FF;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
-        .page-title {
+        .hero-bg {
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 2rem 5% 0;
+            padding: 2rem 5%;
+            background-image: url('https://iili.io/CDxyUOv.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background-attachment: fixed;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.7);
+            z-index: 0;
+        }
+        .hero-bg * { position: relative; z-index: 1; }
+        .hero-bg h1 {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 800;
-            color: #FFD700;
-            font-family: 'Creepster', cursive;
-            letter-spacing: 0.05em;
-            text-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
+            font-weight: 900;
+            color: #00D4FF;
+            font-family: 'Orbitron', cursive;
+            text-shadow: 0 0 60px rgba(0, 212, 255, 0.2);
         }
         .page-sub {
             text-align: center;
-            color: #FF8C00;
+            color: #00B4D8;
             font-size: 0.9rem;
             letter-spacing: 0.2em;
             margin-top: 0.2rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
         }
         .merch-grid {
@@ -84,16 +106,17 @@
             margin: 0 auto;
         }
         .merch-item {
-            background: #0F0F0F;
+            background: rgba(15, 15, 15, 0.9);
             border-radius: 20px;
             padding: 1.8rem;
-            border: 1px solid #1A1A1A;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
             transition: all 0.4s;
             text-align: center;
         }
         .merch-item:hover {
-            border-color: #FFD700;
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
+            border-color: #00D4FF;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.06);
             transform: translateY(-6px);
         }
         .merch-item .merch-image {
@@ -103,23 +126,23 @@
             background-size: cover;
             background-position: center;
             margin-bottom: 1rem;
-            border: 1px solid #1A1A1A;
+            border: 1px solid rgba(0, 212, 255, 0.1);
             transition: all 0.3s;
         }
         .merch-item .merch-image:hover {
-            border-color: #FFD700;
+            border-color: #00D4FF;
             transform: scale(1.02);
         }
         .merch-item h3 {
             font-size: 1.3rem;
-            color: #FFD700;
+            color: #00D4FF;
             margin-bottom: 0.3rem;
-            font-family: 'Creepster', cursive;
+            font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
         }
         .merch-item .tag {
             display: inline-block;
-            background: #FF6B00;
+            background: #00D4FF;
             color: #0A0A0A;
             font-size: 0.65rem;
             font-weight: 700;
@@ -129,31 +152,31 @@
             margin: 0 auto 1rem;
             display: table;
             letter-spacing: 0.1em;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
         }
         .merch-item .buy-btn {
             display: inline-block;
             padding: 0.8rem 3rem;
-            background: #FF6B00;
+            background: #00D4FF;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 0.05em;
             border: none;
             cursor: pointer;
             margin-top: 0.5rem;
-            box-shadow: 0 0 40px rgba(255, 107, 0, 0.15);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
         }
         .merch-item .buy-btn:hover {
-            background: #FFD700;
+            background: #00F0FF;
             transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.4);
         }
         .soundplate-link {
             text-align: center;
@@ -162,34 +185,34 @@
         .soundplate-link a {
             display: inline-block;
             padding: 0.8rem 2.5rem;
-            background: #FF6B00;
+            background: #00D4FF;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
             font-size: 0.95rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            box-shadow: 0 0 40px rgba(255, 107, 0, 0.2);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.2);
         }
         .soundplate-link a:hover {
-            background: #FFD700;
+            background: #00F0FF;
             transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.4);
         }
         footer {
             text-align: center;
             padding: 2rem 5%;
-            color: #FF8C00;
+            color: #00B4D8;
             font-size: 0.8rem;
-            border-top: 1px solid #1A1A1A;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
             margin-top: 2rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
         }
         footer a {
-            color: #FFD700;
+            color: #00D4FF;
             text-decoration: none;
         }
         @media (max-width: 768px) {
@@ -212,8 +235,10 @@
     </ul>
 </nav>
 
-<h1 class="page-title">MERCH</h1>
-<p class="page-sub">— wear the movement —</p>
+<div class="hero-bg">
+    <h1>MERCH</h1>
+    <p class="page-sub">— wear the movement —</p>
+</div>
 
 <div class="merch-grid">
     <div class="merch-item">
