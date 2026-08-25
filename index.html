@@ -17,71 +17,6 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            border-top: 2px solid #39FF14;
-            padding: 1.2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            z-index: 9999;
-            backdrop-filter: blur(10px);
-            transition: transform 0.5s ease;
-            box-shadow: 0 -10px 60px rgba(57, 255, 20, 0.1);
-        }
-        .cookie-banner.hidden { 
-            transform: translateY(100%);
-            display: none;
-        }
-        .cookie-banner p {
-            font-size: 0.9rem;
-            color: #7FFF00;
-            max-width: 600px;
-            font-family: 'Major Mono Display', monospace;
-        }
-        .cookie-banner p a {
-            color: #39FF14;
-            text-decoration: none;
-        }
-        .cookie-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-        .cookie-buttons button {
-            padding: 0.5rem 1.8rem;
-            border: none;
-            border-radius: 30px;
-            font-family: 'Major Mono Display', monospace;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.85rem;
-        }
-        .cookie-accept {
-            background: #39FF14;
-            color: #0A0A0A;
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
-        }
-        .cookie-accept:hover {
-            background: #00FF41;
-            transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(57, 255, 20, 0.5);
-        }
-        .cookie-reject {
-            background: transparent;
-            color: #7FFF00;
-            border: 1px solid #39FF14 !important;
-        }
-        .cookie-reject:hover {
-            border-color: #00FF41 !important;
-            color: #00FF41;
-        }
         nav {
             display: flex;
             justify-content: space-between;
@@ -104,7 +39,6 @@
         .logo:hover {
             text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
         }
-        /* NAV BUTTONS - STYLED DIFFERENTLY */
         .nav-links {
             display: flex;
             gap: 1.5rem;
@@ -117,7 +51,6 @@
             font-weight: 700;
             font-size: 0.9rem;
             transition: all 0.3s;
-            position: relative;
             font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.15em;
@@ -557,8 +490,6 @@
             .music-grid { grid-template-columns: 1fr; }
             .merch-grid { grid-template-columns: 1fr; }
             .video-grid { grid-template-columns: 1fr; }
-            .cookie-banner { flex-direction: column; text-align: center; }
-            .cookie-buttons { width: 100%; justify-content: center; }
             .contact-form-wrapper { padding: 1.5rem; }
         }
         @media (max-width: 480px) {
@@ -568,14 +499,6 @@
     </style>
 </head>
 <body>
-
-<div id="cookieBanner" class="cookie-banner">
-    <p>👽 We use cookies to improve your experience. By using this site, you agree to our <a href="#">Privacy Policy</a>.</p>
-    <div class="cookie-buttons">
-        <button class="cookie-reject" onclick="rejectCookies()">Reject All</button>
-        <button class="cookie-accept" onclick="acceptCookies()">Accept All</button>
-    </div>
-</div>
 
 <nav>
     <a href="index.html" class="logo">✦ WREAL X</a>
@@ -592,4 +515,38 @@
     <h1>WREAL X</h1>
     <p class="subhead">Artist · Producer · Visionary</p>
     <p class="tagline">Dark aesthetics meet alien energy — welcome to my world.</p>
-    <a href="music.html" class="cta-btn">▶ Li
+    <a href="music.html" class="cta-btn">▶ Watch Now</a>
+</section>
+
+<div class="social-bar">
+    <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i> <span class="label">Instagram</span></a>
+    <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i> <span class="label">Twitter</span></a>
+    <a href="https://tiktok.com/wreal_x" target="_blank"><i class="fab fa-tiktok"></i> <span class="label">TikTok</span></a>
+    <a href="https://facebook.com/wrealxcursed" target="_blank"><i class="fab fa-facebook"></i> <span class="label">Facebook</span></a>
+    <a href="https://youtube.com/@wrealx" target="_blank"><i class="fab fa-youtube"></i> <span class="label">YouTube</span></a>
+    <a href="https://soundcloud.com/wrealx" target="_blank"><i class="fab fa-soundcloud"></i> <span class="label">SoundCloud</span></a>
+    <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank"><i class="fab fa-spotify"></i> <span class="label">Spotify</span></a>
+    <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank"><i class="fab fa-apple"></i> <span class="label">Apple</span></a>
+    <a href="https://tidal.com/artist/79457798/u" target="_blank"><i class="fab fa-tidal"></i> <span class="label">Tidal</span></a>
+    <a href="https://audiomack.com/@wrealx" target="_blank"><i class="fas fa-headphones"></i> <span class="label">Audiomack</span></a>
+</div>
+
+<!-- ====== VIDEOS SECTION ====== -->
+<section class="content-section">
+    <h2>✦ VIDEOS</h2>
+    <div class="video-grid">
+        <iframe src="https://www.youtube.com/embed/swCF5DMFquE" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/T59z8NQ3OMA" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" allowfullscreen></iframe>
+    </div>
+
+    <!-- ====== MUSIC SECTION ====== -->
+    <h2>✦ MUSIC</h2>
+    <div class="music-grid">
+        <div class="track-card">
+            <h3>Monalisa</h3>
+            <p class="artist">Wreal X</p>
+            <iframe class="soundcloud-embed" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/wrealx/monalisa&color=39ff14&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe>
+            <div class="streaming-icons">
+                <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank"><i class="fab fa-spotify"></i><span class="label">Spotify</span></a>
+                <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank"
