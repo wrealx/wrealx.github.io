@@ -8,6 +8,68 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- SILKTIDE COOKIE CONSENT -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
+    <style id="silktide-consent-manager-overrides">
+        #stcm-wrapper {
+            --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+            --fontFamily: 'Space Grotesk', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+            --primaryColor: #39FF14;
+            --backgroundColor: #0A0A0A;
+            --textColor: #E0E0E0;
+            --backdropBackgroundColor: #00000080;
+            --backdropBackgroundBlur: 8px;
+            --iconColor: #0A0A0A;
+            --iconBackgroundColor: #39FF14;
+        }
+        /* Silktide button overrides for dark theme */
+        #stcm-wrapper .stcm-button-primary {
+            background: #39FF14 !important;
+            color: #0A0A0A !important;
+            font-weight: 700 !important;
+            font-family: 'Rajdhani', sans-serif !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            border-radius: 50px !important;
+            padding: 0.6rem 1.8rem !important;
+            border: none !important;
+            transition: all 0.3s !important;
+        }
+        #stcm-wrapper .stcm-button-primary:hover {
+            background: #00FF41 !important;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.3) !important;
+            transform: scale(1.05) !important;
+        }
+        #stcm-wrapper .stcm-button-secondary {
+            background: transparent !important;
+            color: #7FFF00 !important;
+            border: 1px solid #39FF14 !important;
+            font-family: 'Rajdhani', sans-serif !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            border-radius: 50px !important;
+            padding: 0.6rem 1.8rem !important;
+            transition: all 0.3s !important;
+        }
+        #stcm-wrapper .stcm-button-secondary:hover {
+            border-color: #00FF41 !important;
+            color: #00FF41 !important;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1) !important;
+        }
+        #stcm-wrapper .stcm-toggle.checked {
+            background: #39FF14 !important;
+        }
+        #stcm-wrapper .stcm-toggle {
+            background: #333 !important;
+        }
+        #stcm-wrapper .stcm-toggle.checked .stcm-toggle-slider {
+            background: #0A0A0A !important;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
@@ -177,12 +239,13 @@
             border-color: #39FF14;
             box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
         }
-        .contact-form-section {
+        /* ====== BEACONS EMAIL FORM - MOBILE VIEW ====== */
+        .email-section {
             padding: 3rem 5%;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
         }
-        .contact-form-section h2 {
+        .email-section h2 {
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 900;
@@ -192,7 +255,7 @@
             letter-spacing: 0.05em;
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
         }
-        .contact-form-section .form-sub {
+        .email-section .email-sub {
             text-align: center;
             color: #7FFF00;
             font-size: 0.9rem;
@@ -201,67 +264,20 @@
             font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
         }
-        .contact-form-wrapper {
-            background: rgba(15, 15, 15, 0.9);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(57, 255, 20, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        .contact-form-wrapper label {
-            display: block;
-            color: #7FFF00;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-family: 'Major Mono Display', monospace;
-        }
-        .contact-form-wrapper input,
-        .contact-form-wrapper textarea {
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 {
             width: 100%;
-            padding: 0.8rem 1rem;
-            background: rgba(10, 10, 10, 0.8);
-            border: 1px solid rgba(57, 255, 20, 0.2);
-            border-radius: 10px;
-            color: #E0E0E0;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 1.2rem;
-            transition: border-color 0.3s;
+            max-width: 100%;
+            overflow: hidden;
         }
-        .contact-form-wrapper input:focus,
-        .contact-form-wrapper textarea:focus {
-            outline: none;
-            border-color: #39FF14;
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.05);
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
+            width: 100% !important;
+            max-width: 100% !important;
+            border: 1px solid rgba(57, 255, 20, 0.1) !important;
+            border-radius: 16px !important;
+            background: rgba(15, 15, 15, 0.9) !important;
+            min-height: 350px;
         }
-        .contact-form-wrapper textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-        .contact-form-wrapper .send-btn {
-            padding: 0.9rem 3rem;
-            background: #39FF14;
-            border: none;
-            border-radius: 50px;
-            color: #0A0A0A;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
-        }
-        .contact-form-wrapper .send-btn:hover {
-            background: #00FF41;
-            transform: scale(1.02);
-            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
-        }
+        /* Social icons - bottom */
         .social-bar-bottom {
             display: flex;
             justify-content: center;
@@ -310,21 +326,39 @@
         footer a:hover {
             text-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
         }
+
+        /* ====== MOBILE RESPONSIVE ====== */
         @media (max-width: 768px) {
             nav { flex-direction: column; }
             .nav-links { gap: 0.8rem; justify-content: center; }
             .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
             .video-grid { grid-template-columns: 1fr; }
-            .contact-form-wrapper { padding: 1.5rem; }
+            .email-section { padding: 2rem 5%; }
+            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
+                min-height: 400px;
+            }
             .social-bar-bottom { gap: 1.5rem; }
             .social-bar-bottom a { font-size: 1.4rem; }
+            .social-bar-bottom a .label { font-size: 0.6rem; }
+            /* Silktide mobile overrides */
+            #stcm-wrapper .stcm-prompt {
+                padding: 1rem !important;
+            }
+            #stcm-wrapper .stcm-button-primary,
+            #stcm-wrapper .stcm-button-secondary {
+                padding: 0.5rem 1.2rem !important;
+                font-size: 0.8rem !important;
+            }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: clamp(3rem, 12vw, 4.5rem); }
             .hero .subhead { font-size: 1rem; letter-spacing: 0.15em; }
             .social-bar-bottom { gap: 1rem; }
             .social-bar-bottom a { font-size: 1.2rem; }
-            .social-bar-bottom a .label { font-size: 0.55rem; }
+            .social-bar-bottom a .label { font-size: 0.5rem; }
+            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
+                min-height: 420px;
+            }
         }
     </style>
 </head>
@@ -359,30 +393,14 @@
     </div>
 </section>
 
-<!-- ====== SEND MESSAGE FORM ====== -->
-<section class="contact-form-section">
-    <h2>✦ SEND A MESSAGE</h2>
-    <p class="form-sub">— let's connect —</p>
-    <div class="contact-form-wrapper">
-        <form action="mailto:wrealx@proton.me" method="post" enctype="text/plain">
-            <label>Your Name</label>
-            <input type="text" name="name" placeholder="e.g. Alex" required>
-
-            <label>Email</label>
-            <input type="email" name="email" placeholder="you@example.com" required>
-
-            <label>Subject</label>
-            <input type="text" name="subject" placeholder="Booking / Collaboration / Fan">
-
-            <label>Message</label>
-            <textarea name="message" placeholder="Tell me what's on your mind..." required></textarea>
-
-            <button type="submit" class="send-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
-        </form>
-    </div>
+<!-- ====== EMAIL SIGNUP - BEACONS (MOBILE VIEW) ====== -->
+<section class="email-section">
+    <h2>✦ STAY CONNECTED</h2>
+    <p class="email-sub">— join the movement —</p>
+    <div id="31c0e709-a54d-43f1-918f-67317d82f9b4"></div>
 </section>
 
-<!-- ====== SOCIAL ICONS - AT THE VERY BOTTOM ====== -->
+<!-- ====== SOCIAL ICONS - BOTTOM ====== -->
 <div class="social-bar-bottom">
     <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i> <span class="label">Instagram</span></a>
     <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i> <span class="label">Twitter</span></a>
@@ -400,7 +418,89 @@
     © 2026 WREAL X · Built with <span style="color:#39FF14;">♾️</span>
 </footer>
 
-<!-- TAWK.TO -->
+<!-- ====== SILKTIDE COOKIE CONSENT INIT ====== -->
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: true
+  },
+  icon: {
+    position: "bottomLeft"
+  },
+  prompt: {
+    position: "bottomCenter"
+  },
+  consentTypes: [
+    {
+      id: "cursed",
+      label: "CURSED",
+      description: "<p>These cookies are necessary for our website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p><p>Cursed &nbsp;</p>",
+      required: true,
+      onAccept: function() {
+        console.log('Add logic for the required CURSED consent type here');
+      }
+    },
+    {
+      id: "analytics",
+      label: "Analytics",
+      description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+      required: false,
+      gtag: "analytics_storage"
+    },
+    {
+      id: "marketing",
+      label: "Marketing",
+      description: "<p>These cookies are used by us and our advertising partners to show you relevant ads on this site and elsewhere, and to measure how those campaigns perform.</p>",
+      required: false,
+      gtag: [
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ]
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
+      acceptAllButtonText: "Accept all",
+      acceptAllButtonAccessibleLabel: "Accept all cookies",
+      rejectNonEssentialButtonText: "Reject non-essential",
+      rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+      preferencesButtonText: "Preferences",
+      preferencesButtonAccessibleLabel: "Toggle preferences"
+    },
+    preferences: {
+      title: "Customize your cookie preferences",
+      description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+      saveButtonText: "Save and close",
+      saveButtonAccessibleLabel: "Save your cookie preferences",
+      creditLinkText: "Get this banner for free",
+      creditLinkAccessibleLabel: "Get this banner for free"
+    }
+  }
+});
+</script>
+
+<!-- ====== BEACONS EMAIL FORM ====== -->
+<script>
+    (function () {
+        function loadBeaconsEmailFormEmbed() {
+            var s = document.createElement("script");
+            var t = Math.floor(new Date().getTime() / 120000);
+            s.type = "module";
+            s.async = 1;
+            s.src = `https://beacons.ai/embeds/emailForm.js?v=${t}&b=wrealx&f=31c0e709-a54d-43f1-918f-67317d82f9b4`;
+            (document.head || document.body || document.documentElement).appendChild(s);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", loadBeaconsEmailFormEmbed, { once: true });
+            return;
+        }
+        loadBeaconsEmailFormEmbed();
+    })();
+</script>
+
+<!-- ====== TAWK.TO ====== -->
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function() {
@@ -414,4 +514,4 @@
 </script>
 
 </body>
-            </html>
+    </html>
