@@ -24,7 +24,6 @@
             --iconColor: #0A0A0A;
             --iconBackgroundColor: #39FF14;
         }
-        /* Silktide button overrides for dark theme */
         #stcm-wrapper .stcm-button-primary {
             background: #39FF14 !important;
             color: #0A0A0A !important;
@@ -109,21 +108,21 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #7FFF00;
+            color: #FFFFFF;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.1em;
             padding: 0.5rem 1.2rem;
-            border: 1.5px solid rgba(57, 255, 20, 0.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
             border-radius: 8px;
-            background: rgba(57, 255, 20, 0.05);
+            background: rgba(255, 255, 255, 0.05);
         }
         .nav-links a:hover {
-            color: #00FF41;
+            color: #39FF14;
             border-color: #39FF14;
             background: rgba(57, 255, 20, 0.1);
             text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
@@ -138,7 +137,7 @@
             align-items: center;
             text-align: center;
             padding: 2rem 5%;
-            background-image: url('https://iili.io/CDxyUOv.jpg');
+            background-image: url('https://iili.io/CD0qtob.png');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -151,7 +150,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(10, 10, 10, 0.75);
+            background: rgba(10, 10, 10, 0.5);
             z-index: 1;
         }
         .hero * { position: relative; z-index: 2; }
@@ -159,30 +158,32 @@
             font-size: clamp(4rem, 15vw, 8rem);
             font-weight: 900;
             line-height: 1.1;
-            color: #39FF14;
-            text-shadow: 0 0 80px rgba(57, 255, 20, 0.2), 0 0 160px rgba(57, 255, 20, 0.1);
+            color: #FFFFFF;
+            text-shadow: 0 0 80px rgba(0, 0, 0, 0.5), 0 0 160px rgba(0, 0, 0, 0.3);
             font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
         }
         .hero .subhead {
-            font-size: 1.6rem;
-            color: #7FFF00;
+            font-size: 1.2rem;
+            color: #FFFFFF;
             margin-top: 0.5rem;
             font-weight: 400;
             letter-spacing: 0.3em;
-            text-shadow: 0 0 40px rgba(57, 255, 20, 0.15);
-            font-family: 'Major Mono Display', monospace;
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
+            opacity: 0.8;
         }
         .hero .tagline {
             font-size: 1.1rem;
-            color: #ADFF2F;
+            color: #39FF14;
             margin-top: 1rem;
             max-width: 500px;
             opacity: 0.9;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 300;
             letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
         }
         .cta-btn {
             margin-top: 2.5rem;
@@ -216,11 +217,11 @@
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 900;
-            color: #39FF14;
+            color: #FFFFFF;
             margin-bottom: 2rem;
             font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
-            text-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
         .video-grid {
             display: grid;
@@ -232,14 +233,13 @@
             width: 100%;
             aspect-ratio: 16/9;
             border-radius: 16px;
-            border: 1px solid rgba(57, 255, 20, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: all 0.3s;
         }
         .video-grid iframe:hover {
             border-color: #39FF14;
             box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
         }
-        /* ====== BEACONS EMAIL FORM - MOBILE VIEW ====== */
         .email-section {
             padding: 3rem 5%;
             max-width: 600px;
@@ -249,20 +249,21 @@
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 900;
-            color: #39FF14;
+            color: #FFFFFF;
             margin-bottom: 0.5rem;
             font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
-            text-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
         .email-section .email-sub {
             text-align: center;
-            color: #7FFF00;
+            color: #FFFFFF;
             font-size: 0.9rem;
             letter-spacing: 0.2em;
             margin-bottom: 2rem;
-            font-family: 'Major Mono Display', monospace;
+            font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
+            opacity: 0.6;
         }
         #31c0e709-a54d-43f1-918f-67317d82f9b4 {
             width: 100%;
@@ -272,52 +273,55 @@
         #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
             width: 100% !important;
             max-width: 100% !important;
-            border: 1px solid rgba(57, 255, 20, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
             border-radius: 16px !important;
             background: rgba(15, 15, 15, 0.9) !important;
             min-height: 350px;
         }
-        /* Social icons - bottom */
         .social-bar-bottom {
             display: flex;
             justify-content: center;
             gap: 2.5rem;
             padding: 2rem 5%;
-            background: rgba(10, 10, 10, 0.95);
-            border-top: 1px solid rgba(57, 255, 20, 0.15);
-            border-bottom: 1px solid rgba(57, 255, 20, 0.15);
+            background: rgba(10, 10, 10, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             flex-wrap: wrap;
             margin-top: 2rem;
         }
         .social-bar-bottom a {
-            color: #7FFF00;
+            color: #FFFFFF;
             font-size: 1.8rem;
             text-decoration: none;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            opacity: 0.7;
         }
         .social-bar-bottom a:hover {
-            color: #00FF41;
+            color: #39FF14;
             transform: translateY(-4px);
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.3);
+            opacity: 1;
         }
         .social-bar-bottom a .label {
             font-size: 0.7rem;
-            color: #7FFF00;
-            font-family: 'Major Mono Display', monospace;
+            color: #FFFFFF;
+            font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            opacity: 0.5;
         }
         footer {
             text-align: center;
             padding: 2rem 5%;
-            color: #7FFF00;
+            color: #FFFFFF;
             font-size: 0.8rem;
-            border-top: 1px solid rgba(57, 255, 20, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 1rem;
-            font-family: 'Major Mono Display', monospace;
+            font-family: 'Space Grotesk', sans-serif;
+            opacity: 0.4;
         }
         footer a {
             color: #39FF14;
@@ -327,7 +331,6 @@
             text-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
         }
 
-        /* ====== MOBILE RESPONSIVE ====== */
         @media (max-width: 768px) {
             nav { flex-direction: column; }
             .nav-links { gap: 0.8rem; justify-content: center; }
@@ -340,7 +343,6 @@
             .social-bar-bottom { gap: 1.5rem; }
             .social-bar-bottom a { font-size: 1.4rem; }
             .social-bar-bottom a .label { font-size: 0.6rem; }
-            /* Silktide mobile overrides */
             #stcm-wrapper .stcm-prompt {
                 padding: 1rem !important;
             }
@@ -375,7 +377,6 @@
     </ul>
 </nav>
 
-<!-- ====== HERO SECTION ====== -->
 <section class="hero">
     <h1>WREAL X</h1>
     <p class="subhead">Artist · Producer · Visionary</p>
@@ -383,7 +384,6 @@
     <a href="music.html" class="cta-btn">▶ Watch Now</a>
 </section>
 
-<!-- ====== VIDEOS SECTION ====== -->
 <section class="content-section">
     <h2>✦ VIDEOS</h2>
     <div class="video-grid">
@@ -393,14 +393,12 @@
     </div>
 </section>
 
-<!-- ====== EMAIL SIGNUP - BEACONS (MOBILE VIEW) ====== -->
 <section class="email-section">
     <h2>✦ STAY CONNECTED</h2>
     <p class="email-sub">— join the movement —</p>
     <div id="31c0e709-a54d-43f1-918f-67317d82f9b4"></div>
 </section>
 
-<!-- ====== SOCIAL ICONS - BOTTOM ====== -->
 <div class="social-bar-bottom">
     <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i> <span class="label">Instagram</span></a>
     <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i> <span class="label">Twitter</span></a>
@@ -418,18 +416,11 @@
     © 2026 WREAL X · Built with <span style="color:#39FF14;">♾️</span>
 </footer>
 
-<!-- ====== SILKTIDE COOKIE CONSENT INIT ====== -->
 <script>
 window.silktideConsentManager.init({
-  backdrop: {
-    show: true
-  },
-  icon: {
-    position: "bottomLeft"
-  },
-  prompt: {
-    position: "bottomCenter"
-  },
+  backdrop: { show: true },
+  icon: { position: "bottomLeft" },
+  prompt: { position: "bottomCenter" },
   consentTypes: [
     {
       id: "cursed",
@@ -452,11 +443,7 @@ window.silktideConsentManager.init({
       label: "Marketing",
       description: "<p>These cookies are used by us and our advertising partners to show you relevant ads on this site and elsewhere, and to measure how those campaigns perform.</p>",
       required: false,
-      gtag: [
-        "ad_storage",
-        "ad_user_data",
-        "ad_personalization"
-      ]
+      gtag: [ "ad_storage", "ad_user_data", "ad_personalization" ]
     }
   ],
   text: {
@@ -481,7 +468,6 @@ window.silktideConsentManager.init({
 });
 </script>
 
-<!-- ====== BEACONS EMAIL FORM ====== -->
 <script>
     (function () {
         function loadBeaconsEmailFormEmbed() {
@@ -500,7 +486,6 @@ window.silktideConsentManager.init({
     })();
 </script>
 
-<!-- ====== TAWK.TO ====== -->
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function() {
