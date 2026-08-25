@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
+        html, body {
             background: #0A0A0A;
             color: #E0E0E0;
             font-family: 'Space Grotesk', sans-serif;
             min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
         nav {
             display: flex;
@@ -23,6 +25,8 @@
             padding: 1.8rem 5%;
             flex-wrap: wrap;
             gap: 1rem;
+            position: relative;
+            z-index: 10;
         }
         .logo {
             font-size: 2.2rem;
@@ -43,21 +47,21 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #7FFF00;
+            color: #FFFFFF;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.1em;
             padding: 0.5rem 1.2rem;
-            border: 1.5px solid rgba(57, 255, 20, 0.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
             border-radius: 8px;
-            background: rgba(57, 255, 20, 0.05);
+            background: rgba(255, 255, 255, 0.05);
         }
         .nav-links a:hover {
-            color: #00FF41;
+            color: #39FF14;
             border-color: #39FF14;
             background: rgba(57, 255, 20, 0.1);
             text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
@@ -72,7 +76,7 @@
             align-items: center;
             text-align: center;
             padding: 2rem 5%;
-            background-image: url('https://iili.io/CDxyUOv.jpg');
+            background-image: url('https://iili.io/CD0qtob.png');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -85,25 +89,26 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(10, 10, 10, 0.7);
+            background: rgba(10, 10, 10, 0.5);
             z-index: 0;
         }
         .hero-bg * { position: relative; z-index: 1; }
         .hero-bg h1 {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 900;
-            color: #39FF14;
+            color: #FFFFFF;
             font-family: 'Orbitron', cursive;
-            text-shadow: 0 0 60px rgba(57, 255, 20, 0.2);
+            text-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
         }
         .page-sub {
             text-align: center;
-            color: #7FFF00;
+            color: #FFFFFF;
             font-size: 0.9rem;
             letter-spacing: 0.2em;
             margin-top: 0.2rem;
-            font-family: 'Major Mono Display', monospace;
+            font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
+            opacity: 0.6;
         }
         .contact-grid {
             display: grid;
@@ -116,16 +121,17 @@
         }
         .contact-info h2 {
             font-size: clamp(1.8rem, 3vw, 2.5rem);
-            color: #39FF14;
+            color: #FFFFFF;
             margin-bottom: 1rem;
             font-family: 'Orbitron', cursive;
-            text-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
         .contact-info p {
-            color: #7FFF00;
+            color: #FFFFFF;
             line-height: 1.8;
             margin-bottom: 1.5rem;
             font-weight: 300;
+            opacity: 0.6;
         }
         .contact-info .contact-item {
             display: flex;
@@ -135,7 +141,7 @@
             padding: 0.8rem 1.2rem;
             background: rgba(15, 15, 15, 0.9);
             border-radius: 12px;
-            border: 1px solid rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             transition: all 0.3s;
         }
@@ -152,7 +158,7 @@
             color: #E0E0E0;
             text-decoration: none;
             transition: color 0.3s;
-            font-family: 'Major Mono Display', monospace;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 0.9rem;
         }
         .contact-info .contact-item a:hover {
@@ -165,14 +171,16 @@
             flex-wrap: wrap;
         }
         .contact-info .social-links a {
-            color: #7FFF00;
+            color: #FFFFFF;
             font-size: 2rem;
             transition: all 0.3s;
+            opacity: 0.6;
         }
         .contact-info .social-links a:hover {
-            color: #00FF41;
+            color: #39FF14;
             transform: translateY(-3px);
             text-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
+            opacity: 1;
         }
         .whatsapp-btn {
             display: inline-block;
@@ -185,7 +193,7 @@
             text-decoration: none;
             transition: all 0.3s;
             text-align: center;
-            font-family: 'Major Mono Display', monospace;
+            font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
             font-size: 0.85rem;
             letter-spacing: 0.05em;
@@ -198,32 +206,33 @@
             background: rgba(15, 15, 15, 0.9);
             padding: 2.5rem;
             border-radius: 20px;
-            border: 1px solid rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
         .contact-form h3 {
-            color: #39FF14;
+            color: #FFFFFF;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
             font-family: 'Orbitron', cursive;
-            text-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
         .contact-form label {
             display: block;
-            color: #7FFF00;
+            color: #FFFFFF;
             font-size: 0.75rem;
             font-weight: 600;
             margin-bottom: 0.3rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            font-family: 'Major Mono Display', monospace;
+            font-family: 'Space Grotesk', sans-serif;
+            opacity: 0.6;
         }
         .contact-form input,
         .contact-form textarea {
             width: 100%;
             padding: 0.8rem 1rem;
             background: rgba(10, 10, 10, 0.8);
-            border: 1px solid rgba(57, 255, 20, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             color: #E0E0E0;
             font-family: 'Space Grotesk', sans-serif;
@@ -289,11 +298,12 @@
         footer {
             text-align: center;
             padding: 2rem 5%;
-            color: #7FFF00;
+            color: #FFFFFF;
             font-size: 0.8rem;
-            border-top: 1px solid rgba(57, 255, 20, 0.1);
-            margin-top: 2rem;
-            font-family: 'Major Mono Display', monospace;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            opacity: 0.4;
         }
         footer a {
             color: #39FF14;
@@ -408,4 +418,4 @@
 </script>
 
 </body>
-        </html>
+    </html>
