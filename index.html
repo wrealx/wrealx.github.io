@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Wreal X · Official Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +24,7 @@
             --iconColor: #0A0A0A;
             --iconBackgroundColor: #39FF14;
         }
+        /* Silktide button overrides for dark theme */
         #stcm-wrapper .stcm-button-primary {
             background: #39FF14 !important;
             color: #0A0A0A !important;
@@ -238,20 +239,18 @@
             border-color: #39FF14;
             box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
         }
-
-        /* ====== BEACONS EMAIL FORM - ENLARGED ====== */
+        /* ====== BEACONS EMAIL FORM - MOBILE VIEW ====== */
         .email-section {
             padding: 3rem 5%;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
-            width: 100%;
         }
         .email-section h2 {
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 900;
             color: #39FF14;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
             font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
@@ -261,7 +260,7 @@
             color: #7FFF00;
             font-size: 0.9rem;
             letter-spacing: 0.2em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
         }
@@ -269,40 +268,15 @@
             width: 100%;
             max-width: 100%;
             overflow: hidden;
-            display: block;
         }
         #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
             width: 100% !important;
             max-width: 100% !important;
-            min-width: 100% !important;
-            border: 1px solid rgba(57, 255, 20, 0.15) !important;
-            border-radius: 20px !important;
-            background: rgba(15, 15, 15, 0.95) !important;
-            min-height: 480px !important;
-            height: auto !important;
-            padding: 10px !important;
-            display: block !important;
+            border: 1px solid rgba(57, 255, 20, 0.1) !important;
+            border-radius: 16px !important;
+            background: rgba(15, 15, 15, 0.9) !important;
+            min-height: 350px;
         }
-        /* Force Beacons form fields to be larger */
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe body {
-            padding: 20px !important;
-        }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe input,
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe textarea,
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe select {
-            font-size: 18px !important;
-            padding: 16px 20px !important;
-            min-height: 60px !important;
-            border-radius: 12px !important;
-        }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe button,
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe .submit-btn {
-            font-size: 20px !important;
-            padding: 16px 40px !important;
-            min-height: 60px !important;
-            border-radius: 50px !important;
-        }
-
         /* Social icons - bottom */
         .social-bar-bottom {
             display: flex;
@@ -359,32 +333,17 @@
             .nav-links { gap: 0.8rem; justify-content: center; }
             .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
             .video-grid { grid-template-columns: 1fr; }
-            .email-section { 
-                padding: 2rem 4%; 
-                max-width: 100%;
-            }
+            .email-section { padding: 2rem 5%; }
             #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
-                min-height: 520px !important;
-                border-radius: 16px !important;
-                padding: 8px !important;
-            }
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe input,
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe textarea,
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe select {
-                font-size: 18px !important;
-                padding: 16px 18px !important;
-                min-height: 56px !important;
-            }
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe button,
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe .submit-btn {
-                font-size: 18px !important;
-                padding: 16px 30px !important;
-                min-height: 56px !important;
+                min-height: 400px;
             }
             .social-bar-bottom { gap: 1.5rem; }
             .social-bar-bottom a { font-size: 1.4rem; }
             .social-bar-bottom a .label { font-size: 0.6rem; }
-            #stcm-wrapper .stcm-prompt { padding: 1rem !important; }
+            /* Silktide mobile overrides */
+            #stcm-wrapper .stcm-prompt {
+                padding: 1rem !important;
+            }
             #stcm-wrapper .stcm-button-primary,
             #stcm-wrapper .stcm-button-secondary {
                 padding: 0.5rem 1.2rem !important;
@@ -394,27 +353,12 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: clamp(3rem, 12vw, 4.5rem); }
             .hero .subhead { font-size: 1rem; letter-spacing: 0.15em; }
-            .email-section { padding: 1.5rem 3%; }
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
-                min-height: 550px !important;
-                padding: 5px !important;
-            }
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe input,
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe textarea,
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe select {
-                font-size: 17px !important;
-                padding: 14px 16px !important;
-                min-height: 52px !important;
-            }
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe button,
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe .submit-btn {
-                font-size: 17px !important;
-                padding: 14px 24px !important;
-                min-height: 52px !important;
-            }
             .social-bar-bottom { gap: 1rem; }
             .social-bar-bottom a { font-size: 1.2rem; }
             .social-bar-bottom a .label { font-size: 0.5rem; }
+            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
+                min-height: 420px;
+            }
         }
     </style>
 </head>
@@ -449,7 +393,7 @@
     </div>
 </section>
 
-<!-- ====== EMAIL SIGNUP - BEACONS (ENLARGED) ====== -->
+<!-- ====== EMAIL SIGNUP - BEACONS (MOBILE VIEW) ====== -->
 <section class="email-section">
     <h2>✦ STAY CONNECTED</h2>
     <p class="email-sub">— join the movement —</p>
@@ -509,4 +453,65 @@ window.silktideConsentManager.init({
       description: "<p>These cookies are used by us and our advertising partners to show you relevant ads on this site and elsewhere, and to measure how those campaigns perform.</p>",
       required: false,
       gtag: [
-    
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ]
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
+      acceptAllButtonText: "Accept all",
+      acceptAllButtonAccessibleLabel: "Accept all cookies",
+      rejectNonEssentialButtonText: "Reject non-essential",
+      rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+      preferencesButtonText: "Preferences",
+      preferencesButtonAccessibleLabel: "Toggle preferences"
+    },
+    preferences: {
+      title: "Customize your cookie preferences",
+      description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+      saveButtonText: "Save and close",
+      saveButtonAccessibleLabel: "Save your cookie preferences",
+      creditLinkText: "Get this banner for free",
+      creditLinkAccessibleLabel: "Get this banner for free"
+    }
+  }
+});
+</script>
+
+<!-- ====== BEACONS EMAIL FORM ====== -->
+<script>
+    (function () {
+        function loadBeaconsEmailFormEmbed() {
+            var s = document.createElement("script");
+            var t = Math.floor(new Date().getTime() / 120000);
+            s.type = "module";
+            s.async = 1;
+            s.src = `https://beacons.ai/embeds/emailForm.js?v=${t}&b=wrealx&f=31c0e709-a54d-43f1-918f-67317d82f9b4`;
+            (document.head || document.body || document.documentElement).appendChild(s);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", loadBeaconsEmailFormEmbed, { once: true });
+            return;
+        }
+        loadBeaconsEmailFormEmbed();
+    })();
+</script>
+
+<!-- ====== TAWK.TO ====== -->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+
+</body>
+</html>
