@@ -6,7 +6,7 @@
     <title>Merch · Wreal X</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,34 +27,42 @@
         .logo {
             font-size: 2.2rem;
             font-weight: 900;
-            color: #00D4FF;
+            color: #39FF14;
             text-decoration: none;
             letter-spacing: 0.1em;
             font-family: 'Orbitron', cursive;
-            text-shadow: 0 0 40px rgba(0, 212, 255, 0.3), 0 0 80px rgba(0, 212, 255, 0.1);
+            text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
         }
         .logo:hover {
-            text-shadow: 0 0 60px rgba(0, 212, 255, 0.5), 0 0 120px rgba(0, 212, 255, 0.2);
+            text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
         }
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #00B4D8;
+            color: #7FFF00;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 0.9rem;
             transition: all 0.3s;
-            font-family: 'Major Mono Display', monospace;
+            font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.15em;
+            padding: 0.5rem 1.2rem;
+            border: 1.5px solid rgba(57, 255, 20, 0.2);
+            border-radius: 8px;
+            background: rgba(57, 255, 20, 0.05);
         }
         .nav-links a:hover {
-            color: #00F0FF;
-            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            color: #00FF41;
+            border-color: #39FF14;
+            background: rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
         }
         .hero-bg {
             min-height: 40vh;
@@ -84,13 +92,13 @@
         .hero-bg h1 {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 900;
-            color: #00D4FF;
+            color: #39FF14;
             font-family: 'Orbitron', cursive;
-            text-shadow: 0 0 60px rgba(0, 212, 255, 0.2);
+            text-shadow: 0 0 60px rgba(57, 255, 20, 0.2);
         }
         .page-sub {
             text-align: center;
-            color: #00B4D8;
+            color: #7FFF00;
             font-size: 0.9rem;
             letter-spacing: 0.2em;
             margin-top: 0.2rem;
@@ -109,14 +117,14 @@
             background: rgba(15, 15, 15, 0.9);
             border-radius: 20px;
             padding: 1.8rem;
-            border: 1px solid rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.1);
             backdrop-filter: blur(10px);
             transition: all 0.4s;
             text-align: center;
         }
         .merch-item:hover {
-            border-color: #00D4FF;
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.06);
+            border-color: #39FF14;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.06);
             transform: translateY(-6px);
         }
         .merch-item .merch-image {
@@ -126,23 +134,23 @@
             background-size: cover;
             background-position: center;
             margin-bottom: 1rem;
-            border: 1px solid rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.1);
             transition: all 0.3s;
         }
         .merch-item .merch-image:hover {
-            border-color: #00D4FF;
+            border-color: #39FF14;
             transform: scale(1.02);
         }
         .merch-item h3 {
             font-size: 1.3rem;
-            color: #00D4FF;
+            color: #39FF14;
             margin-bottom: 0.3rem;
             font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
         }
         .merch-item .tag {
             display: inline-block;
-            background: #00D4FF;
+            background: #39FF14;
             color: #0A0A0A;
             font-size: 0.65rem;
             font-weight: 700;
@@ -158,25 +166,25 @@
         .merch-item .buy-btn {
             display: inline-block;
             padding: 0.8rem 3rem;
-            background: #00D4FF;
+            background: #39FF14;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            font-family: 'Major Mono Display', monospace;
+            font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             font-size: 0.9rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             border: none;
             cursor: pointer;
             margin-top: 0.5rem;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
         }
         .merch-item .buy-btn:hover {
-            background: #00F0FF;
+            background: #00FF41;
             transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
         }
         .soundplate-link {
             text-align: center;
@@ -185,39 +193,40 @@
         .soundplate-link a {
             display: inline-block;
             padding: 0.8rem 2.5rem;
-            background: #00D4FF;
+            background: #39FF14;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
             font-size: 0.95rem;
-            font-family: 'Major Mono Display', monospace;
+            font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
         }
         .soundplate-link a:hover {
-            background: #00F0FF;
+            background: #00FF41;
             transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
         }
         footer {
             text-align: center;
             padding: 2rem 5%;
-            color: #00B4D8;
+            color: #7FFF00;
             font-size: 0.8rem;
-            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            border-top: 1px solid rgba(57, 255, 20, 0.1);
             margin-top: 2rem;
             font-family: 'Major Mono Display', monospace;
         }
         footer a {
-            color: #00D4FF;
+            color: #39FF14;
             text-decoration: none;
         }
         @media (max-width: 768px) {
             nav { flex-direction: column; }
-            .nav-links { gap: 1rem; justify-content: center; }
+            .nav-links { gap: 0.8rem; justify-content: center; }
+            .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
             .merch-grid { grid-template-columns: 1fr; }
         }
     </style>
