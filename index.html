@@ -6,7 +6,7 @@
     <title>Wreal X · Official Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Space+Grotesk:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,8 +22,8 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: #0A0A0A;
-            border-top: 2px solid #FF6B00;
+            background: rgba(10, 10, 10, 0.95);
+            border-top: 2px solid #00D4FF;
             padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
@@ -33,7 +33,7 @@
             z-index: 9999;
             backdrop-filter: blur(10px);
             transition: transform 0.5s ease;
-            box-shadow: 0 -10px 60px rgba(255, 107, 0, 0.1);
+            box-shadow: 0 -10px 60px rgba(0, 212, 255, 0.1);
         }
         .cookie-banner.hidden { 
             transform: translateY(100%);
@@ -41,12 +41,12 @@
         }
         .cookie-banner p {
             font-size: 0.9rem;
-            color: #FF8C00;
+            color: #00B4D8;
             max-width: 600px;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
         }
         .cookie-banner p a {
-            color: #FFD700;
+            color: #00D4FF;
             text-decoration: none;
         }
         .cookie-buttons {
@@ -57,29 +57,30 @@
             padding: 0.5rem 1.8rem;
             border: none;
             border-radius: 30px;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
             font-size: 0.85rem;
         }
         .cookie-accept {
-            background: #FF6B00;
+            background: #00D4FF;
             color: #0A0A0A;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
         .cookie-accept:hover {
-            background: #FFD700;
+            background: #00F0FF;
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(255, 107, 0, 0.3);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.5);
         }
         .cookie-reject {
             background: transparent;
-            color: #FF8C00;
-            border: 1px solid #FF6B00 !important;
+            color: #00B4D8;
+            border: 1px solid #00D4FF !important;
         }
         .cookie-reject:hover {
-            border-color: #FFD700 !important;
-            color: #FFD700;
+            border-color: #00F0FF !important;
+            color: #00F0FF;
         }
         nav {
             display: flex;
@@ -93,15 +94,15 @@
         }
         .logo {
             font-size: 2.2rem;
-            font-weight: 800;
-            color: #FFD700;
+            font-weight: 900;
+            color: #00D4FF;
             text-decoration: none;
-            letter-spacing: 0.05em;
-            font-family: 'Creepster', cursive;
-            text-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+            letter-spacing: 0.1em;
+            font-family: 'Orbitron', cursive;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.3), 0 0 80px rgba(0, 212, 255, 0.1);
         }
         .logo:hover {
-            text-shadow: 0 0 60px rgba(255, 215, 0, 0.4);
+            text-shadow: 0 0 60px rgba(0, 212, 255, 0.5), 0 0 120px rgba(0, 212, 255, 0.2);
         }
         .nav-links {
             display: flex;
@@ -110,19 +111,19 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #FF8C00;
+            color: #00B4D8;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.3s;
             position: relative;
-            letter-spacing: 0.1em;
-            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.15em;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
         }
         .nav-links a:hover {
-            color: #FFD700;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            color: #00F0FF;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
         .nav-links a::after {
             content: '';
@@ -131,7 +132,8 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #FFD700;
+            background: #00D4FF;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
             transition: width 0.3s;
         }
         .nav-links a:hover::after {
@@ -158,32 +160,32 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(10, 10, 10, 0.7);
+            background: rgba(10, 10, 10, 0.75);
             z-index: 1;
         }
         .hero * { position: relative; z-index: 2; }
         .hero h1 {
             font-size: clamp(4rem, 15vw, 8rem);
-            font-weight: 800;
+            font-weight: 900;
             line-height: 1.1;
-            color: #FFD700;
-            text-shadow: 0 0 80px rgba(255, 215, 0, 0.15);
-            font-family: 'Creepster', cursive;
+            color: #00D4FF;
+            text-shadow: 0 0 80px rgba(0, 212, 255, 0.2), 0 0 160px rgba(0, 212, 255, 0.1);
+            font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
         }
         .hero .subhead {
             font-size: 1.6rem;
-            color: #FF6B00;
+            color: #00B4D8;
             margin-top: 0.5rem;
             font-weight: 400;
             letter-spacing: 0.3em;
-            text-shadow: 0 0 40px rgba(255, 107, 0, 0.15);
-            font-family: 'JetBrains Mono', monospace;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.15);
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
         }
         .hero .tagline {
             font-size: 1.1rem;
-            color: #FF8C00;
+            color: #90E0EF;
             margin-top: 1rem;
             max-width: 500px;
             opacity: 0.9;
@@ -194,10 +196,10 @@
         .cta-btn {
             margin-top: 2.5rem;
             padding: 1rem 3.5rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             font-weight: 700;
             font-size: 1rem;
-            background: #FF6B00;
+            background: #00D4FF;
             border: none;
             color: #0A0A0A;
             border-radius: 50px;
@@ -205,27 +207,27 @@
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 0 60px rgba(255, 107, 0, 0.2);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.2);
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
         .cta-btn:hover {
-            background: #FFD700;
+            background: #00F0FF;
             transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 0 80px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 80px rgba(0, 212, 255, 0.4);
         }
         .social-bar {
             display: flex;
             justify-content: center;
             gap: 2rem;
             padding: 1.5rem 5%;
-            background: #0A0A0A;
-            border-top: 1px solid #1A1A1A;
-            border-bottom: 1px solid #1A1A1A;
+            background: rgba(10, 10, 10, 0.95);
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
             flex-wrap: wrap;
         }
         .social-bar a {
-            color: #FF8C00;
+            color: #00B4D8;
             font-size: 1.5rem;
             text-decoration: none;
             transition: all 0.3s;
@@ -234,14 +236,14 @@
             gap: 0.5rem;
         }
         .social-bar a:hover {
-            color: #FFD700;
+            color: #00F0FF;
             transform: translateY(-3px);
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
         }
         .social-bar a .label {
             font-size: 0.65rem;
-            color: #FF8C00;
-            font-family: 'JetBrains Mono', monospace;
+            color: #00B4D8;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -253,12 +255,12 @@
         .content-section h2 {
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            color: #FFD700;
+            font-weight: 900;
+            color: #00D4FF;
             margin-bottom: 2rem;
-            font-family: 'Creepster', cursive;
+            font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
-            text-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
         }
         .video-grid {
             display: grid;
@@ -270,12 +272,12 @@
             width: 100%;
             aspect-ratio: 16/9;
             border-radius: 16px;
-            border: 1px solid #FF6B00;
+            border: 1px solid rgba(0, 212, 255, 0.3);
             transition: all 0.3s;
         }
         .video-grid iframe:hover {
-            border-color: #FFD700;
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
+            border-color: #00D4FF;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
         }
         .music-grid {
             display: grid;
@@ -284,30 +286,31 @@
             margin-bottom: 4rem;
         }
         .track-card {
-            background: #0F0F0F;
+            background: rgba(15, 15, 15, 0.9);
             border-radius: 20px;
             padding: 1.8rem;
-            border: 1px solid #1A1A1A;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
             transition: all 0.4s;
         }
         .track-card:hover {
-            border-color: #FFD700;
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
+            border-color: #00D4FF;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.06);
             transform: translateY(-6px);
         }
         .track-card h3 {
             font-size: 1.5rem;
-            color: #FFD700;
+            color: #00D4FF;
             font-weight: 700;
-            font-family: 'Creepster', cursive;
+            font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
         }
         .track-card .artist {
-            color: #FF8C00;
+            color: #00B4D8;
             font-size: 0.85rem;
             margin-bottom: 0.8rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
         }
         .track-card .soundcloud-embed {
             width: 100%;
@@ -322,26 +325,26 @@
             flex-wrap: wrap;
             margin-top: 0.8rem;
             padding-top: 0.8rem;
-            border-top: 1px solid #1A1A1A;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
         }
         .streaming-icons a {
-            color: #FF8C00;
+            color: #00B4D8;
             font-size: 1.3rem;
             transition: all 0.3s;
             text-decoration: none;
         }
         .streaming-icons a:hover {
-            color: #FFD700;
+            color: #00F0FF;
             transform: scale(1.15);
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
         }
         .streaming-icons a .label {
             font-size: 0.55rem;
             display: block;
             text-align: center;
-            color: #FF8C00;
+            color: #00B4D8;
             margin-top: 2px;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -353,16 +356,17 @@
             margin-bottom: 4rem;
         }
         .merch-item {
-            background: #0F0F0F;
+            background: rgba(15, 15, 15, 0.9);
             border-radius: 20px;
             padding: 1.8rem;
-            border: 1px solid #1A1A1A;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
             transition: all 0.4s;
             text-align: center;
         }
         .merch-item:hover {
-            border-color: #FFD700;
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
+            border-color: #00D4FF;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.06);
             transform: translateY(-6px);
         }
         .merch-item .merch-image {
@@ -372,23 +376,23 @@
             background-size: cover;
             background-position: center;
             margin-bottom: 1rem;
-            border: 1px solid #1A1A1A;
+            border: 1px solid rgba(0, 212, 255, 0.1);
             transition: all 0.3s;
         }
         .merch-item .merch-image:hover {
-            border-color: #FFD700;
+            border-color: #00D4FF;
             transform: scale(1.02);
         }
         .merch-item h3 {
             font-size: 1.2rem;
-            color: #FFD700;
+            color: #00D4FF;
             margin-bottom: 0.3rem;
-            font-family: 'Creepster', cursive;
+            font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
         }
         .merch-item .tag {
             display: inline-block;
-            background: #FF6B00;
+            background: #00D4FF;
             color: #0A0A0A;
             font-size: 0.65rem;
             font-weight: 700;
@@ -398,30 +402,31 @@
             margin: 0 auto 1rem;
             display: table;
             letter-spacing: 0.1em;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
         }
         .merch-item .buy-btn {
             display: inline-block;
             padding: 0.7rem 2.5rem;
-            background: #FF6B00;
+            background: #00D4FF;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
             font-size: 0.85rem;
             letter-spacing: 0.05em;
             border: none;
             cursor: pointer;
             margin-top: 0.5rem;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
         }
         .merch-item .buy-btn:hover {
-            background: #FFD700;
+            background: #00F0FF;
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.4);
         }
         .contact-form-section {
             padding: 3rem 5%;
@@ -431,44 +436,45 @@
         .contact-form-section h2 {
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            color: #FFD700;
+            font-weight: 900;
+            color: #00D4FF;
             margin-bottom: 0.5rem;
-            font-family: 'Creepster', cursive;
+            font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
-            text-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
         }
         .contact-form-section .form-sub {
             text-align: center;
-            color: #FF8C00;
+            color: #00B4D8;
             font-size: 0.9rem;
             letter-spacing: 0.2em;
             margin-bottom: 2rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
         }
         .contact-form-wrapper {
-            background: #0F0F0F;
+            background: rgba(15, 15, 15, 0.9);
             padding: 2.5rem;
             border-radius: 20px;
-            border: 1px solid #1A1A1A;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
         .contact-form-wrapper label {
             display: block;
-            color: #FF8C00;
+            color: #00B4D8;
             font-size: 0.75rem;
             font-weight: 600;
             margin-bottom: 0.3rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
         }
         .contact-form-wrapper input,
         .contact-form-wrapper textarea {
             width: 100%;
             padding: 0.8rem 1rem;
-            background: #0A0A0A;
-            border: 1px solid #222;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
             border-radius: 10px;
             color: #E0E0E0;
             font-family: 'Space Grotesk', sans-serif;
@@ -479,8 +485,8 @@
         .contact-form-wrapper input:focus,
         .contact-form-wrapper textarea:focus {
             outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
+            border-color: #00D4FF;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.05);
         }
         .contact-form-wrapper textarea {
             min-height: 130px;
@@ -488,11 +494,11 @@
         }
         .contact-form-wrapper .send-btn {
             padding: 0.9rem 3rem;
-            background: #FF6B00;
+            background: #00D4FF;
             border: none;
             border-radius: 50px;
             color: #0A0A0A;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             font-weight: 700;
             font-size: 0.9rem;
             cursor: pointer;
@@ -500,11 +506,12 @@
             width: 100%;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
         }
         .contact-form-wrapper .send-btn:hover {
-            background: #FFD700;
+            background: #00F0FF;
             transform: scale(1.02);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.4);
         }
         .soundplate-link {
             text-align: center;
@@ -513,38 +520,38 @@
         .soundplate-link a {
             display: inline-block;
             padding: 0.8rem 2.5rem;
-            background: #FF6B00;
+            background: #00D4FF;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
             font-size: 0.95rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            box-shadow: 0 0 40px rgba(255, 107, 0, 0.2);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.2);
         }
         .soundplate-link a:hover {
-            background: #FFD700;
+            background: #00F0FF;
             transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.4);
         }
         footer {
             text-align: center;
             padding: 2rem 5%;
-            color: #FF8C00;
+            color: #00B4D8;
             font-size: 0.8rem;
-            border-top: 1px solid #1A1A1A;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
             margin-top: 2rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Major Mono Display', monospace;
         }
         footer a {
-            color: #FFD700;
+            color: #00D4FF;
             text-decoration: none;
         }
         footer a:hover {
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
         }
         @media (max-width: 768px) {
             nav { flex-direction: column; }
@@ -567,7 +574,7 @@
 <body>
 
 <div id="cookieBanner" class="cookie-banner">
-    <p>🍪 We use cookies to improve your experience. By using this site, you agree to our <a href="#">Privacy Policy</a>.</p>
+    <p>👽 We use cookies to improve your experience. By using this site, you agree to our <a href="#">Privacy Policy</a>.</p>
     <div class="cookie-buttons">
         <button class="cookie-reject" onclick="rejectCookies()">Reject All</button>
         <button class="cookie-accept" onclick="acceptCookies()">Accept All</button>
@@ -588,14 +595,9 @@
 <section class="hero">
     <h1>WREAL X</h1>
     <p class="subhead">Artist · Producer · Visionary</p>
-    <p class="tagline">Dark aesthetics meet color explosions — welcome to my world.</p>
+    <p class="tagline">Dark aesthetics meet cosmic energy — welcome to my world.</p>
     <a href="music.html" class="cta-btn">▶ Listen Now</a>
 </section>
 
 <div class="social-bar">
-    <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i> <span class="label">Instagram</span></a>
-    <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i> <span class="label">Twitter</span></a>
-    <a href="https://tiktok.com/wreal_x" target="_blank"><i class="fab fa-tiktok"></i> <span class="label">TikTok</span></a>
-    <a href="https://facebook.com/wrealxcursed" target="_blank"><i class="fab fa-facebook"></i> <span class="label">Facebook</span></a>
-    <a href="https://youtube.com/@wrealx" target="_blank"><i class="fab fa-youtube"></i> <span class="label">YouTube</span></a>
-    <a href="https://soundcloud.com/wrealx" target="_blank"><i class="fab fa-soundcloud"></i> <span class="label">SoundCloud<
+    <a href="https://in
