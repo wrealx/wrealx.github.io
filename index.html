@@ -12,28 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        :root {
-            --bg: #0A0A0A;
-            --bg-2: #101010;
-            --panel: rgba(18,18,18,0.9);
-            --panel-strong: rgba(24,24,24,0.95);
-            --green: #39FF14;
-            --green-2: #00FF41;
-            --green-soft: rgba(57,255,20,0.12);
-            --text: #E0E0E0;
-            --muted: rgba(255,255,255,0.7);
-            --line: rgba(255,255,255,0.08);
-            --glow: 0 0 25px rgba(57,255,20,0.35);
-            --shadow-soft: 0 18px 45px rgba(0,0,0,0.35);
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html, body {
-            background:
-                radial-gradient(circle at top, rgba(57,255,20,0.07), transparent 28%),
-                linear-gradient(180deg, #080808 0%, #0A0A0A 35%, #0D0D0D 100%);
-            color: var(--text);
+            background: #0A0A0A;
+            color: #E0E0E0;
             font-family: 'Space Grotesk', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
@@ -48,11 +31,6 @@
             color: inherit;
         }
 
-        img, iframe {
-            max-width: 100%;
-            display: block;
-        }
-
         nav {
             display: flex;
             justify-content: space-between;
@@ -60,115 +38,79 @@
             padding: 1.8rem 5%;
             flex-wrap: wrap;
             gap: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: rgba(10,10,10,0.72);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            position: relative;
+            z-index: 10;
         }
 
         .logo {
             font-size: 2.2rem;
             font-weight: 900;
-            color: var(--green);
+            color: #39FF14;
             text-decoration: none;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             font-family: 'Orbitron', cursive;
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
-            transition: transform 0.3s ease, text-shadow 0.3s ease;
-            display: inline-block;
-            animation: slideUp 0.8s ease both;
         }
 
         .logo:hover {
             text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
-            transform: translateY(-2px) scale(1.02);
         }
 
         .nav-links {
             display: flex;
-            gap: 1.2rem;
+            gap: 1.5rem;
             list-style: none;
             flex-wrap: wrap;
-            animation: slideUp 0.9s ease both;
         }
 
         .nav-links a {
             color: #FFFFFF;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.82rem;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            transition: all 0.3s;
             font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            padding: 0.65rem 1rem;
-            border: 1.5px solid rgba(255, 255, 255, 0.14);
-            border-radius: 999px;
-            background: rgba(255,255,255,0.02);
-            box-shadow: inset 0 0 0 transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, transparent, rgba(57,255,20,0.18), transparent);
-            transform: translateX(-110%);
-            transition: transform 0.6s ease;
+            letter-spacing: 0.1em;
+            padding: 0.5rem 1.2rem;
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .nav-links a:hover {
-            color: var(--green);
-            border-color: var(--green);
-            background: rgba(57,255,20,0.08);
-            text-shadow: 0 0 30px rgba(57,255,20,0.35);
+            color: #39FF14;
+            border-color: #39FF14;
+            background: rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
             transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(57,255,20,0.08);
-        }
-
-        .nav-links a:hover::before {
-            transform: translateX(110%);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
         }
 
         .hero {
-            min-height: 82vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 3rem 5% 4rem;
+            padding: 2rem 5%;
             background-image: url('https://iili.io/CD0qtob.png');
             background-size: cover;
             background-position: center;
             position: relative;
             background-attachment: fixed;
-            overflow: hidden;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(10,10,10,0.35), rgba(10,10,10,0.7));
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.5);
             z-index: 1;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 40rem;
-            height: 40rem;
-            background: radial-gradient(circle, rgba(57,255,20,0.22), transparent 60%);
-            filter: blur(30px);
-            right: -10rem;
-            top: -10rem;
-            z-index: 1;
-            animation: pulseGlow 8s ease-in-out infinite alternate;
         }
 
         .hero * {
@@ -179,35 +121,32 @@
         .hero h1 {
             font-size: clamp(4rem, 15vw, 8rem);
             font-weight: 900;
-            line-height: 1.05;
+            line-height: 1.1;
             color: #FFFFFF;
             text-shadow: 0 0 80px rgba(0, 0, 0, 0.5), 0 0 160px rgba(0, 0, 0, 0.3);
             font-family: 'Orbitron', cursive;
-            letter-spacing: 0.08em;
-            animation: slideUp 0.8s ease both, fadeIn 1s ease both;
+            letter-spacing: 0.05em;
         }
 
         .hero .subhead {
             font-size: 1.6rem;
-            color: var(--green);
+            color: #39FF14;
             margin-top: 0.5rem;
             font-weight: 400;
-            letter-spacing: 0.16em;
+            letter-spacing: 0.1em;
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.15);
             font-family: 'Space Grotesk', sans-serif;
-            animation: fadeIn 1.2s ease both 0.1s;
         }
 
         .hero .tagline {
             font-size: 1.1rem;
             color: #FFFFFF;
             margin-top: 1rem;
-            max-width: 560px;
-            opacity: 0.78;
+            max-width: 500px;
+            opacity: 0.7;
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 300;
-            letter-spacing: 0.06em;
-            animation: fadeIn 1.3s ease both 0.2s;
+            letter-spacing: 0.05em;
         }
 
         .cta-btn {
@@ -215,59 +154,24 @@
             padding: 1rem 3.5rem;
             font-family: 'Rajdhani', sans-serif;
             font-weight: 700;
-            font-size: 1.08rem;
-            background: linear-gradient(135deg, var(--green) 0%, var(--green-2) 100%);
+            font-size: 1.1rem;
+            background: #39FF14;
             border: none;
             color: #0A0A0A;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.35s ease;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
             box-shadow: 0 0 60px rgba(57, 255, 20, 0.2);
             text-transform: uppercase;
-            letter-spacing: 0.16em;
-            position: relative;
-            overflow: hidden;
-            animation: fadeIn 1.4s ease both 0.3s;
+            letter-spacing: 0.15em;
         }
 
-        .cta-btn::before,
-        .stream-btn::before,
-        .small-stream-btn::before,
-        .stream-cta a::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.38) 50%, transparent 100%);
-            transform: translateX(-120%);
-            transition: transform 0.8s ease;
-        }
-
-        .cta-btn:hover,
-        .stream-btn:hover,
-        .small-stream-btn:hover,
-        .stream-cta a:hover {
-            background: linear-gradient(135deg, var(--green-2) 0%, #7CFF66 100%);
-            transform: translateY(-4px) scale(1.02);
+        .cta-btn:hover {
+            background: #00FF41;
+            transform: scale(1.05) translateY(-3px);
             box-shadow: 0 0 80px rgba(57, 255, 20, 0.4);
-        }
-
-        .cta-btn:hover::before,
-        .stream-btn:hover::before,
-        .small-stream-btn:hover::before,
-        .stream-cta a:hover::before {
-            transform: translateX(120%);
-        }
-
-        .content-section,
-        .release-section,
-        .recent-releases,
-        .email-section,
-        .stream-cta,
-        .social-bar-bottom,
-        footer {
-            opacity: 1;
         }
 
         .content-section {
@@ -294,54 +198,41 @@
             margin-bottom: 4rem;
         }
 
-        .video-card-wrapper {
-            position: relative;
-            padding: 1rem;
-            border-radius: 18px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            border: 1px solid rgba(255,255,255,0.06);
-            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-        }
-
-        .video-card-wrapper:hover {
-            transform: translateY(-8px);
-            border-color: rgba(57,255,20,0.35);
-            box-shadow: var(--glow);
-        }
-
         .video-grid iframe {
             width: 100%;
             aspect-ratio: 16/9;
             border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.12);
-            transition: all 0.3s ease;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s;
         }
 
         .video-grid iframe:hover {
-            border-color: rgba(57,255,20,0.35);
-            box-shadow: 0 0 35px rgba(57,255,20,0.12);
+            border-color: #39FF14;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
+        }
+
+        .video-card-wrapper {
+            position: relative;
         }
 
         .video-tag {
             display: inline-block;
-            background: var(--green);
+            background: #39FF14;
             color: #0A0A0A;
             font-size: 0.65rem;
             font-weight: 700;
-            padding: 0.25rem 1rem;
+            padding: 0.2rem 1rem;
             border-radius: 20px;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             letter-spacing: 0.1em;
             font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
-            box-shadow: 0 0 25px rgba(57,255,20,0.16);
         }
 
         .video-title {
             font-size: 1rem;
             color: #FFFFFF;
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.5rem;
             font-weight: 600;
             font-family: 'Space Grotesk', sans-serif;
         }
@@ -366,68 +257,59 @@
 
         .release-cover {
             width: 100%;
-            max-width: 420px;
+            max-width: 400px;
             aspect-ratio: 1/1;
             margin: 0 auto 1.5rem;
-            border-radius: 22px;
-            background-image: url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80');
+            border-radius: 20px;
             background-size: cover;
             background-position: center;
             border: 2px solid rgba(57, 255, 20, 0.3);
             box-shadow: 0 0 60px rgba(57, 255, 20, 0.15);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .release-cover::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(57,255,20,0.18), transparent 50%, rgba(255,255,255,0.08));
+            transition: all 0.3s;
         }
 
         .release-cover:hover {
-            border-color: var(--green);
+            border-color: #39FF14;
             box-shadow: 0 0 80px rgba(57, 255, 20, 0.3);
-            transform: scale(1.02) rotate(-0.5deg);
+            transform: scale(1.02);
         }
 
         .release-title {
-            font-size: 2.1rem;
+            font-size: 2rem;
             font-weight: 900;
             color: #FFFFFF;
             font-family: 'Orbitron', cursive;
-            margin-bottom: 0.35rem;
-            letter-spacing: 0.06em;
+            margin-bottom: 0.3rem;
         }
 
         .release-artist {
             font-size: 1rem;
             color: #FFFFFF;
-            opacity: 0.7;
+            opacity: 0.6;
             margin-bottom: 1.5rem;
             font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
         }
 
         .stream-btn {
             display: inline-block;
             padding: 1rem 3.5rem;
-            background: linear-gradient(135deg, var(--green) 0%, var(--green-2) 100%);
+            background: #39FF14;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
-            transition: all 0.35s ease;
+            transition: all 0.3s;
             font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             font-size: 1.1rem;
             letter-spacing: 0.15em;
             box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
-            position: relative;
-            overflow: hidden;
+        }
+
+        .stream-btn:hover {
+            background: #00FF41;
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
         }
 
         .recent-releases {
@@ -455,34 +337,18 @@
 
         .release-item {
             background: rgba(15, 15, 15, 0.9);
-            border-radius: 22px;
+            border-radius: 20px;
             padding: 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
+            transition: all 0.4s;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .release-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(57,255,20,0.06), transparent 55%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
         .release-item:hover {
-            border-color: rgba(57,255,20,0.4);
-            box-shadow: 0 0 40px rgba(57,255,20,0.08), 0 20px 40px rgba(0,0,0,0.3);
-            transform: translateY(-8px);
-        }
-
-        .release-item:hover::before {
-            opacity: 1;
+            border-color: #39FF14;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.06);
+            transform: translateY(-6px);
         }
 
         .release-item .cover-img {
@@ -492,16 +358,13 @@
             background-size: cover;
             background-position: center;
             margin-bottom: 1rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
         }
 
         .release-item .cover-img:hover {
-            border-color: rgba(57,255,20,0.4);
-            transform: scale(1.02) rotate(-0.5deg);
-            box-shadow: 0 0 35px rgba(57,255,20,0.12);
+            border-color: #39FF14;
+            transform: scale(1.02);
         }
 
         .release-item h3 {
@@ -515,29 +378,31 @@
         .release-item .artist-name {
             color: #FFFFFF;
             font-size: 0.8rem;
-            opacity: 0.6;
+            opacity: 0.5;
             margin-bottom: 1rem;
             font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
         }
 
         .release-item .small-stream-btn {
             display: inline-block;
-            padding: 0.7rem 2.2rem;
-            background: linear-gradient(135deg, var(--green) 0%, var(--green-2) 100%);
+            padding: 0.6rem 2rem;
+            background: #39FF14;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
-            transition: all 0.35s ease;
+            transition: all 0.3s;
             font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             font-size: 0.85rem;
-            letter-spacing: 0.12em;
-            box-shadow: 0 0 30px rgba(57,255,20,0.15);
-            position: relative;
-            overflow: hidden;
+            letter-spacing: 0.1em;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
+        }
+
+        .release-item .small-stream-btn:hover {
+            background: #00FF41;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(57, 255, 20, 0.3);
         }
 
         .stream-cta {
@@ -548,24 +413,28 @@
         .stream-cta a {
             display: inline-block;
             padding: 1rem 3.5rem;
-            background: linear-gradient(135deg, var(--green) 0%, var(--green-2) 100%);
+            background: #39FF14;
             color: #0A0A0A;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
-            transition: all 0.35s ease;
+            transition: all 0.3s;
             font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
             font-size: 1.1rem;
             letter-spacing: 0.15em;
-            box-shadow: 0 0 40px rgba(57,255,20,0.2);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
+        }
+
+        .stream-cta a:hover {
+            background: #00FF41;
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
         }
 
         .email-section {
             padding: 3rem 5%;
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -588,36 +457,32 @@
             margin-bottom: 2rem;
             font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
-            opacity: 0.7;
+            opacity: 0.6;
         }
 
         #mailchimp-form {
             width: 100%;
             max-width: 100%;
             overflow: hidden;
-            border-radius: 18px;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-            background: rgba(15,15,15,0.6);
         }
 
         #mailchimp-form iframe {
             width: 100% !important;
             max-width: 100% !important;
-            border: 0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
             border-radius: 16px !important;
-            background: rgba(15,15,15,0.9) !important;
+            background: rgba(15, 15, 15, 0.9) !important;
             min-height: 350px;
         }
 
         .social-bar-bottom {
             display: flex;
             justify-content: center;
-            gap: 2.4rem;
+            gap: 2.5rem;
             padding: 2rem 5%;
-            background: rgba(10,10,10,0.8);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: rgba(10, 10, 10, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             flex-wrap: wrap;
             margin-top: 2rem;
         }
@@ -626,36 +491,18 @@
             color: #FFFFFF;
             font-size: 1.8rem;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            opacity: 0.75;
-            position: relative;
-        }
-
-        .social-bar-bottom a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -0.35rem;
-            height: 2px;
-            background: var(--green);
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.3s ease;
+            gap: 0.5rem;
+            opacity: 0.7;
         }
 
         .social-bar-bottom a:hover {
-            color: var(--green);
+            color: #39FF14;
             transform: translateY(-4px);
-            text-shadow: 0 0 40px rgba(57,255,20,0.3);
+            text-shadow: 0 0 40px rgba(57, 255, 20, 0.3);
             opacity: 1;
-        }
-
-        .social-bar-bottom a:hover::after {
-            transform: scaleX(1);
         }
 
         .social-bar-bottom a .label {
@@ -664,7 +511,7 @@
             font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            opacity: 0.7;
+            opacity: 0.5;
         }
 
         footer {
@@ -672,57 +519,25 @@
             padding: 2rem 5%;
             color: #FFFFFF;
             font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 1rem;
             font-family: 'Space Grotesk', sans-serif;
-            opacity: 0.66;
+            opacity: 0.4;
         }
 
         footer a {
-            color: var(--green);
+            color: #39FF14;
             text-decoration: none;
         }
 
         footer a:hover {
-            text-shadow: 0 0 20px rgba(57,255,20,0.2);
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(26px);
-            transition: all 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes pulseGlow {
-            0% { transform: scale(0.96); opacity: 0.7; }
-            100% { transform: scale(1.08); opacity: 1; }
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
         }
 
         @media (max-width: 768px) {
             nav { flex-direction: column; }
             .nav-links { gap: 0.8rem; justify-content: center; }
-            .nav-links a { padding: 0.42rem 0.8rem; font-size: 0.75rem; }
+            .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
             .video-grid { grid-template-columns: 1fr; }
             .release-grid { grid-template-columns: 1fr; }
             .email-section { padding: 2rem 5%; }
@@ -761,20 +576,20 @@
     </header>
 
     <main>
-        <section id="videos" class="content-section reveal">
+        <section id="videos" class="content-section">
             <h2>Latest Videos</h2>
             <div class="video-grid">
-                <div class="video-card-wrapper reveal">
+                <div class="video-card-wrapper">
                     <span class="video-tag">Visual</span>
                     <p class="video-title">Official Visualizer</p>
                     <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Official Visualizer" allowfullscreen></iframe>
                 </div>
-                <div class="video-card-wrapper reveal">
+                <div class="video-card-wrapper">
                     <span class="video-tag">Live</span>
                     <p class="video-title">Live Session</p>
                     <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Live Session" allowfullscreen></iframe>
                 </div>
-                <div class="video-card-wrapper reveal">
+                <div class="video-card-wrapper">
                     <span class="video-tag">Behind The Scenes</span>
                     <p class="video-title">Studio Moments</p>
                     <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Studio Moments" allowfullscreen></iframe>
@@ -782,30 +597,30 @@
             </div>
         </section>
 
-        <section id="music" class="release-section reveal">
+        <section id="music" class="release-section">
             <h2>Latest Release</h2>
-            <div class="release-cover reveal" aria-label="Latest release cover art"></div>
-            <div class="release-title reveal">New Wave</div>
-            <div class="release-artist reveal">Wreal X</div>
-            <a href="https://open.spotify.com/" class="stream-btn reveal" target="_blank" rel="noopener noreferrer">Stream Now</a>
+            <div class="release-cover" aria-label="Latest release cover art"></div>
+            <div class="release-title">New Wave</div>
+            <div class="release-artist">Wreal X</div>
+            <a href="https://open.spotify.com/" class="stream-btn" target="_blank" rel="noopener noreferrer">Stream Now</a>
         </section>
 
-        <section id="releases" class="recent-releases reveal">
+        <section id="releases" class="recent-releases">
             <h2>Recent Releases</h2>
             <div class="release-grid">
-                <div class="release-item reveal">
+                <div class="release-item">
                     <div class="cover-img" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80');"></div>
                     <h3>Phase One</h3>
                     <div class="artist-name">Wreal X</div>
                     <a href="https://open.spotify.com/" class="small-stream-btn" target="_blank" rel="noopener noreferrer">Listen</a>
                 </div>
-                <div class="release-item reveal">
+                <div class="release-item">
                     <div class="cover-img" style="background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=900&q=80');"></div>
                     <h3>Neon Drift</h3>
                     <div class="artist-name">Wreal X</div>
                     <a href="https://open.spotify.com/" class="small-stream-btn" target="_blank" rel="noopener noreferrer">Listen</a>
                 </div>
-                <div class="release-item reveal">
+                <div class="release-item">
                     <div class="cover-img" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80');"></div>
                     <h3>Afterglow</h3>
                     <div class="artist-name">Wreal X</div>
@@ -814,11 +629,11 @@
             </div>
         </section>
 
-        <div class="stream-cta reveal">
+        <div class="stream-cta">
             <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Follow The Sound</a>
         </div>
 
-        <section id="contact" class="email-section reveal">
+        <section id="contact" class="email-section">
             <h2>Stay Connected</h2>
             <div class="email-sub">Newsletter / Mailing List</div>
             <div id="mailchimp-form">
@@ -827,7 +642,7 @@
         </section>
     </main>
 
-    <div class="social-bar-bottom reveal" aria-label="Social media links">
+    <div class="social-bar-bottom" aria-label="Social media links">
         <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i><span class="label">YouTube</span></a>
         <a href="https://spotify.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-spotify"></i><span class="label">Spotify</span></a>
         <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i><span class="label">Instagram</span></a>
@@ -835,25 +650,12 @@
         <a href="mailto:hello@wrealx.com"><i class="fa-solid fa-envelope"></i><span class="label">Email</span></a>
     </div>
 
-    <footer class="reveal">
+    <footer>
         © <span id="year"></span> Wreal X • <a href="mailto:hello@wrealx.com">hello@wrealx.com</a>
     </footer>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        const revealItems = document.querySelectorAll('.reveal');
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12 });
-
-        revealItems.forEach((item) => revealObserver.observe(item));
     </script>
 </body>
 </html>
