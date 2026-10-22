@@ -145,6 +145,77 @@
             transform: scale(1.05) translateY(-3px);
             box-shadow: 0 0 80px rgba(57, 255, 20, 0.4);
         }
+        .video-section {
+            padding: 4rem 5% 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .video-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            font-family: 'Orbitron', cursive;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .video-card {
+            background: rgba(15, 15, 15, 0.9);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s;
+            text-align: center;
+        }
+        .video-card:hover {
+            border-color: #39FF14;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.06);
+            transform: translateY(-6px);
+        }
+        .video-card iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .video-title {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #FFFFFF;
+            font-family: 'Orbitron', cursive;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        .video-link {
+            display: inline-block;
+            padding: 0.7rem 2rem;
+            background: #39FF14;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
+        }
+        .video-link:hover {
+            background: #00FF41;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(57, 255, 20, 0.3);
+        }
         .release-section {
             padding: 4rem 5%;
             max-width: 800px;
@@ -376,6 +447,7 @@
             .nav-links { gap: 0.8rem; justify-content: center; }
             .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
             .release-grid { grid-template-columns: 1fr; }
+            .video-grid { grid-template-columns: 1fr; }
             .social-bar-bottom { gap: 1.5rem; }
             .social-bar-bottom a { font-size: 1.4rem; }
             .social-bar-bottom a .label { font-size: 0.6rem; }
@@ -407,6 +479,29 @@
     <p class="subhead">CURSED 🕯️</p>
     <p class="tagline">South Sudanese emo trap artist blending raw vulnerability, darkwave energy, and Afrobeats soul.</p>
     <a href="https://ffm.to/nitro-veil" target="_blank" class="cta-btn">▶ Stream latest</a>
+</section>
+
+<section class="video-section">
+    <h2>✦ LATEST VIDEO</h2>
+    <div class="video-grid">
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/cLhOOhsIs-o?si=A0wkxifgqL-NSJH_" title="Wreal X Latest Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="video-title">Official Video</p>
+            <a href="https://youtu.be/cLhOOhsIs-o?si=A0wkxifgqL-NSJH_" target="_blank" class="video-link">▶ Watch</a>
+        </div>
+
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/lOiZYv0GZGs?si=j3SQc1tBk0YdACUW" title="Wreal X Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="video-title">Visuals</p>
+            <a href="https://youtu.be/lOiZYv0GZGs?si=j3SQc1tBk0YdACUW" target="_blank" class="video-link">▶ Watch</a>
+        </div>
+
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/swCF5DMFquE?si=bUNxy4iRonmlObCC" title="Wreal X Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="video-title">Performance</p>
+            <a href="https://youtu.be/swCF5DMFquE?si=bUNxy4iRonmlObCC" target="_blank" class="video-link">▶ Watch</a>
+        </div>
+    </div>
 </section>
 
 <section class="release-section">
