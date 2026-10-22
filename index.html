@@ -9,66 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- SILKTIDE COOKIE CONSENT -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
-    <style id="silktide-consent-manager-overrides">
-        #stcm-wrapper {
-            --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-            --fontFamily: 'Space Grotesk', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
-            --primaryColor: #39FF14;
-            --backgroundColor: #0A0A0A;
-            --textColor: #E0E0E0;
-            --backdropBackgroundColor: #00000080;
-            --backdropBackgroundBlur: 8px;
-            --iconColor: #0A0A0A;
-            --iconBackgroundColor: #39FF14;
-        }
-        #stcm-wrapper .stcm-button-primary {
-            background: #39FF14 !important;
-            color: #0A0A0A !important;
-            font-weight: 700 !important;
-            font-family: 'Rajdhani', sans-serif !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.05em !important;
-            border-radius: 50px !important;
-            padding: 0.6rem 1.8rem !important;
-            border: none !important;
-            transition: all 0.3s !important;
-        }
-        #stcm-wrapper .stcm-button-primary:hover {
-            background: #00FF41 !important;
-            box-shadow: 0 0 40px rgba(57, 255, 20, 0.3) !important;
-            transform: scale(1.05) !important;
-        }
-        #stcm-wrapper .stcm-button-secondary {
-            background: transparent !important;
-            color: #7FFF00 !important;
-            border: 1px solid #39FF14 !important;
-            font-family: 'Rajdhani', sans-serif !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.05em !important;
-            border-radius: 50px !important;
-            padding: 0.6rem 1.8rem !important;
-            transition: all 0.3s !important;
-        }
-        #stcm-wrapper .stcm-button-secondary:hover {
-            border-color: #00FF41 !important;
-            color: #00FF41 !important;
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1) !important;
-        }
-        #stcm-wrapper .stcm-toggle.checked {
-            background: #39FF14 !important;
-        }
-        #stcm-wrapper .stcm-toggle {
-            background: #333 !important;
-        }
-        #stcm-wrapper .stcm-toggle.checked .stcm-toggle-slider {
-            background: #0A0A0A !important;
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
-
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
@@ -205,62 +145,6 @@
             transform: scale(1.05) translateY(-3px);
             box-shadow: 0 0 80px rgba(57, 255, 20, 0.4);
         }
-        .content-section {
-            padding: 4rem 5%;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-        .content-section h2 {
-            text-align: center;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 900;
-            color: #FFFFFF;
-            margin-bottom: 2rem;
-            font-family: 'Orbitron', cursive;
-            letter-spacing: 0.05em;
-            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-        }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        .video-grid iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            transition: all 0.3s;
-        }
-        .video-grid iframe:hover {
-            border-color: #39FF14;
-            box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
-        }
-        .video-card-wrapper {
-            position: relative;
-        }
-        .video-tag {
-            display: inline-block;
-            background: #39FF14;
-            color: #0A0A0A;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 0.2rem 1rem;
-            border-radius: 20px;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.1em;
-            font-family: 'Space Grotesk', sans-serif;
-            text-transform: uppercase;
-        }
-        .video-title {
-            font-size: 1rem;
-            color: #FFFFFF;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        /* ====== STREAM LATEST RELEASE ====== */
         .release-section {
             padding: 4rem 5%;
             max-width: 800px;
@@ -288,6 +172,7 @@
             border: 2px solid rgba(57, 255, 20, 0.3);
             box-shadow: 0 0 60px rgba(57, 255, 20, 0.15);
             transition: all 0.3s;
+            background-image: url('https://files.catbox.moe/s11dsf.png');
         }
         .release-cover:hover {
             border-color: #39FF14;
@@ -328,7 +213,6 @@
             transform: scale(1.05) translateY(-3px);
             box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
         }
-        /* ====== OTHER RECENT RELEASES ====== */
         .recent-releases {
             padding: 2rem 5% 4rem;
             max-width: 1300px;
@@ -411,7 +295,6 @@
             transform: scale(1.05);
             box-shadow: 0 0 50px rgba(57, 255, 20, 0.3);
         }
-        /* ====== STREAM WREAL X CTA ====== */
         .stream-cta {
             text-align: center;
             padding: 2rem 5% 3rem;
@@ -435,44 +318,6 @@
             background: #00FF41;
             transform: scale(1.05);
             box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
-        }
-        .email-section {
-            padding: 3rem 5%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .email-section h2 {
-            text-align: center;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 900;
-            color: #FFFFFF;
-            margin-bottom: 0.5rem;
-            font-family: 'Orbitron', cursive;
-            letter-spacing: 0.05em;
-            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-        }
-        .email-section .email-sub {
-            text-align: center;
-            color: #FFFFFF;
-            font-size: 0.9rem;
-            letter-spacing: 0.2em;
-            margin-bottom: 2rem;
-            font-family: 'Space Grotesk', sans-serif;
-            text-transform: uppercase;
-            opacity: 0.6;
-        }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 {
-            width: 100%;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
-            width: 100% !important;
-            max-width: 100% !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            border-radius: 16px !important;
-            background: rgba(15, 15, 15, 0.9) !important;
-            min-height: 350px;
         }
         .social-bar-bottom {
             display: flex;
@@ -526,28 +371,14 @@
         footer a:hover {
             text-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
         }
-
         @media (max-width: 768px) {
             nav { flex-direction: column; }
             .nav-links { gap: 0.8rem; justify-content: center; }
             .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
-            .video-grid { grid-template-columns: 1fr; }
             .release-grid { grid-template-columns: 1fr; }
-            .email-section { padding: 2rem 5%; }
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
-                min-height: 400px;
-            }
             .social-bar-bottom { gap: 1.5rem; }
             .social-bar-bottom a { font-size: 1.4rem; }
             .social-bar-bottom a .label { font-size: 0.6rem; }
-            #stcm-wrapper .stcm-prompt {
-                padding: 1rem !important;
-            }
-            #stcm-wrapper .stcm-button-primary,
-            #stcm-wrapper .stcm-button-secondary {
-                padding: 0.5rem 1.2rem !important;
-                font-size: 0.8rem !important;
-            }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: clamp(3rem, 12vw, 4.5rem); }
@@ -555,9 +386,6 @@
             .social-bar-bottom { gap: 1rem; }
             .social-bar-bottom a { font-size: 1.2rem; }
             .social-bar-bottom a .label { font-size: 0.5rem; }
-            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
-                min-height: 420px;
-            }
         }
     </style>
 </head>
@@ -566,4 +394,77 @@
 <nav>
     <a href="index.html" class="logo">✦ WREAL X</a>
     <ul class="nav-links">
-        <li><a hre
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>WREAL X</h1>
+    <p class="subhead">CURSED 🕯️</p>
+    <p class="tagline">South Sudanese emo trap artist blending raw vulnerability, darkwave energy, and Afrobeats soul.</p>
+    <a href="https://ffm.to/nitro-veil" target="_blank" class="cta-btn">▶ Stream latest</a>
+</section>
+
+<section class="release-section">
+    <h2>✦ STREAM LATEST RELEASE</h2>
+    <div class="release-cover"></div>
+    <h3 class="release-title">Nitro Veil</h3>
+    <p class="release-artist">Wreal X</p>
+    <a href="https://ffm.to/nitro-veil" target="_blank" class="stream-btn">▶ Stream Now</a>
+</section>
+
+<section class="recent-releases">
+    <h2>✦ OTHER RECENT RELEASES</h2>
+    <div class="release-grid">
+        <div class="release-item">
+            <div class="cover-img" style="background-image: url('https://files.catbox.moe/gq73y6.png');"></div>
+            <h3>Gang Gang</h3>
+            <p class="artist-name">Wreal X</p>
+            <a href="https://altlink.co/gang-gang" target="_blank" class="small-stream-btn">▶ Stream</a>
+        </div>
+        <div class="release-item">
+            <div class="cover-img" style="background-image: url('https://files.catbox.moe/hasrqj.png');"></div>
+            <h3>Hurry Up</h3>
+            <p class="artist-name">Wreal X</p>
+            <a href="https://altlink.co/hurry-up" target="_blank" class="small-stream-btn">▶ Stream</a>
+        </div>
+    </div>
+</section>
+
+<div class="stream-cta">
+    <a href="https://ffm.to/nitro-veil" target="_blank">▶ Stream Wreal X</a>
+</div>
+
+<div class="social-bar-bottom">
+    <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i><span class="label">Instagram</span></a>
+    <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i><span class="label">Twitter</span></a>
+    <a href="https://tiktok.com/wrealx3" target="_blank"><i class="fab fa-tiktok"></i><span class="label">TikTok</span></a>
+    <a href="https://facebook.com/wrealxcursed" target="_blank"><i class="fab fa-facebook"></i><span class="label">Facebook</span></a>
+    <a href="https://youtube.com/@wrealx" target="_blank"><i class="fab fa-youtube"></i><span class="label">YouTube</span></a>
+    <a href="https://soundcloud.com/wrealx" target="_blank"><i class="fab fa-soundcloud"></i><span class="label">SoundCloud</span></a>
+    <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank"><i class="fab fa-spotify"></i><span class="label">Spotify</span></a>
+    <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank"><i class="fab fa-apple"></i><span class="label">Apple</span></a>
+</div>
+
+<footer>
+    © 2026 WREAL X · <a href="contact.html">Say hi</a>
+</footer>
+
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+
+</body>
+</html>
