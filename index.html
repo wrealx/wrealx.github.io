@@ -2,35 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Wreal X · Official Website</title>
-    <meta name="description" content="Official website for Wreal X — music, videos, releases, and contact information." />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- SILKTIDE COOKIE CONSENT -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
+    <style id="silktide-consent-manager-overrides">
+        #stcm-wrapper {
+            --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+            --fontFamily: 'Space Grotesk', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+            --primaryColor: #39FF14;
+            --backgroundColor: #0A0A0A;
+            --textColor: #E0E0E0;
+            --backdropBackgroundColor: #00000080;
+            --backdropBackgroundBlur: 8px;
+            --iconColor: #0A0A0A;
+            --iconBackgroundColor: #39FF14;
+        }
+        #stcm-wrapper .stcm-button-primary {
+            background: #39FF14 !important;
+            color: #0A0A0A !important;
+            font-weight: 700 !important;
+            font-family: 'Rajdhani', sans-serif !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            border-radius: 50px !important;
+            padding: 0.6rem 1.8rem !important;
+            border: none !important;
+            transition: all 0.3s !important;
+        }
+        #stcm-wrapper .stcm-button-primary:hover {
+            background: #00FF41 !important;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.3) !important;
+            transform: scale(1.05) !important;
+        }
+        #stcm-wrapper .stcm-button-secondary {
+            background: transparent !important;
+            color: #7FFF00 !important;
+            border: 1px solid #39FF14 !important;
+            font-family: 'Rajdhani', sans-serif !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            border-radius: 50px !important;
+            padding: 0.6rem 1.8rem !important;
+            transition: all 0.3s !important;
+        }
+        #stcm-wrapper .stcm-button-secondary:hover {
+            border-color: #00FF41 !important;
+            color: #00FF41 !important;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1) !important;
+        }
+        #stcm-wrapper .stcm-toggle.checked {
+            background: #39FF14 !important;
+        }
+        #stcm-wrapper .stcm-toggle {
+            background: #333 !important;
+        }
+        #stcm-wrapper .stcm-toggle.checked .stcm-toggle-slider {
+            background: #0A0A0A !important;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html, body {
             background: #0A0A0A;
             color: #E0E0E0;
             font-family: 'Space Grotesk', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
-            scroll-behavior: smooth;
+            overflow-y: auto;
         }
-
-        body {
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-        }
-
         nav {
             display: flex;
             justify-content: space-between;
@@ -41,7 +89,6 @@
             position: relative;
             z-index: 10;
         }
-
         .logo {
             font-size: 2.2rem;
             font-weight: 900;
@@ -51,18 +98,15 @@
             font-family: 'Orbitron', cursive;
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
         }
-
         .logo:hover {
             text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
         }
-
         .nav-links {
             display: flex;
             gap: 1.5rem;
             list-style: none;
             flex-wrap: wrap;
         }
-
         .nav-links a {
             color: #FFFFFF;
             text-decoration: none;
@@ -77,7 +121,6 @@
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.05);
         }
-
         .nav-links a:hover {
             color: #39FF14;
             border-color: #39FF14;
@@ -86,7 +129,6 @@
             transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
         }
-
         .hero {
             min-height: 80vh;
             display: flex;
@@ -101,7 +143,6 @@
             position: relative;
             background-attachment: fixed;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -112,12 +153,7 @@
             background: rgba(10, 10, 10, 0.5);
             z-index: 1;
         }
-
-        .hero * {
-            position: relative;
-            z-index: 2;
-        }
-
+        .hero * { position: relative; z-index: 2; }
         .hero h1 {
             font-size: clamp(4rem, 15vw, 8rem);
             font-weight: 900;
@@ -127,7 +163,6 @@
             font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
         }
-
         .hero .subhead {
             font-size: 1.6rem;
             color: #39FF14;
@@ -137,7 +172,6 @@
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.15);
             font-family: 'Space Grotesk', sans-serif;
         }
-
         .hero .tagline {
             font-size: 1.1rem;
             color: #FFFFFF;
@@ -148,7 +182,6 @@
             font-weight: 300;
             letter-spacing: 0.05em;
         }
-
         .cta-btn {
             margin-top: 2.5rem;
             padding: 1rem 3.5rem;
@@ -167,19 +200,16 @@
             text-transform: uppercase;
             letter-spacing: 0.15em;
         }
-
         .cta-btn:hover {
             background: #00FF41;
             transform: scale(1.05) translateY(-3px);
             box-shadow: 0 0 80px rgba(57, 255, 20, 0.4);
         }
-
         .content-section {
             padding: 4rem 5%;
             max-width: 1300px;
             margin: 0 auto;
         }
-
         .content-section h2 {
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
@@ -190,14 +220,12 @@
             letter-spacing: 0.05em;
             text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
-
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-bottom: 4rem;
         }
-
         .video-grid iframe {
             width: 100%;
             aspect-ratio: 16/9;
@@ -205,16 +233,13 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
             transition: all 0.3s;
         }
-
         .video-grid iframe:hover {
             border-color: #39FF14;
             box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
         }
-
         .video-card-wrapper {
             position: relative;
         }
-
         .video-tag {
             display: inline-block;
             background: #39FF14;
@@ -228,7 +253,6 @@
             font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
         }
-
         .video-title {
             font-size: 1rem;
             color: #FFFFFF;
@@ -236,14 +260,13 @@
             font-weight: 600;
             font-family: 'Space Grotesk', sans-serif;
         }
-
+        /* ====== STREAM LATEST RELEASE ====== */
         .release-section {
             padding: 4rem 5%;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
-
         .release-section h2 {
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
@@ -254,7 +277,6 @@
             letter-spacing: 0.05em;
             text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
-
         .release-cover {
             width: 100%;
             max-width: 400px;
@@ -267,13 +289,11 @@
             box-shadow: 0 0 60px rgba(57, 255, 20, 0.15);
             transition: all 0.3s;
         }
-
         .release-cover:hover {
             border-color: #39FF14;
             box-shadow: 0 0 80px rgba(57, 255, 20, 0.3);
             transform: scale(1.02);
         }
-
         .release-title {
             font-size: 2rem;
             font-weight: 900;
@@ -281,7 +301,6 @@
             font-family: 'Orbitron', cursive;
             margin-bottom: 0.3rem;
         }
-
         .release-artist {
             font-size: 1rem;
             color: #FFFFFF;
@@ -289,7 +308,6 @@
             margin-bottom: 1.5rem;
             font-family: 'Space Grotesk', sans-serif;
         }
-
         .stream-btn {
             display: inline-block;
             padding: 1rem 3.5rem;
@@ -305,19 +323,17 @@
             letter-spacing: 0.15em;
             box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
         }
-
         .stream-btn:hover {
             background: #00FF41;
             transform: scale(1.05) translateY(-3px);
             box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
         }
-
+        /* ====== OTHER RECENT RELEASES ====== */
         .recent-releases {
             padding: 2rem 5% 4rem;
             max-width: 1300px;
             margin: 0 auto;
         }
-
         .recent-releases h2 {
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
@@ -328,13 +344,11 @@
             letter-spacing: 0.05em;
             text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
-
         .release-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2.5rem;
         }
-
         .release-item {
             background: rgba(15, 15, 15, 0.9);
             border-radius: 20px;
@@ -344,13 +358,11 @@
             transition: all 0.4s;
             text-align: center;
         }
-
         .release-item:hover {
             border-color: #39FF14;
             box-shadow: 0 0 40px rgba(57, 255, 20, 0.06);
             transform: translateY(-6px);
         }
-
         .release-item .cover-img {
             width: 100%;
             aspect-ratio: 1/1;
@@ -361,12 +373,10 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
         }
-
         .release-item .cover-img:hover {
             border-color: #39FF14;
             transform: scale(1.02);
         }
-
         .release-item h3 {
             font-size: 1.2rem;
             color: #FFFFFF;
@@ -374,7 +384,6 @@
             font-family: 'Orbitron', cursive;
             letter-spacing: 0.05em;
         }
-
         .release-item .artist-name {
             color: #FFFFFF;
             font-size: 0.8rem;
@@ -382,7 +391,6 @@
             margin-bottom: 1rem;
             font-family: 'Space Grotesk', sans-serif;
         }
-
         .release-item .small-stream-btn {
             display: inline-block;
             padding: 0.6rem 2rem;
@@ -398,18 +406,16 @@
             letter-spacing: 0.1em;
             box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
         }
-
         .release-item .small-stream-btn:hover {
             background: #00FF41;
             transform: scale(1.05);
             box-shadow: 0 0 50px rgba(57, 255, 20, 0.3);
         }
-
+        /* ====== STREAM WREAL X CTA ====== */
         .stream-cta {
             text-align: center;
             padding: 2rem 5% 3rem;
         }
-
         .stream-cta a {
             display: inline-block;
             padding: 1rem 3.5rem;
@@ -425,19 +431,16 @@
             letter-spacing: 0.15em;
             box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
         }
-
         .stream-cta a:hover {
             background: #00FF41;
             transform: scale(1.05);
             box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
         }
-
         .email-section {
             padding: 3rem 5%;
             max-width: 600px;
             margin: 0 auto;
         }
-
         .email-section h2 {
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
@@ -448,7 +451,6 @@
             letter-spacing: 0.05em;
             text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
-
         .email-section .email-sub {
             text-align: center;
             color: #FFFFFF;
@@ -459,14 +461,12 @@
             text-transform: uppercase;
             opacity: 0.6;
         }
-
-        #mailchimp-form {
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 {
             width: 100%;
             max-width: 100%;
             overflow: hidden;
         }
-
-        #mailchimp-form iframe {
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
             width: 100% !important;
             max-width: 100% !important;
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -474,7 +474,6 @@
             background: rgba(15, 15, 15, 0.9) !important;
             min-height: 350px;
         }
-
         .social-bar-bottom {
             display: flex;
             justify-content: center;
@@ -486,7 +485,6 @@
             flex-wrap: wrap;
             margin-top: 2rem;
         }
-
         .social-bar-bottom a {
             color: #FFFFFF;
             font-size: 1.8rem;
@@ -497,14 +495,12 @@
             gap: 0.5rem;
             opacity: 0.7;
         }
-
         .social-bar-bottom a:hover {
             color: #39FF14;
             transform: translateY(-4px);
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.3);
             opacity: 1;
         }
-
         .social-bar-bottom a .label {
             font-size: 0.7rem;
             color: #FFFFFF;
@@ -513,7 +509,6 @@
             letter-spacing: 0.05em;
             opacity: 0.5;
         }
-
         footer {
             text-align: center;
             padding: 2rem 5%;
@@ -524,12 +519,10 @@
             font-family: 'Space Grotesk', sans-serif;
             opacity: 0.4;
         }
-
         footer a {
             color: #39FF14;
             text-decoration: none;
         }
-
         footer a:hover {
             text-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
         }
@@ -541,121 +534,36 @@
             .video-grid { grid-template-columns: 1fr; }
             .release-grid { grid-template-columns: 1fr; }
             .email-section { padding: 2rem 5%; }
-            #mailchimp-form iframe { min-height: 400px; }
+            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
+                min-height: 400px;
+            }
             .social-bar-bottom { gap: 1.5rem; }
             .social-bar-bottom a { font-size: 1.4rem; }
             .social-bar-bottom a .label { font-size: 0.6rem; }
+            #stcm-wrapper .stcm-prompt {
+                padding: 1rem !important;
+            }
+            #stcm-wrapper .stcm-button-primary,
+            #stcm-wrapper .stcm-button-secondary {
+                padding: 0.5rem 1.2rem !important;
+                font-size: 0.8rem !important;
+            }
         }
-
         @media (max-width: 480px) {
             .hero h1 { font-size: clamp(3rem, 12vw, 4.5rem); }
             .hero .subhead { font-size: 1rem; letter-spacing: 0.15em; }
             .social-bar-bottom { gap: 1rem; }
             .social-bar-bottom a { font-size: 1.2rem; }
             .social-bar-bottom a .label { font-size: 0.5rem; }
-            #mailchimp-form iframe { min-height: 420px; }
+            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
+                min-height: 420px;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">✦ WREAL X</a>
-        <ul class="nav-links">
-            <li><a href="#music">Music</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#releases">Releases</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <header class="hero">
-        <h1>WREAL X</h1>
-        <div class="subhead">MUSIC • VISION • ENERGY</div>
-        <p class="tagline">A cinematic sound and visual experience shaped by movement, identity, and fearless creativity.</p>
-        <a href="#music" class="cta-btn">Listen Now</a>
-    </header>
-
-    <main>
-        <section id="videos" class="content-section">
-            <h2>Latest Videos</h2>
-            <div class="video-grid">
-                <div class="video-card-wrapper">
-                    <span class="video-tag">Visual</span>
-                    <p class="video-title">Official Visualizer</p>
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Official Visualizer" allowfullscreen></iframe>
-                </div>
-                <div class="video-card-wrapper">
-                    <span class="video-tag">Live</span>
-                    <p class="video-title">Live Session</p>
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Live Session" allowfullscreen></iframe>
-                </div>
-                <div class="video-card-wrapper">
-                    <span class="video-tag">Behind The Scenes</span>
-                    <p class="video-title">Studio Moments</p>
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Studio Moments" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-
-        <section id="music" class="release-section">
-            <h2>Latest Release</h2>
-            <div class="release-cover" aria-label="Latest release cover art"></div>
-            <div class="release-title">New Wave</div>
-            <div class="release-artist">Wreal X</div>
-            <a href="https://open.spotify.com/" class="stream-btn" target="_blank" rel="noopener noreferrer">Stream Now</a>
-        </section>
-
-        <section id="releases" class="recent-releases">
-            <h2>Recent Releases</h2>
-            <div class="release-grid">
-                <div class="release-item">
-                    <div class="cover-img" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80');"></div>
-                    <h3>Phase One</h3>
-                    <div class="artist-name">Wreal X</div>
-                    <a href="https://open.spotify.com/" class="small-stream-btn" target="_blank" rel="noopener noreferrer">Listen</a>
-                </div>
-                <div class="release-item">
-                    <div class="cover-img" style="background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=900&q=80');"></div>
-                    <h3>Neon Drift</h3>
-                    <div class="artist-name">Wreal X</div>
-                    <a href="https://open.spotify.com/" class="small-stream-btn" target="_blank" rel="noopener noreferrer">Listen</a>
-                </div>
-                <div class="release-item">
-                    <div class="cover-img" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80');"></div>
-                    <h3>Afterglow</h3>
-                    <div class="artist-name">Wreal X</div>
-                    <a href="https://open.spotify.com/" class="small-stream-btn" target="_blank" rel="noopener noreferrer">Listen</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="stream-cta">
-            <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Follow The Sound</a>
-        </div>
-
-        <section id="contact" class="email-section">
-            <h2>Stay Connected</h2>
-            <div class="email-sub">Newsletter / Mailing List</div>
-            <div id="mailchimp-form">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="Mailing list signup" loading="lazy" allowfullscreen></iframe>
-            </div>
-        </section>
-    </main>
-
-    <div class="social-bar-bottom" aria-label="Social media links">
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i><span class="label">YouTube</span></a>
-        <a href="https://spotify.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-spotify"></i><span class="label">Spotify</span></a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i><span class="label">Instagram</span></a>
-        <a href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i><span class="label">X</span></a>
-        <a href="mailto:hello@wrealx.com"><i class="fa-solid fa-envelope"></i><span class="label">Email</span></a>
-    </div>
-
-    <footer>
-        © <span id="year"></span> Wreal X • <a href="mailto:hello@wrealx.com">hello@wrealx.com</a>
-    </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-</body>
-</html>
+<nav>
+    <a href="index.html" class="logo">✦ WREAL X</a>
+    <ul class="nav-links">
+        <li><a hre
