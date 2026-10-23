@@ -6,21 +6,79 @@
     <title>Wreal X · Official Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- SILKTIDE COOKIE CONSENT -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
+    <style id="silktide-consent-manager-overrides">
+        #stcm-wrapper {
+            --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+            --fontFamily: 'Space Grotesk', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+            --primaryColor: #39FF14;
+            --backgroundColor: #0A0A0A;
+            --textColor: #E0E0E0;
+            --backdropBackgroundColor: #00000080;
+            --backdropBackgroundBlur: 8px;
+            --iconColor: #0A0A0A;
+            --iconBackgroundColor: #39FF14;
+        }
+        #stcm-wrapper .stcm-button-primary {
+            background: #39FF14 !important;
+            color: #0A0A0A !important;
+            font-weight: 700 !important;
+            font-family: 'Rajdhani', sans-serif !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            border-radius: 50px !important;
+            padding: 0.6rem 1.8rem !important;
+            border: none !important;
+            transition: all 0.3s !important;
+        }
+        #stcm-wrapper .stcm-button-primary:hover {
+            background: #00FF41 !important;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.3) !important;
+            transform: scale(1.05) !important;
+        }
+        #stcm-wrapper .stcm-button-secondary {
+            background: transparent !important;
+            color: #7FFF00 !important;
+            border: 1px solid #39FF14 !important;
+            font-family: 'Rajdhani', sans-serif !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            border-radius: 50px !important;
+            padding: 0.6rem 1.8rem !important;
+            transition: all 0.3s !important;
+        }
+        #stcm-wrapper .stcm-button-secondary:hover {
+            border-color: #00FF41 !important;
+            color: #00FF41 !important;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1) !important;
+        }
+        #stcm-wrapper .stcm-toggle.checked {
+            background: #39FF14 !important;
+        }
+        #stcm-wrapper .stcm-toggle {
+            background: #333 !important;
+        }
+        #stcm-wrapper .stcm-toggle.checked .stcm-toggle-slider {
+            background: #0A0A0A !important;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
-            background: linear-gradient(180deg, #070707 0%, #0A0A0A 25%, #0A0A0A 100%);
+            background: #0A0A0A;
             color: #E0E0E0;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
             overflow-y: auto;
-            transition: background 0.8s ease;
         }
-        a, button, input, textarea, select { font-family: 'Inter', 'Segoe UI', sans-serif; }
-
         nav {
             display: flex;
             justify-content: space-between;
@@ -31,348 +89,481 @@
             position: relative;
             z-index: 10;
         }
-
         .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35em;
             font-size: 2.2rem;
-            font-weight: 800;
+            font-weight: 900;
             color: #39FF14;
             text-decoration: none;
             letter-spacing: 0.1em;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Orbitron', cursive;
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
         }
-        .logo:hover { text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2); }
-        .logo .brand-mark {
-            width: 0.9em; height: 0.9em; object-fit: cover; display: block; border-radius: 0.18em;
-            box-shadow: 0 0 18px rgba(57,255,20,0.18); flex-shrink: 0;
+        .logo:hover {
+            text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
         }
-
-        #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
-
-        .nav-toggle {
-            display: none; position: absolute; right: 5%; top: 1.5rem; width: 48px; height: 48px;
-            border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; background: rgba(255, 255, 255, 0.04);
-            cursor: pointer; z-index: 20; align-items: center; justify-content: center; flex-direction: column; gap: 5px; transition: all 0.3s ease;
-        }
-        .nav-toggle:hover { border-color: rgba(57, 255, 20, 0.6); box-shadow: 0 0 20px rgba(57, 255, 20, 0.12); }
-        .nav-toggle .bar { display: block; width: 22px; height: 2px; border-radius: 2px; background: #FFFFFF; }
-
         .nav-links {
-            display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; align-items: center; justify-content: flex-end;
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
         }
         .nav-links a {
-            color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s;
-            font-family: 'Inter', 'Segoe UI', sans-serif; text-transform: uppercase; letter-spacing: 0.08em;
-            padding: 0.5rem 1rem; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; background: rgba(255, 255, 255, 0.04);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.5rem 1.2rem;
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
         }
         .nav-links a:hover {
-            color: #39FF14; border-color: #39FF14; background: rgba(57, 255, 20, 0.1);
-            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3); transform: translateY(-2px); box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
+            color: #39FF14;
+            border-color: #39FF14;
+            background: rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
         }
-
-        .nav-hint {
-            position: fixed; right: 7.5rem; top: 1.25rem; display: flex; align-items: center; gap: 0.55rem;
-            padding: 0.6rem 0.9rem 0.6rem 0.75rem; border-radius: 999px; background: rgba(10, 10, 10, 0.85);
-            border: 1px solid rgba(57, 255, 20, 0.4); box-shadow: 0 0 25px rgba(57, 255, 20, 0.15); transform-origin: center;
-            z-index: 25; pointer-events: none; animation: navHintMotion 1.8s ease-in-out infinite;
-        }
-        .nav-hint::after {
-            content: ''; position: absolute; right: -14px; top: 50%; width: 18px; height: 2px; background: rgba(57, 255, 20, 0.9);
-            transform: translateY(-50%) rotate(14deg); border-radius: 999px;
-        }
-        .nav-hint-icon {
-            display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%;
-            background: rgba(57, 255, 20, 0.1); color: #39FF14; font-size: 1rem; animation: handPulse 1.3s ease-in-out infinite alternate;
-        }
-        .nav-hint-text {
-            color: #E9FEEB; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.58rem;
-        }
-        body.homepage .nav-hint { display: flex; }
-
         .hero {
-            position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center;
-            padding: 2rem 5% 3rem; background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.55)),
-                url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 5%;
+            background-image: url('https://iili.io/CD0qtob.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background-attachment: fixed;
         }
         .hero::before {
-            content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(57,255,20,0.14), transparent 40%);
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.5);
+            z-index: 1;
         }
-        .hero-inner {
-            position: relative; z-index: 1; max-width: 1200px; width: 100%; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center;
+        .hero * { position: relative; z-index: 2; }
+        .hero h1 {
+            font-size: clamp(4rem, 15vw, 8rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: #FFFFFF;
+            text-shadow: 0 0 80px rgba(0, 0, 0, 0.5), 0 0 160px rgba(0, 0, 0, 0.3);
+            font-family: 'Orbitron', cursive;
+            letter-spacing: 0.05em;
         }
-        .eyebrow {
-            color: #39FF14; font-weight: 800; letter-spacing: 0.22em; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 1rem;
+        .hero .subhead {
+            font-size: 1.6rem;
+            color: #39FF14;
+            margin-top: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 40px rgba(57, 255, 20, 0.15);
+            font-family: 'Space Grotesk', sans-serif;
         }
-        h1 {
-            font-size: clamp(3rem, 7vw, 7rem); line-height: 0.9; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 1rem;
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            margin-top: 1rem;
+            max-width: 500px;
+            opacity: 0.7;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.05em;
         }
-        .tagline {
-            font-size: clamp(1.1rem, 2vw, 1.5rem); color: #D9FCE4; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+        .cta-btn {
+            margin-top: 2.5rem;
+            padding: 1rem 3.5rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: #39FF14;
+            border: none;
+            color: #0A0A0A;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
         }
-        .cta-row {
-            display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;
+        .cta-btn:hover {
+            background: #00FF41;
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 0 80px rgba(57, 255, 20, 0.4);
         }
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center; padding: 1rem 1.6rem; border-radius: 999px;
-            text-decoration: none; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.3s ease;
+        .content-section {
+            padding: 4rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
         }
-        .btn.primary {
-            background: #39FF14; color: #0A0A0A; box-shadow: 0 0 32px rgba(57,255,20,0.2);
+        .content-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            font-family: 'Orbitron', cursive;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
-        .btn.secondary {
-            border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); color: #FFFFFF;
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
-        .btn:hover { transform: translateY(-2px); }
-
-        .hero-card {
-            background: rgba(14,14,14,0.9); border: 1px solid rgba(255,255,255,0.12); border-radius: 22px; padding: 1.5rem;
-            backdrop-filter: blur(8px); box-shadow: 0 20px 60px rgba(0,0,0,0.32);
+        .video-grid iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s;
         }
-        .hero-card .mini-label { color: #39FF14; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
-        .hero-card h3 {
-            font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 0.8rem 0 0.5rem; letter-spacing: 0.08em; text-transform: uppercase;
+        .video-grid iframe:hover {
+            border-color: #39FF14;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
         }
-        .hero-card p {
-            color: #D4D4D4; line-height: 1.8; margin-bottom: 1rem;
+        .video-card-wrapper {
+            position: relative;
         }
-        .stream-list {
-            display: grid; gap: 0.8rem; margin-top: 1rem;
+        .video-tag {
+            display: inline-block;
+            background: #39FF14;
+            color: #0A0A0A;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
         }
-        .stream-item {
-            display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; border-radius: 14px;
-            text-decoration: none; color: #F3F3F3; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+        .video-title {
+            font-size: 1rem;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
         }
-        .stream-item strong { letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem; }
-        .stream-item span { color: #39FF14; font-weight: 700; }
-
-        .section {
-            max-width: 1200px; margin: 0 auto; padding: 5rem 5% 2rem;
+        /* ====== STREAM LATEST RELEASE ====== */
+        .release-section {
+            padding: 4rem 5%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
-        .section-header {
-            display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;
+        .release-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            font-family: 'Orbitron', cursive;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
-        .section-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem); letter-spacing: 0.08em; text-transform: uppercase; margin: 0;
+        .release-cover {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1/1;
+            margin: 0 auto 1.5rem;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.15);
+            transition: all 0.3s;
         }
-
-        .releases-grid, .album-grid, .merch-grid, .contact-wrap {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+        .release-cover:hover {
+            border-color: #39FF14;
+            box-shadow: 0 0 80px rgba(57, 255, 20, 0.3);
+            transform: scale(1.02);
         }
-        .release-card, .album-card, .item, .card {
-            background: rgba(20,20,20,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 1.4rem; overflow: hidden;
-            transition: transform 0.25s ease, border-color 0.25s ease;
+        .release-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            font-family: 'Orbitron', cursive;
+            margin-bottom: 0.3rem;
         }
-        .release-card:hover, .album-card:hover, .item:hover, .card:hover { transform: translateY(-4px); border-color: rgba(57,255,20,0.6); }
-        .cover {
-            width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, rgba(57,255,20,0.2), rgba(255,255,255,0.06));
-            border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: #39FF14;
-            font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+        .release-artist {
+            font-size: 1rem;
+            color: #FFFFFF;
+            opacity: 0.6;
+            margin-bottom: 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
-        .release-card h3, .album-card h3, .item h3, .card h3 {
-            color: #FFFFFF; margin-bottom: 0.55rem; font-size: 1.2rem;
+        .stream-btn {
+            display: inline-block;
+            padding: 1rem 3.5rem;
+            background: #39FF14;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
         }
-        .release-card p, .album-card p, .item p, .card p, .card a {
-            color: #BFBFBF; line-height: 1.7; text-decoration: none;
+        .stream-btn:hover {
+            background: #00FF41;
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
         }
-        .release-card a, .item a, .card a {
-            display: inline-block; margin-top: 1rem; color: #39FF14; font-weight: 700; text-decoration: none;
+        /* ====== OTHER RECENT RELEASES ====== */
+        .recent-releases {
+            padding: 2rem 5% 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
         }
-
-        .about-wrap {
-            display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items: center;
+        .recent-releases h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            font-family: 'Orbitron', cursive;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
-        .about-copy {
-            font-size: 1.05rem; line-height: 1.9; color: #D7D7D7;
+        .release-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
         }
-        .about-copy strong { color: #39FF14; }
-        .stats {
-            display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(120px, 1fr));
+        .release-item {
+            background: rgba(15, 15, 15, 0.9);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s;
+            text-align: center;
         }
-        .stat {
-            background: rgba(20,20,20,0.9); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 1.25rem;
+        .release-item:hover {
+            border-color: #39FF14;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.06);
+            transform: translateY(-6px);
         }
-        .stat strong { display: block; color: #39FF14; font-size: 1.8rem; margin-bottom: 0.4rem; }
-        .stat span { color: #E4E4E4; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
-
-        .socials {
-            display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 2rem;
+        .release-item .cover-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
         }
-        .socials a {
-            display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
-            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); color: #39FF14; text-decoration: none;
-            transition: all 0.25s ease;
+        .release-item .cover-img:hover {
+            border-color: #39FF14;
+            transform: scale(1.02);
         }
-        .socials a:hover { transform: translateY(-2px); box-shadow: 0 0 25px rgba(57,255,20,0.15); }
-
-        .item .visual {
-            width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, rgba(57,255,20,0.2), rgba(255,255,255,0.08));
-            border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #39FF14; font-weight: 800; letter-spacing: 0.1em;
-            margin-bottom: 1rem; text-transform: uppercase;
+        .release-item h3 {
+            font-size: 1.2rem;
+            color: #FFFFFF;
+            margin-bottom: 0.3rem;
+            font-family: 'Orbitron', cursive;
+            letter-spacing: 0.05em;
         }
-        .item a {
-            display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background: #39FF14; color: #0A0A0A; font-weight: 800;
-            border-radius: 999px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em; box-shadow: 0 0 24px rgba(57,255,20,0.18);
+        .release-item .artist-name {
+            color: #FFFFFF;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
-
-        @keyframes navHintMotion {
-            0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
-            20% { transform: translateX(-6px) translateY(-5px) rotate(-5deg); }
-            40% { transform: translateX(2px) translateY(1px) rotate(3deg); }
-            60% { transform: translateX(-4px) translateY(-3px) rotate(-2deg); }
-            80% { transform: translateX(6px) translateY(-6px) rotate(4deg); }
+        .release-item .small-stream-btn {
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            background: #39FF14;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
         }
-        @keyframes handPulse {
-            0% { transform: scale(1) rotate(0deg); }
-            100% { transform: scale(1.12) rotate(8deg); }
+        .release-item .small-stream-btn:hover {
+            background: #00FF41;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(57, 255, 20, 0.3);
+        }
+        /* ====== STREAM WREAL X CTA ====== */
+        .stream-cta {
+            text-align: center;
+            padding: 2rem 5% 3rem;
+        }
+        .stream-cta a {
+            display: inline-block;
+            padding: 1rem 3.5rem;
+            background: #39FF14;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
+        }
+        .stream-cta a:hover {
+            background: #00FF41;
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
+        }
+        .email-section {
+            padding: 3rem 5%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .email-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', cursive;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+        .email-section .email-sub {
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
+            width: 100% !important;
+            max-width: 100% !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 16px !important;
+            background: rgba(15, 15, 15, 0.9) !important;
+            min-height: 350px;
+        }
+        .social-bar-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            padding: 2rem 5%;
+            background: rgba(10, 10, 10, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .social-bar-bottom a {
+            color: #FFFFFF;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.7;
+        }
+        .social-bar-bottom a:hover {
+            color: #39FF14;
+            transform: translateY(-4px);
+            text-shadow: 0 0 40px rgba(57, 255, 20, 0.3);
+            opacity: 1;
+        }
+        .social-bar-bottom a .label {
+            font-size: 0.7rem;
+            color: #FFFFFF;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.5;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            color: #FFFFFF;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            opacity: 0.4;
+        }
+        footer a {
+            color: #39FF14;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
         }
 
         @media (max-width: 768px) {
-            nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 5%; min-height: 70px; position: relative; }
-            .logo { font-size: 1.4rem; letter-spacing: 0.08em; }
-            .nav-toggle { display: flex; }
-            .nav-links {
-                position: absolute; top: 4.6rem; right: 5%; flex-direction: column; gap: 0.75rem; align-items: stretch; min-width: 180px;
-                padding: 0.85rem; background: rgba(10,10,10,0.95); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px;
-                box-shadow: 0 20px 40px rgba(0,0,0,0.35); opacity: 0; transform: translateX(120%); pointer-events: none; transition: transform 0.35s ease, opacity 0.35s ease;
+            nav { flex-direction: column; }
+            .nav-links { gap: 0.8rem; justify-content: center; }
+            .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
+            .video-grid { grid-template-columns: 1fr; }
+            .release-grid { grid-template-columns: 1fr; }
+            .email-section { padding: 2rem 5%; }
+            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
+                min-height: 400px;
             }
-            #nav-toggle:checked ~ .nav-links { opacity: 1; transform: translateX(0); pointer-events: auto; }
-            .nav-links a { width: 100%; text-align: center; padding: 0.8rem 1rem; font-size: 0.72rem; }
-            .hero-inner, .about-wrap { grid-template-columns: 1fr; }
-            .hero { min-height: 70vh; }
+            .social-bar-bottom { gap: 1.5rem; }
+            .social-bar-bottom a { font-size: 1.4rem; }
+            .social-bar-bottom a .label { font-size: 0.6rem; }
+            #stcm-wrapper .stcm-prompt {
+                padding: 1rem !important;
+            }
+            #stcm-wrapper .stcm-button-primary,
+            #stcm-wrapper .stcm-button-secondary {
+                padding: 0.5rem 1.2rem !important;
+                font-size: 0.8rem !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: clamp(3rem, 12vw, 4.5rem); }
+            .hero .subhead { font-size: 1rem; letter-spacing: 0.15em; }
+            .social-bar-bottom { gap: 1rem; }
+            .social-bar-bottom a { font-size: 1.2rem; }
+            .social-bar-bottom a .label { font-size: 0.5rem; }
+            #31c0e709-a54d-43f1-918f-67317d82f9b4 iframe {
+                min-height: 420px;
+            }
         }
     </style>
 </head>
-<body class="homepage">
-    <nav>
-        <a href="index.html" class="logo">WREAL X</a>
+<body>
 
-        <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
-        <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </label>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="music.html">Music</a></li>
-            <li><a href="merch.html">Merch</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="nav-hint" aria-hidden="true">
-        <div class="nav-hint-icon"><i class="fa-solid fa-hand-point-right"></i></div>
-        <div class="nav-hint-text">Explore</div>
-    </div>
-
-    <section class="hero">
-        <div class="hero-inner">
-            <div>
-                <div class="eyebrow">official website</div>
-                <h1>Wreal X</h1>
-                <div class="tagline">CURSED</div>
-                <div class="cta-row">
-                    <a class="btn primary" href="https://ffm.to/nitro-veil" target="_blank" rel="noopener">Listen now</a>
-                    <a class="btn secondary" href="music.html">View music</a>
-                </div>
-            </div>
-
-            <div class="hero-card">
-                <div class="mini-label">latest release</div>
-                <h3>Nitro Veil</h3>
-                <p>Dark, cinematic soundscapes shaped by raw emotion, restless motion, and the kind of honesty that can’t be rehearsed.</p>
-                <div class="stream-list">
-                    <a class="stream-item" href="https://ffm.to/nitro-veil" target="_blank" rel="noopener"><strong>Stream</strong><span>Open</span></a>
-                    <a class="stream-item" href="https://open.spotify.com" target="_blank" rel="noopener"><strong>Spotify</strong><span>Play</span></a>
-                    <a class="stream-item" href="https://music.apple.com" target="_blank" rel="noopener"><strong>Apple Music</strong><span>Play</span></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="section-header">
-            <h2>Featured releases</h2>
-        </div>
-        <div class="releases-grid">
-            <article class="release-card">
-                <div class="cover">NV</div>
-                <h3>Nitro Veil</h3>
-                <p>The latest single: a mood-heavy ride through chaos, control, and the night.</p>
-                <a href="https://ffm.to/nitro-veil" target="_blank" rel="noopener">Listen now</a>
-            </article>
-            <article class="release-card">
-                <div class="cover">NX</div>
-                <h3>Nightfall</h3>
-                <p>Late-night emotion and restless motion, built for the quiet after midnight.</p>
-                <a href="music.html">Explore</a>
-            </article>
-            <article class="release-card">
-                <div class="cover">DX</div>
-                <h3>Dreams in Ash</h3>
-                <p>Soft, bruised melodies carrying the weight of survival and hope.</p>
-                <a href="music.html">Explore</a>
-            </article>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="about-wrap">
-            <div>
-                <div class="section-header" style="margin-bottom: 1rem;">
-                    <h2>About Wreal X</h2>
-                </div>
-                <div class="about-copy">
-                    Wreal X is a multidisciplinary artist moving through sound, emotion, and the kind of truth that feels less like a statement and more like a confession.
-                    <br><br>
-                    Built on <strong>raw honesty</strong>, cinematic melodies, and restless energy, Wreal X blends intimate storytelling with a bold, modern pulse.
-                    <br><br>
-                    The project is rooted in the feeling of being both cursed and alive — torn between shadow and clarity, memory and motion.
-                </div>
-                <div class="socials">
-                    <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://x.com" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://spotify.com" target="_blank" rel="noopener"><i class="fa-brands fa-spotify"></i></a>
-                </div>
-            </div>
-
-            <div class="stats">
-                <div class="stat">
-                    <strong>03</strong>
-                    <span>Featured projects</span>
-                </div>
-                <div class="stat">
-                    <strong>24/7</strong>
-                    <span>Creative flow</span>
-                </div>
-                <div class="stat">
-                    <strong>∞</strong>
-                    <span>Intensity</span>
-                </div>
-                <div class="stat">
-                    <strong>1</strong>
-                    <span>Vision</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navToggle = document.getElementById('nav-toggle');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    if (window.innerWidth <= 768 && navToggle) navToggle.checked = false;
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+<nav>
+    <a href="index.html" class="logo">✦ WREAL X</a>
+    <ul class="nav-links">
+        <li><a hre
