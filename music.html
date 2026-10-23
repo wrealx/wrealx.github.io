@@ -17,6 +17,7 @@
             min-height: 100vh;
             overflow-x: hidden;
             overflow-y: auto;
+            transition: background 0.8s ease;
         }
         nav {
             display: flex;
@@ -245,23 +246,24 @@
             align-items: center;
             text-align: center;
             padding: 2rem 5%;
-            background-image: url('https://iili.io/CD0qtob.png');
+            position: relative;
+            width: 100%;
+            background-image: linear-gradient(180deg, rgba(10,10,10,0.08) 0%, rgba(10,10,10,0.58) 100%), url('https://iili.io/CD0qtob.png');
             background-size: cover;
             background-position: center;
-            position: relative;
+            background-repeat: no-repeat;
             background-attachment: fixed;
+            transition: background 0.9s ease, filter 0.9s ease;
         }
         .hero-bg::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 10, 10, 0.5);
-            z-index: 0;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(7,7,7,0.05), rgba(7,7,7,0.72));
+            transition: opacity 0.8s ease, background 0.8s ease;
+            z-index: 1;
         }
-        .hero-bg * { position: relative; z-index: 1; }
+        .hero-bg * { position: relative; z-index: 2; }
         .hero-bg h1 {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 900;
