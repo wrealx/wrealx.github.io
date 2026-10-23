@@ -6,7 +6,7 @@
     <title>Wreal X · Official Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- ====== SILKTIDE COOKIE CONSENT: HEAD ====== -->
@@ -16,7 +16,7 @@
     <style id="silktide-consent-manager-overrides">
         #stcm-wrapper {
             --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-            --fontFamily: 'Space Grotesk', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+            --fontFamily: 'Inter', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
             --primaryColor: #39FF14;
             --backgroundColor: #0A0A0A;
             --textColor: #E0E0E0;
@@ -29,7 +29,7 @@
             background: #39FF14 !important;
             color: #0A0A0A !important;
             font-weight: 700 !important;
-            font-family: 'Rajdhani', sans-serif !important;
+            font-family: 'Inter', sans-serif !important;
             text-transform: uppercase !important;
             letter-spacing: 0.05em !important;
             border-radius: 50px !important;
@@ -46,7 +46,7 @@
             background: transparent !important;
             color: #7FFF00 !important;
             border: 1px solid #39FF14 !important;
-            font-family: 'Rajdhani', sans-serif !important;
+            font-family: 'Inter', sans-serif !important;
             text-transform: uppercase !important;
             letter-spacing: 0.05em !important;
             border-radius: 50px !important;
@@ -76,11 +76,14 @@
         html, body {
             background: linear-gradient(180deg, #070707 0%, #0A0A0A 25%, #0A0A0A 100%);
             color: #E0E0E0;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
             overflow-y: auto;
             transition: background 0.8s ease;
+        }
+        a, button, input, textarea, select {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
         }
         nav {
             display: flex;
@@ -94,11 +97,11 @@
         }
         .logo {
             font-size: 2.2rem;
-            font-weight: 900;
+            font-weight: 800;
             color: #39FF14;
             text-decoration: none;
             letter-spacing: 0.1em;
-            font-family: 'Orbitron', cursive;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
         }
         .logo:hover {
@@ -109,20 +112,22 @@
             gap: 1.5rem;
             list-style: none;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
         }
         .nav-links a {
             color: #FFFFFF;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
             transition: all 0.3s;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 0.5rem 1.2rem;
-            border: 1.5px solid rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
+            letter-spacing: 0.08em;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
         }
         .nav-links a:hover {
             color: #39FF14;
@@ -172,7 +177,7 @@
             color: #F5F5F5;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            font-family: 'Orbitron', cursive;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             text-shadow: 0 0 10px rgba(255,255,255,0.2), 0 0 20px rgba(255,255,255,0.15), 0 0 30px rgba(57,255,20,0.15), 3px 3px 0 rgba(57,255,20,0.25), -3px -3px 0 rgba(0,0,0,0.6);
             filter: drop-shadow(0 0 24px rgba(57,255,20,0.18));
             position: relative;
@@ -193,16 +198,16 @@
             font-size: 1.6rem;
             color: #39FF14;
             margin-top: 0.5rem;
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: 0.1em;
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.15);
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
         }
         .cta-btn {
             margin-top: 2.5rem;
             padding: 1rem 3.5rem;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-weight: 800;
             font-size: 1.1rem;
             background: #39FF14;
             border: none;
@@ -233,7 +238,7 @@
             font-weight: 900;
             color: #FFFFFF;
             margin-bottom: 2rem;
-            font-family: 'Orbitron', cursive;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             letter-spacing: 0.05em;
             text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
@@ -269,7 +274,7 @@
             margin-top: 1rem;
             font-size: 1rem;
             color: #FFFFFF;
-            font-family: 'Orbitron', cursive;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             letter-spacing: 0.05em;
             margin-bottom: 1rem;
         }
@@ -282,7 +287,7 @@
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 0.1em;
@@ -305,7 +310,7 @@
             font-weight: 900;
             color: #FFFFFF;
             margin-bottom: 2rem;
-            font-family: 'Orbitron', cursive;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             letter-spacing: 0.05em;
             text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
@@ -329,9 +334,9 @@
         }
         .release-title {
             font-size: 2rem;
-            font-weight: 900;
+            font-weight: 800;
             color: #FFFFFF;
-            font-family: 'Orbitron', cursive;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             margin-bottom: 0.3rem;
         }
         .release-artist {
@@ -339,7 +344,7 @@
             color: #FFFFFF;
             opacity: 0.6;
             margin-bottom: 1.5rem;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
         }
         .stream-btn {
             display: inline-block;
@@ -350,7 +355,7 @@
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             text-transform: uppercase;
             font-size: 1.1rem;
             letter-spacing: 0.15em;
@@ -372,7 +377,7 @@
             font-weight: 900;
             color: #FFFFFF;
             margin-bottom: 2rem;
-            font-family: 'Orbitron', cursive;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             letter-spacing: 0.05em;
             text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
         }
@@ -414,7 +419,7 @@
             font-size: 1.2rem;
             color: #FFFFFF;
             margin-bottom: 0.3rem;
-            font-family: 'Orbitron', cursive;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             letter-spacing: 0.05em;
         }
         .release-item .artist-name {
@@ -422,7 +427,7 @@
             font-size: 0.8rem;
             opacity: 0.5;
             margin-bottom: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
         }
         .release-item .small-stream-btn {
             display: inline-block;
@@ -433,7 +438,7 @@
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             text-transform: uppercase;
             font-size: 0.85rem;
             letter-spacing: 0.1em;
@@ -457,7 +462,7 @@
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             text-transform: uppercase;
             font-size: 1.1rem;
             letter-spacing: 0.15em;
@@ -498,7 +503,7 @@
         .social-bar-bottom a .label {
             font-size: 0.7rem;
             color: #FFFFFF;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             opacity: 0.5;
@@ -510,7 +515,7 @@
             font-size: 0.8rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             opacity: 0.4;
         }
         footer a {
@@ -521,9 +526,45 @@
             text-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
         }
         @media (max-width: 768px) {
-            nav { flex-direction: column; }
-            .nav-links { gap: 0.8rem; justify-content: center; }
-            .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
+            nav {
+                display: block;
+                padding: 1.25rem 5%;
+                min-height: 70px;
+            }
+            .logo {
+                position: absolute;
+                left: 5%;
+                top: 1.25rem;
+                font-size: 1.4rem;
+                letter-spacing: 0.08em;
+            }
+            .nav-toggle {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 4.6rem;
+                right: 5%;
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: stretch;
+                min-width: 180px;
+                padding: 0.85rem;
+                background: rgba(10, 10, 10, 0.9);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 14px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            }
+            #nav-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 1rem;
+                font-size: 0.72rem;
+            }
             .release-grid { grid-template-columns: 1fr; }
             .video-grid { grid-template-columns: 1fr; }
             .social-bar-bottom { gap: 1.5rem; }
@@ -543,6 +584,12 @@
 
 <nav>
     <a href="index.html" class="logo">✦ WREAL X</a>
+    <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation" />
+    <label for="nav-toggle" class="nav-toggle" aria-label="Open menu" style="display:none;">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </label>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="music.html">Music</a></li>
