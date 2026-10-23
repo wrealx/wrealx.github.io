@@ -9,19 +9,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #070707;
+            --bg-soft: #0f0f0f;
+            --panel: rgba(18, 18, 18, 0.88);
+            --panel-strong: rgba(12, 12, 12, 0.96);
+            --text: #f3f3f3;
+            --muted: #b8b8b8;
+            --green: #39FF14;
+            --green-soft: rgba(57, 255, 20, 0.12);
+            --line: rgba(255, 255, 255, 0.12);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         html, body {
-            background: #0A0A0A;
-            color: #E0E0E0;
+            background: radial-gradient(circle at top, rgba(57,255,20,0.08), transparent 35%), var(--bg);
+            color: var(--text);
             font-family: 'Inter', 'Segoe UI', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
-            overflow-y: auto;
-            transition: background 0.8s ease;
         }
+
         a, button, input, textarea, select {
             font-family: 'Inter', 'Segoe UI', sans-serif;
         }
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -32,21 +45,19 @@
             position: relative;
             z-index: 10;
         }
+
         .logo {
             display: inline-flex;
             align-items: center;
             gap: 0.35em;
             font-size: 2.2rem;
-            font-weight: 900;
-            color: #39FF14;
+            font-weight: 800;
+            color: var(--green);
             text-decoration: none;
             letter-spacing: 0.1em;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 40px rgba(57,255,20,0.3), 0 0 80px rgba(57,255,20,0.1);
         }
-        .logo:hover {
-            text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
-        }
+
         .logo .brand-mark {
             width: 0.9em;
             height: 0.9em;
@@ -56,50 +67,329 @@
             box-shadow: 0 0 18px rgba(57,255,20,0.18);
             flex-shrink: 0;
         }
-        /* rest of existing CSS omitted for brevity; original file content preserved with the above intro change only */
+
+        #nav-toggle {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-toggle {
+            display: none;
+            position: absolute;
+            right: 5%;
+            top: 1.5rem;
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.04);
+            cursor: pointer;
+            z-index: 20;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 2px;
+            background: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+            border-color: var(--green);
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(57,255,20,0.1);
+        }
+
+        .page-hero {
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 5% 2.5rem;
+            background: linear-gradient(180deg, rgba(7,7,7,0.18), rgba(7,7,7,0.9)),
+                        url('https://iili.io/CD0qtob.png') center/cover no-repeat;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 7vw, 6rem);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255,255,255,0.2), 0 0 40px rgba(57,255,20,0.16);
+        }
+
+        .page-sub {
+            margin-top: 0.6rem;
+            color: var(--green);
+            font-size: 1rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 5% 4rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1.4fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 420px;
+            border-radius: 24px;
+            background: linear-gradient(180deg, rgba(57,255,20,0.08), rgba(0,0,0,0.3)),
+                        url('https://files.catbox.moe/adx9wj.jpg') center/cover no-repeat;
+            border: 1px solid var(--line);
+            box-shadow: 0 0 60px rgba(57,255,20,0.08);
+        }
+
+        .about-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+
+        .about-card h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .real-name {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .real-name span {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .bio {
+            color: #d9d9d9;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .mini-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.2rem;
+        }
+
+        .mini-card h3 {
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 0.4rem;
+        }
+
+        .mini-card p {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 5% 2.5rem;
+            color: rgba(255,255,255,0.65);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        footer a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.25rem 5%;
+                min-height: 70px;
+                position: relative;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+                letter-spacing: 0.08em;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 4.6rem;
+                right: 5%;
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: stretch;
+                min-width: 180px;
+                padding: 0.85rem;
+                background: rgba(10,10,10,0.95);
+                border: 1px solid rgba(255,255,255,0.12);
+                border-radius: 14px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+                opacity: 0;
+                transform: translateX(120%);
+                pointer-events: none;
+                transition: transform 0.35s ease, opacity 0.35s ease;
+                z-index: 50;
+            }
+
+            #nav-toggle:checked ~ .nav-links {
+                opacity: 1;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 1rem;
+                font-size: 0.72rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html" class="logo" aria-label="Wreal X home">
+            <img class="brand-mark" src="https://files.catbox.moe/adx9wj.jpg" alt="Wreal X logo" />
+            <span>WREAL X</span>
+        </a>
 
-<nav>
-    <a href="index.html" class="logo">
-        <img class="brand-mark" src="https://files.catbox.moe/adx9wj.jpg" alt="Wreal X logo" />
-        <span>WREAL X</span>
-    </a>
+        <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+        <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
 
-    <div class="nav-hint" aria-hidden="true">
-        <span class="nav-hint-icon"><i class="fa-solid fa-hand-point-right"></i></span>
-        <span class="nav-hint-text">Explore</span>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="merch.html">Merch</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="page-hero">
+        <h1>About</h1>
+        <p class="page-sub">Cursed</p>
+    </section>
+
+    <div class="content">
+        <div class="about-grid">
+            <div class="about-image" aria-label="Wreal X portrait"></div>
+            <div class="about-card">
+                <h2>Wreal X</h2>
+                <p class="real-name">born <span>Angel Jambu Roy</span> · July 20, 2007 · Yei, South Sudan</p>
+                <p class="bio">
+                    Wreal X is the sound and visual identity of a creative force built from memory, motion,
+                    grief, and survival. What began as instinct grew into a distinct voice that blends street
+                    energy, introspective lyricism, and a raw, futuristic sense of self.
+                </p>
+            </div>
+        </div>
+
+        <div class="story-grid">
+            <div class="mini-card">
+                <h3>Origin</h3>
+                <p>Born in South Sudan and shaped by movement, curiosity, and resilience.</p>
+            </div>
+            <div class="mini-card">
+                <h3>Identity</h3>
+                <p>Music and visuals that sit between rebellion, storytelling, and atmosphere.</p>
+            </div>
+            <div class="mini-card">
+                <h3>Mission</h3>
+                <p>Build a brand that feels cinematic, fearless, and unmistakably personal.</p>
+            </div>
+        </div>
     </div>
 
-    <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
-    <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </label>
+    <footer>
+        © 2026 WREAL X · <a href="contact.html">Say hi</a>
+    </footer>
 
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="music.html">Music</a></li>
-        <li><a href="merch.html">Merch</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.querySelectorAll('.nav-links a');
 
-<div class="hero-bg">
-    <h1>ABOUT</h1>
-    <p class="page-sub">Cursed 🕯️</p>
-</div>
-
-<div class="about-container">
-    <div class="about-image"></div>
-    <div class="about-text">
-        <h2>WREAL X</h2>
-        <p class="real-name">born <span>Angel Jambu Roy</span> · July 20, 2007 · Yei, South Sudan</p>
-        <p class="bio"> ... </p>
-    </div>
-</div>
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 768 && navToggle) {
+                        navToggle.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -9,59 +9,140 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #070707;
+            --panel: rgba(18, 18, 18, 0.9);
+            --text: #f3f3f3;
+            --muted: #b8b8b8;
+            --green: #39FF14;
+            --line: rgba(255,255,255,0.12);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         html, body {
-            background: #0A0A0A;
-            color: #E0E0E0;
+            background: radial-gradient(circle at top, rgba(57,255,20,0.08), transparent 35%), var(--bg);
+            color: var(--text);
             font-family: 'Inter', 'Segoe UI', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
-            overflow-y: auto;
-            transition: background 0.8s ease;
         }
-        a, button, input, textarea, select {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.8rem 5%;
-            flex-wrap: wrap;
-            gap: 1rem;
-            position: relative;
-            z-index: 10;
-        }
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35em;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #39FF14;
-            text-decoration: none;
-            letter-spacing: 0.1em;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
-        }
-        .logo .brand-mark {
-            width: 0.9em;
-            height: 0.9em;
-            object-fit: cover;
-            display: block;
-            border-radius: 0.18em;
-            box-shadow: 0 0 18px rgba(57,255,20,0.18);
-            flex-shrink: 0;
+
+        a, button, input, textarea, select { font-family: 'Inter', 'Segoe UI', sans-serif; }
+        nav { display:flex; justify-content:space-between; align-items:center; padding:1.8rem 5%; flex-wrap:wrap; gap:1rem; position:relative; z-index:10; }
+        .logo { display:inline-flex; align-items:center; gap:0.35em; font-size:2.2rem; font-weight:800; color:var(--green); text-decoration:none; letter-spacing:0.1em; text-shadow:0 0 40px rgba(57,255,20,0.3), 0 0 80px rgba(57,255,20,0.1); }
+        .logo .brand-mark { width:0.9em; height:0.9em; object-fit:cover; display:block; border-radius:0.18em; box-shadow:0 0 18px rgba(57,255,20,0.18); flex-shrink:0; }
+
+        #nav-toggle { position:absolute; opacity:0; pointer-events:none; }
+        .nav-toggle { display:none; position:absolute; right:5%; top:1.5rem; width:48px; height:48px; border:1px solid rgba(255,255,255,0.15); border-radius:12px; background:rgba(255,255,255,0.04); cursor:pointer; z-index:20; align-items:center; justify-content:center; flex-direction:column; gap:5px; transition:all 0.3s ease; }
+        .nav-toggle .bar { display:block; width:22px; height:2px; border-radius:2px; background:#fff; }
+
+        .nav-links { display:flex; gap:1.5rem; list-style:none; flex-wrap:wrap; align-items:center; justify-content:flex-end; }
+        .nav-links a { color:#fff; text-decoration:none; font-weight:700; font-size:0.9rem; transition:all 0.3s ease; text-transform:uppercase; letter-spacing:0.08em; padding:0.5rem 1rem; border:1px solid rgba(255,255,255,0.12); border-radius:10px; background:rgba(255,255,255,0.04); }
+        .nav-links a:hover { color:var(--green); border-color:var(--green); background:rgba(57,255,20,0.1); transform:translateY(-2px); box-shadow:0 0 30px rgba(57,255,20,0.1); }
+
+        .page-hero { min-height:260px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:4rem 5% 2.5rem; background: linear-gradient(180deg, rgba(7,7,7,0.18), rgba(7,7,7,0.9)), url('https://iili.io/CD0qtob.png') center/cover no-repeat; }
+        .page-hero h1 { font-size:clamp(2.5rem, 7vw, 6rem); letter-spacing:0.14em; text-transform:uppercase; font-weight:900; color:#fff; }
+        .page-sub { margin-top:0.5rem; color:var(--green); letter-spacing:0.28em; text-transform:uppercase; font-weight:700; font-size:0.9rem; }
+
+        .content { max-width:1200px; margin:0 auto; padding:2.5rem 5% 4rem; }
+        .merch-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
+        .product { background:var(--panel); border:1px solid var(--line); border-radius:22px; overflow:hidden; box-shadow:0 22px 45px rgba(0,0,0,0.25); }
+        .product-image { height:260px; background-size:cover; background-position:center; }
+        .product-body { padding:1.3rem; }
+        .product-body h3 { font-size:1.3rem; margin-bottom:0.5rem; }
+        .product-body p { color:var(--muted); margin-bottom:1rem; }
+        .price { color:var(--green); font-weight:800; margin-bottom:1rem; display:block; }
+        .button { display:inline-block; padding:0.8rem 1.4rem; border-radius:999px; background:var(--green); color:#0a0a0a; text-decoration:none; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; font-size:0.8rem; }
+
+        footer { text-align:center; padding:1.5rem 5% 2.5rem; color:rgba(255,255,255,0.65); font-size:0.8rem; border-top:1px solid rgba(255,255,255,0.06); }
+        footer a { color:var(--green); text-decoration:none; }
+
+        @media (max-width: 768px) {
+            nav { display:flex; justify-content:space-between; align-items:center; padding:1.25rem 5%; min-height:70px; position:relative; }
+            .logo { font-size:1.4rem; letter-spacing:0.08em; }
+            .nav-toggle { display:flex; }
+            .nav-links { position:absolute; top:4.6rem; right:5%; flex-direction:column; gap:0.75rem; align-items:stretch; min-width:180px; padding:0.85rem; background:rgba(10,10,10,0.95); border:1px solid rgba(255,255,255,0.12); border-radius:14px; box-shadow:0 20px 40px rgba(0,0,0,0.35); opacity:0; transform:translateX(120%); pointer-events:none; transition:transform 0.35s ease, opacity 0.35s ease; z-index:50; }
+            #nav-toggle:checked ~ .nav-links { opacity:1; transform:translateX(0); pointer-events:auto; }
+            .nav-links a { width:100%; text-align:center; padding:0.8rem 1rem; font-size:0.72rem; }
         }
     </style>
 </head>
 <body>
-<nav>
-    <a href="index.html" class="logo">
-        <img class="brand-mark" src="https://files.catbox.moe/adx9wj.jpg" alt="Wreal X logo" />
-        <span>WREAL X</span>
-    </a>
-    ...
-</nav>
+    <nav>
+        <a href="index.html" class="logo" aria-label="Wreal X home">
+            <img class="brand-mark" src="https://files.catbox.moe/adx9wj.jpg" alt="Wreal X logo" />
+            <span>WREAL X</span>
+        </a>
+
+        <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+        <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="merch.html">Merch</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="page-hero">
+        <h1>Merch</h1>
+        <p class="page-sub">Official drops</p>
+    </section>
+
+    <div class="content">
+        <div class="merch-grid">
+            <article class="product">
+                <div class="product-image" style="background-image:url('https://files.catbox.moe/adx9wj.jpg');"></div>
+                <div class="product-body">
+                    <h3>Wreal X Mark Tee</h3>
+                    <p>Black cotton tee with front mark and understated Cursed graphic.</p>
+                    <span class="price">$34</span>
+                    <a class="button" href="contact.html">Order</a>
+                </div>
+            </article>
+            <article class="product">
+                <div class="product-image" style="background-image:url('https://files.catbox.moe/gq73y6.png');"></div>
+                <div class="product-body">
+                    <h3>Cursed Hoodie</h3>
+                    <p>Heavyweight oversized hoodie for studio sessions and late-night sets.</p>
+                    <span class="price">$64</span>
+                    <a class="button" href="contact.html">Order</a>
+                </div>
+            </article>
+            <article class="product">
+                <div class="product-image" style="background-image:url('https://files.catbox.moe/hasrqj.png');"></div>
+                <div class="product-body">
+                    <h3>Signal Cap</h3>
+                    <p>Minimal cap with a sharp green emblem.</p>
+                    <span class="price">$24</span>
+                    <a class="button" href="contact.html">Order</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 WREAL X · <a href="contact.html">Say hi</a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 768 && navToggle) {
+                        navToggle.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
