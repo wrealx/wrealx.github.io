@@ -107,6 +107,40 @@
         .logo:hover {
             text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
         }
+        #nav-toggle {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .nav-toggle {
+            display: none;
+            position: absolute;
+            right: 5%;
+            top: 1.5rem;
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            cursor: pointer;
+            z-index: 20;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-toggle:hover {
+            border-color: rgba(57, 255, 20, 0.6);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.12);
+        }
+        .nav-toggle .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 2px;
+            background: #FFFFFF;
+        }
         .nav-links {
             display: flex;
             gap: 1.5rem;
@@ -527,14 +561,17 @@
         }
         @media (max-width: 768px) {
             nav {
-                display: block;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 padding: 1.25rem 5%;
                 min-height: 70px;
+                position: relative;
             }
             .logo {
-                position: absolute;
-                left: 5%;
-                top: 1.25rem;
+                position: relative;
+                left: auto;
+                top: auto;
                 font-size: 1.4rem;
                 letter-spacing: 0.08em;
             }
@@ -585,7 +622,7 @@
 <nav>
     <a href="index.html" class="logo">✦ WREAL X</a>
     <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation" />
-    <label for="nav-toggle" class="nav-toggle" aria-label="Open menu" style="display:none;">
+    <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
