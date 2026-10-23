@@ -40,25 +40,64 @@
         .logo:hover {
             text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
         }
+
+        #nav-toggle {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-toggle {
+            display: none;
+            position: absolute;
+            right: 5%;
+            top: 1.5rem;
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            cursor: pointer;
+            z-index: 20;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-toggle:hover {
+            border-color: rgba(57, 255, 20, 0.6);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.12);
+        }
+        .nav-toggle .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 2px;
+            background: #FFFFFF;
+        }
+
         .nav-links {
             display: flex;
             gap: 1.5rem;
             list-style: none;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
         }
         .nav-links a {
             color: #FFFFFF;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
             transition: all 0.3s;
             font-family: 'Space Grotesk', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 0.5rem 1.2rem;
-            border: 1.5px solid rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
+            letter-spacing: 0.08em;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
         }
         .nav-links a:hover {
             color: #39FF14;
@@ -68,6 +107,136 @@
             transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
         }
+
+        .nav-hint {
+            position: fixed;
+            right: 7.5rem;
+            top: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.6rem 0.9rem 0.6rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(10, 10, 10, 0.85);
+            border: 1px solid rgba(57, 255, 20, 0.4);
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.15);
+            transform-origin: center;
+            z-index: 25;
+            pointer-events: none;
+            animation: navHintMotion 1.8s ease-in-out infinite;
+        }
+        .nav-hint::after {
+            content: '';
+            position: absolute;
+            right: -14px;
+            top: 50%;
+            width: 18px;
+            height: 2px;
+            background: rgba(57, 255, 20, 0.9);
+            transform: translateY(-50%) rotate(14deg);
+            border-radius: 999px;
+        }
+        .nav-hint-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(57, 255, 20, 0.1);
+            color: #39FF14;
+            font-size: 1rem;
+            animation: handPulse 1.3s ease-in-out infinite alternate;
+        }
+        .nav-hint-text {
+            color: #E9FEEB;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.58rem;
+        }
+
+        @keyframes navHintMotion {
+            0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+            20% { transform: translateX(-6px) translateY(-5px) rotate(-5deg); }
+            40% { transform: translateX(2px) translateY(1px) rotate(3deg); }
+            60% { transform: translateX(-4px) translateY(-3px) rotate(-2deg); }
+            80% { transform: translateX(6px) translateY(-6px) rotate(4deg); }
+        }
+        @keyframes handPulse {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.12) rotate(8deg); }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.25rem 5%;
+                min-height: 70px;
+                position: relative;
+            }
+
+            .logo {
+                position: relative;
+                left: auto;
+                top: auto;
+                font-size: 1.4rem;
+                letter-spacing: 0.08em;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 4.6rem;
+                right: 5%;
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: stretch;
+                min-width: 180px;
+                padding: 0.85rem;
+                background: rgba(10, 10, 10, 0.95);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 14px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+                opacity: 0;
+                transform: translateX(120%);
+                pointer-events: none;
+                transition: transform 0.35s ease, opacity 0.35s ease;
+                z-index: 50;
+            }
+
+            #nav-toggle:checked ~ .nav-links {
+                opacity: 1;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 1rem;
+                font-size: 0.72rem;
+            }
+
+            .nav-hint {
+                right: 4.4rem;
+                top: 1.05rem;
+                padding: 0.45rem 0.7rem 0.45rem 0.55rem;
+            }
+            .nav-hint-text {
+                font-size: 0.5rem;
+            }
+            .nav-hint::after {
+                right: -11px;
+                width: 14px;
+            }
+        }
+
         .hero-bg {
             min-height: 40vh;
             display: flex;
@@ -271,12 +440,6 @@
             .about-text .social-links { justify-content: center; }
             .about-text { text-align: center; }
         }
-        @media (max-width: 768px) {
-            nav { flex-direction: column; }
-            .nav-links { gap: 0.8rem; justify-content: center; }
-            .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
-            .about-text .milestones { grid-template-columns: 1fr 1fr; }
-        }
         @media (max-width: 480px) {
             .about-text .milestones { grid-template-columns: 1fr; }
         }
@@ -286,6 +449,19 @@
 
 <nav>
     <a href="index.html" class="logo">✦ WREAL X</a>
+
+    <div class="nav-hint" aria-hidden="true">
+        <span class="nav-hint-icon"><i class="fa-solid fa-hand-point-right"></i></span>
+        <span class="nav-hint-text">Explore</span>
+    </div>
+
+    <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </label>
+
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="music.html">Music</a></li>
@@ -383,6 +559,19 @@
 </footer>
 
 <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var navToggle = document.getElementById('nav-toggle');
+        var navLinks = document.querySelectorAll('.nav-links a');
+
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768 && navToggle) {
+                    navToggle.checked = false;
+                }
+            });
+        });
+    });
+
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function() {
         var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
@@ -395,4 +584,4 @@
 </script>
 
 </body>
-                                                                    </html>
+</html>
