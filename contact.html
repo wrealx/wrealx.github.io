@@ -1,96 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact · Wreal X</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { background: #0A0A0A; color: #E0E0E0; font-family: 'Inter', 'Segoe UI', sans-serif; min-height: 100vh; overflow-x: hidden; overflow-y: auto; }
-    a, button, input, textarea, select { font-family: 'Inter', 'Segoe UI', sans-serif; }
-    nav {
-      display: flex; justify-content: space-between; align-items: center; padding: 1.8rem 5%; flex-wrap: wrap; gap: 1rem; position: relative; z-index: 10;
-    }
-    .logo { display: inline-block; font-size: 2.2rem; font-weight: 900; color: #39FF14; text-decoration: none; letter-spacing: 0.1em; text-shadow: 0 0 40px rgba(57,255,20,0.3), 0 0 80px rgba(57,255,20,0.1); }
-    .logo:hover { text-shadow: 0 0 60px rgba(57,255,20,0.5), 0 0 120px rgba(57,255,20,0.2); }
-    #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
-    .nav-toggle {
-      display: none; position: absolute; right: 5%; top: 1.5rem; width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; background: rgba(255,255,255,0.04); cursor: pointer; z-index: 20; align-items: center; justify-content: center; flex-direction: column; gap: 5px;
-    }
-    .nav-toggle .bar { display: block; width: 22px; height: 2px; border-radius: 2px; background: #FFFFFF; }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; align-items: center; justify-content: flex-end; }
-    .nav-links a {
-      color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(255,255,255,0.04); transition: all 0.3s ease;
-    }
-    .nav-links a:hover { color: #39FF14; border-color: #39FF14; background: rgba(57,255,20,0.1); transform: translateY(-2px); }
-    .hero { min-height: 220px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem 5% 1rem; }
-    .hero h1 { font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 900; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
-    .hero .arabic { color: #39FF14; font-size: clamp(1.1rem, 3vw, 1.8rem); font-weight: 700; letter-spacing: 0.12em; }
-    .contact-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 5% 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .card { background: rgba(20,20,20,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 1.5rem; }
-    .card h3 { color: #FFFFFF; margin-bottom: 1rem; font-size: 1.4rem; }
-    .card p, .card a { color: #E0E0E0; text-decoration: none; line-height: 1.8; }
-    .card a:hover { color: #39FF14; }
-    @media (max-width: 768px) {
-      nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 5%; }
-      .logo { font-size: 1.4rem; letter-spacing: 0.08em; }
-      .nav-toggle { display: flex; }
-      .nav-links {
-        position: absolute; top: 4.6rem; right: 5%; flex-direction: column; gap: 0.75rem; align-items: stretch; min-width: 180px; padding: 0.85rem; background: rgba(10,10,10,0.95); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; box-shadow: 0 20px 40px rgba(0,0,0,0.35); opacity: 0; transform: translateX(120%); pointer-events: none; transition: transform 0.35s ease, opacity 0.35s ease;
-      }
-      #nav-toggle:checked ~ .nav-links { opacity: 1; transform: translateX(0); pointer-events: auto; }
-      .nav-links a { width: 100%; text-align: center; padding: 0.8rem 1rem; font-size: 0.72rem; }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact · Wreal X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Space+Grotesk:wght@300;400;600;700&family=Major+Mono+Display&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            background: #0A0A0A;
+            color: #E0E0E0;
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 5%;
+            flex-wrap: wrap;
+            gap: 1rem;
+            position: relative;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #39FF14;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            font-family: 'Orbitron', cursive;
+            text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
+        }
+        .logo:hover {
+            text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.5rem 1.2rem;
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .nav-links a:hover {
+            color: #39FF14;
+            border-color: #39FF14;
+            background: rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
+        }
+        .hero-bg {
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 5%;
+            background-image: url('https://iili.io/CD0qtob.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background-attachment: fixed;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.5);
+            z-index: 0;
+        }
+        .hero-bg * { position: relative; z-index: 1; }
+        .hero-bg h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            font-family: 'Orbitron', cursive;
+            text-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+        }
+        .page-sub {
+            text-align: center;
+            color: #39FF14;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            margin-top: 0.2rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 3rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 60vh;
+        }
+        .contact-info h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', cursive;
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+        .contact-info p {
+            color: #FFFFFF;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            opacity: 0.6;
+        }
+        .contact-info .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.8rem 1.2rem;
+            background: rgba(15, 15, 15, 0.9);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        .contact-info .contact-item:hover {
+            border-color: #39FF14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.05);
+        }
+        .contact-info .contact-item i {
+            font-size: 1.3rem;
+            color: #39FF14;
+            width: 30px;
+        }
+        .contact-info .contact-item a {
+            color: #E0E0E0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+        }
+        .contact-info .contact-item a:hover {
+            color: #39FF14;
+        }
+        .contact-info .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .contact-info .social-links a {
+            color: #FFFFFF;
+            font-size: 2rem;
+            transition: all 0.3s;
+            opacity: 0.6;
+        }
+        .contact-info .social-links a:hover {
+            color: #39FF14;
+            transform: translateY(-3px);
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
+            opacity: 1;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.8rem 2rem;
+            background: #25D366;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(37, 211, 102, 0.3);
+        }
+        .contact-form {
+            background: rgba(15, 15, 15, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .contact-form h3 {
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-family: 'Orbitron', cursive;
+            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+        .contact-form label {
+            display: block;
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Space Grotesk', sans-serif;
+            opacity: 0.6;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #E0E0E0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            transition: border-color 0.3s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #39FF14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.05);
+        }
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .contact-form button {
+            padding: 0.9rem 3rem;
+            background: #39FF14;
+            border: none;
+            border-radius: 50px;
+            color: #0A0A0A;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
+        }
+        .contact-form button:hover {
+            background: #00FF41;
+            transform: scale(1.02);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
+        }
+        .stream-cta {
+            text-align: center;
+            padding: 1rem 5% 2rem;
+        }
+        .stream-cta a {
+            display: inline-block;
+            padding: 1rem 3.5rem;
+            background: #39FF14;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
+        }
+        .stream-cta a:hover {
+            background: #00FF41;
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            color: #FFFFFF;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            opacity: 0.4;
+        }
+        footer a {
+            color: #39FF14;
+            text-decoration: none;
+        }
+        @media (max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-form { padding: 1.5rem; }
+        }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            .nav-links { gap: 0.8rem; justify-content: center; }
+            .nav-links a { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html" class="logo">WREAL X</a>
-    <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
-    <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </label>
+
+<nav>
+    <a href="index.html" class="logo">✦ WREAL X</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="merch.html">Merch</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+</nav>
 
-  <section class="hero">
+<div class="hero-bg">
     <h1>CONTACT</h1>
-    <div class="arabic">CURSED</div>
-  </section>
+    <p class="page-sub">Cursed 🕯️</p>
+</div>
 
-  <div class="contact-wrap">
-    <div class="card">
-      <h3>Get in touch</h3>
-      <p><a href="mailto:wrealx@proton.me">wrealx@proton.me</a></p>
-      <p><a href="https://wa.me/2110920146370" target="_blank" rel="noopener">+211 0920146370</a></p>
-      <p><a href="https://ffm.to/nitro-veil" target="_blank" rel="noopener">Stream Wreal X</a></p>
-    </div>
-    <div class="card">
-      <h3>Say hi</h3>
-      <p>For bookings, collabs, and fan messages.</p>
-      <p>Wreal X is always open to the right energy.</p>
-    </div>
-  </div>
+<div class="contact-grid">
+    <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p>
+            For bookings, collaborations, or just to say hi — hit me up through 
+            any of these channels. I'll get back to you within 24 hours.
+        </p>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const navToggle = document.getElementById('nav-toggle');
-      const navLinks = document.querySelectorAll('.nav-links a');
-      navLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-          if (window.innerWidth <= 768 && navToggle) navToggle.checked = false;
-        });
-      });
-    });
-  </script>
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:wrealx@proton.me">wrealx@proton.me</a>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/2110920146370" target="_blank">+211 0920146370</a>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-link"></i>
+            <a href="https://ffm.to/nitro-veil" target="_blank">Stream Wreal X</a>
+        </div>
+
+        <a href="https://wa.me/2110920146370" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+
+        <div class="social-links">
+            <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://tiktok.com/wrealx3" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com/wrealxcursed" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com/@wrealx" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://soundcloud.com/wrealx" target="_blank"><i class="fab fa-soundcloud"></i></a>
+            <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank"><i class="fab fa-apple"></i></a>
+            <a href="https://tidal.com/artist/79457798/u" target="_blank"><i class="fab fa-tidal"></i></a>
+            <a href="https://audiomack.com/@wrealx" target="_blank"><i class="fas fa-headphones"></i></a>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h3>✉️ Send a Message</h3>
+        <form action="mailto:wrealx@proton.me" method="post" enctype="text/plain">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="e.g. Alex" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@example.com" required>
+
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="Booking / Collaboration / Fan">
+
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell me what's on your mind..." required></textarea>
+
+            <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+    </div>
+</div>
+
+<div class="stream-cta">
+    <a href="https://ffm.to/nitro-veil" target="_blank">▶ Stream Wreal X</a>
+</div>
+
+<footer>
+    © 2026 WREAL X · <a href="index.html">wrealx.com</a>
+</footer>
+
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+
 </body>
-</html>
+  </html>
