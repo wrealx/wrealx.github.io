@@ -177,6 +177,69 @@
             box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
         }
 
+        .nav-hint {
+            position: fixed;
+            right: 7.5rem;
+            top: 1.25rem;
+            display: none;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.6rem 0.9rem 0.6rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(10, 10, 10, 0.85);
+            border: 1px solid rgba(57, 255, 20, 0.4);
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.15);
+            transform-origin: center;
+            z-index: 25;
+            pointer-events: none;
+            animation: navHintMotion 1.8s ease-in-out infinite;
+        }
+        .nav-hint::after {
+            content: '';
+            position: absolute;
+            right: -14px;
+            top: 50%;
+            width: 18px;
+            height: 2px;
+            background: rgba(57, 255, 20, 0.9);
+            transform: translateY(-50%) rotate(14deg);
+            border-radius: 999px;
+        }
+        .nav-hint-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(57, 255, 20, 0.1);
+            color: #39FF14;
+            font-size: 1rem;
+            animation: handPulse 1.3s ease-in-out infinite alternate;
+        }
+        .nav-hint-text {
+            color: #E9FEEB;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.58rem;
+        }
+        body.homepage .nav-hint {
+            display: flex;
+        }
+
+        @keyframes navHintMotion {
+            0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+            20% { transform: translateX(-6px) translateY(-5px) rotate(-5deg); }
+            40% { transform: translateX(2px) translateY(1px) rotate(3deg); }
+            60% { transform: translateX(-4px) translateY(-3px) rotate(-2deg); }
+            80% { transform: translateX(6px) translateY(-6px) rotate(4deg); }
+        }
+        @keyframes handPulse {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.12) rotate(8deg); }
+        }
+
         @media (max-width: 768px) {
             nav {
                 display: flex;
@@ -230,6 +293,19 @@
                 text-align: center;
                 padding: 0.8rem 1rem;
                 font-size: 0.72rem;
+            }
+
+            .nav-hint {
+                right: 4.4rem;
+                top: 1.05rem;
+                padding: 0.45rem 0.7rem 0.45rem 0.55rem;
+            }
+            .nav-hint-text {
+                font-size: 0.5rem;
+            }
+            .nav-hint::after {
+                right: -11px;
+                width: 14px;
             }
         }
 
@@ -636,6 +712,11 @@
 <nav>
     <a href="index.html" class="logo">✦ WREAL X</a>
 
+    <div class="nav-hint" aria-hidden="true">
+        <span class="nav-hint-icon"><i class="fa-solid fa-hand-point-right"></i></span>
+        <span class="nav-hint-text">Explore</span>
+    </div>
+
     <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
     <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
         <span class="bar"></span>
@@ -727,6 +808,11 @@
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
+        const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html') || window.location.pathname === '';
+        if (isHomePage) {
+            document.body.classList.add('homepage');
+        }
+
         var navToggle = document.getElementById('nav-toggle');
         var navLinks = document.querySelectorAll('.nav-links a');
 
