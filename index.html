@@ -85,6 +85,7 @@
         a, button, input, textarea, select {
             font-family: 'Inter', 'Segoe UI', sans-serif;
         }
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -95,6 +96,7 @@
             position: relative;
             z-index: 10;
         }
+
         .logo {
             font-size: 2.2rem;
             font-weight: 800;
@@ -107,11 +109,13 @@
         .logo:hover {
             text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
         }
+
         #nav-toggle {
             position: absolute;
             opacity: 0;
             pointer-events: none;
         }
+
         .nav-toggle {
             display: none;
             position: absolute;
@@ -141,6 +145,7 @@
             border-radius: 2px;
             background: #FFFFFF;
         }
+
         .nav-links {
             display: flex;
             gap: 1.5rem;
@@ -171,6 +176,63 @@
             transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
         }
+
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.25rem 5%;
+                min-height: 70px;
+                position: relative;
+            }
+
+            .logo {
+                position: relative;
+                left: auto;
+                top: auto;
+                font-size: 1.4rem;
+                letter-spacing: 0.08em;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 4.6rem;
+                right: 5%;
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: stretch;
+                min-width: 180px;
+                padding: 0.85rem;
+                background: rgba(10, 10, 10, 0.95);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 14px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+                opacity: 0;
+                transform: translateX(120%);
+                pointer-events: none;
+                transition: transform 0.35s ease, opacity 0.35s ease;
+                z-index: 50;
+            }
+
+            #nav-toggle:checked ~ .nav-links {
+                opacity: 1;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 1rem;
+                font-size: 0.72rem;
+            }
+        }
+
         .hero {
             min-height: 80vh;
             display: flex;
@@ -559,55 +621,7 @@
         footer a:hover {
             text-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
         }
-        @media (max-width: 768px) {
-            nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1.25rem 5%;
-                min-height: 70px;
-                position: relative;
-            }
-            .logo {
-                position: relative;
-                left: auto;
-                top: auto;
-                font-size: 1.4rem;
-                letter-spacing: 0.08em;
-            }
-            .nav-toggle {
-                display: flex;
-            }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 4.6rem;
-                right: 5%;
-                flex-direction: column;
-                gap: 0.75rem;
-                align-items: stretch;
-                min-width: 180px;
-                padding: 0.85rem;
-                background: rgba(10, 10, 10, 0.9);
-                border: 1px solid rgba(255, 255, 255, 0.12);
-                border-radius: 14px;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-            }
-            #nav-toggle:checked ~ .nav-links {
-                display: flex;
-            }
-            .nav-links a {
-                width: 100%;
-                text-align: center;
-                padding: 0.8rem 1rem;
-                font-size: 0.72rem;
-            }
-            .release-grid { grid-template-columns: 1fr; }
-            .video-grid { grid-template-columns: 1fr; }
-            .social-bar-bottom { gap: 1.5rem; }
-            .social-bar-bottom a { font-size: 1.4rem; }
-            .social-bar-bottom a .label { font-size: 0.6rem; }
-        }
+
         @media (max-width: 480px) {
             .hero h1 { font-size: clamp(3rem, 12vw, 4.5rem); }
             .hero .subhead { font-size: 1rem; letter-spacing: 0.15em; }
@@ -621,12 +635,14 @@
 
 <nav>
     <a href="index.html" class="logo">✦ WREAL X</a>
-    <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation" />
+
+    <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
     <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
     </label>
+
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="music.html">Music</a></li>
@@ -710,6 +726,19 @@
 </footer>
 
 <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var navToggle = document.getElementById('nav-toggle');
+        var navLinks = document.querySelectorAll('.nav-links a');
+
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768 && navToggle) {
+                    navToggle.checked = false;
+                }
+            });
+        });
+    });
+
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function() {
         var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
