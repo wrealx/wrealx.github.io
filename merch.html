@@ -9,140 +9,483 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        :root {
-            --bg: #070707;
-            --panel: rgba(18, 18, 18, 0.9);
-            --text: #f3f3f3;
-            --muted: #b8b8b8;
-            --green: #39FF14;
-            --line: rgba(255,255,255,0.12);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
-            background: radial-gradient(circle at top, rgba(57,255,20,0.08), transparent 35%), var(--bg);
-            color: var(--text);
+            background: #0A0A0A;
+            color: #E0E0E0;
             font-family: 'Inter', 'Segoe UI', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
+            overflow-y: auto;
+            transition: background 0.8s ease;
+        }
+        a, button, input, textarea, select {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 5%;
+            flex-wrap: wrap;
+            gap: 1rem;
+            position: relative;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #39FF14;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
+        }
+        .logo:hover {
+            text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
         }
 
-        a, button, input, textarea, select { font-family: 'Inter', 'Segoe UI', sans-serif; }
-        nav { display:flex; justify-content:space-between; align-items:center; padding:1.8rem 5%; flex-wrap:wrap; gap:1rem; position:relative; z-index:10; }
-        .logo { display:inline-flex; align-items:center; gap:0.35em; font-size:2.2rem; font-weight:800; color:var(--green); text-decoration:none; letter-spacing:0.1em; text-shadow:0 0 40px rgba(57,255,20,0.3), 0 0 80px rgba(57,255,20,0.1); }
-        .logo .brand-mark { width:0.9em; height:0.9em; object-fit:cover; display:block; border-radius:0.18em; box-shadow:0 0 18px rgba(57,255,20,0.18); flex-shrink:0; }
+        #nav-toggle {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
 
-        #nav-toggle { position:absolute; opacity:0; pointer-events:none; }
-        .nav-toggle { display:none; position:absolute; right:5%; top:1.5rem; width:48px; height:48px; border:1px solid rgba(255,255,255,0.15); border-radius:12px; background:rgba(255,255,255,0.04); cursor:pointer; z-index:20; align-items:center; justify-content:center; flex-direction:column; gap:5px; transition:all 0.3s ease; }
-        .nav-toggle .bar { display:block; width:22px; height:2px; border-radius:2px; background:#fff; }
+        .nav-toggle {
+            display: none;
+            position: absolute;
+            right: 5%;
+            top: 1.5rem;
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            cursor: pointer;
+            z-index: 20;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-toggle:hover {
+            border-color: rgba(57, 255, 20, 0.6);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.12);
+        }
+        .nav-toggle .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 2px;
+            background: #FFFFFF;
+        }
 
-        .nav-links { display:flex; gap:1.5rem; list-style:none; flex-wrap:wrap; align-items:center; justify-content:flex-end; }
-        .nav-links a { color:#fff; text-decoration:none; font-weight:700; font-size:0.9rem; transition:all 0.3s ease; text-transform:uppercase; letter-spacing:0.08em; padding:0.5rem 1rem; border:1px solid rgba(255,255,255,0.12); border-radius:10px; background:rgba(255,255,255,0.04); }
-        .nav-links a:hover { color:var(--green); border-color:var(--green); background:rgba(57,255,20,0.1); transform:translateY(-2px); box-shadow:0 0 30px rgba(57,255,20,0.1); }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .nav-links a:hover {
+            color: #39FF14;
+            border-color: #39FF14;
+            background: rgba(57, 255, 20, 0.1);
+            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
+        }
 
-        .page-hero { min-height:260px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:4rem 5% 2.5rem; background: linear-gradient(180deg, rgba(7,7,7,0.18), rgba(7,7,7,0.9)), url('https://iili.io/CD0qtob.png') center/cover no-repeat; }
-        .page-hero h1 { font-size:clamp(2.5rem, 7vw, 6rem); letter-spacing:0.14em; text-transform:uppercase; font-weight:900; color:#fff; }
-        .page-sub { margin-top:0.5rem; color:var(--green); letter-spacing:0.28em; text-transform:uppercase; font-weight:700; font-size:0.9rem; }
+        .nav-hint {
+            position: fixed;
+            right: 7.5rem;
+            top: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.6rem 0.9rem 0.6rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(10, 10, 10, 0.85);
+            border: 1px solid rgba(57, 255, 20, 0.4);
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.15);
+            transform-origin: center;
+            z-index: 25;
+            pointer-events: none;
+            animation: navHintMotion 1.8s ease-in-out infinite;
+        }
+        .nav-hint::after {
+            content: '';
+            position: absolute;
+            right: -14px;
+            top: 50%;
+            width: 18px;
+            height: 2px;
+            background: rgba(57, 255, 20, 0.9);
+            transform: translateY(-50%) rotate(14deg);
+            border-radius: 999px;
+        }
+        .nav-hint-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(57, 255, 20, 0.1);
+            color: #39FF14;
+            font-size: 1rem;
+            animation: handPulse 1.3s ease-in-out infinite alternate;
+        }
+        .nav-hint-text {
+            color: #E9FEEB;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.58rem;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
 
-        .content { max-width:1200px; margin:0 auto; padding:2.5rem 5% 4rem; }
-        .merch-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
-        .product { background:var(--panel); border:1px solid var(--line); border-radius:22px; overflow:hidden; box-shadow:0 22px 45px rgba(0,0,0,0.25); }
-        .product-image { height:260px; background-size:cover; background-position:center; }
-        .product-body { padding:1.3rem; }
-        .product-body h3 { font-size:1.3rem; margin-bottom:0.5rem; }
-        .product-body p { color:var(--muted); margin-bottom:1rem; }
-        .price { color:var(--green); font-weight:800; margin-bottom:1rem; display:block; }
-        .button { display:inline-block; padding:0.8rem 1.4rem; border-radius:999px; background:var(--green); color:#0a0a0a; text-decoration:none; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; font-size:0.8rem; }
-
-        footer { text-align:center; padding:1.5rem 5% 2.5rem; color:rgba(255,255,255,0.65); font-size:0.8rem; border-top:1px solid rgba(255,255,255,0.06); }
-        footer a { color:var(--green); text-decoration:none; }
+        @keyframes navHintMotion {
+            0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+            20% { transform: translateX(-6px) translateY(-5px) rotate(-5deg); }
+            40% { transform: translateX(2px) translateY(1px) rotate(3deg); }
+            60% { transform: translateX(-4px) translateY(-3px) rotate(-2deg); }
+            80% { transform: translateX(6px) translateY(-6px) rotate(4deg); }
+        }
+        @keyframes handPulse {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.12) rotate(8deg); }
+        }
 
         @media (max-width: 768px) {
-            nav { display:flex; justify-content:space-between; align-items:center; padding:1.25rem 5%; min-height:70px; position:relative; }
-            .logo { font-size:1.4rem; letter-spacing:0.08em; }
-            .nav-toggle { display:flex; }
-            .nav-links { position:absolute; top:4.6rem; right:5%; flex-direction:column; gap:0.75rem; align-items:stretch; min-width:180px; padding:0.85rem; background:rgba(10,10,10,0.95); border:1px solid rgba(255,255,255,0.12); border-radius:14px; box-shadow:0 20px 40px rgba(0,0,0,0.35); opacity:0; transform:translateX(120%); pointer-events:none; transition:transform 0.35s ease, opacity 0.35s ease; z-index:50; }
-            #nav-toggle:checked ~ .nav-links { opacity:1; transform:translateX(0); pointer-events:auto; }
-            .nav-links a { width:100%; text-align:center; padding:0.8rem 1rem; font-size:0.72rem; }
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.25rem 5%;
+                min-height: 70px;
+                position: relative;
+            }
+
+            .logo {
+                position: relative;
+                left: auto;
+                top: auto;
+                font-size: 1.4rem;
+                letter-spacing: 0.08em;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 4.6rem;
+                right: 5%;
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: stretch;
+                min-width: 180px;
+                padding: 0.85rem;
+                background: rgba(10, 10, 10, 0.95);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 14px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+                opacity: 0;
+                transform: translateX(120%);
+                pointer-events: none;
+                transition: transform 0.35s ease, opacity 0.35s ease;
+                z-index: 50;
+            }
+
+            #nav-toggle:checked ~ .nav-links {
+                opacity: 1;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 1rem;
+                font-size: 0.72rem;
+            }
+
+            .nav-hint {
+                right: 4.4rem;
+                top: 1.05rem;
+                padding: 0.45rem 0.7rem 0.45rem 0.55rem;
+            }
+            .nav-hint-text {
+                font-size: 0.5rem;
+            }
+            .nav-hint::after {
+                right: -11px;
+                width: 14px;
+            }
+        }
+
+        .hero-bg {
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 5%;
+            position: relative;
+            width: 100%;
+            background-image: linear-gradient(180deg, rgba(10,10,10,0.08) 0%, rgba(10,10,10,0.58) 100%), url('https://iili.io/CD0qtob.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            transition: background 0.9s ease, filter 0.9s ease;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(7,7,7,0.05), rgba(7,7,7,0.72));
+            transition: opacity 0.8s ease, background 0.8s ease;
+            z-index: 1;
+        }
+        .hero-bg * { position: relative; z-index: 2; }
+        .hero-bg h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            text-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+        }
+        .page-sub {
+            text-align: center;
+            color: #39FF14;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            margin-top: 0.2rem;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            padding: 3rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .merch-item {
+            background: rgba(15, 15, 15, 0.9);
+            border-radius: 20px;
+            padding: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s;
+            text-align: center;
+        }
+        .merch-item:hover {
+            border-color: #39FF14;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.06);
+            transform: translateY(-6px);
+        }
+        .merch-item .merch-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        .merch-item .merch-image:hover {
+            border-color: #39FF14;
+            transform: scale(1.02);
+        }
+        .merch-item h3 {
+            font-size: 1.3rem;
+            color: #FFFFFF;
+            margin-bottom: 0.3rem;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        .merch-item .tag {
+            display: inline-block;
+            background: #39FF14;
+            color: #0A0A0A;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 0 auto 1rem;
+            display: table;
+            letter-spacing: 0.1em;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            text-transform: uppercase;
+        }
+        .merch-item .buy-btn {
+            display: inline-block;
+            padding: 0.8rem 3rem;
+            background: #39FF14;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            border: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
+        }
+        .merch-item .buy-btn:hover {
+            background: #00FF41;
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
+        }
+        .stream-cta {
+            text-align: center;
+            padding: 1rem 5% 2rem;
+        }
+        .stream-cta a {
+            display: inline-block;
+            padding: 1rem 3.5rem;
+            background: #39FF14;
+            color: #0A0A0A;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
+        }
+        .stream-cta a:hover {
+            background: #00FF41;
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(57, 255, 20, 0.4);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            color: #FFFFFF;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 1rem;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            opacity: 0.4;
+        }
+        footer a {
+            color: #39FF14;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .merch-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo" aria-label="Wreal X home">
-            <img class="brand-mark" src="https://files.catbox.moe/adx9wj.jpg" alt="Wreal X logo" />
-            <span>WREAL X</span>
-        </a>
 
-        <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
-        <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </label>
+<nav>
+    <a href="index.html" class="logo">✦ WREAL X</a>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="music.html">Music</a></li>
-            <li><a href="merch.html">Merch</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section class="page-hero">
-        <h1>Merch</h1>
-        <p class="page-sub">Official drops</p>
-    </section>
-
-    <div class="content">
-        <div class="merch-grid">
-            <article class="product">
-                <div class="product-image" style="background-image:url('https://files.catbox.moe/adx9wj.jpg');"></div>
-                <div class="product-body">
-                    <h3>Wreal X Mark Tee</h3>
-                    <p>Black cotton tee with front mark and understated Cursed graphic.</p>
-                    <span class="price">$34</span>
-                    <a class="button" href="contact.html">Order</a>
-                </div>
-            </article>
-            <article class="product">
-                <div class="product-image" style="background-image:url('https://files.catbox.moe/gq73y6.png');"></div>
-                <div class="product-body">
-                    <h3>Cursed Hoodie</h3>
-                    <p>Heavyweight oversized hoodie for studio sessions and late-night sets.</p>
-                    <span class="price">$64</span>
-                    <a class="button" href="contact.html">Order</a>
-                </div>
-            </article>
-            <article class="product">
-                <div class="product-image" style="background-image:url('https://files.catbox.moe/hasrqj.png');"></div>
-                <div class="product-body">
-                    <h3>Signal Cap</h3>
-                    <p>Minimal cap with a sharp green emblem.</p>
-                    <span class="price">$24</span>
-                    <a class="button" href="contact.html">Order</a>
-                </div>
-            </article>
-        </div>
+    <div class="nav-hint" aria-hidden="true">
+        <span class="nav-hint-icon"><i class="fa-solid fa-hand-point-right"></i></span>
+        <span class="nav-hint-text">Explore</span>
     </div>
 
-    <footer>
-        © 2026 WREAL X · <a href="contact.html">Say hi</a>
-    </footer>
+    <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </label>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navToggle = document.getElementById('nav-toggle');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    if (window.innerWidth <= 768 && navToggle) {
-                        navToggle.checked = false;
-                    }
-                });
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="hero-bg">
+    <h1>MERCH</h1>
+    <p class="page-sub">Cursed 🕯️</p>
+</div>
+
+<div class="merch-grid">
+    <div class="merch-item">
+        <div class="merch-image" style="background-image: url('https://iili.io/CDCdmBt.png');"></div>
+        <h3>X PURFER VEST</h3>
+        <span class="tag">Limited Edition</span>
+        <a href="https://payhip.com/b/wP6EI" target="_blank" class="buy-btn">Buy Now</a>
+    </div>
+
+    <div class="merch-item">
+        <div class="merch-image" style="background-image: url('https://iili.io/CDCA0KJ.png');"></div>
+        <h3>X ON HOODIE</h3>
+        <span class="tag">Pre-Order</span>
+        <a href="https://payhip.com/b/eyvrw" target="_blank" class="buy-btn">Buy Now</a>
+    </div>
+</div>
+
+<div class="stream-cta">
+    <a href="https://ffm.to/nitro-veil" target="_blank">▶ Stream Wreal X</a>
+</div>
+
+<footer>
+    © 2026 WREAL X · <a href="contact.html">Get in touch</a>
+</footer>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var navToggle = document.getElementById('nav-toggle');
+        var navLinks = document.querySelectorAll('.nav-links a');
+
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768 && navToggle) {
+                    navToggle.checked = false;
+                }
             });
         });
-    </script>
+    });
+
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+
 </body>
 </html>
