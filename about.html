@@ -1,598 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>About · Wreal X</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body {
-            background: #0A0A0A;
-            color: #E0E0E0;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            min-height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
-            transition: background 0.8s ease;
-        }
-        a, button, input, textarea, select {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.8rem 5%;
-            flex-wrap: wrap;
-            gap: 1rem;
-            position: relative;
-            z-index: 10;
-        }
-        .logo {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #39FF14;
-            text-decoration: none;
-            letter-spacing: 0.1em;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            text-shadow: 0 0 40px rgba(57, 255, 20, 0.3), 0 0 80px rgba(57, 255, 20, 0.1);
-        }
-        .logo:hover {
-            text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About · Wreal X</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      background: #0A0A0A;
+      color: #E0E0E0;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    a, button, input, textarea, select { font-family: 'Inter', 'Segoe UI', sans-serif; }
 
-        #nav-toggle {
-            position: absolute;
-            opacity: 0;
-            pointer-events: none;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem 5%;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: relative;
+      z-index: 10;
+    }
 
-        .nav-toggle {
-            display: none;
-            position: absolute;
-            right: 5%;
-            top: 1.5rem;
-            width: 48px;
-            height: 48px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.04);
-            cursor: pointer;
-            z-index: 20;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 5px;
-            transition: all 0.3s ease;
-        }
-        .nav-toggle:hover {
-            border-color: rgba(57, 255, 20, 0.6);
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.12);
-        }
-        .nav-toggle .bar {
-            display: block;
-            width: 22px;
-            height: 2px;
-            border-radius: 2px;
-            background: #FFFFFF;
-        }
+    .logo {
+      display: inline-block;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #39FF14;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      text-shadow: 0 0 40px rgba(57,255,20,0.3), 0 0 80px rgba(57,255,20,0.1);
+    }
+    .logo:hover {
+      text-shadow: 0 0 60px rgba(57,255,20,0.5), 0 0 120px rgba(57,255,20,0.2);
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: flex-end;
-        }
-        .nav-links a {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 0.5rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.04);
-        }
-        .nav-links a:hover {
-            color: #39FF14;
-            border-color: #39FF14;
-            background: rgba(57, 255, 20, 0.1);
-            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
-        }
+    #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
 
-        .nav-hint {
-            position: fixed;
-            right: 7.5rem;
-            top: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.55rem;
-            padding: 0.6rem 0.9rem 0.6rem 0.75rem;
-            border-radius: 999px;
-            background: rgba(10, 10, 10, 0.85);
-            border: 1px solid rgba(57, 255, 20, 0.4);
-            box-shadow: 0 0 25px rgba(57, 255, 20, 0.15);
-            transform-origin: center;
-            z-index: 25;
-            pointer-events: none;
-            animation: navHintMotion 1.8s ease-in-out infinite;
-        }
-        .nav-hint::after {
-            content: '';
-            position: absolute;
-            right: -14px;
-            top: 50%;
-            width: 18px;
-            height: 2px;
-            background: rgba(57, 255, 20, 0.9);
-            transform: translateY(-50%) rotate(14deg);
-            border-radius: 999px;
-        }
-        .nav-hint-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: rgba(57, 255, 20, 0.1);
-            color: #39FF14;
-            font-size: 1rem;
-            animation: handPulse 1.3s ease-in-out infinite alternate;
-        }
-        .nav-hint-text {
-            color: #E9FEEB;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            font-size: 0.58rem;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-        }
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: 5%;
+      top: 1.5rem;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+      z-index: 20;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .nav-toggle .bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 2px;
+      background: #FFFFFF;
+    }
 
-        @keyframes navHintMotion {
-            0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
-            20% { transform: translateX(-6px) translateY(-5px) rotate(-5deg); }
-            40% { transform: translateX(2px) translateY(1px) rotate(3deg); }
-            60% { transform: translateX(-4px) translateY(-3px) rotate(-2deg); }
-            80% { transform: translateX(6px) translateY(-6px) rotate(4deg); }
-        }
-        @keyframes handPulse {
-            0% { transform: scale(1) rotate(0deg); }
-            100% { transform: scale(1.12) rotate(8deg); }
-        }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.04);
+      transition: all 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #39FF14;
+      border-color: #39FF14;
+      background: rgba(57,255,20,0.1);
+      transform: translateY(-2px);
+    }
 
-        @media (max-width: 768px) {
-            nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1.25rem 5%;
-                min-height: 70px;
-                position: relative;
-            }
+    .page-hero {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 5% 1rem;
+      color: #FFFFFF;
+    }
+    .page-hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .page-hero .arabic {
+      color: #39FF14;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 5% 4rem;
+      line-height: 1.8;
+      color: #E0E0E0;
+    }
+    .content p {
+      margin-bottom: 1.25rem;
+    }
+    strong { color: #39FF14; }
 
-            .logo {
-                position: relative;
-                left: auto;
-                top: auto;
-                font-size: 1.4rem;
-                letter-spacing: 0.08em;
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 4.6rem;
-                right: 5%;
-                flex-direction: column;
-                gap: 0.75rem;
-                align-items: stretch;
-                min-width: 180px;
-                padding: 0.85rem;
-                background: rgba(10, 10, 10, 0.95);
-                border: 1px solid rgba(255, 255, 255, 0.12);
-                border-radius: 14px;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-                opacity: 0;
-                transform: translateX(120%);
-                pointer-events: none;
-                transition: transform 0.35s ease, opacity 0.35s ease;
-                z-index: 50;
-            }
-
-            #nav-toggle:checked ~ .nav-links {
-                opacity: 1;
-                transform: translateX(0);
-                pointer-events: auto;
-            }
-
-            .nav-links a {
-                width: 100%;
-                text-align: center;
-                padding: 0.8rem 1rem;
-                font-size: 0.72rem;
-            }
-
-            .nav-hint {
-                right: 4.4rem;
-                top: 1.05rem;
-                padding: 0.45rem 0.7rem 0.45rem 0.55rem;
-            }
-            .nav-hint-text {
-                font-size: 0.5rem;
-            }
-            .nav-hint::after {
-                right: -11px;
-                width: 14px;
-            }
-        }
-
-        .hero-bg {
-            min-height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem 5%;
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            background-image: linear-gradient(180deg, rgba(10,10,10,0.08) 0%, rgba(10,10,10,0.58) 100%), url('https://iili.io/CD0qtob.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
-            transition: background 0.9s ease, filter 0.9s ease;
-        }
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(7,7,7,0.05), rgba(7,7,7,0.72));
-            transition: opacity 0.8s ease, background 0.8s ease;
-            z-index: 1;
-        }
-        .hero-bg * { position: relative; z-index: 2; }
-        .hero-bg h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 900;
-            color: #FFFFFF;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            text-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
-        }
-        .page-sub {
-            text-align: center;
-            color: #39FF14;
-            font-size: 1.2rem;
-            letter-spacing: 0.1em;
-            margin-top: 0.2rem;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-        }
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            padding: 3rem 5%;
-            max-width: 1300px;
-            margin: 0 auto;
-            align-items: start;
-            min-height: 70vh;
-        }
-        .about-image {
-            width: 100%;
-            aspect-ratio: 1/1;
-            border-radius: 50%;
-            border: 3px solid #39FF14;
-            box-shadow: 0 0 60px rgba(57, 255, 20, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s;
-            background-image: url('https://iili.io/CD0qtob.png');
-            background-size: cover;
-            background-position: center;
-            position: sticky;
-            top: 2rem;
-        }
-        .about-image:hover {
-            border-color: #00FF41;
-            box-shadow: 0 0 80px rgba(57, 255, 20, 0.3);
-            transform: scale(1.02);
-        }
-        .about-text h2 {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            margin-bottom: 0.3rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            letter-spacing: 0.05em;
-            text-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-        }
-        .about-text .real-name {
-            color: #FFFFFF;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            opacity: 0.6;
-        }
-        .about-text .real-name span {
-            color: #39FF14;
-            font-weight: 600;
-        }
-        .about-text .bio {
-            font-size: 1.05rem;
-            line-height: 1.9;
-            color: #E0E0E0;
-            margin-bottom: 1.2rem;
-            font-weight: 300;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-        }
-        .about-text .bio strong {
-            color: #39FF14;
-            font-weight: 700;
-        }
-        .about-text .highlight {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #39FF14;
-            border-left: 4px solid #39FF14;
-            padding-left: 1.2rem;
-            margin: 1.8rem 0;
-            line-height: 1.3;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            text-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
-        }
-        .about-text .details {
-            color: #FFFFFF;
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-top: 1rem;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            opacity: 0.6;
-        }
-        .about-text .details span {
-            color: #39FF14;
-            font-weight: 600;
-        }
-        .about-text .details .label {
-            color: #FFFFFF;
-            font-weight: 400;
-            opacity: 0.4;
-        }
-        .about-text .social-links {
-            display: flex;
-            gap: 1.2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        .about-text .social-links a {
-            color: #FFFFFF;
-            font-size: 1.8rem;
-            transition: all 0.3s;
-            opacity: 0.6;
-        }
-        .about-text .social-links a:hover {
-            color: #39FF14;
-            transform: translateY(-3px);
-            text-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
-            opacity: 1;
-        }
-        .about-text .milestones {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-            padding: 1.2rem;
-            background: rgba(15, 15, 15, 0.9);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        .about-text .milestones .milestone {
-            text-align: center;
-        }
-        .about-text .milestones .milestone .num {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #39FF14;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-        }
-        .about-text .milestones .milestone .desc {
-            font-size: 0.65rem;
-            color: #FFFFFF;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            opacity: 0.5;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 5%;
-            color: #FFFFFF;
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 1rem;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            opacity: 0.4;
-        }
-        footer a {
-            color: #39FF14;
-            text-decoration: none;
-        }
-        @media (max-width: 900px) {
-            .about-container { grid-template-columns: 1fr; }
-            .about-image {
-                max-width: 280px;
-                margin: 0 auto;
-                position: relative;
-                top: 0;
-            }
-            .about-text .highlight { border-left: none; padding-left: 0; }
-            .about-text .social-links { justify-content: center; }
-            .about-text { text-align: center; }
-        }
-        @media (max-width: 480px) {
-            .about-text .milestones { grid-template-columns: 1fr; }
-        }
-    </style>
+    @media (max-width: 768px) {
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 5%;
+      }
+      .logo { font-size: 1.4rem; letter-spacing: 0.08em; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: absolute;
+        top: 4.6rem;
+        right: 5%;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+        min-width: 180px;
+        padding: 0.85rem;
+        background: rgba(10,10,10,0.95);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 14px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+        opacity: 0;
+        transform: translateX(120%);
+        pointer-events: none;
+        transition: transform 0.35s ease, opacity 0.35s ease;
+      }
+      #nav-toggle:checked ~ .nav-links {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+      }
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        font-size: 0.72rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<nav>
-    <a href="index.html" class="logo">✦ WREAL X</a>
-
-    <div class="nav-hint" aria-hidden="true">
-        <span class="nav-hint-icon"><i class="fa-solid fa-hand-point-right"></i></span>
-        <span class="nav-hint-text">Explore</span>
-    </div>
+  <nav>
+    <a href="index.html" class="logo">WREAL X</a>
 
     <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
     <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </label>
 
     <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="music.html">Music</a></li>
-        <li><a href="merch.html">Merch</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="merch.html">Merch</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-</nav>
+  </nav>
 
-<div class="hero-bg">
+  <section class="page-hero">
     <h1>ABOUT</h1>
-    <p class="page-sub">Cursed 🕯️</p>
-</div>
+    <div class="arabic">CURSED</div>
+  </section>
 
-<div class="about-container">
-    <div class="about-image"></div>
-    <div class="about-text">
-        <h2>WREAL X</h2>
-        <p class="real-name">born <span>Angel Jambu Roy</span> · July 20, 2007 · Yei, South Sudan</p>
+  <div class="content">
+    <p><strong>Wreal X</strong> is a South Sudanese singer, emo rapper, and songwriter from East Africa.</p>
+    <p>Deeply influenced by <strong>Juice WRLD</strong>, his music blends the emotional intensity of emo trap with the warmth of Afrobeats.</p>
+    <p>Every record carries the ache of love, loss, and survival — honest, raw, and unforgettable.</p>
+  </div>
 
-        <p class="bio">
-            <strong>Wreal X</strong> is a South Sudanese singer, emo rapper, and songwriter from East Africa. 
-            Deeply influenced by <strong>Juice WRLD</strong>, he masterfully blends the raw vulnerability of emo trap 
-            with the rhythmic warmth of Afrobeats — creating a sound that is both haunting and deeply resonant. 
-            His music navigates the blues, romance, love, and the harsh realities of life — each track a confession, 
-            every verse a glimpse into a soul marked by both suffering and hope.
-        </p>
-
-        <p class="bio">
-            Born to the late <strong>Mr. Taban Roy</strong> and <strong>Mrs. Santuke Koloy Kamba</strong>, 
-            Wreal X discovered his passion for music at just ten years old. He began writing rap songs as a child, 
-            pouring his emotions into lyrics long before he understood the weight of his own words. As he grew, 
-            so did his understanding of the industry and the hip-hop world, leading him to emo trap — a genre 
-            that gave voice to his pain. Through the influence of <strong>Juice WRLD</strong>, he found his true artistic identity.
-        </p>
-
-        <div class="highlight">
-            "Every verse is a confession — a soul marked by suffering and hope."
-        </div>
-
-        <p class="bio">
-            His early releases, <strong>"Monalisa"</strong> and <strong>"Photo"</strong>, carried Afro influences 
-            familiar to his homeland, but it was <strong>"Hurry Up"</strong> — his first trap record — that 
-            announced his arrival, surpassing one thousand streams on YouTube. Its successor, <strong>"Gang Gang"</strong>, 
-            cemented his identity as a fully realized emo trap artisan: audacious in production, unflinching in 
-            lyrical candor, and utterly unlike anything emerging from his region.
-        </p>
-
-        <p class="bio" style="color:#FFFFFF; font-style:italic; opacity:0.6;">
-            Behind the music lies a young man who has faced familial opposition, institutional disillusionment, 
-            and the isolation of pioneering an unrecognized genre in a land rooted in local sounds. He has walked 
-            through broken promises from industry figures who deemed his vision too foreign, too perilous.
-        </p>
-
-        <div class="milestones">
-            <div class="milestone">
-                <div class="num">2017</div>
-                <div class="desc">Started Writing</div>
-            </div>
-            <div class="milestone">
-                <div class="num">2020</div>
-                <div class="desc">Journey Begins</div>
-            </div>
-            <div class="milestone">
-                <div class="num">1K+</div>
-                <div class="desc">"Hurry Up" Streams</div>
-            </div>
-            <div class="milestone">
-                <div class="num">2024</div>
-                <div class="desc">"Gang Gang"</div>
-            </div>
-        </div>
-
-        <p class="details">
-            <span class="label">Influences:</span> <span>Juice WRLD</span><br>
-            <span class="label">Sound:</span> <span>Emo Trap · Afrobeats · Darkwave · Experimental</span><br>
-            <span class="label">From:</span> <span>Yei, Equatoria · South Sudan</span>
-        </p>
-
-        <div class="social-links">
-            <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/Wreal_X" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://tiktok.com/wrealx3" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://facebook.com/wrealxcursed" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://youtube.com/@wrealx" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://soundcloud.com/wrealx" target="_blank"><i class="fab fa-soundcloud"></i></a>
-            <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank"><i class="fab fa-spotify"></i></a>
-            <a href="https://music.apple.com/us/artist/wreal-x/1896590252" target="_blank"><i class="fab fa-apple"></i></a>
-        </div>
-    </div>
-</div>
-
-<footer>
-    © 2026 WREAL X · <a href="contact.html">Say hi</a>
-</footer>
-
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-        var navToggle = document.getElementById('nav-toggle');
-        var navLinks = document.querySelectorAll('.nav-links a');
-
-        navLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768 && navToggle) {
-                    navToggle.checked = false;
-                }
-            });
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.innerWidth <= 768 && navToggle) navToggle.checked = false;
         });
+      });
     });
-
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function() {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
-</script>
-
+  </script>
 </body>
 </html>
