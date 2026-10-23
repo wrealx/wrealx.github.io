@@ -9,68 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- ====== SILKTIDE COOKIE CONSENT: HEAD ====== -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenV0QmvmjfUlbmTAE1gwo+McP4H+hL5rEJwPp2U2ShjE8" crossorigin="anonymous">
-
-    <style id="silktide-consent-manager-overrides">
-        #stcm-wrapper {
-            --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-            --fontFamily: 'Inter', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
-            --primaryColor: #39FF14;
-            --backgroundColor: #0A0A0A;
-            --textColor: #E0E0E0;
-            --backdropBackgroundColor: #00000080;
-            --backdropBackgroundBlur: 8px;
-            --iconColor: #0A0A0A;
-            --iconBackgroundColor: #39FF14;
-        }
-        #stcm-wrapper .stcm-button-primary {
-            background: #39FF14 !important;
-            color: #0A0A0A !important;
-            font-weight: 700 !important;
-            font-family: 'Inter', sans-serif !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.05em !important;
-            border-radius: 50px !important;
-            padding: 0.6rem 1.8rem !important;
-            border: none !important;
-            transition: all 0.3s !important;
-        }
-        #stcm-wrapper .stcm-button-primary:hover {
-            background: #00FF41 !important;
-            box-shadow: 0 0 40px rgba(57, 255, 20, 0.3) !important;
-            transform: scale(1.05) !important;
-        }
-        #stcm-wrapper .stcm-button-secondary {
-            background: transparent !important;
-            color: #7FFF00 !important;
-            border: 1px solid #39FF14 !important;
-            font-family: 'Inter', sans-serif !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.05em !important;
-            border-radius: 50px !important;
-            padding: 0.6rem 1.8rem !important;
-            transition: all 0.3s !important;
-        }
-        #stcm-wrapper .stcm-button-secondary:hover {
-            border-color: #00FF41 !important;
-            color: #00FF41 !important;
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1) !important;
-        }
-        #stcm-wrapper .stcm-toggle.checked {
-            background: #39FF14 !important;
-        }
-        #stcm-wrapper .stcm-toggle {
-            background: #333 !important;
-        }
-        #stcm-wrapper .stcm-toggle.checked .stcm-toggle-slider {
-            background: #0A0A0A !important;
-        }
-    </style>
-
-    <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
-
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
@@ -98,6 +36,9 @@
         }
 
         .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35em;
             font-size: 2.2rem;
             font-weight: 800;
             color: #39FF14;
@@ -108,6 +49,15 @@
         }
         .logo:hover {
             text-shadow: 0 0 60px rgba(57, 255, 20, 0.5), 0 0 120px rgba(57, 255, 20, 0.2);
+        }
+        .logo .brand-mark {
+            width: 0.9em;
+            height: 0.9em;
+            object-fit: cover;
+            display: block;
+            border-radius: 0.18em;
+            box-shadow: 0 0 18px rgba(57,255,20,0.18);
+            flex-shrink: 0;
         }
 
         #nav-toggle {
@@ -343,6 +293,11 @@
         }
         .hero * { position: relative; z-index: 2; }
         .hero-title {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25em;
+            flex-wrap: wrap;
             font-size: clamp(3rem, 10vw, 8rem);
             font-weight: 900;
             line-height: 1.0;
@@ -366,7 +321,22 @@
             filter: blur(1px);
             letter-spacing: 0.18em;
         }
+        .hero-mark {
+            width: 0.54em;
+            height: 0.54em;
+            object-fit: cover;
+            border-radius: 0.14em;
+            display: inline-block;
+            vertical-align: middle;
+            flex-shrink: 0;
+            box-shadow: 0 0 18px rgba(57,255,20,0.22);
+        }
         .hero .subhead {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            flex-wrap: wrap;
             font-size: 1.6rem;
             color: #39FF14;
             margin-top: 0.5rem;
@@ -374,6 +344,21 @@
             letter-spacing: 0.1em;
             text-shadow: 0 0 40px rgba(57, 255, 20, 0.15);
             font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+        .hero .subhead .subhead-logo {
+            width: 0.9em;
+            height: 0.9em;
+            object-fit: cover;
+            border-radius: 0.14em;
+            display: inline-block;
+            vertical-align: middle;
+            box-shadow: 0 0 16px rgba(57,255,20,0.18);
+        }
+        .hero .subhead .subhead-translation {
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            opacity: 0.9;
         }
         .cta-btn {
             margin-top: 2.5rem;
@@ -398,6 +383,7 @@
             transform: scale(1.05) translateY(-3px);
             box-shadow: 0 0 80px rgba(57, 255, 20, 0.4);
         }
+        
         .video-section {
             padding: 4rem 5% 1rem;
             max-width: 1200px;
@@ -710,7 +696,10 @@
 <body>
 
 <nav>
-    <a href="index.html" class="logo">✦ WREAL X</a>
+    <a href="index.html" class="logo" aria-label="Wreal X home">
+        <img class="brand-mark" src="https://files.catbox.moe/adx9wj.jpg" alt="Wreal X logo" />
+        <span>WREAL X</span>
+    </a>
 
     <div class="nav-hint" aria-hidden="true">
         <span class="nav-hint-icon"><i class="fa-solid fa-hand-point-right"></i></span>
@@ -734,8 +723,15 @@
 </nav>
 
 <section class="hero">
-    <h1 class="hero-title">WREAL X</h1>
-    <p class="subhead">CURSED 🕯️</p>
+    <h1 class="hero-title">
+        <img class="hero-mark" src="https://files.catbox.moe/adx9wj.jpg" alt="Wreal X logo" />
+        <span>WREAL X</span>
+    </h1>
+    <p class="subhead">
+        <span>CURSED</span>
+        <img class="subhead-logo" src="https://files.catbox.moe/adx9wj.jpg" alt="Wreal X logo" />
+        <span class="subhead-translation">الملعون</span>
+    </p>
 </section>
 
 <section class="video-section">
