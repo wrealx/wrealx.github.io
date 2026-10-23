@@ -252,11 +252,15 @@
             padding: 2rem 5%;
             position: relative;
             width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
             background-image: linear-gradient(180deg, rgba(10,10,10,0.08) 0%, rgba(10,10,10,0.58) 100%), url('https://iili.io/CD0qtob.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
             transition: background 0.9s ease, filter 0.9s ease;
         }
         .hero-bg::before {
